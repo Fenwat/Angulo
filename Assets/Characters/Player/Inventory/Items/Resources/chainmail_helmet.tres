@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ArmorItem" load_steps=3 format=3 uid="uid://3wfewhws0iwv"]
+
+[ext_resource type="Texture2D" uid="uid://bsg3lv4uc4qb8" path="res://Assets/Characters/Player/Inventory/Items/Sprites/slot_chainmail_helmet.png" id="1_n5rsc"]
+[ext_resource type="Script" path="res://Assets/Characters/Player/Inventory/Scripts/ArmorItem.gd" id="2_besr6"]
+
+[resource]
+script = ExtResource("2_besr6")
+weight = 10.0
+defense = 15.0
+function = "equip_chainmail_helmet"
+item_texture = ExtResource("1_n5rsc")
+item_name = "Chainmail Helmet"
+item_description = "A helmet made of chainmail."

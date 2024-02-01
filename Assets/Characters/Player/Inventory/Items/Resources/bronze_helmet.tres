@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ArmorItem" load_steps=3 format=3 uid="uid://w387wsurqqng"]
+
+[ext_resource type="Texture2D" uid="uid://cy2gx7n815ymi" path="res://Assets/Characters/Player/Inventory/Items/Sprites/slot_bronze_helmet.png" id="1_pv1xi"]
+[ext_resource type="Script" path="res://Assets/Characters/Player/Inventory/Scripts/ArmorItem.gd" id="2_h7dal"]
+
+[resource]
+script = ExtResource("2_h7dal")
+weight = 7.0
+defense = 18.0
+function = "equip_bronze_helmet"
+item_texture = ExtResource("1_pv1xi")
+item_name = "Bronze Helmet"
+item_description = "A bronze helmet."

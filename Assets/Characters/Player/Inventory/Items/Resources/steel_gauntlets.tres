@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ArmorItem" load_steps=3 format=3 uid="uid://b7hd4rd3qe71w"]
+
+[ext_resource type="Texture2D" uid="uid://bw02tiumfnmr7" path="res://Assets/Characters/Player/Inventory/Items/Sprites/slot_steel_gauntlets.png" id="1_y64fx"]
+[ext_resource type="Script" path="res://Assets/Characters/Player/Inventory/Scripts/ArmorItem.gd" id="2_kmeey"]
+
+[resource]
+script = ExtResource("2_kmeey")
+weight = 4.0
+defense = 7.0
+function = "equip_steel_gauntlets"
+item_texture = ExtResource("1_y64fx")
+item_name = "Steel Gauntlets"
+item_description = "Gauntlets made of steel."

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ArmorItem" load_steps=3 format=3 uid="uid://b80n4ste50c6b"]
+
+[ext_resource type="Texture2D" uid="uid://bdb51l8g7vsji" path="res://Assets/Characters/Player/Inventory/Items/Sprites/slot_knight_gauntlets.png" id="1_68t4o"]
+[ext_resource type="Script" path="res://Assets/Characters/Player/Inventory/Scripts/ArmorItem.gd" id="2_0ey35"]
+
+[resource]
+script = ExtResource("2_0ey35")
+weight = 8.0
+defense = 12.0
+function = "equip_knight_gauntlets"
+item_texture = ExtResource("1_68t4o")
+item_name = "Knight's Gauntlets"
+item_description = "Gauntlets worn by a knight."

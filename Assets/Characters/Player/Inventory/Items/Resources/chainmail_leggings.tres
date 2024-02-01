@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ArmorItem" load_steps=3 format=3 uid="uid://bfx1h0vdd253n"]
+
+[ext_resource type="Texture2D" uid="uid://bitlwm3rct70h" path="res://Assets/Characters/Player/Inventory/Items/Sprites/slot_chainmail_leggings.png" id="1_c74lw"]
+[ext_resource type="Script" path="res://Assets/Characters/Player/Inventory/Scripts/ArmorItem.gd" id="2_ftxy3"]
+
+[resource]
+script = ExtResource("2_ftxy3")
+weight = 17.0
+defense = 20.0
+function = "equip_chainmail_leggings"
+item_texture = ExtResource("1_c74lw")
+item_name = "Chainmail Leggings"
+item_description = "Leggings made of chainmail."

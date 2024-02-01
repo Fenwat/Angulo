@@ -1,0 +1,11 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://b8mkbpq18rir"]
+
+[ext_resource type="FontFile" uid="uid://br1i6ggku0pnc" path="res://Assets/Fonts/3x6/3x6.ttf" id="1_tec5k"]
+
+[resource]
+base_font = ExtResource("1_tec5k")
+opentype_features = {
+1667329140: 0
+}
+spacing_top = -5
+spacing_bottom = -6

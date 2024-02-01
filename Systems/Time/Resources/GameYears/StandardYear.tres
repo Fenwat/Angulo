@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="GameYear" load_steps=15 format=3 uid="uid://d2gidtwyhrx2"]
+
+[ext_resource type="Resource" uid="uid://dc5tyb513i7tn" path="res://Systems/Time/Resources/GameMonths/1_Primera.tres" id="1_oui4n"]
+[ext_resource type="Resource" uid="uid://bxmay670wnhds" path="res://Systems/Time/Resources/GameMonths/2_Sectra.tres" id="2_i53ju"]
+[ext_resource type="Resource" uid="uid://g8yg6diwoxku" path="res://Systems/Time/Resources/GameMonths/3_Ters.tres" id="3_qwqsh"]
+[ext_resource type="Resource" uid="uid://b0iogddka4kvc" path="res://Systems/Time/Resources/GameMonths/4_Tetran.tres" id="4_qsfvm"]
+[ext_resource type="Resource" uid="uid://q2xr5rxtqk5s" path="res://Systems/Time/Resources/GameMonths/5_Pentuary.tres" id="5_murtn"]
+[ext_resource type="Resource" uid="uid://dttksvja40e5" path="res://Systems/Time/Resources/GameMonths/6_Hextran.tres" id="6_x6frf"]
+[ext_resource type="Resource" uid="uid://d171abk6ge6et" path="res://Systems/Time/Resources/GameMonths/7_Middary.tres" id="7_tdt4o"]
+[ext_resource type="Resource" uid="uid://v518ke8xdybr" path="res://Systems/Time/Resources/GameMonths/8_Octumber.tres" id="8_3wyx8"]
+[ext_resource type="Resource" uid="uid://vp5x0mux3tl3" path="res://Systems/Time/Resources/GameMonths/9_Novara.tres" id="9_7l6a7"]
+[ext_resource type="Resource" uid="uid://bsgw6bkewpjj5" path="res://Systems/Time/Resources/GameMonths/10_Decan.tres" id="10_rfpac"]
+[ext_resource type="Resource" uid="uid://bylamvr2b6all" path="res://Systems/Time/Resources/GameMonths/11_Elember.tres" id="11_h2njc"]
+[ext_resource type="Resource" uid="uid://c7384rjgna8b4" path="res://Systems/Time/Resources/GameMonths/12_Duodenary.tres" id="12_s3m0u"]
+[ext_resource type="Resource" uid="uid://0kxst1xjodca" path="res://Systems/Time/Resources/GameMonths/13_Finuary.tres" id="13_c2bae"]
+[ext_resource type="Script" path="res://Systems/Time/Scripts/GameYear.gd" id="14_35xo5"]
+
+[resource]
+script = ExtResource("14_35xo5")
+months = Array[Resource("res://Systems/Time/Scripts/GameMonth.gd")]([ExtResource("1_oui4n"), ExtResource("2_i53ju"), ExtResource("3_qwqsh"), ExtResource("4_qsfvm"), ExtResource("5_murtn"), ExtResource("6_x6frf"), ExtResource("7_tdt4o"), ExtResource("8_3wyx8"), ExtResource("9_7l6a7"), ExtResource("10_rfpac"), ExtResource("11_h2njc"), ExtResource("12_s3m0u"), ExtResource("13_c2bae")])

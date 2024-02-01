@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ArmorItem" load_steps=3 format=3 uid="uid://c7ayp243mom7"]
+
+[ext_resource type="Texture2D" uid="uid://cdsul4b3cmf8w" path="res://Assets/Characters/Player/Inventory/Items/Sprites/slot_bronze_cape.png" id="1_m1sjl"]
+[ext_resource type="Script" path="res://Assets/Characters/Player/Inventory/Scripts/ArmorItem.gd" id="2_wvqyj"]
+
+[resource]
+script = ExtResource("2_wvqyj")
+weight = 4.0
+defense = 6.0
+function = "equip_bronze_cape"
+item_texture = ExtResource("1_m1sjl")
+item_name = "Bronze Cape"
+item_description = "A cape made to be worn with a bronze suit of armor."

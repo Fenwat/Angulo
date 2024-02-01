@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ArmorItem" load_steps=3 format=3 uid="uid://clt33ow57nucw"]
+
+[ext_resource type="Texture2D" uid="uid://cxnuy61qxwr5l" path="res://Assets/Characters/Player/Inventory/Items/Sprites/slot_royal_guard_cape.png" id="1_5wgqb"]
+[ext_resource type="Script" path="res://Assets/Characters/Player/Inventory/Scripts/ArmorItem.gd" id="2_plvm1"]
+
+[resource]
+script = ExtResource("2_plvm1")
+weight = 4.0
+defense = 7.0
+function = "equip_royal_guard_cape"
+item_texture = ExtResource("1_5wgqb")
+item_name = "Royal Guard's Cape"
+item_description = "A cape worn by the King's royal guards."

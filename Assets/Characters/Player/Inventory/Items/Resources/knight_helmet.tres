@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ArmorItem" load_steps=3 format=3 uid="uid://cwcu68m4teayv"]
+
+[ext_resource type="Texture2D" uid="uid://61jva2xlslnb" path="res://Assets/Characters/Player/Inventory/Items/Sprites/slot_knight_helmet.png" id="1_8l22w"]
+[ext_resource type="Script" path="res://Assets/Characters/Player/Inventory/Scripts/ArmorItem.gd" id="2_yepo5"]
+
+[resource]
+script = ExtResource("2_yepo5")
+weight = 10.0
+defense = 15.0
+function = "equip_knight_helmet"
+item_texture = ExtResource("1_8l22w")
+item_name = "Knight's Helmet"
+item_description = "A helmet worn by knights."

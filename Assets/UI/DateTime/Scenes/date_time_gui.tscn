@@ -1,0 +1,91 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbik1s41svdr7"]
+
+[ext_resource type="Texture2D" uid="uid://osinuhn8hrvn" path="res://Assets/UI/Inventory/Sprites/InventoryBase_NinePatch.png" id="1_fhu76"]
+[ext_resource type="FontVariation" uid="uid://b8mkbpq18rir" path="res://Assets/Fonts/3x6/3x6.tres" id="2_rkeey"]
+
+[node name="DateTimeGui" type="Control"]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+grow_horizontal = 0
+scale = Vector2(4.2, 4.2)
+
+[node name="Month_NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = -48.8095
+offset_top = 1.19048
+offset_right = -14.8095
+offset_bottom = 12.1905
+texture = ExtResource("1_fhu76")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="Panel" type="Panel" parent="Month_NinePatchRect"]
+self_modulate = Color(0, 0, 0, 0)
+layout_mode = 0
+offset_left = 3.0
+offset_top = 2.0
+offset_right = 32.0
+offset_bottom = 9.0
+
+[node name="Label" type="Label" parent="Month_NinePatchRect/Panel"]
+layout_mode = 0
+offset_right = 29.0
+offset_bottom = 7.0
+theme_override_fonts/font = ExtResource("2_rkeey")
+text = "Month"
+
+[node name="Day_NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = -13.8095
+offset_top = 1.19048
+offset_right = -0.809528
+offset_bottom = 12.1905
+texture = ExtResource("1_fhu76")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="Panel" type="Panel" parent="Day_NinePatchRect"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 3.0
+offset_top = 2.0
+offset_right = 11.0
+offset_bottom = 9.0
+
+[node name="Label" type="Label" parent="Day_NinePatchRect/Panel"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 7.0
+text = "28"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = -24.2857
+offset_top = 13.0952
+offset_right = -1.28572
+offset_bottom = 24.0952
+texture = ExtResource("1_fhu76")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="Panel" type="Panel" parent="NinePatchRect"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 3.0
+offset_top = 2.0
+offset_right = 24.0
+offset_bottom = 9.0
+
+[node name="Label" type="Label" parent="NinePatchRect/Panel"]
+layout_mode = 0
+offset_right = 18.0
+offset_bottom = 7.0
+text = "24:28"

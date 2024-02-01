@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ArmorItem" load_steps=3 format=3 uid="uid://b21260xqio2ju"]
+
+[ext_resource type="Texture2D" uid="uid://82o0n11kg8xe" path="res://Assets/Characters/Player/Inventory/Items/Sprites/slot_royal_guard_leggings.png" id="1_xq840"]
+[ext_resource type="Script" path="res://Assets/Characters/Player/Inventory/Scripts/ArmorItem.gd" id="2_scar3"]
+
+[resource]
+script = ExtResource("2_scar3")
+weight = 13.0
+defense = 23.0
+function = "equip_royal_guard_leggings"
+item_texture = ExtResource("1_xq840")
+item_name = "Royal Guard's Leggings"
+item_description = "A leggings worn by the King's royal guards."

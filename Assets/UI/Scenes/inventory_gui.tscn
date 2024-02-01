@@ -1,0 +1,126 @@
+[gd_scene load_steps=5 format=3 uid="uid://b4uxla845p5qi"]
+
+[ext_resource type="Script" path="res://Assets/UI/Inventory/Scripts/inventory_gui.gd" id="1_5t56u"]
+[ext_resource type="Texture2D" uid="uid://osinuhn8hrvn" path="res://Assets/UI/Inventory/Sprites/InventoryBase_NinePatch.png" id="1_ju6vq"]
+[ext_resource type="PackedScene" uid="uid://777acm1i3xjf" path="res://Assets/UI/Scenes/slot_gui.tscn" id="2_08gxb"]
+[ext_resource type="PackedScene" uid="uid://c1660idr2wltj" path="res://Assets/Characters/Player/Shaders/Debug/debug_skin_map.tscn" id="4_lcfwk"]
+
+[node name="InventoryGui" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 193.0
+offset_bottom = 196.0
+scale = Vector2(4.2, 4.2)
+script = ExtResource("1_5t56u")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 57.0
+offset_bottom = 57.0
+texture = ExtResource("1_ju6vq")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 51.0
+offset_bottom = 43.0
+theme_override_constants/h_separation = 2
+theme_override_constants/v_separation = 2
+columns = 5
+
+[node name="Slot" parent="NinePatchRect/GridContainer" instance=ExtResource("2_08gxb")]
+layout_mode = 2
+
+[node name="Slot2" parent="NinePatchRect/GridContainer" instance=ExtResource("2_08gxb")]
+layout_mode = 2
+
+[node name="Slot3" parent="NinePatchRect/GridContainer" instance=ExtResource("2_08gxb")]
+layout_mode = 2
+
+[node name="Slot4" parent="NinePatchRect/GridContainer" instance=ExtResource("2_08gxb")]
+layout_mode = 2
+
+[node name="Slot5" parent="NinePatchRect/GridContainer" instance=ExtResource("2_08gxb")]
+layout_mode = 2
+
+[node name="Slot6" parent="NinePatchRect/GridContainer" instance=ExtResource("2_08gxb")]
+layout_mode = 2
+
+[node name="Slot7" parent="NinePatchRect/GridContainer" instance=ExtResource("2_08gxb")]
+layout_mode = 2
+
+[node name="Slot8" parent="NinePatchRect/GridContainer" instance=ExtResource("2_08gxb")]
+layout_mode = 2
+
+[node name="Slot9" parent="NinePatchRect/GridContainer" instance=ExtResource("2_08gxb")]
+layout_mode = 2
+
+[node name="Slot10" parent="NinePatchRect/GridContainer" instance=ExtResource("2_08gxb")]
+layout_mode = 2
+
+[node name="Slot11" parent="NinePatchRect/GridContainer" instance=ExtResource("2_08gxb")]
+layout_mode = 2
+
+[node name="Slot12" parent="NinePatchRect/GridContainer" instance=ExtResource("2_08gxb")]
+layout_mode = 2
+
+[node name="Slot13" parent="NinePatchRect/GridContainer" instance=ExtResource("2_08gxb")]
+layout_mode = 2
+
+[node name="Slot14" parent="NinePatchRect/GridContainer" instance=ExtResource("2_08gxb")]
+layout_mode = 2
+
+[node name="Slot15" parent="NinePatchRect/GridContainer" instance=ExtResource("2_08gxb")]
+layout_mode = 2
+
+[node name="Slot16" parent="NinePatchRect/GridContainer" instance=ExtResource("2_08gxb")]
+layout_mode = 2
+
+[node name="Slot17" parent="NinePatchRect/GridContainer" instance=ExtResource("2_08gxb")]
+layout_mode = 2
+
+[node name="Slot18" parent="NinePatchRect/GridContainer" instance=ExtResource("2_08gxb")]
+layout_mode = 2
+
+[node name="Slot19" parent="NinePatchRect/GridContainer" instance=ExtResource("2_08gxb")]
+layout_mode = 2
+
+[node name="Slot20" parent="NinePatchRect/GridContainer" instance=ExtResource("2_08gxb")]
+layout_mode = 2
+
+[node name="Slot21" parent="NinePatchRect/GridContainer" instance=ExtResource("2_08gxb")]
+layout_mode = 2
+
+[node name="Slot22" parent="NinePatchRect/GridContainer" instance=ExtResource("2_08gxb")]
+layout_mode = 2
+
+[node name="Slot23" parent="NinePatchRect/GridContainer" instance=ExtResource("2_08gxb")]
+layout_mode = 2
+
+[node name="Slot24" parent="NinePatchRect/GridContainer" instance=ExtResource("2_08gxb")]
+layout_mode = 2
+
+[node name="Slot25" parent="NinePatchRect/GridContainer" instance=ExtResource("2_08gxb")]
+layout_mode = 2
+
+[node name="SkinDebugRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 58.0
+offset_right = 37.0
+offset_bottom = 75.0
+texture = ExtResource("1_ju6vq")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="DebugSkinMap" parent="SkinDebugRect" instance=ExtResource("4_lcfwk")]
+position = Vector2(17, 8.66667)

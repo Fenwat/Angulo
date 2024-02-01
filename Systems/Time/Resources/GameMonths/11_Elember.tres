@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="GameMonth" load_steps=2 format=3 uid="uid://bylamvr2b6all"]
+
+[ext_resource type="Script" path="res://Systems/Time/Scripts/GameMonth.gd" id="1_kuge2"]
+
+[resource]
+script = ExtResource("1_kuge2")
+display_name = "Elember"
+days = 28

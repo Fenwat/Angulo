@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://da0w6hgl4de3k"
+path="res://.godot/imported/player_skin_index.png-4a4f966faf8b026e26bf13221d57184c.image"
+
+[deps]
+
+source_file="res://Assets/Characters/Player/Shaders/Skins/player_skin_index.png"
+dest_files=["res://.godot/imported/player_skin_index.png-4a4f966faf8b026e26bf13221d57184c.image"]
+
+[params]
+

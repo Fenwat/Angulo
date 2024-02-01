@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1660idr2wltj"]
+
+[ext_resource type="Material" uid="uid://dujeuv6iab2w" path="res://Assets/Characters/Player/Shaders/Materials/player_skin_material.tres" id="1_n0aio"]
+[ext_resource type="Texture2D" uid="uid://cdl15al5jted0" path="res://Assets/Characters/Player/Shaders/Skins/ArmorSets/debug_skin_map.png" id="2_d4wxq"]
+
+[node name="DebugSkinMap" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = ExtResource("1_n0aio")
+texture = ExtResource("2_d4wxq")

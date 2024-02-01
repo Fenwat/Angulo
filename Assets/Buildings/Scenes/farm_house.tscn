@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://hs1lfea0uky1"]
+
+[ext_resource type="Texture2D" uid="uid://dby20jteab51e" path="res://Assets/Buildings/FarmHouse/farm_house3.png" id="1_cmsq5"]
+
+[node name="FarmHouse" type="Node2D"]
+z_index = 2
+y_sort_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_cmsq5")
+offset = Vector2(0, -26)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_mask = 15
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+z_as_relative = false
+position = Vector2(0.0999985, -12)
+scale = Vector2(1.00223, 1)
+polygon = PackedVector2Array(3.89132, 17, 3.89132, 15, 14.8668, 15, 14.8668, 17, 35.8201, 17, 35.8201, -4, -39.013, -4, -39.013, 17, -35.0219, 17, -35.0219, 21, -30.033, 21, -30.033, 20, -19.0575, 20, -19.0575, 21, -14.0686, 21, -14.0686, 17)

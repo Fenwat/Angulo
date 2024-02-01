@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="GameMonth" load_steps=2 format=3 uid="uid://bxmay670wnhds"]
+
+[ext_resource type="Script" path="res://Systems/Time/Scripts/GameMonth.gd" id="1_tff08"]
+
+[resource]
+script = ExtResource("1_tff08")
+display_name = "Sectra"
+days = 28

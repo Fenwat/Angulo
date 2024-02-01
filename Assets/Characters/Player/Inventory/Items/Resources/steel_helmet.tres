@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ArmorItem" load_steps=3 format=3 uid="uid://c0guejaadlvdb"]
+
+[ext_resource type="Texture2D" uid="uid://di42drptcdq7q" path="res://Assets/Characters/Player/Inventory/Items/Sprites/slot_steel_helmet.png" id="1_r0jbw"]
+[ext_resource type="Script" path="res://Assets/Characters/Player/Inventory/Scripts/ArmorItem.gd" id="2_4gojd"]
+
+[resource]
+script = ExtResource("2_4gojd")
+weight = 11.0
+defense = 16.0
+function = "equip_steel_helmet"
+item_texture = ExtResource("1_r0jbw")
+item_name = "Steel Helmet"
+item_description = "A helmet made of steel."

@@ -1,0 +1,166 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Epochs"
+run/main_scene="res://Levels/level_1.tscn"
+config/features=PackedStringArray("4.2", "Forward Plus")
+config/icon="res://Assets/Misc/Icon/icon.svg"
+
+[autoload]
+
+Enums="*res://Assets/Characters/Player/Scripts/Autoloads/Enums.gd"
+Signals="*res://Assets/Global/Scripts/Signals.gd"
+GlobalVariables="*res://Assets/Global/Scripts/GlobalVariables.gd"
+
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/aspect="keep_height"
+
+[dotnet]
+
+project/assembly_name="Epochs"
+
+[file_customization]
+
+folder_colors={
+"res://Assets/": "blue",
+"res://Assets/Buildings/": "red",
+"res://Assets/Buildings/FarmHouse/": "orange",
+"res://Assets/Buildings/Scenes/": "orange",
+"res://Assets/Characters/": "red",
+"res://Assets/Characters/Animals/": "orange",
+"res://Assets/Characters/Enemies/": "orange",
+"res://Assets/Characters/NPCs/": "orange",
+"res://Assets/Characters/NPCs/Farmer/": "yellow",
+"res://Assets/Characters/NPCs/Farmer/Scenes/": "green",
+"res://Assets/Characters/NPCs/Farmer/Scripts/": "green",
+"res://Assets/Characters/NPCs/Farmer/Sprites/": "green",
+"res://Assets/Characters/Player/": "orange",
+"res://Assets/Characters/Player/Inventory/": "yellow",
+"res://Assets/Characters/Player/Inventory/Items/": "green",
+"res://Assets/Characters/Player/Inventory/Items/Resources/": "teal",
+"res://Assets/Characters/Player/Inventory/Items/Sprites/": "teal",
+"res://Assets/Characters/Player/Inventory/Resource/": "green",
+"res://Assets/Characters/Player/Inventory/Scripts/": "green",
+"res://Assets/Characters/Player/Movesets/": "yellow",
+"res://Assets/Characters/Player/Movesets/ShortSword/": "green",
+"res://Assets/Characters/Player/Movesets/StraightSword/": "green",
+"res://Assets/Characters/Player/Movesets/Unequipped/": "green",
+"res://Assets/Characters/Player/Scenes/": "yellow",
+"res://Assets/Characters/Player/Scripts/": "yellow",
+"res://Assets/Characters/Player/Scripts/Autoloads/": "green",
+"res://Assets/Characters/Player/Shaders/": "yellow",
+"res://Assets/Characters/Player/Shaders/Debug/": "green",
+"res://Assets/Characters/Player/Shaders/Materials/": "green",
+"res://Assets/Characters/Player/Shaders/Scripts/": "green",
+"res://Assets/Characters/Player/Shaders/Skin/": "green",
+"res://Assets/Characters/Player/Shaders/Skins/": "green",
+"res://Assets/Characters/Player/Shaders/Skins/ArmorSets/": "teal",
+"res://Assets/Fonts/": "red",
+"res://Assets/Fonts/3x6/": "orange",
+"res://Assets/Global/": "red",
+"res://Assets/Global/Scripts/": "orange",
+"res://Assets/Misc/": "red",
+"res://Assets/Misc/Icon/": "orange",
+"res://Assets/TileMaps/": "red",
+"res://Assets/TileMaps/AutoTiles/": "orange",
+"res://Assets/TileMaps/AutoTiles/Shaders/": "yellow",
+"res://Assets/TileMaps/AutoTiles/cobble/": "yellow",
+"res://Assets/TileMaps/AutoTiles/dirt/": "yellow",
+"res://Assets/TileMaps/AutoTiles/dirt_Grass/": "yellow",
+"res://Assets/TileMaps/AutoTiles/fence/": "yellow",
+"res://Assets/TileMaps/AutoTiles/grass/": "yellow",
+"res://Assets/TileMaps/AutoTiles/soil/": "yellow",
+"res://Assets/TileMaps/Tiles/": "orange",
+"res://Assets/TileMaps/Tiles/Wheat/": "yellow",
+"res://Assets/TileMaps/Variety/": "orange",
+"res://Assets/UI/": "red",
+"res://Assets/UI/DateTime/": "orange",
+"res://Assets/UI/DateTime/Scenes/": "yellow",
+"res://Assets/UI/DateTime/Scripts/": "yellow",
+"res://Assets/UI/Inventory/": "orange",
+"res://Assets/UI/Inventory/Scripts/": "yellow",
+"res://Assets/UI/Inventory/Sprites/": "yellow",
+"res://Assets/UI/Scenes/": "orange",
+"res://Assets/UI/Scripts/": "orange",
+"res://Levels/": "blue",
+"res://Systems/": "blue",
+"res://Systems/Camera/": "red",
+"res://Systems/Camera/Scripts/": "orange",
+"res://Systems/Time/": "red",
+"res://Systems/Time/Resources/": "orange",
+"res://Systems/Time/Resources/GameMonths/": "yellow",
+"res://Systems/Time/Resources/GameYears/": "yellow",
+"res://Systems/Time/Scripts/": "orange",
+"res://Tools/": "blue"
+}
+
+[filesystem]
+
+import/blender/enabled=false
+
+[gui]
+
+theme/custom_font="res://Assets/Fonts/3x6/3x6.tres"
+
+[input]
+
+move_up={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":87,"key_label":0,"unicode":119,"echo":false,"script":null)
+, Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":1,"axis_value":-1.0,"script":null)
+]
+}
+move_down={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":83,"key_label":0,"unicode":115,"echo":false,"script":null)
+, Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":1,"axis_value":1.0,"script":null)
+]
+}
+move_left={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":65,"key_label":0,"unicode":97,"echo":false,"script":null)
+, Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":0,"axis_value":-1.0,"script":null)
+]
+}
+move_right={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":68,"key_label":0,"unicode":100,"echo":false,"script":null)
+, Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":0,"axis_value":1.0,"script":null)
+]
+}
+sprint={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194326,"key_label":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":32,"key_label":0,"unicode":32,"echo":false,"script":null)
+]
+}
+toggle_inventory={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194305,"key_label":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194305,"key_label":0,"unicode":0,"echo":false,"script":null)
+]
+}
+
+[layer_names]
+
+2d_physics/layer_1="world"
+2d_navigation/layer_1="Ground"
+2d_physics/layer_2="player"
+2d_navigation/layer_2="Crop"
+2d_physics/layer_3="npc"
+2d_physics/layer_4="enemy"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0

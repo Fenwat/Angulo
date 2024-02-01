@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="GameMonth" load_steps=2 format=3 uid="uid://q2xr5rxtqk5s"]
+
+[ext_resource type="Script" path="res://Systems/Time/Scripts/GameMonth.gd" id="1_fkc2b"]
+
+[resource]
+script = ExtResource("1_fkc2b")
+display_name = "Pentuary"
+days = 28

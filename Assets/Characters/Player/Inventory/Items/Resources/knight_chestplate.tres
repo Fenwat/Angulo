@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ArmorItem" load_steps=3 format=3 uid="uid://47cquvtmfg5n"]
+
+[ext_resource type="Texture2D" uid="uid://dl8k4dlstf041" path="res://Assets/Characters/Player/Inventory/Items/Sprites/slot_knight_chestplate.png" id="1_0jhxk"]
+[ext_resource type="Script" path="res://Assets/Characters/Player/Inventory/Scripts/ArmorItem.gd" id="2_oni24"]
+
+[resource]
+script = ExtResource("2_oni24")
+weight = 16.0
+defense = 25.0
+function = "equip_knight_chestplate"
+item_texture = ExtResource("1_0jhxk")
+item_name = "Knight's Chestplate"
+item_description = "A chestplate worn by knights."

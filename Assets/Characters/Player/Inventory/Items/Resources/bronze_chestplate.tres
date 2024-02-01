@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ArmorItem" load_steps=3 format=3 uid="uid://x8uhy4bwdr8t"]
+
+[ext_resource type="Texture2D" uid="uid://ba2vu8whi0mve" path="res://Assets/Characters/Player/Inventory/Items/Sprites/slot_bronze_chestplate.png" id="1_dv2xf"]
+[ext_resource type="Script" path="res://Assets/Characters/Player/Inventory/Scripts/ArmorItem.gd" id="2_hg7x7"]
+
+[resource]
+script = ExtResource("2_hg7x7")
+weight = 9.0
+defense = 19.0
+function = "equip_bronze_chestplate"
+item_texture = ExtResource("1_dv2xf")
+item_name = "Bronze Chestplate"
+item_description = "A bronze chestplate."

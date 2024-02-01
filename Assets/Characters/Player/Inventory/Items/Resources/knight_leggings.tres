@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ArmorItem" load_steps=3 format=3 uid="uid://celwstw5ud81o"]
+
+[ext_resource type="Texture2D" uid="uid://dhk6siwtmseew" path="res://Assets/Characters/Player/Inventory/Items/Sprites/slot_knight_leggings.png" id="1_hr233"]
+[ext_resource type="Script" path="res://Assets/Characters/Player/Inventory/Scripts/ArmorItem.gd" id="2_hye1g"]
+
+[resource]
+script = ExtResource("2_hye1g")
+weight = 17.0
+defense = 20.0
+function = "equip_knight_leggings"
+item_texture = ExtResource("1_hr233")
+item_name = "Knight's Leggings"
+item_description = "Leggings worn by a knight."

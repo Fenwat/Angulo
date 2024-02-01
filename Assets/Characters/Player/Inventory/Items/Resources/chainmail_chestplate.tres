@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ArmorItem" load_steps=3 format=3 uid="uid://cm6ju7bsidicc"]
+
+[ext_resource type="Texture2D" uid="uid://d1tyr1eus5hbo" path="res://Assets/Characters/Player/Inventory/Items/Sprites/slot_chainmail_chestplate.png" id="1_so87d"]
+[ext_resource type="Script" path="res://Assets/Characters/Player/Inventory/Scripts/ArmorItem.gd" id="2_44naa"]
+
+[resource]
+script = ExtResource("2_44naa")
+weight = 16.0
+defense = 25.0
+function = "equip_chainmail_chestplate"
+item_texture = ExtResource("1_so87d")
+item_name = "Chainmail Chestplate"
+item_description = "A chestplate made of chainmail."

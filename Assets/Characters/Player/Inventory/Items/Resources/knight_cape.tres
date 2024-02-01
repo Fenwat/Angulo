@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ArmorItem" load_steps=3 format=3 uid="uid://cmytqqddgld2u"]
+
+[ext_resource type="Texture2D" uid="uid://chfdgjylsvjtg" path="res://Assets/Characters/Player/Inventory/Items/Sprites/slot_knight_cape.png" id="1_o3cfj"]
+[ext_resource type="Script" path="res://Assets/Characters/Player/Inventory/Scripts/ArmorItem.gd" id="2_7eorx"]
+
+[resource]
+script = ExtResource("2_7eorx")
+weight = 10.0
+defense = 3.0
+function = "equip_knight_cape"
+item_texture = ExtResource("1_o3cfj")
+item_name = "Knight's Cape"
+item_description = "The cape of a knight."

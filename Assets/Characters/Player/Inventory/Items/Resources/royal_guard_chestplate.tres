@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ArmorItem" load_steps=3 format=3 uid="uid://nl1ly0ry816b"]
+
+[ext_resource type="Texture2D" uid="uid://cbyycg1gcwvem" path="res://Assets/Characters/Player/Inventory/Items/Sprites/slot_royal_guard_chestplate.png" id="1_4we0x"]
+[ext_resource type="Script" path="res://Assets/Characters/Player/Inventory/Scripts/ArmorItem.gd" id="2_uvrfp"]
+
+[resource]
+script = ExtResource("2_uvrfp")
+weight = 16.0
+defense = 15.96
+function = "equip_royal_guard_chestplate"
+item_texture = ExtResource("1_4we0x")
+item_name = "Royal Guard's Chestplate"
+item_description = "A chestplate worn by the King's royal guards."

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ArmorItem" load_steps=3 format=3 uid="uid://dnfuw4fvlesl1"]
+
+[ext_resource type="Texture2D" uid="uid://cw466w0vnoau" path="res://Assets/Characters/Player/Inventory/Items/Sprites/slot_chainmail_cape.png" id="1_8y23g"]
+[ext_resource type="Script" path="res://Assets/Characters/Player/Inventory/Scripts/ArmorItem.gd" id="2_iu8mm"]
+
+[resource]
+script = ExtResource("2_iu8mm")
+weight = 10.0
+defense = 3.0
+function = "equip_chainmail_cape"
+item_texture = ExtResource("1_8y23g")
+item_name = "Cape"
+item_description = "A cape."

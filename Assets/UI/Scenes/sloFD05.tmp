@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://777acm1i3xjf"]
+
+[ext_resource type="Script" path="res://Assets/UI/Inventory/Scripts/slot_gui.gd" id="1_baoby"]
+[ext_resource type="Texture2D" uid="uid://baoe43m4amilr" path="res://Assets/UI/Inventory/InventorySlots.png" id="1_gxkqm"]
+[ext_resource type="Script" path="res://Assets/UI/Scenes/slot_button.gd" id="3_s75v1"]
+
+[node name="Slot" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(8, 8)
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("1_baoby")
+
+[node name="SlotSprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_gxkqm")
+centered = false
+hframes = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Panel" type="Panel" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="ItemSprite" type="Sprite2D" parent="CenterContainer/Panel"]
+
+[node name="Button" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("3_s75v1")
