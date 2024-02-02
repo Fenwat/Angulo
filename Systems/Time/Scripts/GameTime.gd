@@ -1,5 +1,5 @@
 extends Resource
 class_name GameTime
 
-@export var hours: int
-@export var minutes: int
+@export var game_hour: int
+@export var game_minute: int

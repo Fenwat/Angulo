@@ -20,6 +20,7 @@ config/icon="res://Assets/Misc/Icon/icon.svg"
 Enums="*res://Assets/Characters/Player/Scripts/Autoloads/Enums.gd"
 Signals="*res://Assets/Global/Scripts/Signals.gd"
 GlobalVariables="*res://Assets/Global/Scripts/GlobalVariables.gd"
+TimeSignalBus="*res://Systems/Time/Scripts/TimeSignalBus.gd"
 
 [display]
 

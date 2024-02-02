@@ -1,9 +1,10 @@
-[gd_scene load_steps=44 format=3 uid="uid://dbygvg6q6wg3f"]
+[gd_scene load_steps=45 format=3 uid="uid://dbygvg6q6wg3f"]
 
 [ext_resource type="PackedScene" uid="uid://c85qvwqv4xynr" path="res://Assets/Characters/Player/Scenes/player.tscn" id="1_ec7kp"]
 [ext_resource type="Script" path="res://Systems/Camera/Scripts/Camera.gd" id="1_h3ep8"]
 [ext_resource type="Texture2D" uid="uid://docgg7cggsrmy" path="res://Assets/TileMaps/AutoTiles/cobble/cobble.png" id="1_wq0oy"]
 [ext_resource type="Script" path="res://Systems/Time/Scripts/TimeSystem.gd" id="2_58k4f"]
+[ext_resource type="Resource" uid="uid://dnsb48d2kno7t" path="res://Systems/Time/Resources/time_signal_bus.tres" id="3_a058h"]
 [ext_resource type="Texture2D" uid="uid://d2n0hxl2cxb7x" path="res://Assets/TileMaps/AutoTiles/soil/soil.png" id="3_e6p40"]
 [ext_resource type="Texture2D" uid="uid://jk1tyaw41wpo" path="res://Assets/TileMaps/AutoTiles/dirt/dirt.png" id="3_je63g"]
 [ext_resource type="Script" path="res://Systems/Time/Scripts/GameDate.gd" id="3_wqxwt"]
@@ -17,11 +18,11 @@
 [ext_resource type="Texture2D" uid="uid://hs28sauakrkb" path="res://Assets/TileMaps/AutoTiles/cobble/brown_cobble.png" id="6_ijwev"]
 [ext_resource type="Texture2D" uid="uid://spndr30l72o0" path="res://Assets/TileMaps/Tiles/Wheat/wheat.png" id="9_3cd7o"]
 [ext_resource type="PackedScene" uid="uid://hs1lfea0uky1" path="res://Assets/Buildings/Scenes/farm_house.tscn" id="9_kqeee"]
+[ext_resource type="Script" path="res://Levels/GameTimeTimer.gd" id="9_pk7x0"]
 [ext_resource type="Script" path="res://Assets/UI/Scripts/canvas_layer.gd" id="9_swu5r"]
 [ext_resource type="PackedScene" uid="uid://b4uxla845p5qi" path="res://Assets/UI/Scenes/inventory_gui.tscn" id="10_ti26x"]
 [ext_resource type="PackedScene" uid="uid://ba0qinwelvd2e" path="res://Assets/Characters/NPCs/Farmer/Scenes/farmer.tscn" id="12_l81nb"]
 [ext_resource type="PackedScene" uid="uid://dbik1s41svdr7" path="res://Assets/UI/DateTime/Scenes/date_time_gui.tscn" id="22_lmkta"]
-[ext_resource type="Script" path="res://Assets/UI/DateTime/Scripts/date_time_gui.gd" id="23_4t04w"]
 
 [sub_resource type="Resource" id="Resource_2ki0g"]
 script = ExtResource("4_plmt4")
@@ -36,7 +37,7 @@ year = 9362
 [sub_resource type="Resource" id="Resource_nrv4e"]
 script = ExtResource("4_bswml")
 game_hour = 8
-game_minute = 30
+game_minute = 0
 
 [sub_resource type="Resource" id="Resource_m0tyu"]
 script = ExtResource("5_w24ly")
@@ -7883,11 +7884,12 @@ script = ExtResource("1_h3ep8")
 
 [node name="TimeSystem" type="Node2D" parent="Systems"]
 script = ExtResource("2_58k4f")
+time_signal_bus = ExtResource("3_a058h")
 game_calendar = SubResource("Resource_2ki0g")
 date_time = SubResource("Resource_m0tyu")
 
 [node name="Timer" type="Timer" parent="Systems/TimeSystem"]
-autostart = true
+script = ExtResource("9_pk7x0")
 
 [node name="Level" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -7958,6 +7960,3 @@ offset_right = 0.0
 offset_bottom = 0.0
 
 [node name="DateTimeGui" parent="CanvasLayer" instance=ExtResource("22_lmkta")]
-script = ExtResource("23_4t04w")
-
-[connection signal="timeout" from="Systems/TimeSystem/Timer" to="Systems/TimeSystem" method="_on_timer_timeout"]
