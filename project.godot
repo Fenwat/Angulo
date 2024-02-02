@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Epochs"
+config/name="Angulo"
 run/main_scene="res://Levels/level_1.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://Assets/Misc/Icon/icon.svg"

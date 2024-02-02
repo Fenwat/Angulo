@@ -10,7 +10,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 193.0
 offset_bottom = 196.0
-scale = Vector2(4.2, 4.2)
+scale = Vector2(4.1, 4.1)
 script = ExtResource("1_5t56u")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]

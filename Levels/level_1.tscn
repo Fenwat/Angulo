@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://dbygvg6q6wg3f"]
+[gd_scene load_steps=43 format=3 uid="uid://dbygvg6q6wg3f"]
 
 [ext_resource type="PackedScene" uid="uid://c85qvwqv4xynr" path="res://Assets/Characters/Player/Scenes/player.tscn" id="1_ec7kp"]
 [ext_resource type="Script" path="res://Systems/Camera/Scripts/Camera.gd" id="1_h3ep8"]
@@ -21,7 +21,6 @@
 [ext_resource type="PackedScene" uid="uid://b4uxla845p5qi" path="res://Assets/UI/Scenes/inventory_gui.tscn" id="10_ti26x"]
 [ext_resource type="PackedScene" uid="uid://ba0qinwelvd2e" path="res://Assets/Characters/NPCs/Farmer/Scenes/farmer.tscn" id="12_l81nb"]
 [ext_resource type="PackedScene" uid="uid://dbik1s41svdr7" path="res://Assets/UI/DateTime/Scenes/date_time_gui.tscn" id="22_lmkta"]
-[ext_resource type="Script" path="res://Assets/UI/DateTime/Scripts/date_time_gui.gd" id="23_4t04w"]
 
 [sub_resource type="Resource" id="Resource_2ki0g"]
 script = ExtResource("4_plmt4")
@@ -7958,6 +7957,5 @@ offset_right = 0.0
 offset_bottom = 0.0
 
 [node name="DateTimeGui" parent="CanvasLayer" instance=ExtResource("22_lmkta")]
-script = ExtResource("23_4t04w")
 
 [connection signal="timeout" from="Systems/TimeSystem/Timer" to="Systems/TimeSystem" method="_on_timer_timeout"]

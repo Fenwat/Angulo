@@ -8,3 +8,6 @@ signal day_finished(game_date: GameDate)
 
 # emitted when the current day changes to a new day
 signal date_changed(new_game_date: GameDate, days_moved: int)
+
+# emmitted when an 'event time' is reached (every 5 seconds)
+signal event_time_reached(event_time: String)

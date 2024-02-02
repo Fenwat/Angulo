@@ -26,7 +26,7 @@ func set_new_skin(type, new_source_rect):
 		player_skin_map.set_pixel(dest_pixel.x, dest_pixel.y, index_color)
 	player_skin_map.save_png("res://Assets/Characters/Player/Shaders/Skins/player_skin_map.png")
 	var player_skin_map_texture = ImageTexture.create_from_image(player_skin_map)
-	sprite_2d.material.set_shader_parameter("Skin", player_skin_map_texture)
+	sprite_2d.material.set_shader_parameter("SkinMap", player_skin_map_texture)
 
 func process_source_rect():
 	var source_x_start = source_rect[0]
