@@ -11,20 +11,25 @@ const BASE_YEAR = 9362
 
 var print_timer = 0
 
-signal date_time_updated(date_time: DateTime, date_time_as_seconds: float)
-
 func _process(delta):
 	print_timer += delta
 	if print_timer >= 1.0:  # Print every 1 second
-		var current_game_time: Vector2 = Vector2(date_time.game_time.game_hour, date_time.game_time.game_minute)
+		var current_date_time: Dictionary = {
+			"time": 
+				{
+					"hour": date_time.game_time.game_hour,
+					"minute": date_time.game_time.game_minute
+				},
+			"date":
+				{
+					"month": date_time.game_date.month,
+					"day": date_time.game_date.day,
+					"year": date_time.game_date.year
+				}
+		}
 		
-		# Assuming date_time and game_calendar are properly initialized and updated elsewhere
-		var current_time = "{0}:{1}".format([date_time.game_time.game_hour, date_time.game_time.game_minute])
-		var current_date = "{0}/{1}/{2}".format([date_time.game_date.month, date_time.game_date.day, date_time.game_date.year])
+		TimeSignalBus.emit_signal("date_time_updated", current_date_time)
 		
-		TimeSignalBus.emit_signal("date_time_updated", current_game_time)
-		
-		print("Current Time: ", current_time, " Current Date: ", current_date)
 		print_timer = 0  # Reset the timer
 
 # Function to be called by the timer to increment game_minutes

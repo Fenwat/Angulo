@@ -2,9 +2,16 @@ extends Control
 class_name DateTimeGui
 
 func _ready():
-	Signals.connect("item_equipped", Callable(self, "_call_function_by_name"))
-	#time_signal_bus.date_time_updated.connect(print_stuff)
-	TimeSignalBus.connect("date_time_updated", print_stuff)
+	TimeSignalBus.connect("date_time_updated", handle_date_time_update)
 
-func print_stuff(current_game_time):
-	print(current_game_time)
+func handle_date_time_update(current_game_time):
+	var hour: int = current_game_time["time"]["hour"]
+	var minute: int = current_game_time["time"]["minute"]
+	var month: int = current_game_time["date"]["month"]
+	var day: int = current_game_time["date"]["day"]
+	var year: int = current_game_time["date"]["year"]
+
+	# Now you can use the variables hour, minute, month, day, and year as integers in your function
+	print("Current time: ", hour, ":", minute, "     Current date: ", month, "/", day, "/", year)
+	#print("Month: ", month, " Day: ", day, " Year: ", year)
+
