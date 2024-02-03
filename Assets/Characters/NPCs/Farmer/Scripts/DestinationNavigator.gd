@@ -12,8 +12,6 @@ var destination_coords: Vector2 = Vector2.ZERO
 func _ready():
 	TimeSignalBus.connect("event_time_reached", handle_event_time)
 
-
-		
 func _process(_delta):
 	state_machine.update_move_state()
 	var farmer_local_position = farmer.position
