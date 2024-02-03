@@ -10,13 +10,10 @@ var destination_name: String = "farm_house"
 var destination_coords: Vector2 = Vector2.ZERO
 
 func _ready():
-	call_deferred("actor_setup")
+	TimeSignalBus.connect("event_time_reached", handle_event_time)
 
-func actor_setup():
-	state_machine.current_move_state = state_machine.MoveState.WALK
-	get_new_destination()
-	move_to_position()
 
+		
 func _process(_delta):
 	state_machine.update_move_state()
 	var farmer_local_position = farmer.position
@@ -26,13 +23,23 @@ func _physics_process(_delta):
 	if navigation_agent.is_navigation_finished():
 		return
 	
-	#if state_machine.current_move_state == state_machine.MoveState.IDLE:
-		#return
-	
 	navigation_manager.move_direction = to_local(navigation_agent.get_next_path_position()).normalized()
 	farmer.velocity = navigation_manager.move_direction * navigation_manager.move_speed
 	
 	farmer.move_and_slide()
+
+func handle_event_time(event_time):
+	if event_time == "09:00":
+		destination_name = "field"
+		handle_travel_event()
+	elif event_time == "09:30":
+		destination_name = "farm_house"
+		handle_travel_event()
+		
+func handle_travel_event():
+	get_new_destination()
+	state_machine.current_move_state = state_machine.MoveState.WALK
+	move_to_position()
 
 func get_new_destination():
 	var tile_pixel_count: int = 8
