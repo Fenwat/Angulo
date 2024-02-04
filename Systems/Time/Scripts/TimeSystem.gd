@@ -14,9 +14,13 @@ var event_time: String
 var hour_string: String
 var minute_string: String
 
+func _ready():
+	call_deferred("signal_current_date")
+
 func _process(_delta):
 	#update_date_time(delta)
 	handle_event_time()
+	#signal_current_date()
 
 #---------------------------------Timer--------------------------------------
 
@@ -65,6 +69,13 @@ func determine_minute_string():
 		minute_string = "0" + str(date_time.game_time.game_minute)
 	else:
 		minute_string = str(date_time.game_time.game_minute)
+
+#---------------------------Current Date---------------------------------------------
+
+func signal_current_date():
+	var new_game_date
+	new_game_date = date_time.game_date
+	TimeSignalBus.emit_signal("date_changed", new_game_date)
 
 #---------------------------Time increment--------------------------------------------
 
