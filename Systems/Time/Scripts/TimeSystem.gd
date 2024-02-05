@@ -18,33 +18,7 @@ func _ready():
 	call_deferred("signal_current_date")
 
 func _process(_delta):
-	#update_date_time(delta)
 	handle_event_time()
-	#signal_current_date()
-
-#---------------------------------Timer--------------------------------------
-
-#func update_date_time(delta):
-	#print_timer += delta
-	#if print_timer >= 0.0:  # Print every 1 second
-		#var current_date_time: Dictionary = {
-			#"time": 
-				#{
-					#"hour": date_time.game_time.game_hour,
-					#"minute": date_time.game_time.game_minute
-				#},
-			#"date":
-				#{
-					#"month": date_time.game_date.month,
-					#"day": date_time.game_date.day,
-					#"year": date_time.game_date.year
-				#}
-		#}
-		#
-		#TimeSignalBus.emit_signal("date_time_updated", current_date_time)
-		#
-	#elif print_timer == 1.0:	
-		#print_timer = 0  # Reset the timer
 
 #---------------------------Event Time-----------------------------------------------
 
@@ -73,8 +47,7 @@ func determine_minute_string():
 #---------------------------Current Date---------------------------------------------
 
 func signal_current_date():
-	var new_game_date
-	new_game_date = date_time.game_date
+	var new_game_date: GameDate = date_time.game_date
 	TimeSignalBus.emit_signal("date_changed", new_game_date)
 
 #---------------------------Time increment--------------------------------------------
@@ -96,6 +69,7 @@ func increment_game_hour():
 # Function to increment day and handle overflow
 func increment_day():
 	date_time.game_date.day += 1
+	signal_current_date()
 	var year_index = date_time.game_date.year - BASE_YEAR  # Calculate the index based on the base year
 	# Get the number of days in the current month from game_calendar
 	if year_index >= 0 and year_index < game_calendar.game_year.size():

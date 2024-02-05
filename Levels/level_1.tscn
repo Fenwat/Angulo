@@ -7877,7 +7877,7 @@ sources/0 = SubResource("TileSetAtlasSource_4b5oa")
 [node name="CameraSystem" type="Node2D" parent="Systems"]
 
 [node name="PlayerCamera" type="Camera2D" parent="Systems/CameraSystem"]
-zoom = Vector2(4, 4)
+zoom = Vector2(3.5, 3.5)
 script = ExtResource("1_h3ep8")
 
 [node name="TimeSystem" type="Node2D" parent="Systems"]

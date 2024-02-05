@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://ba0qinwelvd2e"]
+[gd_scene load_steps=50 format=3 uid="uid://ba0qinwelvd2e"]
 
 [ext_resource type="Texture2D" uid="uid://ctudpn815lt64" path="res://Assets/Characters/NPCs/Farmer/Sprites/farmer_animations.png" id="1_aoiq8"]
 [ext_resource type="Script" path="res://Assets/Characters/NPCs/Farmer/Scripts/FarmerController.gd" id="2_x7srn"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://Assets/Characters/NPCs/Farmer/Scripts/AnimationManager.gd" id="5_5goup"]
 [ext_resource type="Script" path="res://Assets/Characters/NPCs/Farmer/Scripts/DestinationNavigator.gd" id="5_ccegu"]
 [ext_resource type="Script" path="res://Assets/Characters/NPCs/Farmer/Scripts/StateMachine.gd" id="6_kjmhp"]
+[ext_resource type="Script" path="res://Assets/Characters/NPCs/Farmer/Scripts/Schedule.gd" id="9_qwleu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fnl4b"]
 size = Vector2(5, 1)
@@ -497,6 +498,9 @@ script = ExtResource("5_5goup")
 
 [node name="StateMachine" type="Node2D" parent="Scripts"]
 script = ExtResource("6_kjmhp")
+
+[node name="Schedule" type="Node2D" parent="Scripts"]
+script = ExtResource("9_qwleu")
 
 [connection signal="target_reached" from="Navigation/NavigationAgent2D" to="Scripts/NavigationManager/DestinationNavigator" method="_on_navigation_agent_2d_target_reached"]
 [connection signal="timeout" from="Navigation/Timer" to="Scripts/NavigationManager/RandomNavigator" method="_on_timer_timeout"]

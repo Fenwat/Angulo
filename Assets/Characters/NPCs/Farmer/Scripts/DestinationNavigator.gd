@@ -5,12 +5,10 @@ extends Node2D
 @onready var state_machine = $"../../StateMachine"
 @onready var navigation_manager = $".."
 @onready var navigation_agent = $"../../../Navigation/NavigationAgent2D"
+@onready var schedule = $"../../Schedule"
 
 var destination_name: String = "farm_house"
 var destination_coords: Vector2 = Vector2.ZERO
-
-func _ready():
-	TimeSignalBus.connect("event_time_reached", handle_event_time)
 
 func _process(_delta):
 	state_machine.update_move_state()
@@ -26,14 +24,6 @@ func _physics_process(_delta):
 	
 	farmer.move_and_slide()
 
-func handle_event_time(event_time):
-	if event_time == "09:00":
-		destination_name = "field"
-		handle_travel_event()
-	elif event_time == "09:30":
-		destination_name = "farm_house"
-		handle_travel_event()
-		
 func handle_travel_event():
 	get_new_destination()
 	state_machine.current_move_state = state_machine.MoveState.WALK
