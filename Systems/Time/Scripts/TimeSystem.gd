@@ -1,7 +1,6 @@
 extends Node2D
 class_name TimeSystem
 
-# Your existing variables
 @export var game_calendar: GameCalendar
 @export var date_time = DateTime
 
@@ -15,7 +14,7 @@ var hour_string: String
 var minute_string: String
 
 func _ready():
-	call_deferred("signal_current_date")
+	call_deferred("signal_initial_date")
 
 func _process(_delta):
 	handle_event_time()
@@ -46,13 +45,29 @@ func determine_minute_string():
 
 #---------------------------Current Date---------------------------------------------
 
-func signal_current_date():
+func signal_initial_date():
+	var initial_game_date: GameDate = date_time.game_date
+	var initial_month = date_time.game_date.month - 1
+	var initial_month_name = get_current_month(initial_month)
+	TimeSignalBus.emit_signal("initial_date_set", initial_game_date, initial_month_name)
+
+func signal_current_day():
 	var new_game_date: GameDate = date_time.game_date
 	TimeSignalBus.emit_signal("date_changed", new_game_date)
 
+func signal_new_month():
+	var new_month = date_time.game_date.month - 1
+	var new_month_name = get_current_month(new_month)
+	TimeSignalBus.emit_signal("new_month_reached", new_month_name)
+
+func get_current_month(current_month):
+	var year_index = date_time.game_date.year - BASE_YEAR
+	var current_month_name = game_calendar.game_year[year_index].months[current_month].display_name
+	return current_month_name
+
 #---------------------------Time increment--------------------------------------------
 
-# Function to be called by the timer to increment game_minutes
+# Function called by the timer to increment game_minutes
 func increment_game_minutes():
 	date_time.game_time.game_minute += 1
 	if date_time.game_time.game_minute > 59:
@@ -69,7 +84,6 @@ func increment_game_hour():
 # Function to increment day and handle overflow
 func increment_day():
 	date_time.game_date.day += 1
-	signal_current_date()
 	var year_index = date_time.game_date.year - BASE_YEAR  # Calculate the index based on the base year
 	# Get the number of days in the current month from game_calendar
 	if year_index >= 0 and year_index < game_calendar.game_year.size():
@@ -78,6 +92,7 @@ func increment_day():
 			var days_in_month = months[date_time.game_date.month - 1].days
 			if date_time.game_date.day > days_in_month:
 				date_time.game_date.day = 1  # Reset day
+				signal_current_day()
 				increment_month()  # Increment month since days overflowed
 	else:
 		print("Year out of bounds: ", date_time.game_date.year)
@@ -91,6 +106,7 @@ func increment_month():
 		var months_in_year = game_calendar.game_year[year_index].months.size()
 		if date_time.game_date.month > months_in_year:
 			date_time.game_date.month = 1  # Reset month
+			signal_new_month()
 			increment_year()  # Increment year since months overflowed
 	else:
 		print("Year out of bounds: ", date_time.game_date.year)

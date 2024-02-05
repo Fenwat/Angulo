@@ -18,6 +18,7 @@ func load_destination_data():
 	destination_data = {
 		"destinations": [
 			{"destination_name": "field", "level": "level_1", "coordinate": [41, 28]},
-			{"destination_name": "farm_house", "level": "level_1", "coordinate": [78, 16]}
+			{"destination_name": "farm_house", "level": "level_1", "coordinate": [78, 16]},
+			{"destination_name": "square", "level": "level_1", "coordinate": [85, 51]}
 		]
 	}

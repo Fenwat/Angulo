@@ -10,15 +10,15 @@ anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 grow_horizontal = 0
-scale = Vector2(4.1, 4.1)
+scale = Vector2(3, 3)
 script = ExtResource("1_tevik")
 
 [node name="Month_NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 0
-offset_left = -48.8095
-offset_top = 1.19048
-offset_right = -14.8095
-offset_bottom = 12.1905
+offset_left = -57.0
+offset_top = 1.0
+offset_right = -15.0
+offset_bottom = 12.0
 texture = ExtResource("1_fhu76")
 patch_margin_left = 3
 patch_margin_top = 3

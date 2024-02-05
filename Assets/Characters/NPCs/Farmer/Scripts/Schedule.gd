@@ -14,7 +14,7 @@ func handle_event_time(event_time):
 		"10:15":
 			destination_navigator.destination_name = "field"
 		"11:00":
-			destination_navigator.destination_name = "farm_house"
+			destination_navigator.destination_name = "square"
 		"11:45":
 			destination_navigator.destination_name = "field"
 		"12:30":
@@ -22,15 +22,15 @@ func handle_event_time(event_time):
 		"13:00":
 			destination_navigator.destination_name = "field"
 		"13:45":
-			destination_navigator.destination_name = "field"
+			destination_navigator.destination_name = "farm_house"
 		"14:30":
-			destination_navigator.destination_name = "farm_house"
+			destination_navigator.destination_name = "field"
 		"15:00":
-			destination_navigator.destination_name = "field"
-		"16:00":
 			destination_navigator.destination_name = "farm_house"
+		"16:00":
+			destination_navigator.destination_name = "square"
 		"17:00":
-			destination_navigator.destination_name = "field"
+			destination_navigator.destination_name = "farm_house"
 		_:
 			return  # Handle unexpected time or default case if necessary
 			
