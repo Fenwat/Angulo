@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Angulo"
-run/main_scene="res://Levels/level_1.tscn"
+run/main_scene="res://Levels/Scenes/level_1.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://Assets/Misc/Icon/icon.svg"
 
@@ -21,6 +21,8 @@ Enums="*res://Assets/Characters/Player/Scripts/Autoloads/Enums.gd"
 Signals="*res://Assets/Global/Scripts/Signals.gd"
 GlobalVariables="*res://Assets/Global/Scripts/GlobalVariables.gd"
 TimeSignalBus="*res://Systems/Time/Scripts/TimeSignalBus.gd"
+PlayerSignalBus="*res://Assets/Characters/Player/Scripts/Autoloads/PlayerSignalBus.gd"
+LevelSignalBus="*res://Levels/Scripts/Autoloads/LevelSignalBus.gd"
 
 [display]
 
@@ -95,11 +97,17 @@ folder_colors={
 "res://Assets/UI/Scenes/": "orange",
 "res://Assets/UI/Scripts/": "orange",
 "res://Levels/": "blue",
+"res://Levels/Scenes/": "red",
+"res://Levels/Scripts/": "red",
+"res://Levels/Scripts/Autoloads/": "orange",
 "res://Systems/": "blue",
 "res://Systems/Camera/": "red",
 "res://Systems/Camera/Scripts/": "orange",
+"res://Systems/Camera/Scripts/Autoloads/": "yellow",
+"res://Systems/Scenes/": "red",
 "res://Systems/Time/": "red",
 "res://Systems/Time/Resources/": "orange",
+"res://Systems/Time/Resources/DateTimes/": "yellow",
 "res://Systems/Time/Resources/GameMonths/": "yellow",
 "res://Systems/Time/Resources/GameYears/": "yellow",
 "res://Systems/Time/Scripts/": "orange",

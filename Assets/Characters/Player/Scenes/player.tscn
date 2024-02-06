@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://c85qvwqv4xynr"]
+[gd_scene load_steps=44 format=3 uid="uid://c85qvwqv4xynr"]
 
 [ext_resource type="Material" uid="uid://dujeuv6iab2w" path="res://Assets/Characters/Player/Shaders/Materials/player_skin_material.tres" id="1_uyuon"]
 [ext_resource type="Texture2D" uid="uid://bip7aesedlxq4" path="res://Assets/Characters/Player/Movesets/StraightSword/player_straightSword.png" id="2_e70sl"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://Assets/Characters/Player/Scripts/EquipmentManager.gd" id="6_rfn7m"]
 [ext_resource type="Script" path="res://Assets/Characters/Player/Scripts/InventoryManager.gd" id="9_yhke6"]
 [ext_resource type="Resource" uid="uid://cdl2jiyds7hs" path="res://Assets/Characters/Player/Inventory/Resource/player_inventory.tres" id="10_i3o7h"]
+[ext_resource type="Script" path="res://Assets/Characters/Player/Scripts/SignalEmitter.gd" id="11_ihs8g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kcwg6"]
 size = Vector2(5, 1)
@@ -408,3 +409,6 @@ script = ExtResource("6_8t8bp")
 [node name="InventoryManager" type="Node2D" parent="ScriptManager"]
 script = ExtResource("9_yhke6")
 inventory = ExtResource("10_i3o7h")
+
+[node name="SignalEmitter" type="Node2D" parent="ScriptManager"]
+script = ExtResource("11_ihs8g")

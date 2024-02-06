@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dbik1s41svdr7"]
 
+[ext_resource type="Script" path="res://Assets/UI/DateTime/Scripts/DateTimeGui.gd" id="1_70xjs"]
 [ext_resource type="Texture2D" uid="uid://osinuhn8hrvn" path="res://Assets/UI/Inventory/Sprites/InventoryBase_NinePatch.png" id="1_fhu76"]
-[ext_resource type="Script" path="res://Assets/UI/DateTime/Scripts/date_time_gui.gd" id="1_tevik"]
 [ext_resource type="FontVariation" uid="uid://b8mkbpq18rir" path="res://Assets/Fonts/3x6/3x6.tres" id="2_rkeey"]
 
 [node name="DateTimeGui" type="Control"]
@@ -11,7 +11,7 @@ anchor_left = 1.0
 anchor_right = 1.0
 grow_horizontal = 0
 scale = Vector2(3, 3)
-script = ExtResource("1_tevik")
+script = ExtResource("1_70xjs")
 
 [node name="Month_NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 0

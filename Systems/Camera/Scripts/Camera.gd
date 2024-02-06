@@ -1,30 +1,36 @@
 extends Node
 
-@onready var player = $"../../../Level/Characters/Player"
-@onready var bounding_box = $"../../../Level/BoundingArea/BoundingBox"
-@onready var camera_2d = $"."
-
+var player_position
+var bounding_box1
 var smooth_speed = 10.0 # Adjust this value to change the smoothness
 
 func _ready():
-	_initialize_on_player()
-	set_limits()
+	PlayerSignalBus.connect("player_position_updated", collect_player_position)
+	LevelSignalBus.connect("level_bounding_box", collect_bounding_box)
+	
+	call_deferred("_initialize_on_player")
+	call_deferred("set_limits")
 
 func _physics_process(delta):
 	follow_player(delta)
 
+func collect_player_position(position):
+	player_position = position
+
 func _initialize_on_player():
-	var player_position = player.position
 	self.position = player_position
 
 func follow_player(delta):
-	var player_position = player.position
+	if !player_position:
+		return
 	self.position = self.position.lerp(player_position, smooth_speed * delta)
 
+func collect_bounding_box(size):
+	bounding_box1 = size
+
 func set_limits():
-	var camera_area = Vector2(bounding_box.shape.size)
-	var right_limit = camera_area.x
-	var bottom_limit = camera_area.y
+	var right_limit = bounding_box1.x
+	var bottom_limit = bounding_box1.y
 	
 	self.limit_left = 0.0
 	self.limit_top = 0.0

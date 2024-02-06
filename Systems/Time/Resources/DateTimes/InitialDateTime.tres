@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="DateTime" load_steps=6 format=3 uid="uid://b4m3qk3x53d6p"]
+
+[ext_resource type="Script" path="res://Systems/Time/Scripts/GameDate.gd" id="1_8mkmi"]
+[ext_resource type="Script" path="res://Systems/Time/Scripts/GameTime.gd" id="2_ibeao"]
+[ext_resource type="Script" path="res://Systems/Time/Scripts/DateTime.gd" id="3_rf5vp"]
+
+[sub_resource type="Resource" id="Resource_muymq"]
+script = ExtResource("1_8mkmi")
+day = 15
+month = 4
+year = 9362
+
+[sub_resource type="Resource" id="Resource_qfnp5"]
+script = ExtResource("2_ibeao")
+game_hour = 8
+game_minute = 30
+
+[resource]
+script = ExtResource("3_rf5vp")
+game_date = SubResource("Resource_muymq")
+game_time = SubResource("Resource_qfnp5")

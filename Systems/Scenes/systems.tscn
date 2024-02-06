@@ -1,0 +1,29 @@
+[gd_scene load_steps=7 format=3 uid="uid://buupbsnv0a67o"]
+
+[ext_resource type="Script" path="res://Systems/Camera/Scripts/Camera.gd" id="1_aognt"]
+[ext_resource type="Script" path="res://Systems/Time/Scripts/TimeSystem.gd" id="2_5ik7h"]
+[ext_resource type="Resource" uid="uid://d2gidtwyhrx2" path="res://Systems/Time/Resources/GameYears/StandardYear.tres" id="3_7s3ux"]
+[ext_resource type="Script" path="res://Systems/Time/Scripts/GameCalendar.gd" id="4_td0y2"]
+[ext_resource type="Resource" uid="uid://b4m3qk3x53d6p" path="res://Systems/Time/Resources/DateTimes/InitialDateTime.tres" id="5_2rqlt"]
+
+[sub_resource type="Resource" id="Resource_04qgo"]
+script = ExtResource("4_td0y2")
+game_year = Array[Resource("res://Systems/Time/Scripts/GameYear.gd")]([ExtResource("3_7s3ux")])
+
+[node name="Systems" type="Node2D"]
+
+[node name="CameraSystem" type="Node2D" parent="."]
+
+[node name="PlayerCamera" type="Camera2D" parent="CameraSystem"]
+zoom = Vector2(3, 3)
+script = ExtResource("1_aognt")
+
+[node name="TimeSystem" type="Node2D" parent="."]
+script = ExtResource("2_5ik7h")
+game_calendar = SubResource("Resource_04qgo")
+date_time = ExtResource("5_2rqlt")
+
+[node name="Timer" type="Timer" parent="TimeSystem"]
+autostart = true
+
+[connection signal="timeout" from="TimeSystem/Timer" to="TimeSystem" method="_on_timer_timeout"]
