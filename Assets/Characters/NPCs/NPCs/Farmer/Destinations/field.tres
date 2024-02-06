@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="NPCDestinationEvent" load_steps=2 format=3 uid="uid://ccg36r0lthy40"]
+
+[ext_resource type="Script" path="res://Assets/Characters/NPCs/Scripts/NPCDestinationEvent.gd" id="1_3oylw"]
+
+[resource]
+script = ExtResource("1_3oylw")
+level = "level_1"
+destination_name = "field"
+destination_coordinates = Vector2(41, 28)

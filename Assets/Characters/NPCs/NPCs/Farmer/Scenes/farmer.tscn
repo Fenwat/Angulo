@@ -1,14 +1,17 @@
-[gd_scene load_steps=50 format=3 uid="uid://ba0qinwelvd2e"]
+[gd_scene load_steps=70 format=3 uid="uid://ba0qinwelvd2e"]
 
-[ext_resource type="Texture2D" uid="uid://ctudpn815lt64" path="res://Assets/Characters/NPCs/Farmer/Sprites/farmer_animations.png" id="1_aoiq8"]
-[ext_resource type="Script" path="res://Assets/Characters/NPCs/Farmer/Scripts/FarmerController.gd" id="2_x7srn"]
-[ext_resource type="Script" path="res://Assets/Characters/NPCs/Farmer/Scripts/NavigationManager.gd" id="3_akucb"]
-[ext_resource type="Script" path="res://Assets/Characters/NPCs/Farmer/Scripts/RandomNavigator.gd" id="3_xigap"]
-[ext_resource type="Script" path="res://Assets/Characters/NPCs/Farmer/Scripts/DestinationDatabase.gd" id="5_1hlfy"]
-[ext_resource type="Script" path="res://Assets/Characters/NPCs/Farmer/Scripts/AnimationManager.gd" id="5_5goup"]
-[ext_resource type="Script" path="res://Assets/Characters/NPCs/Farmer/Scripts/DestinationNavigator.gd" id="5_ccegu"]
-[ext_resource type="Script" path="res://Assets/Characters/NPCs/Farmer/Scripts/StateMachine.gd" id="6_kjmhp"]
-[ext_resource type="Script" path="res://Assets/Characters/NPCs/Farmer/Scripts/Schedule.gd" id="9_qwleu"]
+[ext_resource type="Texture2D" uid="uid://ctudpn815lt64" path="res://Assets/Characters/NPCs/NPCs/Farmer/Sprites/farmer_animations.png" id="1_aoiq8"]
+[ext_resource type="Script" path="res://Assets/Characters/NPCs/NPCs/Farmer/Scripts/FarmerController.gd" id="2_x7srn"]
+[ext_resource type="Script" path="res://Assets/Characters/NPCs/NPCs/Farmer/Scripts/NavigationManager.gd" id="3_akucb"]
+[ext_resource type="Script" path="res://Assets/Characters/NPCs/NPCs/Farmer/Scripts/AnimationManager.gd" id="5_5goup"]
+[ext_resource type="Script" path="res://Assets/Characters/NPCs/NPCs/Farmer/Scripts/DestinationNavigator.gd" id="5_ccegu"]
+[ext_resource type="Script" path="res://Assets/Characters/NPCs/NPCs/Farmer/Scripts/StateMachine.gd" id="6_kjmhp"]
+[ext_resource type="Script" path="res://Assets/Characters/NPCs/Scripts/NPCSchedule.gd" id="10_2h0p1"]
+[ext_resource type="Resource" uid="uid://ccg36r0lthy40" path="res://Assets/Characters/NPCs/NPCs/Farmer/Destinations/field.tres" id="11_bbag4"]
+[ext_resource type="Script" path="res://Assets/Characters/NPCs/Scripts/NPCEvent.gd" id="11_rl1ku"]
+[ext_resource type="Script" path="res://Assets/Characters/NPCs/Scripts/NPCEvents.gd" id="12_onyow"]
+[ext_resource type="Resource" uid="uid://bd36jyy0xsbhg" path="res://Assets/Characters/NPCs/NPCs/Farmer/Destinations/farm_house.tres" id="13_bmsmi"]
+[ext_resource type="Resource" uid="uid://k4g58mp3cytj" path="res://Assets/Characters/NPCs/NPCs/Farmer/Destinations/town_square.tres" id="14_bb8ul"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fnl4b"]
 size = Vector2(5, 1)
@@ -435,6 +438,90 @@ states/Straw/position = Vector2(411, 100)
 states/Walk/node = SubResource("AnimationNodeBlendSpace2D_t4040")
 states/Walk/position = Vector2(512, 100)
 
+[sub_resource type="Resource" id="Resource_4tjb1"]
+script = ExtResource("11_rl1ku")
+event_time = "08:30"
+npc_destination_event = ExtResource("11_bbag4")
+
+[sub_resource type="Resource" id="Resource_wfvxb"]
+script = ExtResource("11_rl1ku")
+event_time = "09:00"
+npc_destination_event = ExtResource("13_bmsmi")
+
+[sub_resource type="Resource" id="Resource_knh2j"]
+script = ExtResource("11_rl1ku")
+event_time = "09:45"
+npc_destination_event = ExtResource("14_bb8ul")
+
+[sub_resource type="Resource" id="Resource_8xyss"]
+script = ExtResource("11_rl1ku")
+event_time = "10:30"
+npc_destination_event = ExtResource("13_bmsmi")
+
+[sub_resource type="Resource" id="Resource_jqjhq"]
+script = ExtResource("11_rl1ku")
+event_time = "11:30"
+npc_destination_event = ExtResource("11_bbag4")
+
+[sub_resource type="Resource" id="Resource_a4rsi"]
+script = ExtResource("11_rl1ku")
+event_time = "12:00"
+npc_destination_event = ExtResource("14_bb8ul")
+
+[sub_resource type="Resource" id="Resource_ks57d"]
+script = ExtResource("11_rl1ku")
+event_time = "12:45"
+npc_destination_event = ExtResource("13_bmsmi")
+
+[sub_resource type="Resource" id="Resource_vsqcs"]
+script = ExtResource("11_rl1ku")
+event_time = "13:30"
+npc_destination_event = ExtResource("11_bbag4")
+
+[sub_resource type="Resource" id="Resource_cf5uv"]
+script = ExtResource("11_rl1ku")
+event_time = "14:30"
+npc_destination_event = ExtResource("13_bmsmi")
+
+[sub_resource type="Resource" id="Resource_80v2k"]
+script = ExtResource("11_rl1ku")
+event_time = "15:00"
+npc_destination_event = ExtResource("14_bb8ul")
+
+[sub_resource type="Resource" id="Resource_d4bps"]
+script = ExtResource("11_rl1ku")
+event_time = "16:00"
+npc_destination_event = ExtResource("11_bbag4")
+
+[sub_resource type="Resource" id="Resource_qsf8t"]
+script = ExtResource("11_rl1ku")
+event_time = "16:45"
+npc_destination_event = ExtResource("13_bmsmi")
+
+[sub_resource type="Resource" id="Resource_u1rjm"]
+script = ExtResource("11_rl1ku")
+event_time = "17:30"
+npc_destination_event = ExtResource("11_bbag4")
+
+[sub_resource type="Resource" id="Resource_gmb2j"]
+script = ExtResource("11_rl1ku")
+event_time = "18:30"
+npc_destination_event = ExtResource("13_bmsmi")
+
+[sub_resource type="Resource" id="Resource_g8goi"]
+script = ExtResource("11_rl1ku")
+event_time = "19:30"
+npc_destination_event = ExtResource("14_bb8ul")
+
+[sub_resource type="Resource" id="Resource_342df"]
+script = ExtResource("11_rl1ku")
+event_time = "20:15"
+npc_destination_event = ExtResource("13_bmsmi")
+
+[sub_resource type="Resource" id="Resource_mx81q"]
+script = ExtResource("12_onyow")
+events = Array[ExtResource("11_rl1ku")]([SubResource("Resource_4tjb1"), SubResource("Resource_wfvxb"), SubResource("Resource_knh2j"), SubResource("Resource_8xyss"), SubResource("Resource_jqjhq"), SubResource("Resource_a4rsi"), SubResource("Resource_ks57d"), SubResource("Resource_vsqcs"), SubResource("Resource_cf5uv"), SubResource("Resource_80v2k"), SubResource("Resource_d4bps"), SubResource("Resource_qsf8t"), SubResource("Resource_u1rjm"), SubResource("Resource_gmb2j"), SubResource("Resource_g8goi"), SubResource("Resource_342df")])
+
 [node name="Farmer" type="CharacterBody2D" node_paths=PackedStringArray("navigation_agent")]
 z_as_relative = false
 y_sort_enabled = true
@@ -481,26 +568,24 @@ one_shot = true
 
 [node name="Scripts" type="Node2D" parent="."]
 
+[node name="NPCSchedule" type="Node2D" parent="Scripts"]
+script = ExtResource("10_2h0p1")
+npc_events = SubResource("Resource_mx81q")
+npc_name = "Farmer"
+
 [node name="NavigationManager" type="Node2D" parent="Scripts"]
 script = ExtResource("3_akucb")
 
 [node name="RandomNavigator" type="Node2D" parent="Scripts/NavigationManager"]
-script = ExtResource("3_xigap")
 
 [node name="DestinationNavigator" type="Node2D" parent="Scripts/NavigationManager"]
 script = ExtResource("5_ccegu")
-
-[node name="DestinationDatabase" type="Node2D" parent="Scripts/NavigationManager/DestinationNavigator"]
-script = ExtResource("5_1hlfy")
 
 [node name="AnimationManager" type="Node2D" parent="Scripts"]
 script = ExtResource("5_5goup")
 
 [node name="StateMachine" type="Node2D" parent="Scripts"]
 script = ExtResource("6_kjmhp")
-
-[node name="Schedule" type="Node2D" parent="Scripts"]
-script = ExtResource("9_qwleu")
 
 [connection signal="target_reached" from="Navigation/NavigationAgent2D" to="Scripts/NavigationManager/DestinationNavigator" method="_on_navigation_agent_2d_target_reached"]
 [connection signal="timeout" from="Navigation/Timer" to="Scripts/NavigationManager/RandomNavigator" method="_on_timer_timeout"]

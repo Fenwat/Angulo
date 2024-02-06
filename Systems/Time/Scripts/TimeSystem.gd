@@ -2,7 +2,7 @@ extends Node2D
 class_name TimeSystem
 
 @export var game_calendar: GameCalendar
-@export var date_time = DateTime
+@export var date_time: DateTime
 
 @onready var timer = $Timer
 
@@ -15,9 +15,7 @@ var minute_string: String
 
 func _ready():
 	call_deferred("signal_initial_date")
-
-func _process(_delta):
-	handle_event_time()
+	call_deferred("handle_event_time")
 
 #---------------------------Event Time-----------------------------------------------
 
@@ -27,9 +25,10 @@ func handle_event_time():
 	event_time = hour_string + ":" + minute_string
 	signal_event_time()
 	
-func signal_event_time():	
+func signal_event_time():
 	if date_time.game_time.game_minute % 5 == 0:
 		TimeSignalBus.emit_signal("event_time_reached", event_time)
+		
 
 func determine_hour_string():
 	if len(str(date_time.game_time.game_hour)) == 1:
@@ -73,6 +72,7 @@ func increment_game_minutes():
 	if date_time.game_time.game_minute > 59:
 		date_time.game_time.game_minute = 0  # Reset minutes
 		increment_game_hour()  # Increment hour since minutes overflowed
+	handle_event_time()
 
 # Function to increment game_hour and handle overflow
 func increment_game_hour():

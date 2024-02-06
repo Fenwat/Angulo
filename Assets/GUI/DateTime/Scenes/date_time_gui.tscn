@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dbik1s41svdr7"]
 
-[ext_resource type="Script" path="res://Assets/UI/DateTime/Scripts/DateTimeGui.gd" id="1_70xjs"]
-[ext_resource type="Texture2D" uid="uid://osinuhn8hrvn" path="res://Assets/UI/Inventory/Sprites/InventoryBase_NinePatch.png" id="1_fhu76"]
+[ext_resource type="Script" path="res://Assets/GUI/DateTime/Scripts/DateTimeGui.gd" id="1_70xjs"]
+[ext_resource type="Texture2D" uid="uid://osinuhn8hrvn" path="res://Assets/GUI/Inventory/Sprites/InventoryBase_NinePatch.png" id="1_fhu76"]
 [ext_resource type="FontVariation" uid="uid://b8mkbpq18rir" path="res://Assets/Fonts/3x6/3x6.tres" id="2_rkeey"]
 
 [node name="DateTimeGui" type="Control"]

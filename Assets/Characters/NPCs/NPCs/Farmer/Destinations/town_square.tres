@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="NPCDestinationEvent" load_steps=2 format=3 uid="uid://k4g58mp3cytj"]
+
+[ext_resource type="Script" path="res://Assets/Characters/NPCs/Scripts/NPCDestinationEvent.gd" id="1_f0myx"]
+
+[resource]
+script = ExtResource("1_f0myx")
+level = "level_1"
+destination_name = "town_square"
+destination_coordinates = Vector2(85, 51)

@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://777acm1i3xjf"]
 
-[ext_resource type="Texture2D" uid="uid://baoe43m4amilr" path="res://Assets/UI/Inventory/Sprites/InventorySlots.png" id="2_b503h"]
-[ext_resource type="Script" path="res://Assets/UI/Inventory/Scripts/SlotButton.gd" id="3_jnyyj"]
-[ext_resource type="Script" path="res://Assets/UI/Inventory/Scripts/SlotGui.gd" id="3_ntuh6"]
+[ext_resource type="Texture2D" uid="uid://baoe43m4amilr" path="res://Assets/GUI/Inventory/Sprites/InventorySlots.png" id="2_b503h"]
+[ext_resource type="Script" path="res://Assets/GUI/Inventory/Scripts/SlotButton.gd" id="3_jnyyj"]
+[ext_resource type="Script" path="res://Assets/GUI/Inventory/Scripts/SlotGui.gd" id="3_ntuh6"]
 
 [node name="Slot" type="Panel"]
 self_modulate = Color(1, 1, 1, 0)

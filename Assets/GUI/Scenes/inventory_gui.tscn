@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://b4uxla845p5qi"]
 
-[ext_resource type="Script" path="res://Assets/UI/Inventory/Scripts/InventoryGui.gd" id="1_ejpto"]
-[ext_resource type="Texture2D" uid="uid://osinuhn8hrvn" path="res://Assets/UI/Inventory/Sprites/InventoryBase_NinePatch.png" id="1_ju6vq"]
-[ext_resource type="PackedScene" uid="uid://777acm1i3xjf" path="res://Assets/UI/Scenes/slot_gui.tscn" id="2_08gxb"]
-[ext_resource type="Script" path="res://Assets/UI/Inventory/Scripts/SlotGui.gd" id="4_cqsl8"]
+[ext_resource type="Script" path="res://Assets/GUI/Inventory/Scripts/InventoryGui.gd" id="1_ejpto"]
+[ext_resource type="Texture2D" uid="uid://osinuhn8hrvn" path="res://Assets/GUI/Inventory/Sprites/InventoryBase_NinePatch.png" id="1_ju6vq"]
+[ext_resource type="PackedScene" uid="uid://777acm1i3xjf" path="res://Assets/GUI/Scenes/slot_gui.tscn" id="2_08gxb"]
+[ext_resource type="Script" path="res://Assets/GUI/Inventory/Scripts/SlotGui.gd" id="4_cqsl8"]
 [ext_resource type="PackedScene" uid="uid://c1660idr2wltj" path="res://Assets/Characters/Player/Shaders/Debug/debug_skin_map.tscn" id="4_lcfwk"]
 
 [node name="InventoryGui" type="Control"]

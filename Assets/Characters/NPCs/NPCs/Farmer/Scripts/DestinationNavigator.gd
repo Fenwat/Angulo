@@ -1,13 +1,10 @@
 extends Node2D
 
 @onready var farmer = $"../../.."
-@onready var destination_database = $DestinationDatabase
 @onready var state_machine = $"../../StateMachine"
 @onready var navigation_manager = $".."
 @onready var navigation_agent = $"../../../Navigation/NavigationAgent2D"
-@onready var schedule = $"../../Schedule"
 
-var destination_name: String = "farm_house"
 var destination_coords: Vector2 = Vector2.ZERO
 
 func _process(_delta):
@@ -24,14 +21,14 @@ func _physics_process(_delta):
 	
 	farmer.move_and_slide()
 
-func handle_travel_event():
-	get_new_destination()
+func do_travel_event(event):
+	get_new_coordinates(event)
 	state_machine.current_move_state = state_machine.MoveState.WALK
 	move_to_position()
 
-func get_new_destination():
+func get_new_coordinates(event):
 	var tile_pixel_count: int = 8
-	var adjusted_coords = (destination_database.select_destination(destination_name) * Vector2(tile_pixel_count, tile_pixel_count) + Vector2(4, 4))
+	var adjusted_coords = (event.npc_destination_event.destination_coordinates * Vector2(tile_pixel_count, tile_pixel_count) + Vector2(4, 4))
 	destination_coords = adjusted_coords
 
 func move_to_position():

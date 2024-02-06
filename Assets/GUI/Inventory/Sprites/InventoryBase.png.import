@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://osinuhn8hrvn"
-path="res://.godot/imported/InventoryBase_NinePatch.png-2feeb6f003fa68770f7623fd03634bb0.ctex"
+uid="uid://dkevtlehphcxx"
+path="res://.godot/imported/InventoryBase.png-00960d3a29ddeff1f454010ba651073b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/Inventory/Sprites/InventoryBase_NinePatch.png"
-dest_files=["res://.godot/imported/InventoryBase_NinePatch.png-2feeb6f003fa68770f7623fd03634bb0.ctex"]
+source_file="res://Assets/GUI/Inventory/Sprites/InventoryBase.png"
+dest_files=["res://.godot/imported/InventoryBase.png-00960d3a29ddeff1f454010ba651073b.ctex"]
 
 [params]
 

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="NPCDestinationEvent" load_steps=2 format=3 uid="uid://bd36jyy0xsbhg"]
+
+[ext_resource type="Script" path="res://Assets/Characters/NPCs/Scripts/NPCDestinationEvent.gd" id="1_qcbop"]
+
+[resource]
+script = ExtResource("1_qcbop")
+level = "level_1"
+destination_name = "farm_house"
+destination_coordinates = Vector2(78, 16)

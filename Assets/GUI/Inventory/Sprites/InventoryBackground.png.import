@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctudpn815lt64"
-path="res://.godot/imported/farmer_animations.png-a73d5d0256ea578e6f81f2b63a56c0b1.ctex"
+uid="uid://2x5ccy4lg16y"
+path="res://.godot/imported/InventoryBackground.png-d8a491c0ab9f20005afe96d2f274cf2d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Characters/NPCs/Farmer/Sprites/farmer_animations.png"
-dest_files=["res://.godot/imported/farmer_animations.png-a73d5d0256ea578e6f81f2b63a56c0b1.ctex"]
+source_file="res://Assets/GUI/Inventory/Sprites/InventoryBackground.png"
+dest_files=["res://.godot/imported/InventoryBackground.png-d8a491c0ab9f20005afe96d2f274cf2d.ctex"]
 
 [params]
 
