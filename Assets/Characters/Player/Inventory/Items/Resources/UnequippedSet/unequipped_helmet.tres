@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ArmorItem" load_steps=4 format=3 uid="uid://thsvo7430gnd"]
+
+[ext_resource type="Resource" uid="uid://dstqou7ou5iif" path="res://Assets/Characters/Player/Inventory/Resource/DestRects/HelmetDestRect.tres" id="1_6ntn7"]
+[ext_resource type="Texture2D" uid="uid://bfipyxxn5qdbl" path="res://Assets/Characters/Player/Inventory/Items/Sprites/Empty/slot_empty_helmet.png" id="2_2wei1"]
+[ext_resource type="Script" path="res://Assets/Characters/Player/Inventory/Scripts/ArmorItem.gd" id="3_urlt7"]
+
+[resource]
+script = ExtResource("3_urlt7")
+weight = 0.0
+defense = 0.0
+source_rect = Vector4(7, 40, 15, 4)
+dest_rect = ExtResource("1_6ntn7")
+armor_type = 0
+item_texture = ExtResource("2_2wei1")
+item_name = "Default Helmet"
+item_description = "-"
+item_type = 0

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ArmorItem" load_steps=4 format=3 uid="uid://cp1kqhd2vg6yh"]
+
+[ext_resource type="Resource" uid="uid://dws6mhvwtebc8" path="res://Assets/Characters/Player/Inventory/Resource/DestRects/GauntletsDestRect.tres" id="1_n1dt1"]
+[ext_resource type="Texture2D" uid="uid://cmk5r4pwyecot" path="res://Assets/Characters/Player/Inventory/Items/Sprites/Empty/slot_empty_gauntlets.png" id="2_i0ljc"]
+[ext_resource type="Script" path="res://Assets/Characters/Player/Inventory/Scripts/ArmorItem.gd" id="3_2flm6"]
+
+[resource]
+script = ExtResource("3_2flm6")
+weight = 0.0
+defense = 0.0
+source_rect = Vector4(23, 40, 6, 3)
+dest_rect = ExtResource("1_n1dt1")
+armor_type = 3
+item_texture = ExtResource("2_i0ljc")
+item_name = "Default Gauntlets"
+item_description = "-"
+item_type = 0
