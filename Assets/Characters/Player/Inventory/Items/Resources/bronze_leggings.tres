@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="ArmorItem" load_steps=3 format=3 uid="uid://bfkusxe0gta3y"]
+[gd_resource type="Resource" script_class="ArmorItem" load_steps=4 format=3 uid="uid://bfkusxe0gta3y"]
 
+[ext_resource type="Resource" uid="uid://ve8grpec7ic0" path="res://Assets/Characters/Player/Inventory/Resource/DestRects/LeggingsDestRect.tres" id="1_78gcr"]
 [ext_resource type="Texture2D" uid="uid://clvkttuiiios6" path="res://Assets/Characters/Player/Inventory/Items/Sprites/slot_bronze_leggings.png" id="1_iytxp"]
 [ext_resource type="Script" path="res://Assets/Characters/Player/Inventory/Scripts/ArmorItem.gd" id="2_ae03m"]
 
@@ -9,6 +10,9 @@ weight = 8.0
 defense = 17.0
 function = "equip_bronze_leggings"
 source_rect = Vector4(23, 57, 6, 7)
+dest_rect = ExtResource("1_78gcr")
+armor_type = 2
 item_texture = ExtResource("1_iytxp")
 item_name = "Bronze Leggings"
 item_description = "A bronze pair of leggings."
+item_type = 0

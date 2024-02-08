@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="ArmorItem" load_steps=3 format=3 uid="uid://x8uhy4bwdr8t"]
+[gd_resource type="Resource" script_class="ArmorItem" load_steps=4 format=3 uid="uid://x8uhy4bwdr8t"]
 
+[ext_resource type="Resource" uid="uid://74qmsvv144xj" path="res://Assets/Characters/Player/Inventory/Resource/DestRects/ChestplateDestRect.tres" id="1_36xpq"]
 [ext_resource type="Texture2D" uid="uid://ba2vu8whi0mve" path="res://Assets/Characters/Player/Inventory/Items/Sprites/slot_bronze_chestplate.png" id="1_dv2xf"]
 [ext_resource type="Script" path="res://Assets/Characters/Player/Inventory/Scripts/ArmorItem.gd" id="2_hg7x7"]
 
@@ -9,6 +10,9 @@ weight = 9.0
 defense = 19.0
 function = "equip_bronze_chestplate"
 source_rect = Vector4(7, 57, 15, 7)
+dest_rect = ExtResource("1_36xpq")
+armor_type = 1
 item_texture = ExtResource("1_dv2xf")
 item_name = "Bronze Chestplate"
 item_description = "A bronze chestplate."
+item_type = 0

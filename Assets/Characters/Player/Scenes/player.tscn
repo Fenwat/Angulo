@@ -5,9 +5,9 @@
 [ext_resource type="Script" path="res://Assets/Characters/Player/Scripts/InputManager.gd" id="3_tao1v"]
 [ext_resource type="Script" path="res://Assets/Characters/Player/Scripts/MovementManager.gd" id="4_fq7xd"]
 [ext_resource type="Script" path="res://Assets/Characters/Player/Scripts/AnimationManager.gd" id="5_uq34l"]
-[ext_resource type="Script" path="res://Assets/Characters/Player/Scripts/EquipmentDatabase.gd" id="6_8t8bp"]
 [ext_resource type="Script" path="res://Assets/Characters/Player/Scripts/SkinManager.gd" id="6_j4vvw"]
 [ext_resource type="Script" path="res://Assets/Characters/Player/Scripts/EquipmentManager.gd" id="6_rfn7m"]
+[ext_resource type="Resource" uid="uid://dk41yrd04fl4s" path="res://Assets/Characters/Player/Inventory/Items/Resources/KnightSet/knight_equipment_load.tres" id="8_75xb1"]
 [ext_resource type="Script" path="res://Assets/Characters/Player/Scripts/InventoryManager.gd" id="9_yhke6"]
 [ext_resource type="Resource" uid="uid://cdl2jiyds7hs" path="res://Assets/Characters/Player/Inventory/Resource/player_inventory.tres" id="10_i3o7h"]
 [ext_resource type="Script" path="res://Assets/Characters/Player/Scripts/SignalEmitter.gd" id="11_ihs8g"]
@@ -402,9 +402,7 @@ script = ExtResource("6_j4vvw")
 
 [node name="EquipmentManager" type="Node2D" parent="ScriptManager"]
 script = ExtResource("6_rfn7m")
-
-[node name="EquipmentDatabase" type="Node2D" parent="ScriptManager/EquipmentManager"]
-script = ExtResource("6_8t8bp")
+equipment_load = ExtResource("8_75xb1")
 
 [node name="InventoryManager" type="Node2D" parent="ScriptManager"]
 script = ExtResource("9_yhke6")

@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="ArmorItem" load_steps=3 format=3 uid="uid://c0guejaadlvdb"]
+[gd_resource type="Resource" script_class="ArmorItem" load_steps=4 format=3 uid="uid://c0guejaadlvdb"]
 
 [ext_resource type="Texture2D" uid="uid://di42drptcdq7q" path="res://Assets/Characters/Player/Inventory/Items/Sprites/slot_steel_helmet.png" id="1_r0jbw"]
+[ext_resource type="Resource" uid="uid://dstqou7ou5iif" path="res://Assets/Characters/Player/Inventory/Resource/DestRects/HelmetDestRect.tres" id="1_wj7qs"]
 [ext_resource type="Script" path="res://Assets/Characters/Player/Inventory/Scripts/ArmorItem.gd" id="2_4gojd"]
 
 [resource]
@@ -9,6 +10,9 @@ weight = 11.0
 defense = 16.0
 function = "equip_steel_helmet"
 source_rect = Vector4(7, 27, 15, 4)
+dest_rect = ExtResource("1_wj7qs")
+armor_type = 0
 item_texture = ExtResource("1_r0jbw")
 item_name = "Steel Helmet"
 item_description = "A helmet made of steel."
+item_type = 0

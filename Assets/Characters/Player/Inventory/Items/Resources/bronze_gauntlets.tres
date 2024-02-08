@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="ArmorItem" load_steps=3 format=3 uid="uid://djmh2deyeq254"]
+[gd_resource type="Resource" script_class="ArmorItem" load_steps=4 format=3 uid="uid://djmh2deyeq254"]
 
 [ext_resource type="Texture2D" uid="uid://bg72jjm3xgio5" path="res://Assets/Characters/Player/Inventory/Items/Sprites/slot_bronze_gauntlets.png" id="1_o78k5"]
+[ext_resource type="Resource" uid="uid://dws6mhvwtebc8" path="res://Assets/Characters/Player/Inventory/Resource/DestRects/GauntletsDestRect.tres" id="1_rfhlc"]
 [ext_resource type="Script" path="res://Assets/Characters/Player/Inventory/Scripts/ArmorItem.gd" id="2_vtiod"]
 
 [resource]
@@ -9,6 +10,9 @@ weight = 6.0
 defense = 15.0
 function = "equip_bronze_gauntlets"
 source_rect = Vector4(23, 53, 6, 3)
+dest_rect = ExtResource("1_rfhlc")
+armor_type = 3
 item_texture = ExtResource("1_o78k5")
 item_name = "Bronze Gauntlets"
 item_description = "A pair of bronze gauntlets."
+item_type = 0

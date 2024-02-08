@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="ArmorItem" load_steps=3 format=3 uid="uid://c6fwitynmtltf"]
+[gd_resource type="Resource" script_class="ArmorItem" load_steps=4 format=3 uid="uid://c6fwitynmtltf"]
 
+[ext_resource type="Resource" uid="uid://74qmsvv144xj" path="res://Assets/Characters/Player/Inventory/Resource/DestRects/ChestplateDestRect.tres" id="1_i36kb"]
 [ext_resource type="Texture2D" uid="uid://bjv318ysduqii" path="res://Assets/Characters/Player/Inventory/Items/Sprites/slot_steel_chestplate.png" id="1_rx1xr"]
 [ext_resource type="Script" path="res://Assets/Characters/Player/Inventory/Scripts/ArmorItem.gd" id="2_7pcab"]
 
@@ -7,8 +8,11 @@
 script = ExtResource("2_7pcab")
 weight = 16.0
 defense = 15.96
-function = "equip_steel_chestplate"
+function = "equip_item"
 source_rect = Vector4(7, 31, 15, 7)
+dest_rect = ExtResource("1_i36kb")
+armor_type = 1
 item_texture = ExtResource("1_rx1xr")
 item_name = "Steel Chestplate"
 item_description = "A chestplate made of steel."
+item_type = 0

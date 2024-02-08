@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="DestRect" load_steps=2 format=3 uid="uid://dstqou7ou5iif"]
+
+[ext_resource type="Script" path="res://Assets/Characters/Player/Inventory/Scripts/DestRect.gd" id="1_lnk3u"]
+
+[resource]
+script = ExtResource("1_lnk3u")
+rect = Vector4(7, 1, 15, 4)

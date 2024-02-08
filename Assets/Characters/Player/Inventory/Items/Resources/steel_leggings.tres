@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="ArmorItem" load_steps=3 format=3 uid="uid://c3wgutu826qr0"]
+[gd_resource type="Resource" script_class="ArmorItem" load_steps=4 format=3 uid="uid://c3wgutu826qr0"]
 
+[ext_resource type="Resource" uid="uid://ve8grpec7ic0" path="res://Assets/Characters/Player/Inventory/Resource/DestRects/LeggingsDestRect.tres" id="1_5xjqf"]
 [ext_resource type="Texture2D" uid="uid://hfbnrgtpvy5c" path="res://Assets/Characters/Player/Inventory/Items/Sprites/slot_steel_leggings.png" id="1_b3yny"]
 [ext_resource type="Script" path="res://Assets/Characters/Player/Inventory/Scripts/ArmorItem.gd" id="2_wf0ir"]
 
@@ -9,6 +10,9 @@ weight = 13.0
 defense = 28.0
 function = "equip_steel_leggings"
 source_rect = Vector4(23, 31, 6, 7)
+dest_rect = ExtResource("1_5xjqf")
+armor_type = 2
 item_texture = ExtResource("1_b3yny")
 item_name = "Steel Leggings"
 item_description = "A leggings made of steel."
+item_type = null

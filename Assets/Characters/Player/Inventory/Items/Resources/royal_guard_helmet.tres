@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="ArmorItem" load_steps=3 format=3 uid="uid://c830bvuu56br3"]
+[gd_resource type="Resource" script_class="ArmorItem" load_steps=4 format=3 uid="uid://c830bvuu56br3"]
 
+[ext_resource type="Resource" uid="uid://dstqou7ou5iif" path="res://Assets/Characters/Player/Inventory/Resource/DestRects/HelmetDestRect.tres" id="1_muca8"]
 [ext_resource type="Texture2D" uid="uid://dxbg2hw5aodf" path="res://Assets/Characters/Player/Inventory/Items/Sprites/slot_royal_guard_helmet.png" id="1_y2nh6"]
 [ext_resource type="Script" path="res://Assets/Characters/Player/Inventory/Scripts/ArmorItem.gd" id="2_x4sgu"]
 
@@ -9,6 +10,9 @@ weight = 11.0
 defense = 16.0
 function = "equip_royal_guard_helmet"
 source_rect = Vector4(37, 1, 15, 4)
+dest_rect = ExtResource("1_muca8")
+armor_type = 0
 item_texture = ExtResource("1_y2nh6")
 item_name = "Royal Guard's Helmet"
 item_description = "A helmet worn by the King's royal guards."
+item_type = 0

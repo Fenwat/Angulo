@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="ArmorItem" load_steps=3 format=3 uid="uid://3wfewhws0iwv"]
+[gd_resource type="Resource" script_class="ArmorItem" load_steps=4 format=3 uid="uid://3wfewhws0iwv"]
 
+[ext_resource type="Resource" uid="uid://dstqou7ou5iif" path="res://Assets/Characters/Player/Inventory/Resource/DestRects/HelmetDestRect.tres" id="1_8nrsl"]
 [ext_resource type="Texture2D" uid="uid://bsg3lv4uc4qb8" path="res://Assets/Characters/Player/Inventory/Items/Sprites/slot_chainmail_helmet.png" id="1_n5rsc"]
 [ext_resource type="Script" path="res://Assets/Characters/Player/Inventory/Scripts/ArmorItem.gd" id="2_besr6"]
 
@@ -9,6 +10,9 @@ weight = 10.0
 defense = 15.0
 function = "equip_chainmail_helmet"
 source_rect = Vector4(67, 27, 15, 4)
+dest_rect = ExtResource("1_8nrsl")
+armor_type = 0
 item_texture = ExtResource("1_n5rsc")
 item_name = "Chainmail Helmet"
 item_description = "A helmet made of chainmail."
+item_type = 0

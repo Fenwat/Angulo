@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="ArmorItem" load_steps=3 format=3 uid="uid://cdutfexcuxly2"]
+[gd_resource type="Resource" script_class="ArmorItem" load_steps=4 format=3 uid="uid://cdutfexcuxly2"]
 
+[ext_resource type="Resource" uid="uid://dkbuk62usrrt4" path="res://Assets/Characters/Player/Inventory/Resource/DestRects/CapeDestRect.tres" id="1_c67fe"]
 [ext_resource type="Texture2D" uid="uid://djarvulf8gcuu" path="res://Assets/Characters/Player/Inventory/Items/Sprites/slot_steel_cape.png" id="1_pr428"]
 [ext_resource type="Script" path="res://Assets/Characters/Player/Inventory/Scripts/ArmorItem.gd" id="2_1tftt"]
 
@@ -9,6 +10,9 @@ weight = 4.0
 defense = 7.0
 function = "equip_steel_cape"
 source_rect = Vector4(1, 27, 5, 11)
+dest_rect = ExtResource("1_c67fe")
+armor_type = 4
 item_texture = ExtResource("1_pr428")
 item_name = "Steel Cape"
 item_description = "A cape made to adorn armor of steel."
+item_type = 0
