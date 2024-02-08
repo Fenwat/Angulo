@@ -8,6 +8,7 @@ script = ExtResource("2_7pcab")
 weight = 16.0
 defense = 15.96
 function = "equip_steel_chestplate"
+source_rect = Vector4(7, 31, 15, 7)
 item_texture = ExtResource("1_rx1xr")
 item_name = "Steel Chestplate"
 item_description = "A chestplate made of steel."

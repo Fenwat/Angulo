@@ -75,6 +75,8 @@ func load_equipment_data():
 		]
 }
 
+#-------------------------Debug---------------------------------------------------------------
+
 func print_equipment_data() -> void:
 	for data in equipment_data:
 		print(data + " Data:")

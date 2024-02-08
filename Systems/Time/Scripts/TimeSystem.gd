@@ -8,7 +8,6 @@ class_name TimeSystem
 
 const BASE_YEAR = 9362
 
-var print_timer = 0
 var event_time: String
 var hour_string: String
 var minute_string: String
@@ -28,7 +27,6 @@ func handle_event_time():
 func signal_event_time():
 	if date_time.game_time.game_minute % 5 == 0:
 		TimeSignalBus.emit_signal("event_time_reached", event_time)
-		
 
 func determine_hour_string():
 	if len(str(date_time.game_time.game_hour)) == 1:
@@ -50,7 +48,7 @@ func signal_initial_date():
 	var initial_month_name = get_current_month(initial_month)
 	TimeSignalBus.emit_signal("initial_date_set", initial_game_date, initial_month_name)
 
-func signal_current_day():
+func signal_new_day():
 	var new_game_date: GameDate = date_time.game_date
 	TimeSignalBus.emit_signal("date_changed", new_game_date)
 
@@ -92,7 +90,7 @@ func increment_day():
 			var days_in_month = months[date_time.game_date.month - 1].days
 			if date_time.game_date.day > days_in_month:
 				date_time.game_date.day = 1  # Reset day
-				signal_current_day()
+				signal_new_day()
 				increment_month()  # Increment month since days overflowed
 	else:
 		print("Year out of bounds: ", date_time.game_date.year)

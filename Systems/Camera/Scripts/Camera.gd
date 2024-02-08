@@ -1,7 +1,7 @@
 extends Node
 
 var player_position
-var bounding_box1
+var bounding_box
 var smooth_speed = 10.0 # Adjust this value to change the smoothness
 
 func _ready():
@@ -26,11 +26,11 @@ func follow_player(delta):
 	self.position = self.position.lerp(player_position, smooth_speed * delta)
 
 func collect_bounding_box(size):
-	bounding_box1 = size
+	bounding_box = size
 
 func set_limits():
-	var right_limit = bounding_box1.x
-	var bottom_limit = bounding_box1.y
+	var right_limit = bounding_box.x
+	var bottom_limit = bounding_box.y
 	
 	self.limit_left = 0.0
 	self.limit_top = 0.0

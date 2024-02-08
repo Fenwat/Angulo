@@ -8,6 +8,7 @@ script = ExtResource("2_wvqyj")
 weight = 4.0
 defense = 6.0
 function = "equip_bronze_cape"
+source_rect = Vector4(1, 53, 5, 11)
 item_texture = ExtResource("1_m1sjl")
 item_name = "Bronze Cape"
 item_description = "A cape made to be worn with a bronze suit of armor."

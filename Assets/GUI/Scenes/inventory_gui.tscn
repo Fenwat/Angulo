@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://b4uxla845p5qi"]
+[gd_scene load_steps=5 format=3 uid="uid://b4uxla845p5qi"]
 
 [ext_resource type="Script" path="res://Assets/GUI/Inventory/Scripts/InventoryGui.gd" id="1_ejpto"]
 [ext_resource type="Texture2D" uid="uid://osinuhn8hrvn" path="res://Assets/GUI/Inventory/Sprites/InventoryBase_NinePatch.png" id="1_ju6vq"]
 [ext_resource type="PackedScene" uid="uid://777acm1i3xjf" path="res://Assets/GUI/Scenes/slot_gui.tscn" id="2_08gxb"]
-[ext_resource type="Script" path="res://Assets/GUI/Inventory/Scripts/SlotGui.gd" id="4_cqsl8"]
 [ext_resource type="PackedScene" uid="uid://c1660idr2wltj" path="res://Assets/Characters/Player/Shaders/Debug/debug_skin_map.tscn" id="4_lcfwk"]
 
 [node name="InventoryGui" type="Control"]
@@ -38,73 +37,57 @@ columns = 5
 
 [node name="Slot" parent="NinePatchRect/GridContainer" instance=ExtResource("2_08gxb")]
 layout_mode = 2
-script = ExtResource("4_cqsl8")
 
 [node name="Slot2" parent="NinePatchRect/GridContainer" instance=ExtResource("2_08gxb")]
 layout_mode = 2
-script = ExtResource("4_cqsl8")
 
 [node name="Slot3" parent="NinePatchRect/GridContainer" instance=ExtResource("2_08gxb")]
 layout_mode = 2
-script = ExtResource("4_cqsl8")
 
 [node name="Slot4" parent="NinePatchRect/GridContainer" instance=ExtResource("2_08gxb")]
 layout_mode = 2
-script = ExtResource("4_cqsl8")
 
 [node name="Slot5" parent="NinePatchRect/GridContainer" instance=ExtResource("2_08gxb")]
 layout_mode = 2
-script = ExtResource("4_cqsl8")
 
 [node name="Slot6" parent="NinePatchRect/GridContainer" instance=ExtResource("2_08gxb")]
 layout_mode = 2
-script = ExtResource("4_cqsl8")
 
 [node name="Slot7" parent="NinePatchRect/GridContainer" instance=ExtResource("2_08gxb")]
 layout_mode = 2
-script = ExtResource("4_cqsl8")
 
 [node name="Slot8" parent="NinePatchRect/GridContainer" instance=ExtResource("2_08gxb")]
 layout_mode = 2
 
 [node name="Slot9" parent="NinePatchRect/GridContainer" instance=ExtResource("2_08gxb")]
 layout_mode = 2
-script = ExtResource("4_cqsl8")
 
 [node name="Slot10" parent="NinePatchRect/GridContainer" instance=ExtResource("2_08gxb")]
 layout_mode = 2
-script = ExtResource("4_cqsl8")
 
 [node name="Slot11" parent="NinePatchRect/GridContainer" instance=ExtResource("2_08gxb")]
 layout_mode = 2
 
 [node name="Slot12" parent="NinePatchRect/GridContainer" instance=ExtResource("2_08gxb")]
 layout_mode = 2
-script = ExtResource("4_cqsl8")
 
 [node name="Slot13" parent="NinePatchRect/GridContainer" instance=ExtResource("2_08gxb")]
 layout_mode = 2
-script = ExtResource("4_cqsl8")
 
 [node name="Slot14" parent="NinePatchRect/GridContainer" instance=ExtResource("2_08gxb")]
 layout_mode = 2
-script = ExtResource("4_cqsl8")
 
 [node name="Slot15" parent="NinePatchRect/GridContainer" instance=ExtResource("2_08gxb")]
 layout_mode = 2
-script = ExtResource("4_cqsl8")
 
 [node name="Slot16" parent="NinePatchRect/GridContainer" instance=ExtResource("2_08gxb")]
 layout_mode = 2
-script = ExtResource("4_cqsl8")
 
 [node name="Slot17" parent="NinePatchRect/GridContainer" instance=ExtResource("2_08gxb")]
 layout_mode = 2
-script = ExtResource("4_cqsl8")
 
 [node name="Slot18" parent="NinePatchRect/GridContainer" instance=ExtResource("2_08gxb")]
 layout_mode = 2
-script = ExtResource("4_cqsl8")
 
 [node name="Slot19" parent="NinePatchRect/GridContainer" instance=ExtResource("2_08gxb")]
 layout_mode = 2

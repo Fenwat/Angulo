@@ -8,6 +8,7 @@ script = ExtResource("2_ftxy3")
 weight = 17.0
 defense = 20.0
 function = "equip_chainmail_leggings"
+source_rect = Vector4(83, 31, 6, 7)
 item_texture = ExtResource("1_c74lw")
 item_name = "Chainmail Leggings"
 item_description = "Leggings made of chainmail."

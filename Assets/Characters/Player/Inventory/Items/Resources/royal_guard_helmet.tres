@@ -8,6 +8,7 @@ script = ExtResource("2_x4sgu")
 weight = 11.0
 defense = 16.0
 function = "equip_royal_guard_helmet"
+source_rect = Vector4(37, 1, 15, 4)
 item_texture = ExtResource("1_y2nh6")
 item_name = "Royal Guard's Helmet"
 item_description = "A helmet worn by the King's royal guards."

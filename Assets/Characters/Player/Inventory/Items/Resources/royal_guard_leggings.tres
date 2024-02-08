@@ -8,6 +8,7 @@ script = ExtResource("2_scar3")
 weight = 13.0
 defense = 23.0
 function = "equip_royal_guard_leggings"
+source_rect = Vector4(53, 5, 6, 7)
 item_texture = ExtResource("1_xq840")
 item_name = "Royal Guard's Leggings"
 item_description = "A leggings worn by the King's royal guards."

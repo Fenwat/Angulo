@@ -8,6 +8,7 @@ script = ExtResource("2_plvm1")
 weight = 4.0
 defense = 7.0
 function = "equip_royal_guard_cape"
+source_rect = Vector4(31, 1, 5, 11)
 item_texture = ExtResource("1_5wgqb")
 item_name = "Royal Guard's Cape"
 item_description = "A cape worn by the King's royal guards."

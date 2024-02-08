@@ -8,6 +8,7 @@ script = ExtResource("2_oni24")
 weight = 16.0
 defense = 25.0
 function = "equip_knight_chestplate"
+source_rect = Vector4(7, 18, 15, 7)
 item_texture = ExtResource("1_0jhxk")
 item_name = "Knight's Chestplate"
 item_description = "A chestplate worn by knights."

@@ -8,6 +8,7 @@ script = ExtResource("2_4gojd")
 weight = 11.0
 defense = 16.0
 function = "equip_steel_helmet"
+source_rect = Vector4(7, 27, 15, 4)
 item_texture = ExtResource("1_r0jbw")
 item_name = "Steel Helmet"
 item_description = "A helmet made of steel."

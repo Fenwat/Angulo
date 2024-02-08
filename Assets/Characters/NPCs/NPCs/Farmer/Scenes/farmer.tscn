@@ -555,7 +555,7 @@ libraries = {
 tree_root = SubResource("AnimationNodeStateMachine_epnwp")
 anim_player = NodePath("../AnimationPlayer")
 parameters/Forage/blend_position = Vector2(0, -0.0174603)
-parameters/Idle/blend_position = Vector2(0, 0.0174602)
+parameters/Idle/blend_position = Vector2(0.00205767, -0.015942)
 parameters/Straw/blend_position = Vector2(0, 0)
 parameters/Walk/blend_position = Vector2(0, 0)
 

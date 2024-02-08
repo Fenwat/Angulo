@@ -13,7 +13,7 @@ func compare_event_time(time):
 	#print("event_time received")
 	for event in npc_events.events:
 		if event.event_time == time:
-			destination_debug(event)
+			#destination_debug(event)
 			destination_navigator.do_travel_event(event)
 
 

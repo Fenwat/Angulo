@@ -8,6 +8,7 @@ script = ExtResource("2_iu8mm")
 weight = 10.0
 defense = 3.0
 function = "equip_chainmail_cape"
+source_rect = Vector4(61, 27, 5, 11)
 item_texture = ExtResource("1_8y23g")
 item_name = "Cape"
 item_description = "A cape."

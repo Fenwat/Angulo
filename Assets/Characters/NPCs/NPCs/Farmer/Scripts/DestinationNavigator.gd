@@ -9,8 +9,8 @@ var destination_coords: Vector2 = Vector2.ZERO
 
 func _process(_delta):
 	state_machine.update_move_state()
-	var farmer_local_position = farmer.position
-	var _map_coords = farmer.map.local_to_map(farmer_local_position)
+	#var farmer_local_position = farmer.position
+	#var _map_coords = farmer.map.local_to_map(farmer_local_position)
 
 func _physics_process(_delta):	
 	if navigation_agent.is_navigation_finished():
@@ -27,8 +27,8 @@ func do_travel_event(event):
 	move_to_position()
 
 func get_new_coordinates(event):
-	var tile_pixel_count: int = 8
-	var adjusted_coords = (event.npc_destination_event.destination_coordinates * Vector2(tile_pixel_count, tile_pixel_count) + Vector2(4, 4))
+	const tile_pixel_count: int = 8
+	var adjusted_coords = (event.npc_destination_event.destination_coordinates * Vector2(tile_pixel_count, tile_pixel_count) + Vector2(tile_pixel_count / 2.0, tile_pixel_count / 2.0))
 	destination_coords = adjusted_coords
 
 func move_to_position():

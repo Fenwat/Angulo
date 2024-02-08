@@ -18,11 +18,10 @@ config/icon="res://Assets/Misc/Icon/icon.svg"
 [autoload]
 
 Enums="*res://Assets/Characters/Player/Scripts/Autoloads/Enums.gd"
-Signals="*res://Assets/Global/Scripts/Signals.gd"
-GlobalVariables="*res://Assets/Global/Scripts/GlobalVariables.gd"
 TimeSignalBus="*res://Systems/Time/Scripts/TimeSignalBus.gd"
 PlayerSignalBus="*res://Assets/Characters/Player/Scripts/Autoloads/PlayerSignalBus.gd"
 LevelSignalBus="*res://Levels/Scripts/Autoloads/LevelSignalBus.gd"
+PlayerInventorySignalBus="*res://Assets/Characters/Player/Inventory/Scripts/Autoloads/PlayerInventorySignalBus.gd"
 
 [display]
 
@@ -59,6 +58,7 @@ folder_colors={
 "res://Assets/Characters/Player/Inventory/Items/Sprites/": "teal",
 "res://Assets/Characters/Player/Inventory/Resource/": "green",
 "res://Assets/Characters/Player/Inventory/Scripts/": "green",
+"res://Assets/Characters/Player/Inventory/Scripts/Autoloads/": "teal",
 "res://Assets/Characters/Player/Movesets/": "yellow",
 "res://Assets/Characters/Player/Movesets/ShortSword/": "green",
 "res://Assets/Characters/Player/Movesets/StraightSword/": "green",
@@ -84,7 +84,6 @@ folder_colors={
 "res://Assets/GUI/Inventory/Sprites/": "yellow",
 "res://Assets/GUI/Scenes/": "orange",
 "res://Assets/GUI/Scripts/": "orange",
-"res://Assets/Global/": "red",
 "res://Assets/Global/Scripts/": "orange",
 "res://Assets/Misc/": "red",
 "res://Assets/Misc/Icon/": "orange",

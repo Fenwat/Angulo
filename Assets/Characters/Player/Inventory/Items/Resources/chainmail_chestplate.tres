@@ -8,6 +8,7 @@ script = ExtResource("2_44naa")
 weight = 16.0
 defense = 25.0
 function = "equip_chainmail_chestplate"
+source_rect = Vector4(67, 31, 15, 7)
 item_texture = ExtResource("1_so87d")
 item_name = "Chainmail Chestplate"
 item_description = "A chestplate made of chainmail."
