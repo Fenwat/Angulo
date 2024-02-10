@@ -8,7 +8,6 @@
 script = ExtResource("2_besr6")
 weight = 10.0
 defense = 15.0
-function = "equip_chainmail_helmet"
 source_rect = Vector4(67, 27, 15, 4)
 dest_rect = ExtResource("1_8nrsl")
 armor_type = 0
@@ -16,3 +15,4 @@ item_texture = ExtResource("1_n5rsc")
 item_name = "Chainmail Helmet"
 item_description = "A helmet made of chainmail."
 item_type = 0
+inventory_item_priority = 2

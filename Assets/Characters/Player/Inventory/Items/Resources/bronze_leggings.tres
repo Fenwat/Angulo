@@ -8,7 +8,6 @@
 script = ExtResource("2_ae03m")
 weight = 8.0
 defense = 17.0
-function = "equip_bronze_leggings"
 source_rect = Vector4(23, 57, 6, 7)
 dest_rect = ExtResource("1_78gcr")
 armor_type = 2
@@ -16,3 +15,4 @@ item_texture = ExtResource("1_iytxp")
 item_name = "Bronze Leggings"
 item_description = "A bronze pair of leggings."
 item_type = 0
+inventory_item_priority = 1

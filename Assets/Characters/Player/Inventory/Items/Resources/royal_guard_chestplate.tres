@@ -8,7 +8,6 @@
 script = ExtResource("2_uvrfp")
 weight = 16.0
 defense = 15.96
-function = "equip_royal_guard_chestplate"
 source_rect = Vector4(37, 5, 15, 7)
 dest_rect = ExtResource("1_mxq31")
 armor_type = 1
@@ -16,3 +15,4 @@ item_texture = ExtResource("1_4we0x")
 item_name = "Royal Guard's Chestplate"
 item_description = "A chestplate worn by the King's royal guards."
 item_type = 0
+inventory_item_priority = 3

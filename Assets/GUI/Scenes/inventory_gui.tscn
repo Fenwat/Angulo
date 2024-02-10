@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://b4uxla845p5qi"]
+[gd_scene load_steps=7 format=3 uid="uid://b4uxla845p5qi"]
 
 [ext_resource type="Script" path="res://Assets/GUI/Inventory/Scripts/InventoryGui.gd" id="1_ejpto"]
 [ext_resource type="Texture2D" uid="uid://osinuhn8hrvn" path="res://Assets/GUI/Inventory/Sprites/InventoryBase_NinePatch.png" id="1_ju6vq"]
+[ext_resource type="Resource" uid="uid://cdl2jiyds7hs" path="res://Assets/Characters/Player/Inventory/Resource/player_inventory.tres" id="2_00ypd"]
 [ext_resource type="PackedScene" uid="uid://777acm1i3xjf" path="res://Assets/GUI/Scenes/slot_gui.tscn" id="2_08gxb"]
 [ext_resource type="PackedScene" uid="uid://c1660idr2wltj" path="res://Assets/Characters/Player/Shaders/Debug/debug_skin_map.tscn" id="4_lcfwk"]
+[ext_resource type="PackedScene" uid="uid://cefxdq4aiue5e" path="res://Assets/Characters/Player/Inventory/Scenes/inventory_break.tscn" id="5_qltxe"]
 
 [node name="InventoryGui" type="Control"]
 layout_mode = 3
@@ -12,6 +14,7 @@ offset_right = 193.0
 offset_bottom = 196.0
 scale = Vector2(3, 3)
 script = ExtResource("1_ejpto")
+inventory = ExtResource("2_00ypd")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 0
@@ -124,3 +127,35 @@ patch_margin_bottom = 3
 
 [node name="DebugSkinMap" parent="SkinDebugRect" instance=ExtResource("4_lcfwk")]
 position = Vector2(17, 8.66667)
+
+[node name="ArmorInventory" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 3.0
+offset_right = 148.0
+offset_bottom = 104.0
+texture = ExtResource("1_ju6vq")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="Panel" type="Panel" parent="ArmorInventory"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 59.0
+offset_bottom = 10.0
+
+[node name="Label" type="Label" parent="ArmorInventory/Panel"]
+layout_mode = 0
+offset_left = 2.0
+offset_right = 57.0
+offset_bottom = 8.0
+text = "Armor"
+
+[node name="InventoryBreak" parent="ArmorInventory" instance=ExtResource("5_qltxe")]
+layout_mode = 1
+offset_left = -0.333333
+offset_right = -0.333336

@@ -8,7 +8,6 @@
 script = ExtResource("2_hg7x7")
 weight = 9.0
 defense = 19.0
-function = "equip_bronze_chestplate"
 source_rect = Vector4(7, 57, 15, 7)
 dest_rect = ExtResource("1_36xpq")
 armor_type = 1
@@ -16,3 +15,4 @@ item_texture = ExtResource("1_dv2xf")
 item_name = "Bronze Chestplate"
 item_description = "A bronze chestplate."
 item_type = 0
+inventory_item_priority = 1

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="PlayerInventory" load_steps=27 format=3 uid="uid://cdl2jiyds7hs"]
+[gd_resource type="Resource" script_class="PlayerInventory" load_steps=32 format=3 uid="uid://cdl2jiyds7hs"]
 
 [ext_resource type="Resource" uid="uid://cwcu68m4teayv" path="res://Assets/Characters/Player/Inventory/Items/Resources/knight_helmet.tres" id="1_p80sd"]
 [ext_resource type="Resource" uid="uid://c830bvuu56br3" path="res://Assets/Characters/Player/Inventory/Items/Resources/royal_guard_helmet.tres" id="2_3wlre"]
@@ -26,7 +26,13 @@
 [ext_resource type="Resource" uid="uid://cdutfexcuxly2" path="res://Assets/Characters/Player/Inventory/Items/Resources/steel_cape.tres" id="18_34orb"]
 [ext_resource type="Resource" uid="uid://bfkusxe0gta3y" path="res://Assets/Characters/Player/Inventory/Items/Resources/bronze_leggings.tres" id="20_ckvyo"]
 [ext_resource type="Resource" uid="uid://c7ayp243mom7" path="res://Assets/Characters/Player/Inventory/Items/Resources/bronze_cape.tres" id="25_nora4"]
+[ext_resource type="Resource" uid="uid://c2uj0v0sbs4wa" path="res://Assets/Characters/Player/Inventory/Resource/SubInventories/helmet_subinventory.tres" id="27_ho6qe"]
+[ext_resource type="Resource" uid="uid://b6r7u0gpvxuuy" path="res://Assets/Characters/Player/Inventory/Resource/SubInventories/chestplate_subinventory.tres" id="28_fp2hv"]
+[ext_resource type="Resource" uid="uid://budoy4711iukn" path="res://Assets/Characters/Player/Inventory/Resource/SubInventories/leggings_subinventory.tres" id="29_mq3o8"]
+[ext_resource type="Resource" uid="uid://02ek03gu1d6r" path="res://Assets/Characters/Player/Inventory/Resource/SubInventories/gauntlets_subinventory.tres" id="30_on61l"]
+[ext_resource type="Resource" uid="uid://cswxwb36uym21" path="res://Assets/Characters/Player/Inventory/Resource/SubInventories/cape_subinventory.tres" id="31_m034b"]
 
 [resource]
 script = ExtResource("2_je7dp")
+sub_inventories = Array[Resource("res://Assets/Characters/Player/Inventory/Scripts/PlayerSubInventory.gd")]([ExtResource("27_ho6qe"), ExtResource("28_fp2hv"), ExtResource("29_mq3o8"), ExtResource("30_on61l"), ExtResource("31_m034b")])
 items = Array[Resource("res://Assets/Characters/Player/Inventory/Scripts/PlayerInventoryItem.gd")]([ExtResource("1_p80sd"), ExtResource("2_5okcv"), ExtResource("3_tmqoh"), ExtResource("2_3wlre"), ExtResource("5_0g7ms"), ExtResource("3_8prnb"), ExtResource("6_4sfxi"), ExtResource("6_2a6q2"), ExtResource("4_k1yvc"), ExtResource("10_lluwi"), ExtResource("5_4m7jr"), ExtResource("10_olqrj"), ExtResource("9_hrq26"), ExtResource("6_y8iow"), ExtResource("15_l8gxq"), ExtResource("7_gqafm"), ExtResource("14_cynam"), ExtResource("12_1kx0i"), ExtResource("8_adfl8"), ExtResource("20_ckvyo"), ExtResource("9_an47p"), ExtResource("18_34orb"), ExtResource("15_gqkge"), ExtResource("6_w6bqa"), ExtResource("25_nora4")])

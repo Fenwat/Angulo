@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PlayerSubInventory" load_steps=2 format=3 uid="uid://budoy4711iukn"]
+
+[ext_resource type="Script" path="res://Assets/Characters/Player/Inventory/Scripts/PlayerSubInventory.gd" id="1_ohg7a"]
+
+[resource]
+script = ExtResource("1_ohg7a")
+sub_inventory_type = 2
+sub_inventory_name = "Leggings"
+items = Array[Resource("res://Assets/Characters/Player/Inventory/Scripts/PlayerInventoryItem.gd")]([])
+sub_inventory_priority = 2

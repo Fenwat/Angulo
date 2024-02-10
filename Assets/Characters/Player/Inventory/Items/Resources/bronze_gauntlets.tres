@@ -8,7 +8,6 @@
 script = ExtResource("2_vtiod")
 weight = 6.0
 defense = 15.0
-function = "equip_bronze_gauntlets"
 source_rect = Vector4(23, 53, 6, 3)
 dest_rect = ExtResource("1_rfhlc")
 armor_type = 3
@@ -16,3 +15,4 @@ item_texture = ExtResource("1_o78k5")
 item_name = "Bronze Gauntlets"
 item_description = "A pair of bronze gauntlets."
 item_type = 0
+inventory_item_priority = 1

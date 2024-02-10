@@ -8,7 +8,6 @@
 script = ExtResource("2_1tftt")
 weight = 4.0
 defense = 7.0
-function = "equip_steel_cape"
 source_rect = Vector4(1, 27, 5, 11)
 dest_rect = ExtResource("1_c67fe")
 armor_type = 4
@@ -16,3 +15,4 @@ item_texture = ExtResource("1_pr428")
 item_name = "Steel Cape"
 item_description = "A cape made to adorn armor of steel."
 item_type = 0
+inventory_item_priority = 4
