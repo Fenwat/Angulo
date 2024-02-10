@@ -15,3 +15,4 @@ item_texture = ExtResource("2_1sd7t")
 item_name = "Default Chestplate"
 item_description = "-"
 item_type = 0
+inventory_item_priority = 0

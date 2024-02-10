@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b4uxla845p5qi"]
+[gd_scene load_steps=8 format=3 uid="uid://b4uxla845p5qi"]
 
 [ext_resource type="Script" path="res://Assets/GUI/Inventory/Scripts/InventoryGui.gd" id="1_ejpto"]
 [ext_resource type="Texture2D" uid="uid://osinuhn8hrvn" path="res://Assets/GUI/Inventory/Sprites/InventoryBase_NinePatch.png" id="1_ju6vq"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://777acm1i3xjf" path="res://Assets/GUI/Scenes/slot_gui.tscn" id="2_08gxb"]
 [ext_resource type="PackedScene" uid="uid://c1660idr2wltj" path="res://Assets/Characters/Player/Shaders/Debug/debug_skin_map.tscn" id="4_lcfwk"]
 [ext_resource type="PackedScene" uid="uid://cefxdq4aiue5e" path="res://Assets/Characters/Player/Inventory/Scenes/inventory_break.tscn" id="5_qltxe"]
+[ext_resource type="PackedScene" uid="uid://berept4v7sbrk" path="res://Assets/Characters/Player/Inventory/Scenes/sub_inventory.tscn" id="7_86pax"]
 
 [node name="InventoryGui" type="Control"]
 layout_mode = 3
@@ -18,10 +19,10 @@ inventory = ExtResource("2_00ypd")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 0
-offset_left = 3.0
-offset_top = 3.0
-offset_right = 57.0
-offset_bottom = 57.0
+offset_left = 90.0
+offset_top = 3.33333
+offset_right = 144.0
+offset_bottom = 57.3333
 texture = ExtResource("1_ju6vq")
 patch_margin_left = 3
 patch_margin_top = 3
@@ -115,10 +116,10 @@ layout_mode = 2
 
 [node name="SkinDebugRect" type="NinePatchRect" parent="."]
 layout_mode = 0
-offset_left = 3.0
-offset_top = 58.0
-offset_right = 37.0
-offset_bottom = 75.0
+offset_left = 90.3333
+offset_top = 59.6667
+offset_right = 124.333
+offset_bottom = 76.6667
 texture = ExtResource("1_ju6vq")
 patch_margin_left = 3
 patch_margin_top = 3
@@ -130,9 +131,9 @@ position = Vector2(17, 8.66667)
 
 [node name="ArmorInventory" type="NinePatchRect" parent="."]
 layout_mode = 0
-offset_left = 64.0
+offset_left = 3.0
 offset_top = 3.0
-offset_right = 148.0
+offset_right = 87.0
 offset_bottom = 104.0
 texture = ExtResource("1_ju6vq")
 patch_margin_left = 3
@@ -159,3 +160,6 @@ text = "Armor"
 layout_mode = 1
 offset_left = -0.333333
 offset_right = -0.333336
+
+[node name="SubInventory" parent="ArmorInventory" instance=ExtResource("7_86pax")]
+layout_mode = 1
