@@ -1,10 +1,10 @@
 extends Control
-class_name SubInventoryGui
+class_name GuiSubInventory
 
 @export var inventory: PlayerInventory
 
 @onready var grid_container = $GridContainer
-@onready var slot = preload("res://Assets/GUI/Scenes/slot_gui.tscn")
+@onready var slot = preload("res://Assets/GUI/Inventory/Scenes/gui_slot.tscn")
 
 func _ready():
 	set_sub_inventory_parameters()
@@ -28,7 +28,6 @@ func set_y_height():
 
 func populate_grid(columns):
 	while columns > 0:
+		columns -= 1
 		var new_slot = slot.instantiate()
 		grid_container.add_child(new_slot)
-		print(columns)
-		columns -= 1

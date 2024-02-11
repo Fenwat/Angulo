@@ -1,5 +1,5 @@
 extends Control
-class_name InventoryBreak
+class_name GuiSubInventoryBreak
 
 @onready var nine_patch_rect = $NinePatchRect
 

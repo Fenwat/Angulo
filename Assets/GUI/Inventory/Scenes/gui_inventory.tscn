@@ -1,0 +1,178 @@
+[gd_scene load_steps=5 format=3 uid="uid://c3c3x3avdcc6e"]
+
+[ext_resource type="Script" path="res://Assets/GUI/Inventory/Scripts/GuiInventory.gd" id="1_bmqak"]
+[ext_resource type="Texture2D" uid="uid://osinuhn8hrvn" path="res://Assets/GUI/Inventory/Sprites/InventoryBase_NinePatch.png" id="1_ey6jo"]
+[ext_resource type="PackedScene" uid="uid://cs1r7hlo0cr4k" path="res://Assets/GUI/Inventory/Scenes/gui_slot.tscn" id="3_i2572"]
+[ext_resource type="PackedScene" uid="uid://c1660idr2wltj" path="res://Assets/Characters/Player/Shaders/Debug/debug_skin_map.tscn" id="3_wvu5t"]
+
+[node name="GuiInventory" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bmqak")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 3.33333
+offset_right = 144.0
+offset_bottom = 57.3333
+texture = ExtResource("1_ey6jo")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 51.0
+offset_bottom = 43.0
+theme_override_constants/h_separation = 2
+theme_override_constants/v_separation = 2
+columns = 5
+
+[node name="GuiSlot" parent="NinePatchRect/GridContainer" instance=ExtResource("3_i2572")]
+layout_mode = 2
+
+[node name="GuiSlot2" parent="NinePatchRect/GridContainer" instance=ExtResource("3_i2572")]
+self_modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+
+[node name="GuiSlot3" parent="NinePatchRect/GridContainer" instance=ExtResource("3_i2572")]
+self_modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+
+[node name="GuiSlot4" parent="NinePatchRect/GridContainer" instance=ExtResource("3_i2572")]
+self_modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+
+[node name="GuiSlot5" parent="NinePatchRect/GridContainer" instance=ExtResource("3_i2572")]
+self_modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+
+[node name="GuiSlot6" parent="NinePatchRect/GridContainer" instance=ExtResource("3_i2572")]
+self_modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+
+[node name="GuiSlot7" parent="NinePatchRect/GridContainer" instance=ExtResource("3_i2572")]
+self_modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+
+[node name="GuiSlot8" parent="NinePatchRect/GridContainer" instance=ExtResource("3_i2572")]
+self_modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+
+[node name="GuiSlot9" parent="NinePatchRect/GridContainer" instance=ExtResource("3_i2572")]
+self_modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+
+[node name="GuiSlot10" parent="NinePatchRect/GridContainer" instance=ExtResource("3_i2572")]
+self_modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+
+[node name="GuiSlot11" parent="NinePatchRect/GridContainer" instance=ExtResource("3_i2572")]
+self_modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+
+[node name="GuiSlot12" parent="NinePatchRect/GridContainer" instance=ExtResource("3_i2572")]
+self_modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+
+[node name="GuiSlot13" parent="NinePatchRect/GridContainer" instance=ExtResource("3_i2572")]
+self_modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+
+[node name="GuiSlot14" parent="NinePatchRect/GridContainer" instance=ExtResource("3_i2572")]
+self_modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+
+[node name="GuiSlot15" parent="NinePatchRect/GridContainer" instance=ExtResource("3_i2572")]
+self_modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+
+[node name="GuiSlot16" parent="NinePatchRect/GridContainer" instance=ExtResource("3_i2572")]
+self_modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+
+[node name="GuiSlot17" parent="NinePatchRect/GridContainer" instance=ExtResource("3_i2572")]
+self_modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+
+[node name="GuiSlot18" parent="NinePatchRect/GridContainer" instance=ExtResource("3_i2572")]
+self_modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+
+[node name="GuiSlot19" parent="NinePatchRect/GridContainer" instance=ExtResource("3_i2572")]
+self_modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+
+[node name="GuiSlot20" parent="NinePatchRect/GridContainer" instance=ExtResource("3_i2572")]
+self_modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+
+[node name="GuiSlot21" parent="NinePatchRect/GridContainer" instance=ExtResource("3_i2572")]
+self_modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+
+[node name="GuiSlot22" parent="NinePatchRect/GridContainer" instance=ExtResource("3_i2572")]
+self_modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+
+[node name="GuiSlot23" parent="NinePatchRect/GridContainer" instance=ExtResource("3_i2572")]
+self_modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+
+[node name="GuiSlot24" parent="NinePatchRect/GridContainer" instance=ExtResource("3_i2572")]
+self_modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+
+[node name="GuiSlot25" parent="NinePatchRect/GridContainer" instance=ExtResource("3_i2572")]
+self_modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+
+[node name="SkinDebugRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 90.3333
+offset_top = 59.6667
+offset_right = 124.333
+offset_bottom = 76.6667
+texture = ExtResource("1_ey6jo")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="DebugSkinMap" parent="SkinDebugRect" instance=ExtResource("3_wvu5t")]
+position = Vector2(17, 8.66667)
+
+[node name="PlayerInventory" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 87.0
+offset_bottom = 104.0
+texture = ExtResource("1_ey6jo")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="Panel" type="Panel" parent="PlayerInventory"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 59.0
+offset_bottom = 10.0
+
+[node name="Label" type="Label" parent="PlayerInventory/Panel"]
+layout_mode = 0
+offset_left = 2.0
+offset_right = 57.0
+offset_bottom = 8.0
+text = "Armor"

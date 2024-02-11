@@ -1,8 +1,12 @@
 extends Panel
+class_name GuiSlot
 
 @onready var slot_sprite: Sprite2D = $SlotSprite
 @onready var item_sprite: Sprite2D = $CenterContainer/Panel/ItemSprite
 @onready var button = $Button
+
+func _ready():
+	self.self_modulate.a = 0
 
 func update(item: PlayerInventoryItem):
 	if !item:
