@@ -76,6 +76,7 @@ folder_colors={
 "res://Assets/Characters/Player/Shaders/Skin/": "green",
 "res://Assets/Characters/Player/Shaders/Skins/": "green",
 "res://Assets/Characters/Player/Shaders/Skins/ArmorSets/": "teal",
+"res://Assets/Development/": "red",
 "res://Assets/Fonts/": "red",
 "res://Assets/Fonts/3x6/": "orange",
 "res://Assets/GUI/": "red",
