@@ -6,6 +6,11 @@ class_name GuiSubInventory
 @onready var grid_container = $GridContainer
 @onready var slot = preload("res://Assets/GUI/Inventory/Scenes/gui_slot.tscn")
 
+enum gui_type {TEXT, SUBINVENTORY, BREAK}
+
+var height: int
+var type = gui_type.SUBINVENTORY
+
 func _ready():
 	set_sub_inventory_parameters()
 

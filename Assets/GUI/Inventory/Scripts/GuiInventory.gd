@@ -15,7 +15,7 @@ var skinDebugEnabled: bool = true
 
 func _ready():
 	PlayerInventorySignalBus.connect("player_inventory_button_pressed", handle_new_item)
-	handle_debug()
+	handle_skin_debug()
 	update_inventory()
 
 func update_inventory():
@@ -35,17 +35,25 @@ func close_inventory():
 
 func handle_new_item(_item):
 	handle_sub_inventories()
+	print_sub_inventories_array()
 
 func handle_sub_inventories():
-	for sub_inventory in inventory.sub_inventories:
-		if sub_inventory.items.size() > 0:
+	for sub_inventory_element in inventory.sub_inventories:
+		if !sub_inventory_element:
 			var new_sub_inventory = gui_sub_inventory.instantiate()
-			gui_player_inventory.add_child(new_sub_inventory)
+			sub_inventory_element.gui_sub_inventory_element = new_sub_inventory
 
 #-----------------------------------------Debug--------------------------------------------------
 
-func handle_debug():
+func handle_skin_debug():
 	if skinDebugEnabled:
 		skin_debug_rect.visible = true
 	else:
 		skin_debug_rect.visible = false
+
+func print_sub_inventories_array():
+	pass
+	#print(gui_sub_inventories_array)
+	#for sub_inventory in gui_sub_inventories_array:
+		#if sub_inventory.items.size() > 0:
+			#print(str(sub_inventory.type) + " : " + str(sub_inventory.height))

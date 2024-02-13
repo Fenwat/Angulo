@@ -3,6 +3,11 @@ class_name GuiSubInventoryBreak
 
 @onready var nine_patch_rect = $NinePatchRect
 
+enum gui_type {TEXT, SUBINVENTORY, BREAK}
+
+var height: int
+var type = gui_type.SUBINVENTORY
+
 func _ready():
 	set_break_size()
 
