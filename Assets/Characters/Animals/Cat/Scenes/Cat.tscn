@@ -1,3 +1,144 @@
-[gd_scene format=3 uid="uid://bcoup3318lgs1"]
+[gd_scene load_steps=15 format=3 uid="uid://bcoup3318lgs1"]
+
+[ext_resource type="Texture2D" uid="uid://wmv8iki3y46l" path="res://Assets/Characters/Animals/Cat/Sprites/calico_cat.png" id="1_gisd0"]
+
+[sub_resource type="Animation" id="Animation_cvvo3"]
+resource_name = "sit_left"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_ssssx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_l2s57"]
+resource_name = "sit_right"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+
+[sub_resource type="Animation" id="Animation_men0i"]
+resource_name = "lick_left"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [2, 3, 4, 1]
+}
+
+[sub_resource type="Animation" id="Animation_p2mxv"]
+resource_name = "lick_right"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [10, 11, 12, 9]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h5sv0"]
+_data = {
+"RESET": SubResource("Animation_ssssx"),
+"lick_left": SubResource("Animation_men0i"),
+"lick_right": SubResource("Animation_p2mxv"),
+"sit_left": SubResource("Animation_cvvo3"),
+"sit_right": SubResource("Animation_l2s57")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_d7qym"]
+animation = &"lick_left"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_icx6h"]
+animation = &"lick_right"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_nul3c"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_d7qym")
+blend_point_0/pos = -1.0
+blend_point_1/node = SubResource("AnimationNodeAnimation_icx6h")
+blend_point_1/pos = 1.0
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wdduc"]
+animation = &"sit_left"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ftuyb"]
+animation = &"sit_right"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_h55yx"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_wdduc")
+blend_point_0/pos = -1.0
+blend_point_1/node = SubResource("AnimationNodeAnimation_ftuyb")
+blend_point_1/pos = 1.0
+blend_mode = 1
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_l2kce"]
+states/Lick/node = SubResource("AnimationNodeBlendSpace1D_nul3c")
+states/Lick/position = Vector2(428, 101)
+states/Sit/node = SubResource("AnimationNodeBlendSpace1D_h55yx")
+states/Sit/position = Vector2(319, 101)
 
 [node name="Cat" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_gisd0")
+hframes = 4
+vframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_h5sv0")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_h5sv0")
+}
+tree_root = SubResource("AnimationNodeStateMachine_l2kce")
+anim_player = NodePath("../AnimationPlayer")
+parameters/Lick/blend_position = 0.0
+parameters/Sit/blend_position = 0
