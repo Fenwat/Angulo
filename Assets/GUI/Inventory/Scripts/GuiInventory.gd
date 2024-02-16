@@ -23,7 +23,7 @@ func update_inventory():
 		slots[i].update(inventory.items[i])
 
 func open_inventory():
-	handle_sub_inventories()
+	populate_gui_inventory()
 	visible = true
 	isOpen = true
 
@@ -34,14 +34,30 @@ func close_inventory():
 #----------------------------------------Gui-Sub-Inventories--------------------------------------
 
 func handle_new_item(_item):
-	handle_sub_inventories()
+	populate_gui_inventory()
+	debug_inventory_contents()
 	print_sub_inventories_array()
 
-func handle_sub_inventories():
-	for sub_inventory_element in inventory.sub_inventories:
-		if !sub_inventory_element:
-			var new_sub_inventory = gui_sub_inventory.instantiate()
-			sub_inventory_element.gui_sub_inventory_element = new_sub_inventory
+func populate_gui_inventory():
+	if inventory.sub_inventories.size() == 0:
+		#print("No subinventories")
+		return
+	for sub_inventory in inventory.sub_inventories:
+		if sub_inventory.items.size() == 0:
+			return
+		#print("New subinventory")
+
+#func handle_sub_inventories():
+	#for sub_inventory_element in inventory.sub_inventories:
+		#if sub_inventory_element: 
+			#if sub_inventory_element.type != 1: # 1 is SUBINVENTORY
+				#return
+		#
+		#if sub_inventory_element.items.size() > 0:
+			#print("instantiating new sub-inventory")
+			#var new_gui_sub_inventory = gui_sub_inventory.instantiate()
+			#new_gui_sub_inventory.gui_sub_inventory_name = sub_inventory_element.sub_inventory_name
+			#print("New sub-inventory: " + new_gui_sub_inventory.gui_sub_inventory_name)
 
 #-----------------------------------------Debug--------------------------------------------------
 
@@ -52,8 +68,19 @@ func handle_skin_debug():
 		skin_debug_rect.visible = false
 
 func print_sub_inventories_array():
-	pass
 	#print(gui_sub_inventories_array)
-	#for sub_inventory in gui_sub_inventories_array:
-		#if sub_inventory.items.size() > 0:
-			#print(str(sub_inventory.type) + " : " + str(sub_inventory.height))
+	for sub_inventory in gui_sub_inventories_array:
+		if sub_inventory.items.size() > 0:
+			print(str(sub_inventory.type) + " : " + str(sub_inventory.height))
+
+func debug_inventory_contents():
+	print("")
+	print("----------------PLAYER-INVENTORY-------------------")
+	for sub_inventory in inventory.sub_inventories:
+		if sub_inventory.items.size() > 0:
+			print_contents(sub_inventory)
+			
+func print_contents(sub_inventory):
+	print(sub_inventory.sub_inventory_name + ":")
+	for item in sub_inventory.items:
+		print("    -" + item.item_name)

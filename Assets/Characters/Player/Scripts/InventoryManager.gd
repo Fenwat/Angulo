@@ -2,11 +2,32 @@ extends Node
 
 @export var inventory: PlayerInventory
 
-func _ready():
-	PlayerInventorySignalBus.connect("player_inventory_button_pressed", add_item_to_inventory)
+@onready var player_sub_inventory = preload("res://Assets/Characters/Player/Inventory/Resource/SubInventories/empty_subinventory.tres")
 
-func add_item_to_inventory(item):
-	var sub_inventory = inventory.sub_inventories[item.armor_type]
+func _ready():
+	PlayerInventorySignalBus.connect("player_inventory_button_pressed", handle_new_item)
+
+func handle_new_item(item):
+	var sub_inventory_already_added: bool = false
+	var new_sub_inventory_index = item.sub_inventory_index
+
+	for i in range(inventory.sub_inventories.size()):
+		print("subinventory already exists")
+		if inventory.sub_inventories[i].sub_inventory_index == new_sub_inventory_index:
+			var existing_sub_inventory = inventory.sub_inventories[i]
+			sub_inventory_already_added = true
+			add_item_to_inventory(item, existing_sub_inventory)
+			break
+	
+	if not sub_inventory_already_added:
+		print("adding new subinventory")
+		var new_sub_inventory = player_sub_inventory
+		new_sub_inventory.sub_inventory_name = item.sub_inventory_name
+		new_sub_inventory.sub_inventory_index = item.sub_inventory_index
+		inventory.sub_inventories.append(new_sub_inventory)
+		add_item_to_inventory(item, new_sub_inventory)
+		
+func add_item_to_inventory(item, sub_inventory):
 	var index = item.inventory_item_priority
 	var item_added = false
 	
@@ -19,7 +40,6 @@ func add_item_to_inventory(item):
 	if not item_added:
 		sub_inventory.items.append(item)
 	
-	debug_inventory_contents()
 
 #-----------------------------------Debug--------------------------------------------------
 

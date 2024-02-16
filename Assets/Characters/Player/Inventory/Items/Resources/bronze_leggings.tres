@@ -16,3 +16,5 @@ item_name = "Bronze Leggings"
 item_description = "A bronze pair of leggings."
 item_type = 0
 inventory_item_priority = 1
+sub_inventory_name = "Leggings"
+sub_inventory_index = 2

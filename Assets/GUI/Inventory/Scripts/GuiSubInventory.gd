@@ -10,6 +10,7 @@ enum gui_type {TEXT, SUBINVENTORY, BREAK}
 
 var height: int
 var type = gui_type.SUBINVENTORY
+var gui_sub_inventory_name: String
 
 func _ready():
 	set_sub_inventory_parameters()

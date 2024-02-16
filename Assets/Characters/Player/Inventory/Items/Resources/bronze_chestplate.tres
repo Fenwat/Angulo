@@ -16,3 +16,5 @@ item_name = "Bronze Chestplate"
 item_description = "A bronze chestplate."
 item_type = 0
 inventory_item_priority = 1
+sub_inventory_name = "Chestplates"
+sub_inventory_index = 1

@@ -16,3 +16,4 @@ item_name = "Bronze Helmet"
 item_description = "A bronze helmet."
 item_type = 0
 inventory_item_priority = 1
+sub_inventory_name = "Helmets"

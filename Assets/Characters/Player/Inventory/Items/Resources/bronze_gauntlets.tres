@@ -16,3 +16,5 @@ item_name = "Bronze Gauntlets"
 item_description = "A pair of bronze gauntlets."
 item_type = 0
 inventory_item_priority = 1
+sub_inventory_name = "Gauntlets"
+sub_inventory_index = 3

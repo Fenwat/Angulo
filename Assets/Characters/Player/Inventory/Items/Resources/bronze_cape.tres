@@ -16,3 +16,5 @@ item_name = "Bronze Cape"
 item_description = "A cape made to be worn with a bronze suit of armor."
 item_type = 0
 inventory_item_priority = 1
+sub_inventory_name = "Capes"
+sub_inventory_index = 4
