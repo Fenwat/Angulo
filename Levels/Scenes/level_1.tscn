@@ -1,4 +1,4 @@
-[gd_scene load_steps=136 format=3 uid="uid://dbygvg6q6wg3f"]
+[gd_scene load_steps=135 format=3 uid="uid://dbygvg6q6wg3f"]
 
 [ext_resource type="PackedScene" uid="uid://buupbsnv0a67o" path="res://Systems/Scenes/systems.tscn" id="1_qjupr"]
 [ext_resource type="Script" path="res://Levels/Scripts/Level.gd" id="2_uelrh"]
@@ -15,7 +15,6 @@
 [ext_resource type="PackedScene" uid="uid://hs1lfea0uky1" path="res://Assets/Buildings/Scenes/farm_house.tscn" id="13_a7vik"]
 [ext_resource type="Script" path="res://Assets/GUI/Scripts/CanvasLayer.gd" id="14_kk3l3"]
 [ext_resource type="PackedScene" uid="uid://dbik1s41svdr7" path="res://Assets/GUI/DateTime/Scenes/date_time_gui.tscn" id="16_cads6"]
-[ext_resource type="Resource" uid="uid://cdl2jiyds7hs" path="res://Assets/Characters/Player/Inventory/Resource/player_inventory.tres" id="17_11l50"]
 [ext_resource type="PackedScene" uid="uid://c3c3x3avdcc6e" path="res://Assets/GUI/Inventory/Scenes/gui_inventory.tscn" id="17_w87mi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kb72y"]
@@ -8628,4 +8627,3 @@ visible = false
 offset_right = -1152.0
 offset_bottom = -648.0
 scale = Vector2(3, 3)
-inventory = ExtResource("17_11l50")

@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="EquipmentLoad" load_steps=7 format=3 uid="uid://dk41yrd04fl4s"]
 
-[ext_resource type="Resource" uid="uid://cmytqqddgld2u" path="res://Assets/Characters/Player/Inventory/Items/Resources/knight_cape.tres" id="1_aitmt"]
-[ext_resource type="Resource" uid="uid://47cquvtmfg5n" path="res://Assets/Characters/Player/Inventory/Items/Resources/knight_chestplate.tres" id="2_5o5a7"]
-[ext_resource type="Resource" uid="uid://b80n4ste50c6b" path="res://Assets/Characters/Player/Inventory/Items/Resources/knight_gauntlets.tres" id="3_h83df"]
-[ext_resource type="Resource" uid="uid://cwcu68m4teayv" path="res://Assets/Characters/Player/Inventory/Items/Resources/knight_helmet.tres" id="4_1ovh8"]
-[ext_resource type="Resource" uid="uid://celwstw5ud81o" path="res://Assets/Characters/Player/Inventory/Items/Resources/knight_leggings.tres" id="5_w4rvo"]
+[ext_resource type="Resource" uid="uid://cmytqqddgld2u" path="res://Assets/Characters/Player/Inventory/Items/Resources/KnightSet/knight_cape.tres" id="1_aitmt"]
+[ext_resource type="Resource" uid="uid://47cquvtmfg5n" path="res://Assets/Characters/Player/Inventory/Items/Resources/KnightSet/knight_chestplate.tres" id="2_5o5a7"]
+[ext_resource type="Resource" uid="uid://b80n4ste50c6b" path="res://Assets/Characters/Player/Inventory/Items/Resources/KnightSet/knight_gauntlets.tres" id="3_h83df"]
+[ext_resource type="Resource" uid="uid://cwcu68m4teayv" path="res://Assets/Characters/Player/Inventory/Items/Resources/KnightSet/knight_helmet.tres" id="4_1ovh8"]
+[ext_resource type="Resource" uid="uid://celwstw5ud81o" path="res://Assets/Characters/Player/Inventory/Items/Resources/KnightSet/knight_leggings.tres" id="5_w4rvo"]
 [ext_resource type="Script" path="res://Assets/Characters/Player/Inventory/Scripts/EquipmentLoad.gd" id="6_wp2ti"]
 
 [resource]

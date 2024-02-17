@@ -16,3 +16,5 @@ item_name = "Default Chestplate"
 item_description = "-"
 item_type = 0
 inventory_item_priority = 0
+sub_inventory_name = ""
+sub_inventory_index = 0

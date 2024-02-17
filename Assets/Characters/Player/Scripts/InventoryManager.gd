@@ -8,20 +8,22 @@ func _ready():
 	PlayerInventorySignalBus.connect("player_inventory_button_pressed", handle_new_item)
 
 func handle_new_item(item):
-	var sub_inventory_already_added: bool = false
 	var new_sub_inventory_index = item.sub_inventory_index
+	var sub_inventory_already_added: bool = false
 
 	for i in range(inventory.sub_inventories.size()):
-		print("subinventory already exists")
 		if inventory.sub_inventories[i].sub_inventory_index == new_sub_inventory_index:
 			var existing_sub_inventory = inventory.sub_inventories[i]
+			
+			print("subinventory already exists")
 			sub_inventory_already_added = true
 			add_item_to_inventory(item, existing_sub_inventory)
 			break
 	
 	if not sub_inventory_already_added:
-		print("adding new subinventory")
 		var new_sub_inventory = player_sub_inventory
+		
+		print("adding new subinventory")
 		new_sub_inventory.sub_inventory_name = item.sub_inventory_name
 		new_sub_inventory.sub_inventory_index = item.sub_inventory_index
 		inventory.sub_inventories.append(new_sub_inventory)
@@ -29,7 +31,7 @@ func handle_new_item(item):
 		
 func add_item_to_inventory(item, sub_inventory):
 	var index = item.inventory_item_priority
-	var item_added = false
+	var item_added: bool = false
 	
 	for i in range(sub_inventory.items.size()):
 		if sub_inventory.items[i].inventory_item_priority > index:
