@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://Assets/Characters/Player/Scripts/AnimationManager.gd" id="5_uq34l"]
 [ext_resource type="Script" path="res://Assets/Characters/Player/Scripts/SkinManager.gd" id="6_j4vvw"]
 [ext_resource type="Script" path="res://Assets/Characters/Player/Scripts/EquipmentManager.gd" id="6_rfn7m"]
-[ext_resource type="Resource" uid="uid://bagandoc31av" path="res://Assets/Characters/Player/Inventory/Items/Resources/UnequippedSet/unequipped_equipment_load.tres" id="8_2pxpe"]
+[ext_resource type="Resource" uid="uid://bagandoc31av" path="res://Assets/Characters/Player/Inventory/Items/Resources/ArmorSets/UnequippedSet/unequipped_equipment_load.tres" id="8_2pxpe"]
 [ext_resource type="Script" path="res://Assets/Characters/Player/Scripts/InventoryManager.gd" id="9_yhke6"]
 [ext_resource type="Resource" uid="uid://cdl2jiyds7hs" path="res://Assets/Characters/Player/Inventory/Resource/player_inventory.tres" id="10_i3o7h"]
 [ext_resource type="Script" path="res://Assets/Characters/Player/Scripts/SignalEmitter.gd" id="11_ihs8g"]

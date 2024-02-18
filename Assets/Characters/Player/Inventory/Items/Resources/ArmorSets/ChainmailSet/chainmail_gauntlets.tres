@@ -16,3 +16,5 @@ item_name = "Chainmail Gauntlets"
 item_description = "Gauntlets made of chainmail."
 item_type = 0
 inventory_item_priority = 2
+sub_inventory_name = "Gauntlets"
+sub_inventory_index = 3

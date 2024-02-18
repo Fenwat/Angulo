@@ -16,3 +16,5 @@ item_name = "Cape"
 item_description = "A cape."
 item_type = 0
 inventory_item_priority = 2
+sub_inventory_name = "Capes"
+sub_inventory_index = 4

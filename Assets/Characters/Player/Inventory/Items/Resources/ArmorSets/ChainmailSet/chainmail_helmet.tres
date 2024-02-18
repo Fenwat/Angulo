@@ -16,5 +16,5 @@ item_name = "Chainmail Helmet"
 item_description = "A helmet made of chainmail."
 item_type = 0
 inventory_item_priority = 2
-sub_inventory_name = ""
+sub_inventory_name = "Helmets"
 sub_inventory_index = 0
