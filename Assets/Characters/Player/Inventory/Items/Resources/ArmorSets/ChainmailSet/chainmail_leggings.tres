@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="ArmorItem" load_steps=4 format=3 uid="uid://bfx1h0vdd253n"]
+[gd_resource type="Resource" script_class="ArmorItem" load_steps=5 format=3 uid="uid://bfx1h0vdd253n"]
 
 [ext_resource type="Texture2D" uid="uid://bitlwm3rct70h" path="res://Assets/Characters/Player/Inventory/Items/Sprites/slot_chainmail_leggings.png" id="1_c74lw"]
 [ext_resource type="Resource" uid="uid://ve8grpec7ic0" path="res://Assets/Characters/Player/Inventory/Resource/DestRects/LeggingsDestRect.tres" id="1_cwpcm"]
 [ext_resource type="Script" path="res://Assets/Characters/Player/Inventory/Scripts/ArmorItem.gd" id="2_ftxy3"]
+[ext_resource type="Resource" uid="uid://8benawo2a5gk" path="res://Assets/Characters/Player/Inventory/Resource/SubInventoryData/leggings_sub_inventory_data.tres" id="4_ov23e"]
 
 [resource]
 script = ExtResource("2_ftxy3")
@@ -16,3 +17,4 @@ item_name = "Chainmail Leggings"
 item_description = "Leggings made of chainmail."
 item_type = 0
 inventory_item_priority = 2
+sub_inventory_data = ExtResource("4_ov23e")

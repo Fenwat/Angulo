@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="ArmorItem" load_steps=4 format=3 uid="uid://cp1kqhd2vg6yh"]
+[gd_resource type="Resource" script_class="ArmorItem" load_steps=5 format=3 uid="uid://cp1kqhd2vg6yh"]
 
 [ext_resource type="Resource" uid="uid://dws6mhvwtebc8" path="res://Assets/Characters/Player/Inventory/Resource/DestRects/GauntletsDestRect.tres" id="1_n1dt1"]
 [ext_resource type="Texture2D" uid="uid://cmk5r4pwyecot" path="res://Assets/Characters/Player/Inventory/Items/Sprites/Empty/slot_empty_gauntlets.png" id="2_i0ljc"]
 [ext_resource type="Script" path="res://Assets/Characters/Player/Inventory/Scripts/ArmorItem.gd" id="3_2flm6"]
+[ext_resource type="Resource" uid="uid://13omte80ueo8" path="res://Assets/Characters/Player/Inventory/Resource/SubInventoryData/gauntlets_sub_inventory_data.tres" id="4_t662b"]
 
 [resource]
 script = ExtResource("3_2flm6")
@@ -15,3 +16,5 @@ item_texture = ExtResource("2_i0ljc")
 item_name = "Default Gauntlets"
 item_description = "-"
 item_type = 0
+inventory_item_priority = 0
+sub_inventory_data = ExtResource("4_t662b")

@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="ArmorItem" load_steps=4 format=3 uid="uid://c0guejaadlvdb"]
+[gd_resource type="Resource" script_class="ArmorItem" load_steps=5 format=3 uid="uid://c0guejaadlvdb"]
 
 [ext_resource type="Texture2D" uid="uid://di42drptcdq7q" path="res://Assets/Characters/Player/Inventory/Items/Sprites/slot_steel_helmet.png" id="1_r0jbw"]
 [ext_resource type="Resource" uid="uid://dstqou7ou5iif" path="res://Assets/Characters/Player/Inventory/Resource/DestRects/HelmetDestRect.tres" id="1_wj7qs"]
 [ext_resource type="Script" path="res://Assets/Characters/Player/Inventory/Scripts/ArmorItem.gd" id="2_4gojd"]
+[ext_resource type="Resource" uid="uid://d2vr4rdb4srm6" path="res://Assets/Characters/Player/Inventory/Resource/SubInventoryData/helmet_sub_inventory_data.tres" id="4_rm2jl"]
 
 [resource]
 script = ExtResource("2_4gojd")
@@ -16,3 +17,4 @@ item_name = "Steel Helmet"
 item_description = "A helmet made of steel."
 item_type = 0
 inventory_item_priority = 4
+sub_inventory_data = ExtResource("4_rm2jl")

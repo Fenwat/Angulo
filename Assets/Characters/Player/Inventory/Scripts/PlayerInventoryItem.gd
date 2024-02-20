@@ -7,5 +7,4 @@ class_name PlayerInventoryItem
 @export_enum("ARMOR", "WEAPON") var item_type
 @export var inventory_item_priority: int
 
-@export var sub_inventory_name: String
-@export var sub_inventory_index: int
+@export var sub_inventory_data: SubInventoryData

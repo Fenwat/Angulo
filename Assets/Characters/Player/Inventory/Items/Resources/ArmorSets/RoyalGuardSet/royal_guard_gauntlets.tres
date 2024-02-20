@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="ArmorItem" load_steps=4 format=3 uid="uid://c5wmj46w3ox2x"]
+[gd_resource type="Resource" script_class="ArmorItem" load_steps=5 format=3 uid="uid://c5wmj46w3ox2x"]
 
 [ext_resource type="Resource" uid="uid://dws6mhvwtebc8" path="res://Assets/Characters/Player/Inventory/Resource/DestRects/GauntletsDestRect.tres" id="1_hxrdm"]
 [ext_resource type="Texture2D" uid="uid://d3msxvpch6bew" path="res://Assets/Characters/Player/Inventory/Items/Sprites/slot_royal_guard_gauntlets.png" id="1_kcqmk"]
 [ext_resource type="Script" path="res://Assets/Characters/Player/Inventory/Scripts/ArmorItem.gd" id="2_l2x7e"]
+[ext_resource type="Resource" uid="uid://13omte80ueo8" path="res://Assets/Characters/Player/Inventory/Resource/SubInventoryData/gauntlets_sub_inventory_data.tres" id="4_x1j4m"]
 
 [resource]
 script = ExtResource("2_l2x7e")
@@ -16,3 +17,4 @@ item_name = "Royal Guard's Gauntlets"
 item_description = "A cape worn by the King's royal guards."
 item_type = 0
 inventory_item_priority = 3
+sub_inventory_data = ExtResource("4_x1j4m")

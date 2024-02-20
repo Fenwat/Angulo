@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="SubInventoryData" load_steps=2 format=3 uid="uid://d2vr4rdb4srm6"]
+
+[ext_resource type="Script" path="res://Assets/Characters/Player/Inventory/Scripts/SubInventoryData.gd" id="1_yh247"]
+
+[resource]
+script = ExtResource("1_yh247")
+sub_inventory_name = "Helmets"
+sub_inventory_index = 0

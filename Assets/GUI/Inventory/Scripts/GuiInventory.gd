@@ -2,7 +2,7 @@ extends Control
 class_name GuiInventory
 
 @export var inventory: PlayerInventory
-@export var gui_sub_inventories_array: Array[GuiSubInventoryElement]
+@export var gui_sub_inventories_array: Array[Control]
 
 @onready var slots: Array = $NinePatchRect/GridContainer.get_children()
 @onready var skin_debug_rect = $SkinDebugRect
@@ -36,28 +36,61 @@ func close_inventory():
 func handle_new_item(_item):
 	populate_gui_inventory()
 	debug_inventory_contents()
-	print_sub_inventories_array()
+	#print_sub_inventories_array()
 
 func populate_gui_inventory():
 	if inventory.sub_inventories.size() == 0:
-		#print("No subinventories")
+		print("No subinventories")
 		return
-	for sub_inventory in inventory.sub_inventories:
-		if sub_inventory.items.size() == 0:
-			return
-		#print("New subinventory")
+	
+	create_gui_sub_inventory_elements()
 
-#func handle_sub_inventories():
-	#for sub_inventory_element in inventory.sub_inventories:
-		#if sub_inventory_element: 
-			#if sub_inventory_element.type != 1: # 1 is SUBINVENTORY
-				#return
-		#
-		#if sub_inventory_element.items.size() > 0:
-			#print("instantiating new sub-inventory")
-			#var new_gui_sub_inventory = gui_sub_inventory.instantiate()
-			#new_gui_sub_inventory.gui_sub_inventory_name = sub_inventory_element.sub_inventory_name
-			#print("New sub-inventory: " + new_gui_sub_inventory.gui_sub_inventory_name)
+func create_gui_sub_inventory_elements():
+	for sub_inventory_element in inventory.sub_inventories:
+		var exists: bool = false
+		
+		for existing_gui_sub_inventory in gui_sub_inventories_array:
+			if existing_gui_sub_inventory.gui_sub_inventory_name == sub_inventory_element.sub_inventory_name:
+				exists = true
+				break
+		
+		if !exists:
+			var new_gui_sub_inventory = gui_sub_inventory.instantiate()
+			new_gui_sub_inventory.gui_sub_inventory_name = sub_inventory_element.sub_inventory_name
+			gui_sub_inventories_array.append(new_gui_sub_inventory)
+			add_gui_sub_inventory_elements()
+
+func add_gui_sub_inventory_elements():
+	for gui_sub_inventory_element in gui_sub_inventories_array:
+		if !gui_sub_inventory_element.added_to_gui:
+			add_gui_break()
+			gui_sub_inventory_element.sub_inventory_y_position = determine_sub_inventory_element_y_position()
+			gui_player_inventory.add_child(gui_sub_inventory_element)
+			gui_sub_inventory_element.added_to_gui = true
+
+func add_gui_break():
+	var new_gui_inventory_break = gui_sub_inventory.instantiate()
+	gui_player_inventory.add_child(new_gui_inventory_break)
+
+#-------------------------------Gui-Sub-Inventory-Element-Height-----------------------------------
+
+func determine_sub_inventory_element_y_position():
+	var final_y_position
+	const top_buffer: int = 2
+	var text_buffer: int = 8
+	var inventory_break_height: int = 2
+	var sub_inventory_heights: int = 0
+	
+	var array1 = gui_player_inventory.get_children()
+	
+	for item in array1:
+		if item != gui_sub_inventory:
+			break
+		if item.type == 1:
+			sub_inventory_heights += item.sub_inventory_y_position
+	
+	final_y_position = top_buffer + text_buffer + inventory_break_height + sub_inventory_heights
+	return final_y_position
 
 #-----------------------------------------Debug--------------------------------------------------
 
@@ -68,10 +101,10 @@ func handle_skin_debug():
 		skin_debug_rect.visible = false
 
 func print_sub_inventories_array():
-	#print(gui_sub_inventories_array)
 	for sub_inventory in gui_sub_inventories_array:
-		if sub_inventory.items.size() > 0:
-			print(str(sub_inventory.type) + " : " + str(sub_inventory.height))
+		print(sub_inventory)
+		#if sub_inventory.items.size() > 0:
+			#print(str(sub_inventory.type) + " : " + str(sub_inventory.height))
 
 func debug_inventory_contents():
 	print("")

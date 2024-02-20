@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="ArmorItem" load_steps=4 format=3 uid="uid://b4usypw61y51w"]
+[gd_resource type="Resource" script_class="ArmorItem" load_steps=5 format=3 uid="uid://b4usypw61y51w"]
 
 [ext_resource type="Resource" uid="uid://ve8grpec7ic0" path="res://Assets/Characters/Player/Inventory/Resource/DestRects/LeggingsDestRect.tres" id="1_yapyc"]
 [ext_resource type="Texture2D" uid="uid://7cucp6ulq323" path="res://Assets/Characters/Player/Inventory/Items/Sprites/Empty/slot_empty_leggings.png" id="2_vsnuu"]
 [ext_resource type="Script" path="res://Assets/Characters/Player/Inventory/Scripts/ArmorItem.gd" id="3_jjnkf"]
+[ext_resource type="Resource" uid="uid://8benawo2a5gk" path="res://Assets/Characters/Player/Inventory/Resource/SubInventoryData/leggings_sub_inventory_data.tres" id="4_ejulp"]
 
 [resource]
 script = ExtResource("3_jjnkf")
@@ -15,3 +16,5 @@ item_texture = ExtResource("2_vsnuu")
 item_name = "Default Leggings"
 item_description = "-"
 item_type = 0
+inventory_item_priority = 0
+sub_inventory_data = ExtResource("4_ejulp")

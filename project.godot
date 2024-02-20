@@ -69,6 +69,7 @@ folder_colors={
 "res://Assets/Characters/Player/Inventory/Resource/": "green",
 "res://Assets/Characters/Player/Inventory/Resource/DestRects/": "teal",
 "res://Assets/Characters/Player/Inventory/Resource/SubInventories/": "teal",
+"res://Assets/Characters/Player/Inventory/Resource/SubInventoryData/": "teal",
 "res://Assets/Characters/Player/Inventory/Scripts/": "green",
 "res://Assets/Characters/Player/Inventory/Scripts/Autoloads/": "teal",
 "res://Assets/Characters/Player/Movesets/": "yellow",

@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="ArmorItem" load_steps=4 format=3 uid="uid://b52gywu705q21"]
+[gd_resource type="Resource" script_class="ArmorItem" load_steps=5 format=3 uid="uid://b52gywu705q21"]
 
 [ext_resource type="Resource" uid="uid://dws6mhvwtebc8" path="res://Assets/Characters/Player/Inventory/Resource/DestRects/GauntletsDestRect.tres" id="1_ol7m5"]
 [ext_resource type="Texture2D" uid="uid://bdb51l8g7vsji" path="res://Assets/Characters/Player/Inventory/Items/Sprites/slot_knight_gauntlets.png" id="1_s2ind"]
 [ext_resource type="Script" path="res://Assets/Characters/Player/Inventory/Scripts/ArmorItem.gd" id="2_lke7f"]
+[ext_resource type="Resource" uid="uid://13omte80ueo8" path="res://Assets/Characters/Player/Inventory/Resource/SubInventoryData/gauntlets_sub_inventory_data.tres" id="4_g2n5n"]
 
 [resource]
 script = ExtResource("2_lke7f")
@@ -16,5 +17,4 @@ item_name = "Chainmail Gauntlets"
 item_description = "Gauntlets made of chainmail."
 item_type = 0
 inventory_item_priority = 2
-sub_inventory_name = "Gauntlets"
-sub_inventory_index = 3
+sub_inventory_data = ExtResource("4_g2n5n")
