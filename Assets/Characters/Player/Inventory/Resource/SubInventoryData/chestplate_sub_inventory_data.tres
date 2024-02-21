@@ -4,5 +4,5 @@
 
 [resource]
 script = ExtResource("1_to6r2")
-sub_inventory_name = "Chestplate"
+sub_inventory_name = "Chestplates"
 sub_inventory_index = 1

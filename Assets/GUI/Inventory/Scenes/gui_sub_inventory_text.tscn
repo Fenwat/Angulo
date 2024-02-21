@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://deki2rky4h1mq"]
+
+[ext_resource type="Script" path="res://Assets/GUI/Inventory/Scripts/GuiSubInventoryText.gd" id="1_cq34q"]
+
+[node name="GuiSubInventoryText" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cq34q")
+
+[node name="Panel" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 59.0
+offset_bottom = 10.0
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 2.0
+offset_right = 57.0
+offset_bottom = 8.0

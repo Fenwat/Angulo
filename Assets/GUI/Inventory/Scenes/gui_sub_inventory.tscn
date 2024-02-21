@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://poypax5s8yjk"]
+[gd_scene load_steps=3 format=3 uid="uid://poypax5s8yjk"]
 
 [ext_resource type="Script" path="res://Assets/GUI/Inventory/Scripts/GuiSubInventory.gd" id="1_ywtgt"]
+[ext_resource type="Resource" uid="uid://cdl2jiyds7hs" path="res://Assets/Characters/Player/Inventory/Resource/player_inventory.tres" id="2_u0wsk"]
 
 [node name="GuiSubInventory" type="Control"]
 layout_mode = 3
@@ -10,6 +11,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ywtgt")
+inventory = ExtResource("2_u0wsk")
 
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 0
