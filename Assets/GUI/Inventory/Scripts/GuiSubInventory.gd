@@ -8,7 +8,7 @@ class_name GuiSubInventory
 @onready var slot = preload("res://Assets/GUI/Inventory/Scenes/gui_slot.tscn")
 
 enum gui_type {TEXT, SUBINVENTORY, BREAK}
-
+ 
 var height: int
 var type = gui_type.SUBINVENTORY
 var gui_sub_inventory_name: String
@@ -16,6 +16,7 @@ var added_to_gui: bool = false
 var sub_inventory_y_position: int = 0
 
 func _ready():
+	PlayerInventorySignalBus.connect("player_inventory_button_pressed", handle_new_item)
 	set_sub_inventory_parameters()
 	call_deferred("populate_slots")
 
@@ -47,6 +48,8 @@ func create_grid(columns):
 	
 	slots = grid_container.get_children()
 
+func handle_new_item(_item):
+	populate_slots()
 
 func populate_slots():
 	for sub_inventory in inventory.sub_inventories:

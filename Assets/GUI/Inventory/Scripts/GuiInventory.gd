@@ -36,7 +36,7 @@ func close_inventory():
 
 func handle_new_item(_item):
 	populate_gui_inventory()
-	debug_inventory_contents()
+	#debug_inventory_contents()
 
 func populate_gui_inventory():
 	if inventory.sub_inventories.size() == 0:
@@ -89,6 +89,7 @@ func add_gui_break():
 
 func determine_sub_inventory_element_y_position():
 	var final_y_position
+	var top_buffer = 1
 	var sub_inventory_heights: int = 0
 	var inventory_children = gui_player_inventory.get_children()
 	
@@ -96,7 +97,7 @@ func determine_sub_inventory_element_y_position():
 		print(child.sub_inventory_y_position,"-", child.type)
 		sub_inventory_heights += child.height
 	
-	final_y_position = sub_inventory_heights
+	final_y_position = top_buffer + sub_inventory_heights
 	return final_y_position
 
 #-----------------------------------------Debug--------------------------------------------------
