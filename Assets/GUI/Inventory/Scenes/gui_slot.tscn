@@ -2,10 +2,9 @@
 
 [ext_resource type="Script" path="res://Assets/GUI/Inventory/Scripts/GuiSlot.gd" id="1_mlq4u"]
 [ext_resource type="Texture2D" uid="uid://baoe43m4amilr" path="res://Assets/GUI/Inventory/Sprites/InventorySlots.png" id="2_6l4yu"]
-[ext_resource type="Script" path="res://Assets/GUI/Inventory/Scripts/GuiSlotButton.gd" id="3_dtdeo"]
+[ext_resource type="Script" path="res://Assets/GUI/Inventory/Scripts/GuiButtons/GuiSlotButton.gd" id="3_35mxw"]
 
 [node name="GuiSlot" type="Panel"]
-self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(8, 8)
 offset_right = 8.0
 offset_bottom = 8.0
@@ -27,9 +26,8 @@ layout_mode = 2
 [node name="ItemSprite" type="Sprite2D" parent="CenterContainer/Panel"]
 
 [node name="Button" type="Button" parent="."]
-modulate = Color(1, 1, 1, 0)
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_right = 8.0
 offset_bottom = 8.0
-script = ExtResource("3_dtdeo")
+script = ExtResource("3_35mxw")

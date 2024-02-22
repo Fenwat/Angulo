@@ -3,9 +3,10 @@ class_name GuiInventory
 
 @export var inventory: PlayerInventory
 
-@onready var slots: Array = $NinePatchRect/GridContainer.get_children()
+@onready var gui_layer = $".."
 @onready var skin_debug_rect = $SkinDebugRect
 @onready var gui_player_inventory = $PlayerInventory
+
 @onready var gui_inventory_break = preload("res://Assets/GUI/Inventory/Scenes/gui_sub_inventory_break.tscn")
 @onready var gui_sub_inventory = preload("res://Assets/GUI/Inventory/Scenes/gui_sub_inventory.tscn")
 @onready var gui_sub_inventory_text = preload("res://Assets/GUI/Inventory/Scenes/gui_sub_inventory_text.tscn")
@@ -15,22 +16,16 @@ var isOpen: bool = false
 var skinDebugEnabled: bool = false
 
 func _ready():
-	PlayerInventorySignalBus.connect("player_inventory_button_pressed", handle_new_item)
+	PlayerInventorySignalBus.connect("item_added_to_player_inventory", handle_new_item)
 	handle_skin_debug()
-	update_inventory()
-
-func update_inventory():
-	for i in range(min(inventory.items.size(), slots.size())):
-		slots[i].update(inventory.items[i])
 
 func open_inventory():
-	populate_gui_inventory()
 	visible = true
-	isOpen = true
+	gui_layer.is_open = true
 
 func close_inventory():
 	visible = false
-	isOpen = false
+	gui_layer.is_open = false
 
 #----------------------------------------Gui-Sub-Inventories--------------------------------------
 
@@ -40,7 +35,6 @@ func handle_new_item(_item):
 
 func populate_gui_inventory():
 	if inventory.sub_inventories.size() == 0:
-		print("No subinventories")
 		return
 	
 	create_gui_sub_inventory_elements()
@@ -94,7 +88,7 @@ func determine_sub_inventory_element_y_position():
 	var inventory_children = gui_player_inventory.get_children()
 	
 	for child in inventory_children:
-		print(child.sub_inventory_y_position,"-", child.type)
+		#print(child.sub_inventory_y_position,"-", child.type)
 		sub_inventory_heights += child.height
 	
 	final_y_position = top_buffer + sub_inventory_heights

@@ -5,7 +5,7 @@ extends Node
 @onready var player_sub_inventory = preload("res://Assets/Characters/Player/Inventory/Resource/SubInventories/empty_subinventory.tres")
 
 func _ready():
-	PlayerInventorySignalBus.connect("player_inventory_button_pressed", handle_new_item)
+	PlayerInventorySignalBus.connect("item_added_to_player_inventory", handle_new_item)
 
 func handle_new_item(item):
 	var new_sub_inventory_index = item.sub_inventory_data.sub_inventory_index

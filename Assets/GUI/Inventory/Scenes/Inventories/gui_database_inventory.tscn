@@ -1,0 +1,113 @@
+[gd_scene load_steps=5 format=3 uid="uid://c0prcm7xwmm66"]
+
+[ext_resource type="Script" path="res://Assets/GUI/Inventory/Scripts/Inventories/GuiDatabaseInventory.gd" id="1_jvtpi"]
+[ext_resource type="Texture2D" uid="uid://osinuhn8hrvn" path="res://Assets/GUI/Inventory/Sprites/InventoryBase_NinePatch.png" id="1_osktw"]
+[ext_resource type="Resource" uid="uid://cdl2jiyds7hs" path="res://Assets/Characters/Player/Inventory/Resource/player_inventory.tres" id="2_a27at"]
+[ext_resource type="PackedScene" uid="uid://vr4dst7krh5p" path="res://Assets/GUI/Inventory/Scenes/gui_slot_database.tscn" id="4_kfssp"]
+
+[node name="GuiDatabaseInventory" type="Control"]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+grow_horizontal = 0
+scale = Vector2(3, 3)
+script = ExtResource("1_jvtpi")
+inventory = ExtResource("2_a27at")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = -55.6667
+offset_top = 27.0
+offset_right = -1.66667
+offset_bottom = 81.0
+texture = ExtResource("1_osktw")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 51.0
+offset_bottom = 43.0
+theme_override_constants/h_separation = 2
+theme_override_constants/v_separation = 2
+columns = 5
+
+[node name="GuiSlotDatabase" parent="NinePatchRect/GridContainer" instance=ExtResource("4_kfssp")]
+layout_mode = 2
+
+[node name="GuiSlotDatabase2" parent="NinePatchRect/GridContainer" instance=ExtResource("4_kfssp")]
+layout_mode = 2
+
+[node name="GuiSlotDatabase3" parent="NinePatchRect/GridContainer" instance=ExtResource("4_kfssp")]
+layout_mode = 2
+
+[node name="GuiSlotDatabase4" parent="NinePatchRect/GridContainer" instance=ExtResource("4_kfssp")]
+layout_mode = 2
+
+[node name="GuiSlotDatabase5" parent="NinePatchRect/GridContainer" instance=ExtResource("4_kfssp")]
+layout_mode = 2
+
+[node name="GuiSlotDatabase6" parent="NinePatchRect/GridContainer" instance=ExtResource("4_kfssp")]
+layout_mode = 2
+
+[node name="GuiSlotDatabase7" parent="NinePatchRect/GridContainer" instance=ExtResource("4_kfssp")]
+layout_mode = 2
+
+[node name="GuiSlotDatabase8" parent="NinePatchRect/GridContainer" instance=ExtResource("4_kfssp")]
+layout_mode = 2
+
+[node name="GuiSlotDatabase9" parent="NinePatchRect/GridContainer" instance=ExtResource("4_kfssp")]
+layout_mode = 2
+
+[node name="GuiSlotDatabase10" parent="NinePatchRect/GridContainer" instance=ExtResource("4_kfssp")]
+layout_mode = 2
+
+[node name="GuiSlotDatabase11" parent="NinePatchRect/GridContainer" instance=ExtResource("4_kfssp")]
+layout_mode = 2
+
+[node name="GuiSlotDatabase12" parent="NinePatchRect/GridContainer" instance=ExtResource("4_kfssp")]
+layout_mode = 2
+
+[node name="GuiSlotDatabase13" parent="NinePatchRect/GridContainer" instance=ExtResource("4_kfssp")]
+layout_mode = 2
+
+[node name="GuiSlotDatabase14" parent="NinePatchRect/GridContainer" instance=ExtResource("4_kfssp")]
+layout_mode = 2
+
+[node name="GuiSlotDatabase15" parent="NinePatchRect/GridContainer" instance=ExtResource("4_kfssp")]
+layout_mode = 2
+
+[node name="GuiSlotDatabase16" parent="NinePatchRect/GridContainer" instance=ExtResource("4_kfssp")]
+layout_mode = 2
+
+[node name="GuiSlotDatabase17" parent="NinePatchRect/GridContainer" instance=ExtResource("4_kfssp")]
+layout_mode = 2
+
+[node name="GuiSlotDatabase18" parent="NinePatchRect/GridContainer" instance=ExtResource("4_kfssp")]
+layout_mode = 2
+
+[node name="GuiSlotDatabase19" parent="NinePatchRect/GridContainer" instance=ExtResource("4_kfssp")]
+layout_mode = 2
+
+[node name="GuiSlotDatabase20" parent="NinePatchRect/GridContainer" instance=ExtResource("4_kfssp")]
+layout_mode = 2
+
+[node name="GuiSlotDatabase21" parent="NinePatchRect/GridContainer" instance=ExtResource("4_kfssp")]
+layout_mode = 2
+
+[node name="GuiSlotDatabase22" parent="NinePatchRect/GridContainer" instance=ExtResource("4_kfssp")]
+layout_mode = 2
+
+[node name="GuiSlotDatabase23" parent="NinePatchRect/GridContainer" instance=ExtResource("4_kfssp")]
+layout_mode = 2
+
+[node name="GuiSlotDatabase24" parent="NinePatchRect/GridContainer" instance=ExtResource("4_kfssp")]
+layout_mode = 2
+
+[node name="GuiSlotDatabase25" parent="NinePatchRect/GridContainer" instance=ExtResource("4_kfssp")]
+layout_mode = 2

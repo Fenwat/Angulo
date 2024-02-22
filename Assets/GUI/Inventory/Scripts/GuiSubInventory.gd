@@ -16,7 +16,7 @@ var added_to_gui: bool = false
 var sub_inventory_y_position: int = 0
 
 func _ready():
-	PlayerInventorySignalBus.connect("player_inventory_button_pressed", handle_new_item)
+	PlayerInventorySignalBus.connect("item_added_to_player_inventory", handle_new_item)
 	set_sub_inventory_parameters()
 	call_deferred("populate_slots")
 
@@ -48,16 +48,18 @@ func create_grid(columns):
 	
 	slots = grid_container.get_children()
 
+#--------------------------------------------------------------------------------------------------
+
 func handle_new_item(_item):
 	populate_slots()
 
 func populate_slots():
 	for sub_inventory in inventory.sub_inventories:
 		if sub_inventory.sub_inventory_name == gui_sub_inventory_name:
-			print("Populating slots for sub-inventory: " + gui_sub_inventory_name)
+			#print("Populating slots for sub-inventory: " + gui_sub_inventory_name)
 			var count = min(sub_inventory.items.size(), slots.size())
 			for i in range(count):
 				var item = sub_inventory.items[i]
 				slots[i].update(item)
-				print("Updating slot: " + str(i) + " with item: " + item.item_name)
+				#print("Updating slot: " + str(i) + " with item: " + item.item_name)
 
