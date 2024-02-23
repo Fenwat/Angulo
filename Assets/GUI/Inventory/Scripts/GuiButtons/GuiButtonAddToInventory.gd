@@ -18,7 +18,6 @@ func set_item(item: PlayerInventoryItem):
 
 func _button_pressed():
 	if new_item != null:
-		print("item_added_to_player_inventory" + new_item.item_name)
 		PlayerInventorySignalBus.emit_signal("item_added_to_player_inventory", new_item)
 	else:
 		print("No item or function defined")

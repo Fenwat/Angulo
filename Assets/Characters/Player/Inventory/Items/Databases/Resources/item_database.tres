@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="ItemDatabase" load_steps=27 format=3 uid="uid://bbgcolp3dir4r"]
+
+[ext_resource type="Resource" uid="uid://cwcu68m4teayv" path="res://Assets/Characters/Player/Inventory/Items/Resources/ArmorSets/KnightSet/knight_helmet.tres" id="1_8ay5l"]
+[ext_resource type="Resource" uid="uid://w387wsurqqng" path="res://Assets/Characters/Player/Inventory/Items/Resources/ArmorSets/BronzeSet/bronze_helmet.tres" id="2_3n67q"]
+[ext_resource type="Resource" uid="uid://3wfewhws0iwv" path="res://Assets/Characters/Player/Inventory/Items/Resources/ArmorSets/ChainmailSet/chainmail_helmet.tres" id="3_wtpxi"]
+[ext_resource type="Resource" uid="uid://c830bvuu56br3" path="res://Assets/Characters/Player/Inventory/Items/Resources/ArmorSets/RoyalGuardSet/royal_guard_helmet.tres" id="4_emkpg"]
+[ext_resource type="Resource" uid="uid://c0guejaadlvdb" path="res://Assets/Characters/Player/Inventory/Items/Resources/ArmorSets/Steel/steel_helmet.tres" id="5_sy6h7"]
+[ext_resource type="Resource" uid="uid://47cquvtmfg5n" path="res://Assets/Characters/Player/Inventory/Items/Resources/ArmorSets/KnightSet/knight_chestplate.tres" id="6_lh5c8"]
+[ext_resource type="Resource" uid="uid://x8uhy4bwdr8t" path="res://Assets/Characters/Player/Inventory/Items/Resources/ArmorSets/BronzeSet/bronze_chestplate.tres" id="7_oudrx"]
+[ext_resource type="Resource" uid="uid://cm6ju7bsidicc" path="res://Assets/Characters/Player/Inventory/Items/Resources/ArmorSets/ChainmailSet/chainmail_chestplate.tres" id="8_v74vu"]
+[ext_resource type="Resource" uid="uid://nl1ly0ry816b" path="res://Assets/Characters/Player/Inventory/Items/Resources/ArmorSets/RoyalGuardSet/royal_guard_chestplate.tres" id="9_76t2h"]
+[ext_resource type="Resource" uid="uid://c6fwitynmtltf" path="res://Assets/Characters/Player/Inventory/Items/Resources/ArmorSets/Steel/steel_chestplate.tres" id="10_cgodw"]
+[ext_resource type="Resource" uid="uid://celwstw5ud81o" path="res://Assets/Characters/Player/Inventory/Items/Resources/ArmorSets/KnightSet/knight_leggings.tres" id="11_vv6qa"]
+[ext_resource type="Resource" uid="uid://bfkusxe0gta3y" path="res://Assets/Characters/Player/Inventory/Items/Resources/ArmorSets/BronzeSet/bronze_leggings.tres" id="12_ixwtd"]
+[ext_resource type="Resource" uid="uid://bfx1h0vdd253n" path="res://Assets/Characters/Player/Inventory/Items/Resources/ArmorSets/ChainmailSet/chainmail_leggings.tres" id="13_mgiry"]
+[ext_resource type="Resource" uid="uid://b21260xqio2ju" path="res://Assets/Characters/Player/Inventory/Items/Resources/ArmorSets/RoyalGuardSet/royal_guard_leggings.tres" id="14_nkjg2"]
+[ext_resource type="Resource" uid="uid://c3wgutu826qr0" path="res://Assets/Characters/Player/Inventory/Items/Resources/ArmorSets/Steel/steel_leggings.tres" id="15_j3k8j"]
+[ext_resource type="Resource" uid="uid://b80n4ste50c6b" path="res://Assets/Characters/Player/Inventory/Items/Resources/ArmorSets/KnightSet/knight_gauntlets.tres" id="16_lj171"]
+[ext_resource type="Resource" uid="uid://djmh2deyeq254" path="res://Assets/Characters/Player/Inventory/Items/Resources/ArmorSets/BronzeSet/bronze_gauntlets.tres" id="17_wn1ud"]
+[ext_resource type="Resource" uid="uid://b52gywu705q21" path="res://Assets/Characters/Player/Inventory/Items/Resources/ArmorSets/ChainmailSet/chainmail_gauntlets.tres" id="18_2yov4"]
+[ext_resource type="Resource" uid="uid://c5wmj46w3ox2x" path="res://Assets/Characters/Player/Inventory/Items/Resources/ArmorSets/RoyalGuardSet/royal_guard_gauntlets.tres" id="19_iyesp"]
+[ext_resource type="Resource" uid="uid://b7hd4rd3qe71w" path="res://Assets/Characters/Player/Inventory/Items/Resources/ArmorSets/Steel/steel_gauntlets.tres" id="20_wj3fq"]
+[ext_resource type="Resource" uid="uid://cmytqqddgld2u" path="res://Assets/Characters/Player/Inventory/Items/Resources/ArmorSets/KnightSet/knight_cape.tres" id="21_w0bca"]
+[ext_resource type="Resource" uid="uid://c7ayp243mom7" path="res://Assets/Characters/Player/Inventory/Items/Resources/ArmorSets/BronzeSet/bronze_cape.tres" id="22_oim3r"]
+[ext_resource type="Resource" uid="uid://dnfuw4fvlesl1" path="res://Assets/Characters/Player/Inventory/Items/Resources/ArmorSets/ChainmailSet/chainmail_cape.tres" id="23_iqpxb"]
+[ext_resource type="Resource" uid="uid://clt33ow57nucw" path="res://Assets/Characters/Player/Inventory/Items/Resources/ArmorSets/RoyalGuardSet/royal_guard_cape.tres" id="24_mvcx6"]
+[ext_resource type="Resource" uid="uid://cdutfexcuxly2" path="res://Assets/Characters/Player/Inventory/Items/Resources/ArmorSets/Steel/steel_cape.tres" id="25_sl5mb"]
+[ext_resource type="Script" path="res://Assets/Characters/Player/Inventory/Scripts/ItemDatabase.gd" id="26_4x8ml"]
+
+[resource]
+script = ExtResource("26_4x8ml")
+armor_items = Array[Resource("res://Assets/Characters/Player/Inventory/Scripts/PlayerInventoryItem.gd")]([ExtResource("1_8ay5l"), ExtResource("2_3n67q"), ExtResource("3_wtpxi"), ExtResource("4_emkpg"), ExtResource("5_sy6h7"), ExtResource("6_lh5c8"), ExtResource("7_oudrx"), ExtResource("8_v74vu"), ExtResource("9_76t2h"), ExtResource("10_cgodw"), ExtResource("11_vv6qa"), ExtResource("12_ixwtd"), ExtResource("13_mgiry"), ExtResource("14_nkjg2"), ExtResource("15_j3k8j"), ExtResource("16_lj171"), ExtResource("17_wn1ud"), ExtResource("18_2yov4"), ExtResource("19_iyesp"), ExtResource("20_wj3fq"), ExtResource("21_w0bca"), ExtResource("22_oim3r"), ExtResource("23_iqpxb"), ExtResource("24_mvcx6"), ExtResource("25_sl5mb")])
+weapon_items = Array[Resource("res://Assets/Characters/Player/Inventory/Scripts/PlayerInventoryItem.gd")]([])

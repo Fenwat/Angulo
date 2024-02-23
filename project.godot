@@ -56,6 +56,8 @@ folder_colors={
 "res://Assets/Characters/Player/": "orange",
 "res://Assets/Characters/Player/Inventory/": "yellow",
 "res://Assets/Characters/Player/Inventory/Items/": "green",
+"res://Assets/Characters/Player/Inventory/Items/Databases/": "teal",
+"res://Assets/Characters/Player/Inventory/Items/Databases/Resources/": "blue",
 "res://Assets/Characters/Player/Inventory/Items/Resources/": "teal",
 "res://Assets/Characters/Player/Inventory/Items/Resources/ArmorData/": "blue",
 "res://Assets/Characters/Player/Inventory/Items/Resources/ArmorSets/": "blue",

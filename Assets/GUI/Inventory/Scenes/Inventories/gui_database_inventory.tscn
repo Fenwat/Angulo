@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Assets/GUI/Inventory/Scripts/Inventories/GuiDatabaseInventory.gd" id="1_jvtpi"]
 [ext_resource type="Texture2D" uid="uid://osinuhn8hrvn" path="res://Assets/GUI/Inventory/Sprites/InventoryBase_NinePatch.png" id="1_osktw"]
-[ext_resource type="Resource" uid="uid://cdl2jiyds7hs" path="res://Assets/Characters/Player/Inventory/Resource/player_inventory.tres" id="2_a27at"]
+[ext_resource type="Resource" uid="uid://bbgcolp3dir4r" path="res://Assets/Characters/Player/Inventory/Items/Databases/Resources/item_database.tres" id="3_gldog"]
 [ext_resource type="PackedScene" uid="uid://vr4dst7krh5p" path="res://Assets/GUI/Inventory/Scenes/gui_slot_database.tscn" id="4_kfssp"]
 
 [node name="GuiDatabaseInventory" type="Control"]
@@ -13,7 +13,7 @@ anchor_right = 1.0
 grow_horizontal = 0
 scale = Vector2(3, 3)
 script = ExtResource("1_jvtpi")
-inventory = ExtResource("2_a27at")
+database = ExtResource("3_gldog")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 0

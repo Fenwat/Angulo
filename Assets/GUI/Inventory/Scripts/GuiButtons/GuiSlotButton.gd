@@ -7,6 +7,9 @@ extends Button
 
 func _ready():
 	button.pressed.connect(self._button_pressed)
+	handle_button()
+
+func handle_button():
 	configure_button()
 	add_child(button)
 
