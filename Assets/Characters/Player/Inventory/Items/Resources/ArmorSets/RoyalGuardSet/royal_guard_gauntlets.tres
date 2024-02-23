@@ -2,7 +2,7 @@
 
 [ext_resource type="Resource" uid="uid://dws6mhvwtebc8" path="res://Assets/Characters/Player/Inventory/Resource/DestRects/GauntletsDestRect.tres" id="1_hxrdm"]
 [ext_resource type="Texture2D" uid="uid://d3msxvpch6bew" path="res://Assets/Characters/Player/Inventory/Items/Sprites/slot_royal_guard_gauntlets.png" id="1_kcqmk"]
-[ext_resource type="Script" path="res://Assets/Characters/Player/Inventory/Scripts/ArmorItem.gd" id="2_l2x7e"]
+[ext_resource type="Script" path="res://Assets/Characters/Player/Inventory/Scripts/InventoryItems/ArmorItems/ArmorItem.gd" id="2_l2x7e"]
 [ext_resource type="Resource" uid="uid://13omte80ueo8" path="res://Assets/Characters/Player/Inventory/Resource/SubInventoryData/gauntlets_sub_inventory_data.tres" id="4_x1j4m"]
 
 [resource]

@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://61jva2xlslnb" path="res://Assets/Characters/Player/Inventory/Items/Sprites/slot_knight_helmet.png" id="1_8l22w"]
 [ext_resource type="Resource" uid="uid://dstqou7ou5iif" path="res://Assets/Characters/Player/Inventory/Resource/DestRects/HelmetDestRect.tres" id="1_a4v0x"]
-[ext_resource type="Script" path="res://Assets/Characters/Player/Inventory/Scripts/ArmorItem.gd" id="2_yepo5"]
+[ext_resource type="Script" path="res://Assets/Characters/Player/Inventory/Scripts/InventoryItems/ArmorItems/ArmorItem.gd" id="2_yepo5"]
 [ext_resource type="Resource" uid="uid://d2vr4rdb4srm6" path="res://Assets/Characters/Player/Inventory/Resource/SubInventoryData/helmet_sub_inventory_data.tres" id="4_vxshv"]
 
 [resource]

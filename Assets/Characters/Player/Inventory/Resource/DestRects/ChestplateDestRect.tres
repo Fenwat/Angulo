@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="DestRect" load_steps=2 format=3 uid="uid://74qmsvv144xj"]
 
-[ext_resource type="Script" path="res://Assets/Characters/Player/Inventory/Scripts/DestRect.gd" id="1_aofjw"]
+[ext_resource type="Script" path="res://Assets/Characters/Player/Inventory/Scripts/InventoryItems/DestRect.gd" id="1_aofjw"]
 
 [resource]
 script = ExtResource("1_aofjw")

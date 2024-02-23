@@ -2,7 +2,7 @@
 
 [ext_resource type="Resource" uid="uid://74qmsvv144xj" path="res://Assets/Characters/Player/Inventory/Resource/DestRects/ChestplateDestRect.tres" id="1_36xpq"]
 [ext_resource type="Texture2D" uid="uid://ba2vu8whi0mve" path="res://Assets/Characters/Player/Inventory/Items/Sprites/slot_bronze_chestplate.png" id="1_dv2xf"]
-[ext_resource type="Script" path="res://Assets/Characters/Player/Inventory/Scripts/ArmorItem.gd" id="2_hg7x7"]
+[ext_resource type="Script" path="res://Assets/Characters/Player/Inventory/Scripts/InventoryItems/ArmorItems/ArmorItem.gd" id="2_hg7x7"]
 [ext_resource type="Resource" uid="uid://drr6tgtln22t4" path="res://Assets/Characters/Player/Inventory/Resource/SubInventoryData/chestplate_sub_inventory_data.tres" id="4_4aa8v"]
 
 [resource]

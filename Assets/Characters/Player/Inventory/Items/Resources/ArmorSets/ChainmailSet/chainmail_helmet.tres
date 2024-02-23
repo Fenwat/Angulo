@@ -2,7 +2,7 @@
 
 [ext_resource type="Resource" uid="uid://dstqou7ou5iif" path="res://Assets/Characters/Player/Inventory/Resource/DestRects/HelmetDestRect.tres" id="1_vy0v6"]
 [ext_resource type="Texture2D" uid="uid://bsg3lv4uc4qb8" path="res://Assets/Characters/Player/Inventory/Items/Sprites/slot_chainmail_helmet.png" id="2_c3725"]
-[ext_resource type="Script" path="res://Assets/Characters/Player/Inventory/Scripts/ArmorItem.gd" id="3_j2cgu"]
+[ext_resource type="Script" path="res://Assets/Characters/Player/Inventory/Scripts/InventoryItems/ArmorItems/ArmorItem.gd" id="3_j2cgu"]
 [ext_resource type="Resource" uid="uid://d2vr4rdb4srm6" path="res://Assets/Characters/Player/Inventory/Resource/SubInventoryData/helmet_sub_inventory_data.tres" id="4_gn2at"]
 
 [resource]

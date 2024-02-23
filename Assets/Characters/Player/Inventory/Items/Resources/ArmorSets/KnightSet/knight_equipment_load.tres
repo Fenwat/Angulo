@@ -5,7 +5,7 @@
 [ext_resource type="Resource" uid="uid://b80n4ste50c6b" path="res://Assets/Characters/Player/Inventory/Items/Resources/ArmorSets/KnightSet/knight_gauntlets.tres" id="3_h83df"]
 [ext_resource type="Resource" uid="uid://cwcu68m4teayv" path="res://Assets/Characters/Player/Inventory/Items/Resources/ArmorSets/KnightSet/knight_helmet.tres" id="4_1ovh8"]
 [ext_resource type="Resource" uid="uid://celwstw5ud81o" path="res://Assets/Characters/Player/Inventory/Items/Resources/ArmorSets/KnightSet/knight_leggings.tres" id="5_w4rvo"]
-[ext_resource type="Script" path="res://Assets/Characters/Player/Inventory/Scripts/EquipmentLoad.gd" id="6_wp2ti"]
+[ext_resource type="Script" path="res://Assets/Characters/Player/Inventory/Scripts/EquipmentLoad/EquipmentLoad.gd" id="6_wp2ti"]
 
 [resource]
 script = ExtResource("6_wp2ti")

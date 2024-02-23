@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bdb51l8g7vsji" path="res://Assets/Characters/Player/Inventory/Items/Sprites/slot_knight_gauntlets.png" id="1_68t4o"]
 [ext_resource type="Resource" uid="uid://dws6mhvwtebc8" path="res://Assets/Characters/Player/Inventory/Resource/DestRects/GauntletsDestRect.tres" id="1_71npi"]
-[ext_resource type="Script" path="res://Assets/Characters/Player/Inventory/Scripts/ArmorItem.gd" id="2_0ey35"]
+[ext_resource type="Script" path="res://Assets/Characters/Player/Inventory/Scripts/InventoryItems/ArmorItems/ArmorItem.gd" id="2_0ey35"]
 [ext_resource type="Resource" uid="uid://13omte80ueo8" path="res://Assets/Characters/Player/Inventory/Resource/SubInventoryData/gauntlets_sub_inventory_data.tres" id="4_sbsfe"]
 
 [resource]

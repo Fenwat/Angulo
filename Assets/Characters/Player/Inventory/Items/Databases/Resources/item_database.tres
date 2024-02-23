@@ -25,7 +25,7 @@
 [ext_resource type="Resource" uid="uid://dnfuw4fvlesl1" path="res://Assets/Characters/Player/Inventory/Items/Resources/ArmorSets/ChainmailSet/chainmail_cape.tres" id="23_iqpxb"]
 [ext_resource type="Resource" uid="uid://clt33ow57nucw" path="res://Assets/Characters/Player/Inventory/Items/Resources/ArmorSets/RoyalGuardSet/royal_guard_cape.tres" id="24_mvcx6"]
 [ext_resource type="Resource" uid="uid://cdutfexcuxly2" path="res://Assets/Characters/Player/Inventory/Items/Resources/ArmorSets/Steel/steel_cape.tres" id="25_sl5mb"]
-[ext_resource type="Script" path="res://Assets/Characters/Player/Inventory/Scripts/ItemDatabase.gd" id="26_4x8ml"]
+[ext_resource type="Script" path="res://Assets/Characters/Player/Inventory/Items/Databases/Scripts/ItemDatabase.gd" id="26_4x8ml"]
 
 [resource]
 script = ExtResource("26_4x8ml")

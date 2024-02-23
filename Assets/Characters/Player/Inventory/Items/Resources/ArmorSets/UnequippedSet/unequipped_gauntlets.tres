@@ -2,7 +2,7 @@
 
 [ext_resource type="Resource" uid="uid://dws6mhvwtebc8" path="res://Assets/Characters/Player/Inventory/Resource/DestRects/GauntletsDestRect.tres" id="1_n1dt1"]
 [ext_resource type="Texture2D" uid="uid://cmk5r4pwyecot" path="res://Assets/Characters/Player/Inventory/Items/Sprites/Empty/slot_empty_gauntlets.png" id="2_i0ljc"]
-[ext_resource type="Script" path="res://Assets/Characters/Player/Inventory/Scripts/ArmorItem.gd" id="3_2flm6"]
+[ext_resource type="Script" path="res://Assets/Characters/Player/Inventory/Scripts/InventoryItems/ArmorItems/ArmorItem.gd" id="3_2flm6"]
 [ext_resource type="Resource" uid="uid://13omte80ueo8" path="res://Assets/Characters/Player/Inventory/Resource/SubInventoryData/gauntlets_sub_inventory_data.tres" id="4_t662b"]
 
 [resource]

@@ -2,7 +2,7 @@
 
 [ext_resource type="Resource" uid="uid://ve8grpec7ic0" path="res://Assets/Characters/Player/Inventory/Resource/DestRects/LeggingsDestRect.tres" id="1_5xjqf"]
 [ext_resource type="Texture2D" uid="uid://hfbnrgtpvy5c" path="res://Assets/Characters/Player/Inventory/Items/Sprites/slot_steel_leggings.png" id="1_b3yny"]
-[ext_resource type="Script" path="res://Assets/Characters/Player/Inventory/Scripts/ArmorItem.gd" id="2_wf0ir"]
+[ext_resource type="Script" path="res://Assets/Characters/Player/Inventory/Scripts/InventoryItems/ArmorItems/ArmorItem.gd" id="2_wf0ir"]
 [ext_resource type="Resource" uid="uid://8benawo2a5gk" path="res://Assets/Characters/Player/Inventory/Resource/SubInventoryData/leggings_sub_inventory_data.tres" id="4_ijrj6"]
 
 [resource]

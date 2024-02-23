@@ -2,7 +2,7 @@
 
 [ext_resource type="Resource" uid="uid://dkbuk62usrrt4" path="res://Assets/Characters/Player/Inventory/Resource/DestRects/CapeDestRect.tres" id="1_c67fe"]
 [ext_resource type="Texture2D" uid="uid://djarvulf8gcuu" path="res://Assets/Characters/Player/Inventory/Items/Sprites/slot_steel_cape.png" id="1_pr428"]
-[ext_resource type="Script" path="res://Assets/Characters/Player/Inventory/Scripts/ArmorItem.gd" id="2_1tftt"]
+[ext_resource type="Script" path="res://Assets/Characters/Player/Inventory/Scripts/InventoryItems/ArmorItems/ArmorItem.gd" id="2_1tftt"]
 [ext_resource type="Resource" uid="uid://bebs0ibkwtxl5" path="res://Assets/Characters/Player/Inventory/Resource/SubInventoryData/cape_sub_inventory_data.tres" id="4_a8ebq"]
 
 [resource]
