@@ -4,4 +4,4 @@
 
 [resource]
 script = ExtResource("2_je7dp")
-sub_inventories = Array[Resource("res://Assets/Characters/Player/Inventory/Scripts/PlayerSubInventory.gd")]([])
+sub_inventories = Array[Resource("res://Assets/Characters/Player/Inventory/Scripts/Inventorys/PlayerSubInventory.gd")]([])

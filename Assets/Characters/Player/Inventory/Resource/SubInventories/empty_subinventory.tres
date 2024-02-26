@@ -6,5 +6,5 @@
 script = ExtResource("1_ytxwf")
 sub_inventory_type = null
 sub_inventory_name = ""
-items = Array[Resource("res://Assets/Characters/Player/Inventory/Scripts/PlayerInventoryItem.gd")]([])
-sub_inventory_priority = 0
+items = Array[Resource("res://Assets/Characters/Player/Inventory/Scripts/InventoryItems/PlayerInventoryItem.gd")]([])
+sub_inventory_index = 0

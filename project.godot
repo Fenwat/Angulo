@@ -112,6 +112,7 @@ folder_colors={
 "res://Assets/Global/Scripts/": "orange",
 "res://Assets/Misc/": "red",
 "res://Assets/Misc/Icon/": "orange",
+"res://Assets/Misc/TitleScreens/": "orange",
 "res://Assets/TileMaps/": "red",
 "res://Assets/TileMaps/AutoTiles/": "orange",
 "res://Assets/TileMaps/AutoTiles/Shaders/": "yellow",
