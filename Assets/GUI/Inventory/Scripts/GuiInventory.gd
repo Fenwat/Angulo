@@ -29,18 +29,18 @@ func close_inventory():
 
 #----------------------------------------Gui-Sub-Inventories--------------------------------------
 
-func handle_new_item(_item):
+func handle_new_item(item):
+	print("----New item: ", item.item_name, "----")
 	populate_gui_inventory()
 	#debug_inventory_contents()
 
 func populate_gui_inventory():
 	if inventory.sub_inventories.size() == 0:
 		return
-	
 	create_gui_sub_inventory_elements()
 
 func create_gui_sub_inventory_elements():
-	#add_gui_text()
+	add_gui_text()
 	for sub_inventory_element in inventory.sub_inventories:
 		var exists: bool = false
 		
@@ -88,7 +88,7 @@ func determine_sub_inventory_element_y_position():
 	var inventory_children = gui_player_inventory.get_children()
 	
 	for child in inventory_children:
-		#print(child.sub_inventory_y_position,"-", child.type)
+		print(child.sub_inventory_y_position,"-", child.type)
 		sub_inventory_heights += child.height
 	
 	final_y_position = top_buffer + sub_inventory_heights
@@ -108,7 +108,7 @@ func debug_inventory_contents():
 	for sub_inventory in inventory.sub_inventories:
 		if sub_inventory.items.size() > 0:
 			print_contents(sub_inventory)
-			
+
 func print_contents(sub_inventory):
 	print(sub_inventory.sub_inventory_name + ":")
 	for item in sub_inventory.items:
