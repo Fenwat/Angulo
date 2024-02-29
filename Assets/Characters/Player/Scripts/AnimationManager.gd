@@ -66,3 +66,11 @@ func _handle_run_animation(move_input):
 
 func set_animation_blend_position(path, move_input):
 	animation_tree.set(path, move_input)
+
+#--------------------------------New-Animation-Manager-------------------------------
+
+func _handle_animation(move_input, state_name):
+	var blend_position: String = "parameters/" + state_name + "/blend_position"
+	
+	state_machine.travel(state_name)
+	set_animation_blend_position(blend_position, move_input)
