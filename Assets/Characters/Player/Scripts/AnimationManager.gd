@@ -67,10 +67,20 @@ func _handle_run_animation(move_input):
 func set_animation_blend_position(path, move_input):
 	animation_tree.set(path, move_input)
 
-#--------------------------------New-Animation-Manager-------------------------------
+#------------------------------------New-Animation-Manager-------------------------------------
 
-func _handle_animation(move_input, state_name):
-	var blend_position: String = "parameters/" + state_name + "/blend_position"
+func _handle_animation(move_input, character_state):
+	var blend_position: String = "parameters/" + character_state.state_name + "/blend_position"
+	var animation_vector: Vector2 = Vector2.ZERO
 	
-	state_machine.travel(state_name)
-	set_animation_blend_position(blend_position, move_input)
+	if character_state.movement_type == 0:
+		animation_vector = last_non_zero_input
+	elif character_state.move_type == 1:
+		animation_vector = move_input
+	
+	state_machine.travel(character_state.state_name)
+	
+	if character_state.movement_type == 1 and animation_vector != Vector2.ZERO:
+		return
+	
+	set_animation_blend_position(blend_position, animation_vector)
