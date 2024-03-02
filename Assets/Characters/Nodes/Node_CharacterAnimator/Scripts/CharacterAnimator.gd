@@ -1,7 +1,9 @@
 extends Node
+class_name CharacterAnimator
 
+@onready var character_input = $"../CharacterInput"
 @onready var input_manager = $"../InputManager"
-@onready var animation_tree = $"../../AnimationTree"
+@onready var animation_tree = $"AnimationTree"
 @onready var state_machine = animation_tree.get("parameters/playback")
 
 var debug_current_animation_active: bool = false
@@ -11,9 +13,9 @@ func handle_animation(character_state: CharacterState):
 	var animation_vector: Vector2 = Vector2.ZERO
 	
 	if character_state.is_static:
-		animation_vector = input_manager.last_non_zero_input
+		animation_vector = character_input.last_non_zero_input
 	else:
-		animation_vector = input_manager.input_direction
+		animation_vector = character_input.input_direction
 	
 	state_machine.travel(character_state.character_state_name)
 	

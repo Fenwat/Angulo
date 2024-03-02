@@ -12,7 +12,7 @@ var velocity: Vector2 = Vector2.ZERO
 var input_direction: Vector2 = Vector2.ZERO
 
 func _physics_process(_delta):
-	input_direction = input_manager.direction
+	input_direction = input_manager.input_direction
 	
 	handle_movement()
 
@@ -28,4 +28,3 @@ func handle_sprint():
 func sprint_released():
 	is_sprinting = false
 	move_speed = walk_speed
-	

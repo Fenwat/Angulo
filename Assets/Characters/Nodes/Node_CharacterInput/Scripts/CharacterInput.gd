@@ -1,4 +1,5 @@
-extends Node2D
+extends Node
+class_name CharacterInput
 
 @onready var movement_manager = $"../MovementManager"
 
@@ -22,4 +23,3 @@ func _check_sprint():
 	
 	if Input.is_action_just_released("sprint"):
 		movement_manager.sprint_released()
-

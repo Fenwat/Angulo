@@ -10,8 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://wd805m28wd3s" path="res://Assets/TileMaps/AutoTiles/grass/grass.png" id="8_kslfo"]
 [ext_resource type="Texture2D" uid="uid://boqk11g1ldu1t" path="res://Assets/TileMaps/AutoTiles/fence/fence.png" id="9_hf3k7"]
 [ext_resource type="Texture2D" uid="uid://spndr30l72o0" path="res://Assets/TileMaps/Tiles/Wheat/wheat.png" id="10_hh44h"]
-[ext_resource type="PackedScene" uid="uid://c85qvwqv4xynr" path="res://Assets/Characters/Player/Scenes/player.tscn" id="11_rneqs"]
 [ext_resource type="PackedScene" uid="uid://ba0qinwelvd2e" path="res://Assets/Characters/NPCs/NPCs/Farmer/Scenes/farmer.tscn" id="12_b6540"]
+[ext_resource type="PackedScene" uid="uid://8youmhgtwvqr" path="res://Assets/Characters/Player/Scenes/test_player.tscn" id="13_7n3ux"]
 [ext_resource type="PackedScene" uid="uid://hs1lfea0uky1" path="res://Assets/Buildings/Scenes/farm_house.tscn" id="13_a7vik"]
 [ext_resource type="Script" path="res://Assets/GUI/Scripts/CanvasLayer.gd" id="14_kk3l3"]
 [ext_resource type="PackedScene" uid="uid://dbik1s41svdr7" path="res://Assets/GUI/DateTime/Scenes/date_time_gui.tscn" id="16_cads6"]
@@ -8604,12 +8604,12 @@ layer_0/tile_data = PackedInt32Array(2687031, 65536, 0, 2687030, 65536, 0, 26870
 z_as_relative = false
 y_sort_enabled = true
 
-[node name="Player" parent="Level/Characters" instance=ExtResource("11_rneqs")]
-position = Vector2(558, 204)
-
 [node name="Farmer" parent="Level/Characters" node_paths=PackedStringArray("map") instance=ExtResource("12_b6540")]
 position = Vector2(415, 273)
 map = NodePath("../../TileMaps/Ground_TileMap")
+
+[node name="TestPlayer" parent="Level/Characters" instance=ExtResource("13_7n3ux")]
+position = Vector2(554, 279)
 
 [node name="Buildings" type="Node2D" parent="Level"]
 z_as_relative = false
