@@ -1,7 +1,7 @@
 extends Node
 class_name CharacterInput
 
-@onready var movement_manager = $"../MovementManager"
+@onready var character_movement = $"../CharacterMovement"
 
 var input_direction: Vector2
 var last_non_zero_input: Vector2 = Vector2(0, 0.1)
@@ -19,7 +19,7 @@ func _get_input_direction():
 
 func _check_sprint():
 	if Input.is_action_pressed("sprint"):
-		movement_manager.handle_sprint()
+		character_movement.handle_sprint()
 	
 	if Input.is_action_just_released("sprint"):
-		movement_manager.sprint_released()
+		character_movement.sprint_released()

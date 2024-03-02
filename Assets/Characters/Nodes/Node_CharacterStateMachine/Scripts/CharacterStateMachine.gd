@@ -5,7 +5,7 @@ extends Node
 
 @onready var character = $".."
 @onready var character_input = $"../CharacterInput"
-@onready var movement_manager = $"../ScriptManager/MovementManager"
+@onready var character_movement = $"../CharacterMovement"
 @onready var character_animator = $"../CharacterAnimator"
 
 var character_state_locked: bool = false
@@ -74,7 +74,7 @@ func _update_character_state():
 			_debug_current_character_state(current_character_state)
 
 func _determine_movement_state():
-	if(movement_manager.is_sprinting == true):
+	if(character_movement.is_sprinting == true):
 		current_character_state = movement_states[1]
 	else:
 		current_character_state = movement_states[0]

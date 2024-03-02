@@ -2,7 +2,7 @@ extends Node
 class_name CharacterAnimator
 
 @onready var character_input = $"../CharacterInput"
-@onready var input_manager = $"../InputManager"
+@onready var character_inpu = $"../CharacterInput"
 @onready var animation_tree = $"AnimationTree"
 @onready var state_machine = animation_tree.get("parameters/playback")
 
