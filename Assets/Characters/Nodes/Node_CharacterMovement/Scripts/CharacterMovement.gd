@@ -22,7 +22,7 @@ func handle_movement():
 	
 	character.move_and_slide()
 
-func handle_sprint():
+func sprint_pressed():
 	is_sprinting = true
 	move_speed = sprint_speed
 

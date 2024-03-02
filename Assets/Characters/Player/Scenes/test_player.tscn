@@ -1,4 +1,4 @@
-[gd_scene load_steps=87 format=3 uid="uid://8youmhgtwvqr"]
+[gd_scene load_steps=94 format=3 uid="uid://8youmhgtwvqr"]
 
 [ext_resource type="Material" uid="uid://dujeuv6iab2w" path="res://Assets/Characters/Player/Shaders/Materials/player_skin_material.tres" id="1_dnpnp"]
 [ext_resource type="PackedScene" uid="uid://doakyahaj4cqc" path="res://Assets/Characters/Nodes/Node_CharacterSprite/Scenes/character_sprite.tscn" id="1_mu7au"]
@@ -7,7 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://dqe0ilr4gjmxk" path="res://Assets/Characters/Nodes/Node_CharacterStateMachine/Scenes/character_state_machine.tscn" id="4_yoxmo"]
 [ext_resource type="PackedScene" uid="uid://bxjqjiak56vpp" path="res://Assets/Characters/Nodes/Node_CharacterAnimator/Scenes/character_animator.tscn" id="5_0kqqu"]
 [ext_resource type="Script" path="res://Assets/Characters/Nodes/Node_CharacterStateMachine/Scripts/CharacterState.gd" id="5_m6wco"]
+[ext_resource type="Script" path="res://Assets/Characters/Nodes/Node_CharacterInput/Scripts/CharacterInputMap.gd" id="6_i37jq"]
+[ext_resource type="Script" path="res://Assets/Characters/Nodes/Node_CharacterInput/Scripts/DirectionalInputMap.gd" id="6_qaaus"]
 [ext_resource type="PackedScene" uid="uid://dlsnoel4tf4ir" path="res://Assets/Characters/Nodes/Node_CharacterInput/Scenes/character_input.tscn" id="7_swe6k"]
+[ext_resource type="Script" path="res://Assets/Characters/Nodes/Node_CharacterInput/Scripts/HoldInputMap.gd" id="8_j7vus"]
 [ext_resource type="PackedScene" uid="uid://cppn86vq126jj" path="res://Assets/Characters/Nodes/Node_CharacterSignalEmitter/Scenes/character_signal_emitter.tscn" id="8_oymk2"]
 [ext_resource type="PackedScene" uid="uid://y3tfq8f53ji6" path="res://Assets/Characters/Nodes/Node_CharacterMovement/Scenes/character_movement.tscn" id="9_qigq3"]
 [ext_resource type="PackedScene" uid="uid://nenrmt8xvxgq" path="res://Assets/Characters/Nodes/Node_CharacterSkin/Scenes/character_skin.tscn" id="10_8h42o"]
@@ -17,12 +20,38 @@
 [ext_resource type="Resource" uid="uid://cdl2jiyds7hs" path="res://Assets/Characters/Player/Inventory/Resource/player_inventory.tres" id="12_kab2c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_12k0d"]
-size = Vector2(5, 1)
+size = Vector2(4.8125, 1.1875)
 
-[sub_resource type="Resource" id="Resource_fxgyn"]
+[sub_resource type="Resource" id="Resource_kfwix"]
 script = ExtResource("3_qu5xa")
 character_sprite_sheet_name = "straightSword"
 character_sprite_sheet = ExtResource("2_hcgd3")
+
+[sub_resource type="Resource" id="Resource_kttp6"]
+script = ExtResource("6_qaaus")
+left_input = "move_left"
+right_input = "move_right"
+up_input = "move_up"
+down_input = "move_down"
+
+[sub_resource type="Resource" id="Resource_e27p0"]
+script = ExtResource("6_i37jq")
+input_map_name = "Player Movement"
+input_map_type = 0
+directional_inputs = SubResource("Resource_kttp6")
+
+[sub_resource type="Resource" id="Resource_ckret"]
+script = ExtResource("8_j7vus")
+hold_input_name = "sprint"
+pressed_function = "sprint_pressed"
+released_funcion = "sprint_released"
+character_nodes = 1
+
+[sub_resource type="Resource" id="Resource_varh1"]
+script = ExtResource("6_i37jq")
+input_map_name = "Player Sprint"
+input_map_type = 2
+hold_input = SubResource("Resource_ckret")
 
 [sub_resource type="Resource" id="Resource_d67fi"]
 script = ExtResource("5_m6wco")
@@ -765,18 +794,19 @@ z_as_relative = false
 y_sort_enabled = true
 material = ExtResource("1_dnpnp")
 texture = ExtResource("2_hcgd3")
+offset = Vector2(-0.5, -7.5)
 hframes = 9
 vframes = 32
 frame = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 7.5)
 shape = SubResource("RectangleShape2D_12k0d")
 
 [node name="CharacterSprite" parent="." instance=ExtResource("1_mu7au")]
-character_sprites = Array[ExtResource("3_qu5xa")]([SubResource("Resource_fxgyn")])
+character_sprites = Array[ExtResource("3_qu5xa")]([SubResource("Resource_kfwix")])
 
 [node name="CharacterInput" parent="." instance=ExtResource("7_swe6k")]
+character_inputs = Array[ExtResource("6_i37jq")]([SubResource("Resource_e27p0"), SubResource("Resource_varh1")])
 
 [node name="CharacterStateMachine" parent="." instance=ExtResource("4_yoxmo")]
 states = Array[ExtResource("5_m6wco")]([SubResource("Resource_d67fi"), SubResource("Resource_igdyn"), SubResource("Resource_q3uvc")])

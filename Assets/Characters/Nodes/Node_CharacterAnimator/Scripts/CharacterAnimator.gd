@@ -2,11 +2,17 @@ extends Node
 class_name CharacterAnimator
 
 @onready var character_input = $"../CharacterInput"
-@onready var character_inpu = $"../CharacterInput"
 @onready var animation_tree = $"AnimationTree"
 @onready var state_machine = animation_tree.get("parameters/playback")
 
 var debug_current_animation_active: bool = false
+
+#func _ready():
+	#_set_default_animation()
+#
+#func _set_default_animation():
+	#state_machine.travel("idle")
+	#_set_animation_blend_position("parameters/idle/blend_position", Vector2.ZERO)
 
 func handle_animation(character_state: CharacterState):
 	var blend_position: String = "parameters/" + character_state.character_state_name + "/blend_position"
