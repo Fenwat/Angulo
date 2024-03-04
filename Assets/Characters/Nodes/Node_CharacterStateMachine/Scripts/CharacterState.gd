@@ -18,3 +18,6 @@ class_name CharacterState
 
 ## If enabled, Vector2 will be set to the last non-zero input.
 @export var is_static: bool
+
+## Only used if Character State Type is set to ATTACK
+@export var attack_data: AttackStateData

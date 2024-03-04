@@ -15,6 +15,8 @@ var idle_states: Array[CharacterState]
 var idle_insert_states: Array[CharacterState]
 var movement_states: Array[CharacterState]
 var attack_states: Array[CharacterState]
+var light_attack_states: Array[CharacterState]
+var heavy_attack_states: Array[CharacterState]
 
 var current_character_state: CharacterState
 
@@ -28,6 +30,11 @@ enum character_state_type {
 	IDLE_INSERT,
 	MOVEMENT,
 	ATTACK
+	}
+
+enum attack_state_type {
+	LIGHT,
+	HEAVY
 	}
 
 #----------------------------------------------------------------------------------------
@@ -48,6 +55,7 @@ func _assign_character_states():
 			movement_states.append(state)
 		elif state.character_state_type == character_state_type.ATTACK:
 			attack_states.append(state)
+			_assign_character_attack_state(state)
 			
 	_debug_character_states()
 
@@ -55,6 +63,12 @@ func _set_default_character_state():
 	current_character_state = idle_states[0]
 	
 	_debug_current_character_state(current_character_state)
+
+func _assign_character_attack_state(state: CharacterState):
+	if state.attack_data.attack_type == attack_state_type.LIGHT:
+		light_attack_states.append(state)
+	elif state.attack_data.attack_type == attack_state_type.HEAVY:
+		heavy_attack_states.append(state)
 
 #----------------------------------------------------------------------------------------
 #----------------------------------Physics-Process---------------------------------------
@@ -81,6 +95,33 @@ func _determine_movement_state():
 
 func _handle_character_state():
 	character_animator.handle_animation(current_character_state)
+
+#----------------------------------------------------------------------------------------
+#-----------------------------------Input-Triggered--------------------------------------
+#----------------------------------------------------------------------------------------
+
+#------------------------------------Light-Attack----------------------------------------
+
+func handle_light_attack():
+	if light_attack_states.size() == 0:
+		return
+	
+	current_character_state = light_attack_states[0]
+	character_animator.handle_animation(current_character_state)
+	
+	character_state_locked = true
+	character_movement.position_locked = true
+	character_animator.direction_locked = true
+	
+	
+	
+	#for light_attack_state in light_attack_states:
+		#print(light_attack_state.character_state_name)
+
+func light_attack_finished():
+	character_state_locked = false
+	character_movement.position_locked = false
+	character_animator.direction_locked = false
 
 #----------------------------------------------------------------------------------------
 #---------------------------------------Debug--------------------------------------------

@@ -26,7 +26,7 @@ enum input_map_type {
 	HOLD
 	}
 
-enum character_nodes {
+enum character_node_bank {
 	CHARACTER_SPRITE,
 	CHARACTER_MOVEMENT,
 	CHARACTER_STATE_MACHINE,
@@ -60,6 +60,7 @@ func _assign_character_inputs():
 func _physics_process(_delta):
 	_get_input_direction(directional_input)
 	_check_hold_inputs()
+	_check_press_inputs()
 
 func _get_input_direction(input_map: CharacterInputMap):
 	var left_input: String
@@ -76,6 +77,8 @@ func _get_input_direction(input_map: CharacterInputMap):
 	
 	if input_direction != Vector2.ZERO:
 		last_non_zero_input = input_direction
+
+#-------------------------------Hold-Input----------------------------------------
 
 func _check_hold_inputs():
 	if hold_inputs.size() == 0:
@@ -99,19 +102,56 @@ func _handle_hold_input(input: CharacterInputMap):
 		function_node_location.call(release_function)
 
 func _determine_function_node_location(input: CharacterInputMap):
-	if input.hold_input.character_nodes == character_nodes.CHARACTER_SPRITE:
+	if input.hold_input.character_nodes == character_node_bank.CHARACTER_SPRITE:
 		return character_sprite
-	elif input.hold_input.character_nodes == character_nodes.CHARACTER_MOVEMENT:
+	elif input.hold_input.character_nodes == character_node_bank.CHARACTER_MOVEMENT:
 		return character_movement
-	elif input.hold_input.character_nodes == character_nodes.CHARACTER_STATE_MACHINE:
+	elif input.hold_input.character_nodes == character_node_bank.CHARACTER_STATE_MACHINE:
 		return character_state_machine
-	elif input.hold_input.character_nodes == character_nodes.CHARACTER_ANIMATOR:
+	elif input.hold_input.character_nodes == character_node_bank.CHARACTER_ANIMATOR:
 		return character_animator
-	elif input.hold_input.character_nodes == character_nodes.CHARACTER_SKIN:
+	elif input.hold_input.character_nodes == character_node_bank.CHARACTER_SKIN:
 		return character_skin
-	elif input.hold_input.character_nodes == character_nodes.CHARACTER_EQUIPMENT:
+	elif input.hold_input.character_nodes == character_node_bank.CHARACTER_EQUIPMENT:
 		return character_equipment
-	elif input.hold_input.character_nodes == character_nodes.CHARACTER_INVENTORY:
+	elif input.hold_input.character_nodes == character_node_bank.CHARACTER_INVENTORY:
 		return character_inventory
-	elif input.hold_input.character_nodes == character_nodes.CHARACTER_SIGNAL_EMITTER:
+	elif input.hold_input.character_nodes == character_node_bank.CHARACTER_SIGNAL_EMITTER:
+		return character_signal_emitter
+
+#--------------------------------Press-Input-----------------------------------------
+
+func _check_press_inputs():
+	if press_inputs.size() == 0:
+		return
+		
+	for press_input in press_inputs:
+		_handle_press_input(press_input)
+
+func _handle_press_input(input: CharacterInputMap):
+	var press_input_name: String = input.press_input.press_input_name
+	var press_function: String = input.press_input.pressed_function
+	var function_node_location
+	
+	function_node_location = _determine_function_press_node_location(input)
+	
+	if Input.is_action_just_pressed(press_input_name):
+		function_node_location.call(press_function)
+
+func _determine_function_press_node_location(input: CharacterInputMap):
+	if input.press_input.character_nodes == character_node_bank.CHARACTER_SPRITE:
+		return character_sprite
+	elif input.press_input.character_nodes == character_node_bank.CHARACTER_MOVEMENT:
+		return character_movement
+	elif input.press_input.character_nodes == character_node_bank.CHARACTER_STATE_MACHINE:
+		return character_state_machine
+	elif input.press_input.character_nodes == character_node_bank.CHARACTER_ANIMATOR:
+		return character_animator
+	elif input.press_input.character_nodes == character_node_bank.CHARACTER_SKIN:
+		return character_skin
+	elif input.press_input.character_nodes == character_node_bank.CHARACTER_EQUIPMENT:
+		return character_equipment
+	elif input.press_input.character_nodes == character_node_bank.CHARACTER_INVENTORY:
+		return character_inventory
+	elif input.press_input.character_nodes == character_node_bank.CHARACTER_SIGNAL_EMITTER:
 		return character_signal_emitter

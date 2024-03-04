@@ -8609,7 +8609,7 @@ position = Vector2(415, 273)
 map = NodePath("../../TileMaps/Ground_TileMap")
 
 [node name="TestPlayer" parent="Level/Characters" instance=ExtResource("13_7n3ux")]
-position = Vector2(554, 279)
+position = Vector2(520, 171)
 
 [node name="Buildings" type="Node2D" parent="Level"]
 z_as_relative = false

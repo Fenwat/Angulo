@@ -24,10 +24,10 @@ func equip_equipment_load(loadout):
 func equip_item(item):
 	character_skin.set_new_skin(item.source_rect, item.dest_rect.rect)
 	
-	if debug_enabled:
-		print_item_equip_debug(item)
+	print_item_equip_debug(item)
 
 #----------------------------Debug------------------------------------------------
 
 func print_item_equip_debug(item):
-	print(item.item_name + " equipped")
+	if debug_enabled:
+		print(item.item_name + " equipped")

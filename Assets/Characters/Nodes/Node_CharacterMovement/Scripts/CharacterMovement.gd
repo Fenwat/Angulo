@@ -8,9 +8,11 @@ const walk_speed: int = 35
 const sprint_speed: int = 80
 
 var move_speed: int = walk_speed
-var is_sprinting: bool = false
 var velocity: Vector2 = Vector2.ZERO
 var input_direction: Vector2 = Vector2.ZERO
+
+var position_locked: bool = false
+var is_sprinting: bool = false
 
 func _physics_process(_delta):
 	input_direction = character_input.input_direction
@@ -18,7 +20,10 @@ func _physics_process(_delta):
 	handle_movement()
 
 func handle_movement():
-	character.velocity = input_direction * move_speed
+	if position_locked:
+		character.velocity = Vector2.ZERO
+	else:
+		character.velocity = input_direction * move_speed
 	
 	character.move_and_slide()
 

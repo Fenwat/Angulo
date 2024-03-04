@@ -1,4 +1,4 @@
-[gd_scene load_steps=94 format=3 uid="uid://8youmhgtwvqr"]
+[gd_scene load_steps=106 format=3 uid="uid://8youmhgtwvqr"]
 
 [ext_resource type="Material" uid="uid://dujeuv6iab2w" path="res://Assets/Characters/Player/Shaders/Materials/player_skin_material.tres" id="1_dnpnp"]
 [ext_resource type="PackedScene" uid="uid://doakyahaj4cqc" path="res://Assets/Characters/Nodes/Node_CharacterSprite/Scenes/character_sprite.tscn" id="1_mu7au"]
@@ -13,9 +13,11 @@
 [ext_resource type="Script" path="res://Assets/Characters/Nodes/Node_CharacterInput/Scripts/HoldInputMap.gd" id="8_j7vus"]
 [ext_resource type="PackedScene" uid="uid://cppn86vq126jj" path="res://Assets/Characters/Nodes/Node_CharacterSignalEmitter/Scenes/character_signal_emitter.tscn" id="8_oymk2"]
 [ext_resource type="PackedScene" uid="uid://y3tfq8f53ji6" path="res://Assets/Characters/Nodes/Node_CharacterMovement/Scenes/character_movement.tscn" id="9_qigq3"]
+[ext_resource type="Script" path="res://Assets/Characters/Nodes/Node_CharacterInput/Scripts/PressInputMap.gd" id="9_r2u2h"]
 [ext_resource type="PackedScene" uid="uid://nenrmt8xvxgq" path="res://Assets/Characters/Nodes/Node_CharacterSkin/Scenes/character_skin.tscn" id="10_8h42o"]
 [ext_resource type="PackedScene" uid="uid://x8vjpjln4rjw" path="res://Assets/Characters/Nodes/Node_CharacterInventory/Scenes/character_inventory.tscn" id="11_4sa66"]
 [ext_resource type="PackedScene" uid="uid://usxc1wl5ubiv" path="res://Assets/Characters/Nodes/Node_CharacterEquipment/Scenes/character_equipment.tscn" id="11_utqxn"]
+[ext_resource type="Script" path="res://Assets/Characters/Nodes/Node_CharacterStateMachine/Scripts/AttackStateData.gd" id="12_57t2m"]
 [ext_resource type="Resource" uid="uid://bagandoc31av" path="res://Assets/Characters/Player/Inventory/Items/Resources/ArmorSets/UnequippedSet/unequipped_equipment_load.tres" id="12_b6yqc"]
 [ext_resource type="Resource" uid="uid://cdl2jiyds7hs" path="res://Assets/Characters/Player/Inventory/Resource/player_inventory.tres" id="12_kab2c"]
 
@@ -53,6 +55,18 @@ input_map_name = "Player Sprint"
 input_map_type = 2
 hold_input = SubResource("Resource_ckret")
 
+[sub_resource type="Resource" id="Resource_58yie"]
+script = ExtResource("9_r2u2h")
+press_input_name = "light_attack"
+pressed_function = "handle_light_attack"
+character_nodes = 2
+
+[sub_resource type="Resource" id="Resource_u6txf"]
+script = ExtResource("6_i37jq")
+input_map_name = "Player Light Attack"
+input_map_type = 1
+press_input = SubResource("Resource_58yie")
+
 [sub_resource type="Resource" id="Resource_d67fi"]
 script = ExtResource("5_m6wco")
 character_state_name = "Stand"
@@ -73,6 +87,66 @@ character_state_name = "Run"
 character_state_type = 2
 locks_character_state = false
 is_static = false
+
+[sub_resource type="Resource" id="Resource_x0834"]
+script = ExtResource("12_57t2m")
+attack_type = 0
+part_of_string_attack = true
+attack_string_name = ""
+attack_index = 0
+
+[sub_resource type="Resource" id="Resource_spgvd"]
+script = ExtResource("5_m6wco")
+character_state_name = "LightAttack1"
+character_state_type = 3
+locks_character_state = true
+is_static = true
+attack_data = SubResource("Resource_x0834")
+
+[sub_resource type="Resource" id="Resource_4g4wr"]
+script = ExtResource("12_57t2m")
+attack_type = 0
+part_of_string_attack = true
+attack_string_name = ""
+attack_index = 1
+
+[sub_resource type="Resource" id="Resource_ixmmg"]
+script = ExtResource("5_m6wco")
+character_state_name = "LightAttack2"
+character_state_type = 3
+locks_character_state = true
+is_static = true
+attack_data = SubResource("Resource_4g4wr")
+
+[sub_resource type="Resource" id="Resource_mpc44"]
+script = ExtResource("12_57t2m")
+attack_type = 0
+part_of_string_attack = true
+attack_string_name = ""
+attack_index = 2
+
+[sub_resource type="Resource" id="Resource_tdskh"]
+script = ExtResource("5_m6wco")
+character_state_name = "LightAttack3"
+character_state_type = 3
+locks_character_state = true
+is_static = true
+attack_data = SubResource("Resource_mpc44")
+
+[sub_resource type="Resource" id="Resource_22s0x"]
+script = ExtResource("12_57t2m")
+attack_type = 0
+part_of_string_attack = true
+attack_string_name = ""
+attack_index = 3
+
+[sub_resource type="Resource" id="Resource_5ht8j"]
+script = ExtResource("5_m6wco")
+character_state_name = "LightAttack4"
+character_state_type = 3
+locks_character_state = true
+is_static = true
+attack_data = SubResource("Resource_22s0x")
 
 [sub_resource type="Animation" id="Animation_boxv8"]
 length = 0.001
@@ -176,6 +250,20 @@ tracks/0/keys = {
 "update": 1,
 "values": [153, 154, 155, 156]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../CharacterStateMachine")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"light_attack_finished"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_fgurr"]
 resource_name = "player_lightAttack1_front"
@@ -191,6 +279,20 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [144, 145, 146, 147]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../CharacterStateMachine")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"light_attack_finished"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_005ya"]
@@ -208,6 +310,20 @@ tracks/0/keys = {
 "update": 1,
 "values": [171, 172, 173, 174]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../CharacterStateMachine")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"light_attack_finished"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_2jjp7"]
 resource_name = "player_lightAttack1_right"
@@ -223,6 +339,20 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [162, 163, 164, 165]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../CharacterStateMachine")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"light_attack_finished"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_eisp1"]
@@ -787,6 +917,8 @@ graph_offset = Vector2(-144, 51)
 [node name="TestPlayer" type="CharacterBody2D"]
 z_as_relative = false
 y_sort_enabled = true
+collision_layer = 2
+collision_mask = 15
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 2
@@ -806,10 +938,10 @@ shape = SubResource("RectangleShape2D_12k0d")
 character_sprites = Array[ExtResource("3_qu5xa")]([SubResource("Resource_kfwix")])
 
 [node name="CharacterInput" parent="." instance=ExtResource("7_swe6k")]
-character_inputs = Array[ExtResource("6_i37jq")]([SubResource("Resource_e27p0"), SubResource("Resource_varh1")])
+character_inputs = Array[ExtResource("6_i37jq")]([SubResource("Resource_e27p0"), SubResource("Resource_varh1"), SubResource("Resource_u6txf")])
 
 [node name="CharacterStateMachine" parent="." instance=ExtResource("4_yoxmo")]
-states = Array[ExtResource("5_m6wco")]([SubResource("Resource_d67fi"), SubResource("Resource_igdyn"), SubResource("Resource_q3uvc")])
+states = Array[ExtResource("5_m6wco")]([SubResource("Resource_d67fi"), SubResource("Resource_igdyn"), SubResource("Resource_q3uvc"), SubResource("Resource_spgvd"), SubResource("Resource_ixmmg"), SubResource("Resource_tdskh"), SubResource("Resource_5ht8j")])
 
 [node name="CharacterAnimator" parent="." instance=ExtResource("5_0kqqu")]
 

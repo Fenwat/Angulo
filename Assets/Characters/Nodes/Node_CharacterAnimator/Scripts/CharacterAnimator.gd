@@ -5,18 +5,16 @@ class_name CharacterAnimator
 @onready var animation_tree = $"AnimationTree"
 @onready var state_machine = animation_tree.get("parameters/playback")
 
-var debug_current_animation_active: bool = false
+var direction_locked: bool = false
 
-#func _ready():
-	#_set_default_animation()
-#
-#func _set_default_animation():
-	#state_machine.travel("idle")
-	#_set_animation_blend_position("parameters/idle/blend_position", Vector2.ZERO)
+var debug_current_animation_active: bool = false
 
 func handle_animation(character_state: CharacterState):
 	var blend_position: String = "parameters/" + character_state.character_state_name + "/blend_position"
 	var animation_vector: Vector2 = Vector2.ZERO
+	
+	if direction_locked:
+		return
 	
 	if character_state.is_static:
 		animation_vector = character_input.last_non_zero_input
