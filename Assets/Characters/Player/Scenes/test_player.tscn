@@ -94,6 +94,10 @@ attack_type = 0
 part_of_string_attack = true
 attack_string_name = ""
 attack_index = 0
+attack_step_size_north = 7
+attack_step_size_east = 7
+attack_step_size_south = 7
+attack_step_size_west = 7
 
 [sub_resource type="Resource" id="Resource_spgvd"]
 script = ExtResource("5_m6wco")
@@ -109,6 +113,10 @@ attack_type = 0
 part_of_string_attack = true
 attack_string_name = ""
 attack_index = 1
+attack_step_size_north = 9
+attack_step_size_east = 9
+attack_step_size_south = 9
+attack_step_size_west = 9
 
 [sub_resource type="Resource" id="Resource_ixmmg"]
 script = ExtResource("5_m6wco")
@@ -124,6 +132,10 @@ attack_type = 0
 part_of_string_attack = true
 attack_string_name = ""
 attack_index = 2
+attack_step_size_north = 11
+attack_step_size_east = 11
+attack_step_size_south = 11
+attack_step_size_west = 11
 
 [sub_resource type="Resource" id="Resource_tdskh"]
 script = ExtResource("5_m6wco")
@@ -139,6 +151,10 @@ attack_type = 0
 part_of_string_attack = true
 attack_string_name = ""
 attack_index = 3
+attack_step_size_north = 0
+attack_step_size_east = 0
+attack_step_size_south = 0
+attack_step_size_west = 0
 
 [sub_resource type="Resource" id="Resource_5ht8j"]
 script = ExtResource("5_m6wco")
@@ -370,6 +386,20 @@ tracks/0/keys = {
 "update": 1,
 "values": [189, 190, 191, 192]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../CharacterStateMachine")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"light_attack_finished"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_xh3g7"]
 resource_name = "player_lightAttack2_front"
@@ -385,6 +415,20 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [180, 181, 182, 183]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../CharacterStateMachine")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"light_attack_finished"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_7jtm6"]
@@ -402,6 +446,20 @@ tracks/0/keys = {
 "update": 1,
 "values": [207, 208, 209, 210]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../CharacterStateMachine")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"light_attack_finished"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_j71xe"]
 resource_name = "player_lightAttack2_right"
@@ -417,6 +475,20 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [198, 199, 200, 201]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../CharacterStateMachine")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"light_attack_finished"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_q7f3y"]
@@ -434,6 +506,20 @@ tracks/0/keys = {
 "update": 1,
 "values": [225, 226, 227, 228, 229, 230]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../CharacterStateMachine")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.6),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"light_attack_finished"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_t3opq"]
 resource_name = "player_lightAttack3_front"
@@ -449,6 +535,20 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [216, 217, 218, 219, 220, 221]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../CharacterStateMachine")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.6),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"light_attack_finished"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_to8jn"]
@@ -466,6 +566,20 @@ tracks/0/keys = {
 "update": 1,
 "values": [243, 244, 245, 246, 247, 248]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../CharacterStateMachine")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.6),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"light_attack_finished"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_agm7y"]
 resource_name = "player_lightAttack3_right"
@@ -481,6 +595,20 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": [234, 235, 236, 237, 238]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../CharacterStateMachine")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.6),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"light_attack_finished"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_filf2"]
@@ -498,6 +626,20 @@ tracks/0/keys = {
 "update": 1,
 "values": [261, 262, 263, 264, 265, 266, 267, 268]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../CharacterStateMachine")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.8),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"light_attack_finished"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_7sk2f"]
 resource_name = "player_lightAttack4_front"
@@ -513,6 +655,20 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [252, 253, 254, 255, 256, 257, 258, 259]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../CharacterStateMachine")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.8),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"light_attack_finished"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_hedi6"]
@@ -530,6 +686,20 @@ tracks/0/keys = {
 "update": 1,
 "values": [279, 280, 281, 282, 283, 284, 285, 286]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../CharacterStateMachine")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.8),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"light_attack_finished"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_18t81"]
 resource_name = "player_lightAttack4_right"
@@ -545,6 +715,20 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [270, 271, 272, 273, 274, 275, 276, 277]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../CharacterStateMachine")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.8),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"light_attack_finished"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_73e73"]
@@ -752,7 +936,7 @@ animation = &"player_lightAttack2_left"
 animation = &"player_lightAttack2_front"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_nk2ro"]
-animation = &"player_lightAttack2_front"
+animation = &"player_lightAttack2_back"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_e5ax2"]
 animation = &"player_lightAttack2_right"
@@ -774,7 +958,7 @@ blend_mode = 1
 animation = &"player_lightAttack3_left"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2obom"]
-animation = &"player_lightAttack3_back"
+animation = &"player_lightAttack3_front"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_r7lrr"]
 animation = &"player_lightAttack3_back"

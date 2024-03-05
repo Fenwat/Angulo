@@ -20,6 +20,11 @@ var heavy_attack_states: Array[CharacterState]
 
 var current_character_state: CharacterState
 
+# Attack indexing variables
+var attack_queued: bool = false
+var attack_in_progress: bool = false
+var current_attack_index: int = 0
+
 # Toggle debugs
 var debug_current_character_state_active: bool = false
 var debug_character_states_active: bool = false
@@ -66,7 +71,8 @@ func _set_default_character_state():
 
 func _assign_character_attack_state(state: CharacterState):
 	if state.attack_data.attack_type == attack_state_type.LIGHT:
-		light_attack_states.append(state)
+		if state.attack_data.part_of_string_attack:
+			light_attack_states.insert(state.attack_data.attack_index, state)
 	elif state.attack_data.attack_type == attack_state_type.HEAVY:
 		heavy_attack_states.append(state)
 
@@ -100,28 +106,52 @@ func _handle_character_state():
 #-----------------------------------Input-Triggered--------------------------------------
 #----------------------------------------------------------------------------------------
 
+#---------------------------------------Tools-------------------------------------------
+
+func lock_character():
+	character_state_locked = true
+	character_movement.position_locked = true
+	character_animator.direction_locked = true
+
+func unlock_character():
+	character_state_locked = false
+	character_movement.position_locked = false
+	character_animator.direction_locked = false
+
 #------------------------------------Light-Attack----------------------------------------
 
 func handle_light_attack():
 	if light_attack_states.size() == 0:
 		return
 	
-	current_character_state = light_attack_states[0]
+	if attack_in_progress:
+		attack_queued = true
+	else:
+		attack_in_progress = true
+	
+	if current_attack_index > light_attack_states.size() - 1:
+		current_attack_index = 0
+	
+	current_character_state = light_attack_states[current_attack_index]
 	character_animator.handle_animation(current_character_state)
 	
-	character_state_locked = true
-	character_movement.position_locked = true
-	character_animator.direction_locked = true
-	
-	
-	
-	#for light_attack_state in light_attack_states:
-		#print(light_attack_state.character_state_name)
+	lock_character()
 
 func light_attack_finished():
-	character_state_locked = false
-	character_movement.position_locked = false
-	character_animator.direction_locked = false
+	attack_in_progress = false
+	if attack_queued:
+		attack_queued = false
+		current_attack_index += 1
+		character_movement.move_character(current_character_state)
+		unlock_character()
+		handle_next_light_attack()
+	else:
+		attack_queued = false
+		current_attack_index = 0
+		unlock_character()
+
+func handle_next_light_attack():
+	handle_light_attack()
 
 #----------------------------------------------------------------------------------------
 #---------------------------------------Debug--------------------------------------------

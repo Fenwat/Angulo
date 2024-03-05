@@ -18,3 +18,15 @@ class_name AttackStateData
 ## Indicates when in the attack string this attack state is placed.
 ## Starts at 0.
 @export var attack_index: int
+
+## Indicates haw many pixels foward the character steps during the attack.
+@export var attack_step_size_north: int
+
+## Indicates haw many pixels foward the character steps during the attack.
+@export var attack_step_size_east: int
+
+## Indicates haw many pixels foward the character steps during the attack.
+@export var attack_step_size_south: int
+
+## Indicates haw many pixels foward the character steps during the attack.
+@export var attack_step_size_west: int
