@@ -4,8 +4,20 @@ extends Node
 
 @onready var player_sub_inventory = preload("res://Assets/Characters/Player/Inventory/Resource/SubInventories/empty_subinventory.tres")
 
+var menu_is_open: bool = false
+
 func _ready():
+	_connect_signals()
+
+func _connect_signals():
 	PlayerInventorySignalBus.connect("item_added_to_player_inventory", handle_new_item)
+	PlayerInventorySignalBus.connect("player_menu_toggled", toggle_menu_status)
+
+func toggle_menu_status():
+	if menu_is_open:
+		menu_is_open = false
+	else:
+		menu_is_open = true
 
 func handle_new_item(item):
 	var new_sub_inventory_index = item.sub_inventory_data.sub_inventory_index

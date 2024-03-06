@@ -14,6 +14,7 @@ func _input(event):
 			close_inventories()
 		else:
 			open_inventories()
+		PlayerInventorySignalBus.emit_signal("player_menu_toggled")
 
 func close_inventories():
 	gui_inventory.close_inventory()

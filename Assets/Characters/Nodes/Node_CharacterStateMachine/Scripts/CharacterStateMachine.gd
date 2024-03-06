@@ -7,6 +7,7 @@ extends Node
 @onready var character_input = $"../CharacterInput"
 @onready var character_movement = $"../CharacterMovement"
 @onready var character_animator = $"../CharacterAnimator"
+@onready var character_inventory = $"../CharacterInventory"
 
 var character_state_locked: bool = false
 
@@ -49,6 +50,7 @@ enum attack_state_type {
 func _ready():
 	_assign_character_states()
 	_set_default_character_state()
+
 
 func _assign_character_states():
 	for state in states:
@@ -122,6 +124,9 @@ func unlock_character():
 
 func handle_light_attack():
 	if light_attack_states.size() == 0:
+		return
+	
+	if character_inventory.menu_is_open:
 		return
 	
 	if attack_in_progress:

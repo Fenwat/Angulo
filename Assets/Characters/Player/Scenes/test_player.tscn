@@ -22,7 +22,7 @@
 [ext_resource type="Resource" uid="uid://cdl2jiyds7hs" path="res://Assets/Characters/Player/Inventory/Resource/player_inventory.tres" id="12_kab2c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_12k0d"]
-size = Vector2(4.8125, 1.1875)
+size = Vector2(5, 1)
 
 [sub_resource type="Resource" id="Resource_kfwix"]
 script = ExtResource("3_qu5xa")
@@ -113,9 +113,9 @@ attack_type = 0
 part_of_string_attack = true
 attack_string_name = ""
 attack_index = 1
-attack_step_size_north = 9
+attack_step_size_north = 8
 attack_step_size_east = 9
-attack_step_size_south = 9
+attack_step_size_south = 8
 attack_step_size_west = 9
 
 [sub_resource type="Resource" id="Resource_ixmmg"]
@@ -132,9 +132,9 @@ attack_type = 0
 part_of_string_attack = true
 attack_string_name = ""
 attack_index = 2
-attack_step_size_north = 11
+attack_step_size_north = 8
 attack_step_size_east = 11
-attack_step_size_south = 11
+attack_step_size_south = 8
 attack_step_size_west = 11
 
 [sub_resource type="Resource" id="Resource_tdskh"]
