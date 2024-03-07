@@ -1,6 +1,7 @@
 extends Node
 class_name CharacterAnimator
 
+@onready var character = $".."
 @onready var character_input = $"../CharacterInput"
 @onready var animation_tree = $"AnimationTree"
 @onready var state_machine = animation_tree.get("parameters/playback")
@@ -33,4 +34,4 @@ func _set_animation_blend_position(path, move_input):
 
 func _debug_current_animation(character_state: CharacterState):
 	if debug_current_animation_active:
-		print("Current animation: ", character_state.character_state_name, "   |   Animation locked: ", character_state.locks_character_state)
+		print(character.character_name, "'s current animation: ", character_state.character_state_name, "   |   Animation locked: ", character_state.locks_character_state)

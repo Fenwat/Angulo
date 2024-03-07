@@ -164,15 +164,16 @@ func handle_next_light_attack():
 
 func _debug_current_character_state(character_state: CharacterState):
 	if debug_current_character_state_active:
-		print("----------------------------------------")
+		print("--------------character.character_name---------------")
 		print("Current state: ", character_state.character_state_name)
 		print("  Character state type: ", character_state.character_state_type)
 		print("  Locks state: ", character_state.locks_character_state)
 		print("")
 
-func _debug_character_states():		
+func _debug_character_states():
+	
 	if debug_character_states_active:
-		print("---------Character States----------")
+		print("----", character.character_name, " Character States-------")
 		if idle_states.size() > 0:
 			for state in idle_states:
 				print("Idle state: ", state.character_state_name)

@@ -88,10 +88,10 @@ func debug_character_direction():
 	if debug_character_direction_enabled:
 		match current_character_direction:
 			character_direction.NORTH:
-				print("Facing north")
+				print(character.character_name, " facing north")
 			character_direction.EAST:
-				print("Facing east")
+				print(character.character_name, " facing east")
 			character_direction.SOUTH:
-				print("Facing south")
+				print(character.character_name, " facing south")
 			character_direction.WEST:
-				print("Facing west")
+				print(character.character_name, " facing west")

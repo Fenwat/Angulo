@@ -1,6 +1,7 @@
-[gd_scene load_steps=106 format=3 uid="uid://8youmhgtwvqr"]
+[gd_scene load_steps=107 format=3 uid="uid://8youmhgtwvqr"]
 
 [ext_resource type="Material" uid="uid://dujeuv6iab2w" path="res://Assets/Characters/Player/Shaders/Materials/player_skin_material.tres" id="1_dnpnp"]
+[ext_resource type="Script" path="res://Assets/Characters/Nodes/Node_Character/Scripts/Character.gd" id="1_j8k8j"]
 [ext_resource type="PackedScene" uid="uid://doakyahaj4cqc" path="res://Assets/Characters/Nodes/Node_CharacterSprite/Scenes/character_sprite.tscn" id="1_mu7au"]
 [ext_resource type="Texture2D" uid="uid://bip7aesedlxq4" path="res://Assets/Characters/Player/Movesets/StraightSword/player_straightSword.png" id="2_hcgd3"]
 [ext_resource type="Script" path="res://Assets/Characters/Nodes/Node_CharacterSprite/Scripts/CharacterSpriteElement.gd" id="3_qu5xa"]
@@ -1103,6 +1104,8 @@ z_as_relative = false
 y_sort_enabled = true
 collision_layer = 2
 collision_mask = 15
+script = ExtResource("1_j8k8j")
+character_name = "Player"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 2

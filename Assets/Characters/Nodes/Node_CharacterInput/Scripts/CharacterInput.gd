@@ -78,7 +78,7 @@ func _get_input_direction(input_map: CharacterInputMap):
 	if input_direction != Vector2.ZERO:
 		last_non_zero_input = input_direction
 
-#-------------------------------Hold-Input----------------------------------------
+#-------------------------------------Hold-Input----------------------------------------
 
 func _check_hold_inputs():
 	if hold_inputs.size() == 0:
@@ -119,7 +119,7 @@ func _determine_function_node_location(input: CharacterInputMap):
 	elif input.hold_input.character_nodes == character_node_bank.CHARACTER_SIGNAL_EMITTER:
 		return character_signal_emitter
 
-#--------------------------------Press-Input-----------------------------------------
+#-------------------------------------Press-Input-------------------------------------------
 
 func _check_press_inputs():
 	if press_inputs.size() == 0:

@@ -2,6 +2,7 @@ extends Node
 
 @export var inventory: PlayerInventory
 
+@onready var character = $".."
 @onready var player_sub_inventory = preload("res://Assets/Characters/Player/Inventory/Resource/SubInventories/empty_subinventory.tres")
 
 var menu_is_open: bool = false
@@ -60,7 +61,7 @@ func add_item_to_inventory(item, sub_inventory):
 
 func debug_inventory_contents():
 	print("")
-	print("----------------PLAYER-INVENTORY-------------------")
+	print("----------------", character.character_name, "-Inventory-------------------")
 	for sub_inventory in inventory.sub_inventories:
 		if sub_inventory.items.size() > 0:
 			print_contents(sub_inventory)
