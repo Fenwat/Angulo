@@ -18,7 +18,7 @@ var gui_sub_inventories_array: Array[Control]
 var debug_new_item_enabled: bool = false
 var debug_inventory_contents_enabled: bool = false
 var debug_skin_enabled: bool = false
-var debug_gui_subinventories_enabled: bool = true
+var debug_gui_subinventories_enabled: bool = false
 
 #-------------------------------------------------------------------------------------------------
 #-------------------------------------------Ready-------------------------------------------------
@@ -69,14 +69,12 @@ func create_gui_sub_inventory_elements():
 
 func add_gui_sub_inventory_elements(sub_inventory_element):
 	for gui_sub_inventory_element in gui_sub_inventories_array:
-		if gui_sub_inventory_element.added_to_gui:
-			return
-		
-		gui_sub_inventory_element.sub_inventory_y_position = determine_sub_inventory_element_y_position()
-		if gui_sub_inventory_element.type == 0:
-			gui_sub_inventory_element.label_text = sub_inventory_element.sub_inventory_name
-		gui_player_inventory.add_child(gui_sub_inventory_element)
-		gui_sub_inventory_element.added_to_gui = true
+		if gui_sub_inventory_element.added_to_gui == false:
+			gui_sub_inventory_element.sub_inventory_y_position = determine_sub_inventory_element_y_position()
+			if gui_sub_inventory_element.type == 0:
+				gui_sub_inventory_element.label_text = sub_inventory_element.sub_inventory_name
+			gui_player_inventory.add_child(gui_sub_inventory_element)
+			gui_sub_inventory_element.added_to_gui = true
 
 #------------------------------------Clear-Children---------------------------------------
 
