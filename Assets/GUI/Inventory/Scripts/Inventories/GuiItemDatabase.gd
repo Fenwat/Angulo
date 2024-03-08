@@ -1,5 +1,5 @@
 extends Control
-class_name GuiDatabaseInventory
+class_name GuiItemDatabase
 
 @export var database: ItemDatabase
 
@@ -19,10 +19,10 @@ func update_armor_items():
 	for i in range(min(armor_items.size(), slots.size())):
 		slots[i].update(armor_items[i])
 
-func open_inventory():
+func open_item_database():
 	visible = true
-	gui_layer.is_open = true
+	gui_layer.item_database_is_open = true
 
-func close_inventory():
+func close_item_database():
 	visible = false
-	gui_layer.is_open = false
+	gui_layer.item_database_is_open = false

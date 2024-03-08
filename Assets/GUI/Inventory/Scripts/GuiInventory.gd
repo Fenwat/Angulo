@@ -37,11 +37,11 @@ func _connect_signals():
 
 func open_inventory():
 	visible = true
-	gui_layer.is_open = true
+	gui_layer.inventory_is_open = true
 
 func close_inventory():
 	visible = false
-	gui_layer.is_open = false
+	gui_layer.inventory_is_open = false
 
 #-------------------------------------------------------------------------------------------------
 #----------------------------------------Gui-Sub-Inventories--------------------------------------

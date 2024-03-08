@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://hs1lfea0uky1" path="res://Assets/Buildings/Scenes/farm_house.tscn" id="13_a7vik"]
 [ext_resource type="Script" path="res://Assets/GUI/Scripts/CanvasLayer.gd" id="14_kk3l3"]
 [ext_resource type="PackedScene" uid="uid://dbik1s41svdr7" path="res://Assets/GUI/DateTime/Scenes/date_time_gui.tscn" id="16_cads6"]
-[ext_resource type="PackedScene" uid="uid://c0prcm7xwmm66" path="res://Assets/GUI/Inventory/Scenes/Inventories/gui_database_inventory.tscn" id="17_0faut"]
+[ext_resource type="PackedScene" uid="uid://lc3gcek3ihuj" path="res://Assets/GUI/Inventory/Scenes/Inventories/gui_item_database.tscn" id="17_fm2tk"]
 [ext_resource type="PackedScene" uid="uid://c3c3x3avdcc6e" path="res://Assets/GUI/Inventory/Scenes/gui_inventory.tscn" id="17_w87mi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kb72y"]
@@ -8624,11 +8624,8 @@ script = ExtResource("14_kk3l3")
 
 [node name="DateTimeGui" parent="CanvasLayer" instance=ExtResource("16_cads6")]
 
-[node name="GuiInventory" parent="CanvasLayer" instance=ExtResource("17_w87mi")]
+[node name="GuiItemDatabase" parent="CanvasLayer" instance=ExtResource("17_fm2tk")]
 visible = false
-offset_right = -1152.0
-offset_bottom = -648.0
-scale = Vector2(3, 3)
 
-[node name="GuiDatabaseInventory" parent="CanvasLayer" instance=ExtResource("17_0faut")]
+[node name="GuiInventory" parent="CanvasLayer" instance=ExtResource("17_w87mi")]
 visible = false

@@ -1,18 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://c3c3x3avdcc6e"]
+[gd_scene load_steps=5 format=3 uid="uid://c3c3x3avdcc6e"]
 
 [ext_resource type="Script" path="res://Assets/GUI/Inventory/Scripts/GuiInventory.gd" id="1_bmqak"]
 [ext_resource type="Texture2D" uid="uid://osinuhn8hrvn" path="res://Assets/GUI/Inventory/Sprites/InventoryBase_NinePatch.png" id="1_ey6jo"]
 [ext_resource type="Resource" uid="uid://cdl2jiyds7hs" path="res://Assets/Characters/Player/Inventory/Resource/player_inventory.tres" id="2_cpyqw"]
 [ext_resource type="PackedScene" uid="uid://c1660idr2wltj" path="res://Assets/Characters/Player/Shaders/Debug/debug_skin_map.tscn" id="3_wvu5t"]
-[ext_resource type="PackedScene" uid="uid://poypax5s8yjk" path="res://Assets/GUI/Inventory/Scenes/gui_sub_inventory.tscn" id="5_v1q8k"]
 
 [node name="GuiInventory" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
+scale = Vector2(3, 3)
 script = ExtResource("1_bmqak")
 inventory = ExtResource("2_cpyqw")
 
@@ -42,13 +38,3 @@ patch_margin_left = 3
 patch_margin_top = 3
 patch_margin_right = 3
 patch_margin_bottom = 3
-
-[node name="GuiSubInventory" parent="PlayerInventory" instance=ExtResource("5_v1q8k")]
-sub_inventory_y_position = 3
-
-[node name="GuiSubInventory2" parent="PlayerInventory" instance=ExtResource("5_v1q8k")]
-layout_mode = 0
-sub_inventory_y_position = 13
-
-[node name="GuiSubInventory3" parent="PlayerInventory" instance=ExtResource("5_v1q8k")]
-sub_inventory_y_position = 23
