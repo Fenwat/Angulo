@@ -10,6 +10,12 @@ func _ready():
 	configure_button()
 	add_child(button)
 
+func _process(_delta):
+	if button.is_hovered():
+		slot.slot_sprite.frame = 2
+	else:
+		slot.reset_slot()
+
 func configure_button():
 	button.self_modulate.a = 0
 

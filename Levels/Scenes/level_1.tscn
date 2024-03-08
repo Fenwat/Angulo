@@ -8619,6 +8619,7 @@ y_sort_enabled = true
 position = Vector2(619, 125)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 100
 script = ExtResource("14_kk3l3")
 
 [node name="DateTimeGui" parent="CanvasLayer" instance=ExtResource("16_cads6")]

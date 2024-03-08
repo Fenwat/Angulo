@@ -7,6 +7,9 @@ extends Node
 
 var menu_is_open: bool = false
 
+# debug switches
+var debug_inventory_contents_enabled: bool = false
+
 func _ready():
 	_connect_signals()
 
@@ -41,6 +44,8 @@ func handle_new_item(item):
 		inventory.sub_inventories.append(new_sub_inventory)
 
 		add_item_to_inventory(item, new_sub_inventory)
+	
+	debug_inventory_contents()
 
 		
 func add_item_to_inventory(item, sub_inventory):
@@ -60,6 +65,9 @@ func add_item_to_inventory(item, sub_inventory):
 #-----------------------------------Debug--------------------------------------------------
 
 func debug_inventory_contents():
+	if debug_inventory_contents_enabled == false:
+		return
+	
 	print("")
 	print("----------------", character.character_name, "-Inventory-------------------")
 	for sub_inventory in inventory.sub_inventories:

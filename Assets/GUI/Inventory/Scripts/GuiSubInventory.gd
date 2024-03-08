@@ -9,11 +9,11 @@ class_name GuiSubInventory
 
 enum gui_type {TEXT, SUBINVENTORY, BREAK}
  
-var height: int
+@export var height: int
 var type = gui_type.SUBINVENTORY
-var gui_sub_inventory_name: String
-var added_to_gui: bool = false
-var sub_inventory_y_position: int = 0
+@export var gui_sub_inventory_name: String
+@export var added_to_gui: bool = false
+@export var sub_inventory_y_position: int = 0
 
 func _ready():
 	PlayerInventorySignalBus.connect("item_added_to_player_inventory", handle_new_item)
