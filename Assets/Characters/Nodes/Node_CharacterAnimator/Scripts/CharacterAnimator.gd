@@ -8,6 +8,7 @@ class_name CharacterAnimator
 
 var direction_locked: bool = false
 
+# debug switches
 var debug_current_animation_active: bool = false
 
 func handle_animation(character_state: CharacterState):

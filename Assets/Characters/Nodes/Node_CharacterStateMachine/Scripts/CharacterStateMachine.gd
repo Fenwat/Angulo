@@ -120,6 +120,16 @@ func unlock_character():
 	character_movement.position_locked = false
 	character_animator.direction_locked = false
 
+func _check_for_attack():
+	if attack_in_progress:
+		attack_queued = true
+	else:
+		attack_in_progress = true
+
+func _handle_attack_state(attack_state_array: Array):
+	current_character_state = attack_state_array[current_attack_index]
+	character_animator.handle_animation(current_character_state)
+
 #------------------------------------Light-Attack----------------------------------------
 
 func handle_light_attack():
@@ -129,17 +139,12 @@ func handle_light_attack():
 	if character_inventory.menu_is_open:
 		return
 	
-	if attack_in_progress:
-		attack_queued = true
-	else:
-		attack_in_progress = true
+	_check_for_attack()
 	
 	if current_attack_index > light_attack_states.size() - 1:
 		current_attack_index = 0
 	
-	current_character_state = light_attack_states[current_attack_index]
-	character_animator.handle_animation(current_character_state)
-	
+	_handle_attack_state(light_attack_states)
 	lock_character()
 
 func light_attack_finished():

@@ -1,13 +1,14 @@
 extends Node
 class_name CharacterMovement
 
+@export var walk_speed: int
+@export var jog_speed: int
+@export var sprint_speed: int
+
 @onready var character = $".."
 @onready var character_input = $"../CharacterInput"
 
-const walk_speed: int = 35
-const sprint_speed: int = 80
-
-var move_speed: int = walk_speed
+@onready var move_speed: int = walk_speed
 var velocity: Vector2 = Vector2.ZERO
 
 var position_locked: bool = false
