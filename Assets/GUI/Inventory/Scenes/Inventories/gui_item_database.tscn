@@ -17,9 +17,9 @@ database = ExtResource("2_d0efu")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 0
-offset_left = -55.6667
+offset_left = -66.0
 offset_top = 27.0
-offset_right = -1.66667
+offset_right = -2.0
 offset_bottom = 81.0
 texture = ExtResource("3_8gmor")
 patch_margin_left = 3
@@ -31,11 +31,11 @@ patch_margin_bottom = 3
 layout_mode = 0
 offset_left = 3.0
 offset_top = 3.0
-offset_right = 51.0
-offset_bottom = 43.0
+offset_right = 62.0
+offset_bottom = 52.0
 theme_override_constants/h_separation = 2
 theme_override_constants/v_separation = 2
-columns = 5
+columns = 6
 
 [node name="GuiSlotDatabase" parent="NinePatchRect/GridContainer" instance=ExtResource("4_t0bpm")]
 layout_mode = 2
@@ -110,4 +110,19 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="GuiSlotDatabase25" parent="NinePatchRect/GridContainer" instance=ExtResource("4_t0bpm")]
+layout_mode = 2
+
+[node name="GuiSlotDatabase26" parent="NinePatchRect/GridContainer" instance=ExtResource("4_t0bpm")]
+layout_mode = 2
+
+[node name="GuiSlotDatabase27" parent="NinePatchRect/GridContainer" instance=ExtResource("4_t0bpm")]
+layout_mode = 2
+
+[node name="GuiSlotDatabase28" parent="NinePatchRect/GridContainer" instance=ExtResource("4_t0bpm")]
+layout_mode = 2
+
+[node name="GuiSlotDatabase29" parent="NinePatchRect/GridContainer" instance=ExtResource("4_t0bpm")]
+layout_mode = 2
+
+[node name="GuiSlotDatabase30" parent="NinePatchRect/GridContainer" instance=ExtResource("4_t0bpm")]
 layout_mode = 2

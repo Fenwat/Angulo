@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="ArmorItem" load_steps=5 format=3 uid="uid://5u1wocnpthl7"]
+
+[ext_resource type="Script" path="res://Assets/Characters/Player/Inventory/Scripts/InventoryItems/ArmorItems/ArmorItem.gd" id="1_eukm2"]
+[ext_resource type="Resource" uid="uid://dws6mhvwtebc8" path="res://Assets/Characters/Player/Inventory/Resource/DestRects/GauntletsDestRect.tres" id="1_p5g8r"]
+[ext_resource type="Texture2D" uid="uid://cfi51vbuidwvw" path="res://Assets/Characters/Player/Inventory/Items/Sprites/RedBandSet_Slot/slot_red_band_gauntlets.png" id="2_67pe5"]
+[ext_resource type="Resource" uid="uid://13omte80ueo8" path="res://Assets/Characters/Player/Inventory/Resource/SubInventoryData/gauntlets_sub_inventory_data.tres" id="4_lhef2"]
+
+[resource]
+script = ExtResource("1_eukm2")
+weight = 9.0
+defense = 12.0
+source_rect = Vector4(83, 66, 6, 3)
+dest_rect = ExtResource("1_p5g8r")
+armor_type = 3
+item_texture = ExtResource("2_67pe5")
+item_name = "Red Band Gauntlets"
+item_description = "Gauntlets worn by the Red Band Bandits."
+item_type = 0
+inventory_item_priority = 5
+sub_inventory_data = ExtResource("4_lhef2")

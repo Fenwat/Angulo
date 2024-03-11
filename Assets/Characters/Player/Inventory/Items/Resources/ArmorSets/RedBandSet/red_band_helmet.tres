@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="ArmorItem" load_steps=5 format=3 uid="uid://ccxsb8j1x7k0u"]
+
+[ext_resource type="Resource" uid="uid://dstqou7ou5iif" path="res://Assets/Characters/Player/Inventory/Resource/DestRects/HelmetDestRect.tres" id="1_os8hl"]
+[ext_resource type="Script" path="res://Assets/Characters/Player/Inventory/Scripts/InventoryItems/ArmorItems/ArmorItem.gd" id="1_tnmey"]
+[ext_resource type="Texture2D" uid="uid://lxpe3b1vxx11" path="res://Assets/Characters/Player/Inventory/Items/Sprites/RedBandSet_Slot/slot_red_band_helmet.png" id="2_lujcm"]
+[ext_resource type="Resource" uid="uid://d2vr4rdb4srm6" path="res://Assets/Characters/Player/Inventory/Resource/SubInventoryData/helmet_sub_inventory_data.tres" id="4_5orvp"]
+
+[resource]
+script = ExtResource("1_tnmey")
+weight = 11.0
+defense = 15.0
+source_rect = Vector4(67, 66, 15, 4)
+dest_rect = ExtResource("1_os8hl")
+armor_type = 0
+item_texture = ExtResource("2_lujcm")
+item_name = "Red Band Helmet"
+item_description = "A helmet with a red band draped over it's side. The signature helmet of the Red Band Bandits."
+item_type = 0
+inventory_item_priority = 5
+sub_inventory_data = ExtResource("4_5orvp")

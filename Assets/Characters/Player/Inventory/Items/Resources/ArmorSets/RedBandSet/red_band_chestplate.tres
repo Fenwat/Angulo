@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="ArmorItem" load_steps=5 format=3 uid="uid://bax7xded8p5l8"]
+
+[ext_resource type="Resource" uid="uid://74qmsvv144xj" path="res://Assets/Characters/Player/Inventory/Resource/DestRects/ChestplateDestRect.tres" id="1_vb0bk"]
+[ext_resource type="Script" path="res://Assets/Characters/Player/Inventory/Scripts/InventoryItems/ArmorItems/ArmorItem.gd" id="1_yflv6"]
+[ext_resource type="Texture2D" uid="uid://byb48wlmjhbqw" path="res://Assets/Characters/Player/Inventory/Items/Sprites/RedBandSet_Slot/slot_red_band_chestplate.png" id="2_gehwa"]
+[ext_resource type="Resource" uid="uid://drr6tgtln22t4" path="res://Assets/Characters/Player/Inventory/Resource/SubInventoryData/chestplate_sub_inventory_data.tres" id="4_7pguw"]
+
+[resource]
+script = ExtResource("1_yflv6")
+weight = 17.0
+defense = 24.0
+source_rect = Vector4(67, 70, 15, 7)
+dest_rect = ExtResource("1_vb0bk")
+armor_type = 1
+item_texture = ExtResource("2_gehwa")
+item_name = "Red Band Chestplate"
+item_description = "A steel chestplate adorned with a red scarf, as worn by the Red Band Bandits."
+item_type = 0
+inventory_item_priority = 5
+sub_inventory_data = ExtResource("4_7pguw")

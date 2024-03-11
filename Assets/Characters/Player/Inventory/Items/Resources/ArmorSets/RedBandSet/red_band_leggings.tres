@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="ArmorItem" load_steps=5 format=3 uid="uid://c138ynsgc6y13"]
+
+[ext_resource type="Resource" uid="uid://ve8grpec7ic0" path="res://Assets/Characters/Player/Inventory/Resource/DestRects/LeggingsDestRect.tres" id="1_f0q6a"]
+[ext_resource type="Script" path="res://Assets/Characters/Player/Inventory/Scripts/InventoryItems/ArmorItems/ArmorItem.gd" id="1_tj1sn"]
+[ext_resource type="Texture2D" uid="uid://d3yjxa272njxd" path="res://Assets/Characters/Player/Inventory/Items/Sprites/RedBandSet_Slot/slot_red_band_leggings.png" id="2_a3pr4"]
+[ext_resource type="Resource" uid="uid://8benawo2a5gk" path="res://Assets/Characters/Player/Inventory/Resource/SubInventoryData/leggings_sub_inventory_data.tres" id="4_0sejd"]
+
+[resource]
+script = ExtResource("1_tj1sn")
+weight = 18.0
+defense = 20.0
+source_rect = Vector4(83, 70, 6, 7)
+dest_rect = ExtResource("1_f0q6a")
+armor_type = 2
+item_texture = ExtResource("2_a3pr4")
+item_name = "Red Band Leggings"
+item_description = "A pair of steel leggings with a red inner lining. Worn by the Red Band Bandits."
+item_type = 0
+inventory_item_priority = 5
+sub_inventory_data = ExtResource("4_0sejd")
