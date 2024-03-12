@@ -254,7 +254,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_q6vxs"]
 resource_name = "player_lightAttack1_back"
-length = 0.4
+length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -284,7 +284,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_fgurr"]
 resource_name = "player_lightAttack1_front"
-length = 0.4
+length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -314,7 +314,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_005ya"]
 resource_name = "player_lightAttack1_left"
-length = 0.4
+length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -344,7 +344,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_2jjp7"]
 resource_name = "player_lightAttack1_right"
-length = 0.4
+length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -374,7 +374,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_eisp1"]
 resource_name = "player_lightAttack2_back"
-length = 0.4
+length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -404,7 +404,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_xh3g7"]
 resource_name = "player_lightAttack2_front"
-length = 0.4
+length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -434,7 +434,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_7jtm6"]
 resource_name = "player_lightAttack2_left"
-length = 0.4
+length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -464,7 +464,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_j71xe"]
 resource_name = "player_lightAttack2_right"
-length = 0.4
+length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -494,7 +494,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_q7f3y"]
 resource_name = "player_lightAttack3_back"
-length = 0.6
+length = 0.7
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -524,7 +524,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_t3opq"]
 resource_name = "player_lightAttack3_front"
-length = 0.6
+length = 0.7
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -554,7 +554,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_to8jn"]
 resource_name = "player_lightAttack3_left"
-length = 0.6
+length = 0.7
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -584,7 +584,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_agm7y"]
 resource_name = "player_lightAttack3_right"
-length = 0.6
+length = 0.7
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -614,7 +614,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_filf2"]
 resource_name = "player_lightAttack4_back"
-length = 0.8
+length = 0.9
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -644,7 +644,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_7sk2f"]
 resource_name = "player_lightAttack4_front"
-length = 0.8
+length = 0.9
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -674,7 +674,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_hedi6"]
 resource_name = "player_lightAttack4_left"
-length = 0.8
+length = 0.9
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -704,7 +704,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_18t81"]
 resource_name = "player_lightAttack4_right"
-length = 0.8
+length = 0.9
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1094,7 +1094,7 @@ states/Run/node = SubResource("AnimationNodeBlendSpace2D_1b6nm")
 states/Run/position = Vector2(280, 208)
 states/Stand/node = SubResource("AnimationNodeBlendSpace2D_kp81a")
 states/Stand/position = Vector2(280, 99)
-states/Start/position = Vector2(166, 99)
+states/Start/position = Vector2(174, 99)
 states/Walk/node = SubResource("AnimationNodeBlendSpace2D_qwvnx")
 states/Walk/position = Vector2(280, 153)
 graph_offset = Vector2(-144, 51)
@@ -1106,6 +1106,7 @@ collision_layer = 2
 collision_mask = 15
 script = ExtResource("1_j8k8j")
 character_name = "Player"
+character_type = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 2

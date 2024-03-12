@@ -8,6 +8,7 @@ extends Node
 @onready var character_movement = $"../CharacterMovement"
 @onready var character_animator = $"../CharacterAnimator"
 @onready var character_inventory = $"../CharacterInventory"
+@onready var current_character_type = character.character_type
 
 var character_state_locked: bool = false
 

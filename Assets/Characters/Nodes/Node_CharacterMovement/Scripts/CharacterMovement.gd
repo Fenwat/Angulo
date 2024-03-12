@@ -8,8 +8,13 @@ class_name CharacterMovement
 @onready var character = $".."
 @onready var character_input = $"../CharacterInput"
 
+@onready var current_character_type = character.character_type
 @onready var move_speed: int = walk_speed
+
 var velocity: Vector2 = Vector2.ZERO
+var direction_vector: Vector2 = Vector2.ZERO
+var last_non_zero_direction_vector: Vector2 = Vector2.ZERO
+var call_function: String = ""
 
 var position_locked: bool = false
 var is_sprinting: bool = false
@@ -19,6 +24,13 @@ enum character_direction{
 	EAST,
 	SOUTH,
 	WEST
+}
+
+enum character_type {
+	PLAYER,
+	NPC,
+	ENEMY,
+	ANIMAL
 }
 
 var current_character_direction = character_direction.SOUTH
@@ -31,25 +43,41 @@ var debug_character_direction_enabled: bool = false
 #----------------------------------------------------------------------------------------
 
 func _physics_process(_delta):
+	determine_input_source()
 	_handle_movement()
 	_determine_character_direction()
+
+#------------------------------------Input-Source----------------------------------------
+
+func determine_input_source():
+	match current_character_type:
+		character_type.PLAYER:
+			_assign_input_vectors()
+
+func _assign_input_vectors():
+	direction_vector = character_input.input_direction
+	last_non_zero_direction_vector = character_input.last_non_zero_input
+
+#--------------------------------------Movement------------------------------------------
 
 func _handle_movement():
 	if position_locked:
 		character.velocity = Vector2.ZERO
 	else:
-		character.velocity = character_input.input_direction * move_speed
+		character.velocity = direction_vector * move_speed
 	
 	character.move_and_slide()
 
+#---------------------------------Character_Direction------------------------------------
+
 func _determine_character_direction():
-	if character_input.last_non_zero_input.y < 0 and abs(character_input.last_non_zero_input.x) < abs(character_input.last_non_zero_input.y):
+	if last_non_zero_direction_vector.y < 0 and abs(last_non_zero_direction_vector.x) < abs(last_non_zero_direction_vector.y):
 		current_character_direction = character_direction.NORTH
-	elif character_input.last_non_zero_input.x > 0 and abs(character_input.last_non_zero_input.x) > abs(character_input.last_non_zero_input.y):
+	elif last_non_zero_direction_vector.x > 0 and abs(last_non_zero_direction_vector.x) > abs(last_non_zero_direction_vector.y):
 		current_character_direction = character_direction.EAST
-	elif character_input.last_non_zero_input.y > 0 and abs(character_input.last_non_zero_input.x) < abs(character_input.last_non_zero_input.y):
+	elif last_non_zero_direction_vector.y > 0 and abs(last_non_zero_direction_vector.x) < abs(last_non_zero_direction_vector.y):
 		current_character_direction = character_direction.SOUTH
-	elif character_input.last_non_zero_input.x < 0 and abs(character_input.last_non_zero_input.x) > abs(character_input.last_non_zero_input.y):
+	elif last_non_zero_direction_vector.x < 0 and abs(last_non_zero_direction_vector.x) > abs(last_non_zero_direction_vector.y):
 		current_character_direction = character_direction.WEST
 	
 	debug_character_direction()
