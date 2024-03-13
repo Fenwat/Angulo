@@ -1,4 +1,4 @@
-[gd_scene load_steps=136 format=3 uid="uid://dbygvg6q6wg3f"]
+[gd_scene load_steps=137 format=3 uid="uid://dbygvg6q6wg3f"]
 
 [ext_resource type="PackedScene" uid="uid://buupbsnv0a67o" path="res://Systems/Scenes/systems.tscn" id="1_qjupr"]
 [ext_resource type="Script" path="res://Levels/Scripts/Level.gd" id="2_uelrh"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://ba0qinwelvd2e" path="res://Assets/Characters/NPCs/NPCs/Farmer/Scenes/farmer.tscn" id="12_b6540"]
 [ext_resource type="PackedScene" uid="uid://8youmhgtwvqr" path="res://Assets/Characters/Player/Scenes/test_player.tscn" id="13_7n3ux"]
 [ext_resource type="PackedScene" uid="uid://hs1lfea0uky1" path="res://Assets/Buildings/Scenes/farm_house.tscn" id="13_a7vik"]
+[ext_resource type="PackedScene" uid="uid://de1vguys3nehi" path="res://Assets/Characters/Enemies/Red_Band_Bandits/RBB_Dagger/Scenes/rbb_dagger.tscn" id="13_pmyx7"]
 [ext_resource type="Script" path="res://Assets/GUI/Scripts/CanvasLayer.gd" id="14_kk3l3"]
 [ext_resource type="PackedScene" uid="uid://dbik1s41svdr7" path="res://Assets/GUI/DateTime/Scenes/date_time_gui.tscn" id="16_cads6"]
 [ext_resource type="PackedScene" uid="uid://lc3gcek3ihuj" path="res://Assets/GUI/Inventory/Scenes/Inventories/gui_item_database.tscn" id="17_fm2tk"]
@@ -8610,6 +8611,9 @@ map = NodePath("../../TileMaps/Ground_TileMap")
 
 [node name="TestPlayer" parent="Level/Characters" instance=ExtResource("13_7n3ux")]
 position = Vector2(520, 171)
+
+[node name="RbbDagger" parent="Level/Characters" instance=ExtResource("13_pmyx7")]
+position = Vector2(580, 294)
 
 [node name="Buildings" type="Node2D" parent="Level"]
 z_as_relative = false

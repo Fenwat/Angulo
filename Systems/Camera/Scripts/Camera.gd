@@ -2,7 +2,7 @@ extends Node
 
 var player_position
 var bounding_box
-var smooth_speed = 10.0 # Adjust this value to change the smoothness
+var smooth_speed = 30.0 # Adjust this value to change the smoothness
 
 func _ready():
 	PlayerSignalBus.connect("player_position_updated", collect_player_position)

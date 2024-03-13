@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://b2upwk8ng3g63"]
+
+[ext_resource type="Shader" path="res://Assets/Characters/Shaders/Scripts/character_skin.gdshader" id="1_f4tkf"]
+[ext_resource type="Texture2D" uid="uid://uai7pwf153tk" path="res://Assets/Characters/Enemies/Red_Band_Bandits/RBB_Dagger/Sprites/Skin_Varients/rbb_dagger_varient6_map.png" id="2_gwvpk"]
+
+[resource]
+shader = ExtResource("1_f4tkf")
+shader_parameter/SkinResolution = Vector2(24, 24)
+shader_parameter/SkinMap = ExtResource("2_gwvpk")

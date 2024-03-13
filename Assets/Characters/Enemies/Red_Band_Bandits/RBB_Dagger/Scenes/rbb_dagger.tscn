@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://de1vguys3nehi"]
+
+[ext_resource type="Material" uid="uid://b2upwk8ng3g63" path="res://Assets/Characters/Enemies/Red_Band_Bandits/RBB_Dagger/Materials/rbb_dagger_skin_material.tres" id="1_mdj7f"]
+[ext_resource type="Texture2D" uid="uid://1bsgn7ur5fe8" path="res://Assets/Characters/Enemies/Red_Band_Bandits/RBB_Dagger/Sprites/Movesets/rbb_dagger_moveset.png" id="2_s42k6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d2rln"]
+size = Vector2(5, 1)
+
+[node name="RbbDagger" type="CharacterBody2D"]
+collision_layer = 8
+collision_mask = 15
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 2
+z_as_relative = false
+y_sort_enabled = true
+material = ExtResource("1_mdj7f")
+texture = ExtResource("2_s42k6")
+offset = Vector2(-0.5, -7.5)
+hframes = 16
+vframes = 28
+frame = 325
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_d2rln")
