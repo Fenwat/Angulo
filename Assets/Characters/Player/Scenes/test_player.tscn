@@ -5,12 +5,12 @@
 [ext_resource type="PackedScene" uid="uid://doakyahaj4cqc" path="res://Assets/Characters/Nodes/Node_CharacterSprite/Scenes/character_sprite.tscn" id="1_mu7au"]
 [ext_resource type="Texture2D" uid="uid://bip7aesedlxq4" path="res://Assets/Characters/Player/Movesets/StraightSword/player_straightSword.png" id="2_hcgd3"]
 [ext_resource type="Script" path="res://Assets/Characters/Nodes/Node_CharacterSprite/Scripts/CharacterSpriteElement.gd" id="3_qu5xa"]
+[ext_resource type="PackedScene" uid="uid://bdws1mjkkhq04" path="res://Assets/Characters/Nodes/Node_CharacterInput/Node_CharacterUserInput/Scenes/character_user_input.tscn" id="4_82hbs"]
 [ext_resource type="PackedScene" uid="uid://dqe0ilr4gjmxk" path="res://Assets/Characters/Nodes/Node_CharacterStateMachine/Scenes/character_state_machine.tscn" id="4_yoxmo"]
 [ext_resource type="PackedScene" uid="uid://bxjqjiak56vpp" path="res://Assets/Characters/Nodes/Node_CharacterAnimator/Scenes/character_animator.tscn" id="5_0kqqu"]
 [ext_resource type="Script" path="res://Assets/Characters/Nodes/Node_CharacterStateMachine/Scripts/CharacterState.gd" id="5_m6wco"]
 [ext_resource type="Script" path="res://Assets/Characters/Nodes/Node_CharacterInput/Scripts/CharacterInputMap.gd" id="6_i37jq"]
 [ext_resource type="Script" path="res://Assets/Characters/Nodes/Node_CharacterInput/Scripts/DirectionalInputMap.gd" id="6_qaaus"]
-[ext_resource type="PackedScene" uid="uid://dlsnoel4tf4ir" path="res://Assets/Characters/Nodes/Node_CharacterInput/Scenes/character_input.tscn" id="7_swe6k"]
 [ext_resource type="Script" path="res://Assets/Characters/Nodes/Node_CharacterInput/Scripts/HoldInputMap.gd" id="8_j7vus"]
 [ext_resource type="PackedScene" uid="uid://cppn86vq126jj" path="res://Assets/Characters/Nodes/Node_CharacterSignalEmitter/Scenes/character_signal_emitter.tscn" id="8_oymk2"]
 [ext_resource type="PackedScene" uid="uid://y3tfq8f53ji6" path="res://Assets/Characters/Nodes/Node_CharacterMovement/Scenes/character_movement.tscn" id="9_qigq3"]
@@ -25,48 +25,48 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_12k0d"]
 size = Vector2(5, 1)
 
-[sub_resource type="Resource" id="Resource_kfwix"]
-script = ExtResource("3_qu5xa")
-character_sprite_sheet_name = "straightSword"
-character_sprite_sheet = ExtResource("2_hcgd3")
-
-[sub_resource type="Resource" id="Resource_kttp6"]
+[sub_resource type="Resource" id="Resource_hmqtf"]
 script = ExtResource("6_qaaus")
 left_input = "move_left"
 right_input = "move_right"
 up_input = "move_up"
 down_input = "move_down"
 
-[sub_resource type="Resource" id="Resource_e27p0"]
+[sub_resource type="Resource" id="Resource_q6nko"]
 script = ExtResource("6_i37jq")
-input_map_name = "Player Movement"
+input_map_name = "Move"
 input_map_type = 0
-directional_inputs = SubResource("Resource_kttp6")
+directional_inputs = SubResource("Resource_hmqtf")
 
-[sub_resource type="Resource" id="Resource_ckret"]
+[sub_resource type="Resource" id="Resource_sohh2"]
 script = ExtResource("8_j7vus")
 hold_input_name = "sprint"
 pressed_function = "sprint_pressed"
 released_funcion = "sprint_released"
 character_nodes = 1
 
-[sub_resource type="Resource" id="Resource_varh1"]
+[sub_resource type="Resource" id="Resource_75xny"]
 script = ExtResource("6_i37jq")
-input_map_name = "Player Sprint"
+input_map_name = "Sprint"
 input_map_type = 2
-hold_input = SubResource("Resource_ckret")
+hold_input = SubResource("Resource_sohh2")
 
-[sub_resource type="Resource" id="Resource_58yie"]
+[sub_resource type="Resource" id="Resource_mwly0"]
 script = ExtResource("9_r2u2h")
 press_input_name = "light_attack"
 pressed_function = "handle_light_attack"
 character_nodes = 2
 
-[sub_resource type="Resource" id="Resource_u6txf"]
+[sub_resource type="Resource" id="Resource_feeig"]
 script = ExtResource("6_i37jq")
-input_map_name = "Player Light Attack"
+input_map_name = "Light Attack"
 input_map_type = 1
-press_input = SubResource("Resource_58yie")
+press_input = SubResource("Resource_mwly0")
+
+[sub_resource type="Resource" id="Resource_kfwix"]
+script = ExtResource("3_qu5xa")
+character_sprite_sheet_name = "straightSword"
+character_sprite_sheet = ExtResource("2_hcgd3")
 
 [sub_resource type="Resource" id="Resource_d67fi"]
 script = ExtResource("5_m6wco")
@@ -1122,16 +1122,30 @@ frame = 9
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_12k0d")
 
-[node name="CharacterSprite" parent="." instance=ExtResource("1_mu7au")]
+[node name="CharacterUserInput" parent="." node_paths=PackedStringArray("character_sprite", "character_state_machine", "character_movement", "character_animator", "character_skin", "character_equipment", "character_inventory", "character_signal_emitter") instance=ExtResource("4_82hbs")]
+character_sprite = NodePath("../CharacterSprite")
+character_state_machine = NodePath("../CharacterStateMachine")
+character_movement = NodePath("../CharacterMovement")
+character_animator = NodePath("../CharacterAnimator")
+character_skin = NodePath("../CharacterSkin")
+character_equipment = NodePath("../CharacterEquipment")
+character_inventory = NodePath("../CharacterInventory")
+character_signal_emitter = NodePath("../CharacterSignalEmitter")
+character_inputs = Array[ExtResource("6_i37jq")]([SubResource("Resource_q6nko"), SubResource("Resource_75xny"), SubResource("Resource_feeig")])
+
+[node name="CharacterSprite" parent="." node_paths=PackedStringArray("sprite_2d") instance=ExtResource("1_mu7au")]
+sprite_2d = NodePath("../Sprite2D")
 character_sprites = Array[ExtResource("3_qu5xa")]([SubResource("Resource_kfwix")])
 
-[node name="CharacterInput" parent="." instance=ExtResource("7_swe6k")]
-character_inputs = Array[ExtResource("6_i37jq")]([SubResource("Resource_e27p0"), SubResource("Resource_varh1"), SubResource("Resource_u6txf")])
-
-[node name="CharacterStateMachine" parent="." instance=ExtResource("4_yoxmo")]
+[node name="CharacterStateMachine" parent="." node_paths=PackedStringArray("character_input", "character_movement", "character_animator", "character_inventory") instance=ExtResource("4_yoxmo")]
+character_input = NodePath("../CharacterUserInput")
+character_movement = NodePath("../CharacterMovement")
+character_animator = NodePath("../CharacterAnimator")
+character_inventory = NodePath("../CharacterInventory")
 states = Array[ExtResource("5_m6wco")]([SubResource("Resource_d67fi"), SubResource("Resource_igdyn"), SubResource("Resource_q3uvc"), SubResource("Resource_spgvd"), SubResource("Resource_ixmmg"), SubResource("Resource_tdskh"), SubResource("Resource_5ht8j")])
 
-[node name="CharacterAnimator" parent="." instance=ExtResource("5_0kqqu")]
+[node name="CharacterAnimator" parent="." node_paths=PackedStringArray("character_input") instance=ExtResource("5_0kqqu")]
+character_input = NodePath("../CharacterUserInput")
 
 [node name="AnimationTree" type="AnimationTree" parent="CharacterAnimator"]
 libraries = {
@@ -1152,14 +1166,17 @@ libraries = {
 "": SubResource("AnimationLibrary_xo6vf")
 }
 
-[node name="CharacterMovement" parent="." instance=ExtResource("9_qigq3")]
+[node name="CharacterMovement" parent="." node_paths=PackedStringArray("character_input") instance=ExtResource("9_qigq3")]
+character_input = NodePath("../CharacterUserInput")
 walk_speed = 20
 jog_speed = 50
 sprint_speed = 80
 
-[node name="CharacterSkin" parent="." instance=ExtResource("10_8h42o")]
+[node name="CharacterSkin" parent="." node_paths=PackedStringArray("sprite_2d") instance=ExtResource("10_8h42o")]
+sprite_2d = NodePath("../Sprite2D")
 
-[node name="CharacterEquipment" parent="." instance=ExtResource("11_utqxn")]
+[node name="CharacterEquipment" parent="." node_paths=PackedStringArray("character_skin") instance=ExtResource("11_utqxn")]
+character_skin = NodePath("../CharacterSkin")
 equipment_load = ExtResource("12_b6yqc")
 
 [node name="CharacterInventory" parent="." instance=ExtResource("11_4sa66")]

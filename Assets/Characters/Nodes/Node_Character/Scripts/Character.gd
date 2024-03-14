@@ -9,3 +9,5 @@ class_name Character
 	"EMEMY",
 	"ANIMAL"
 ) var character_type
+
+@export var character_skin: Texture2D

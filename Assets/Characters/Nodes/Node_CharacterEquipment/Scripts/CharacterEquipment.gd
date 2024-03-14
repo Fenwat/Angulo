@@ -1,9 +1,8 @@
 extends Node
 class_name CharacterEquipment
 
+@export var character_skin: CharacterSkin
 @export var equipment_load: EquipmentLoad
-
-@onready var character_skin = $"../CharacterSkin"
 
 var debug_enabled: bool = false
 

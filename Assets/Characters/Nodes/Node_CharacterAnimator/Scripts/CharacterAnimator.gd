@@ -1,8 +1,9 @@
 extends Node
 class_name CharacterAnimator
 
+@export var character_input: CharacterInput
+
 @onready var character = $".."
-@onready var character_input = $"../CharacterInput"
 @onready var animation_tree = $"AnimationTree"
 @onready var state_machine = animation_tree.get("parameters/playback")
 
@@ -15,8 +16,7 @@ func handle_animation(character_state: CharacterState):
 	var blend_position: String = "parameters/" + character_state.character_state_name + "/blend_position"
 	var animation_vector: Vector2 = Vector2.ZERO
 	
-	if direction_locked:
-		return
+	if direction_locked: return
 	
 	if character_state.is_static:
 		animation_vector = character_input.last_non_zero_input

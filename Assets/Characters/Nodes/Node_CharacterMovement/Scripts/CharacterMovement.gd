@@ -1,14 +1,14 @@
 extends Node
 class_name CharacterMovement
 
+@export var character_input: CharacterInput
+
 @export var walk_speed: int
 @export var jog_speed: int
 @export var sprint_speed: int
 
 @onready var character = $".."
-@onready var character_input = $"../CharacterInput"
 
-@onready var current_character_type = character.character_type
 @onready var move_speed: int = walk_speed
 
 var velocity: Vector2 = Vector2.ZERO
@@ -43,16 +43,11 @@ var debug_character_direction_enabled: bool = false
 #----------------------------------------------------------------------------------------
 
 func _physics_process(_delta):
-	determine_input_source()
+	_assign_input_vectors()
 	_handle_movement()
 	_determine_character_direction()
 
 #------------------------------------Input-Source----------------------------------------
-
-func determine_input_source():
-	match current_character_type:
-		character_type.PLAYER:
-			_assign_input_vectors()
 
 func _assign_input_vectors():
 	direction_vector = character_input.input_direction

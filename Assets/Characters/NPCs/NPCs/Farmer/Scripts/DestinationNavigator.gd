@@ -13,8 +13,7 @@ func _process(_delta):
 	#var _map_coords = farmer.map.local_to_map(farmer_local_position)
 
 func _physics_process(_delta):	
-	if navigation_agent.is_navigation_finished():
-		return
+	if navigation_agent.is_navigation_finished(): return
 	
 	navigation_manager.move_direction = to_local(navigation_agent.get_next_path_position()).normalized()
 	farmer.velocity = navigation_manager.move_direction * navigation_manager.move_speed

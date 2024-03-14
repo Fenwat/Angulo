@@ -38,8 +38,7 @@ func switch_move_state():
 		update_move_state()
 
 func update_move_state():
-	if move_state_locked:
-		return
+	if move_state_locked: return
 		
 	match current_move_state:
 		MoveState.IDLE:
@@ -80,8 +79,7 @@ func handle_forage_state():
 #----------------------------Navigator-State-------------------------------------
 
 func update_navigator_state():
-	if navigator_state_locked:
-		return
+	if navigator_state_locked: return
 		
 	match current_navigator_state:
 		NavigatorState.DESTINATION:

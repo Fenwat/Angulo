@@ -1,13 +1,15 @@
 extends Node
+class_name CharacterStateMachine
+
+@export var character_input: CharacterInput
+@export var character_movement: CharacterMovement
+@export var character_animator: CharacterAnimator
+@export var character_inventory: CharacterInventory
 
 ## Array of all character states. Order does not matter.
 @export var states: Array[CharacterState]
 
 @onready var character = $".."
-@onready var character_input = $"../CharacterInput"
-@onready var character_movement = $"../CharacterMovement"
-@onready var character_animator = $"../CharacterAnimator"
-@onready var character_inventory = $"../CharacterInventory"
 @onready var current_character_type = character.character_type
 
 var character_state_locked: bool = false
@@ -134,11 +136,9 @@ func _handle_attack_state(attack_state_array: Array):
 #------------------------------------Light-Attack----------------------------------------
 
 func handle_light_attack():
-	if light_attack_states.size() == 0:
-		return
+	if light_attack_states.size() == 0: return
 	
-	if character_inventory.menu_is_open:
-		return
+	if character_inventory.menu_is_open: return
 	
 	_check_for_attack()
 	

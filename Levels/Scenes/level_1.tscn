@@ -1,4 +1,4 @@
-[gd_scene load_steps=137 format=3 uid="uid://dbygvg6q6wg3f"]
+[gd_scene load_steps=143 format=3 uid="uid://dbygvg6q6wg3f"]
 
 [ext_resource type="PackedScene" uid="uid://buupbsnv0a67o" path="res://Systems/Scenes/systems.tscn" id="1_qjupr"]
 [ext_resource type="Script" path="res://Levels/Scripts/Level.gd" id="2_uelrh"]
@@ -15,9 +15,15 @@
 [ext_resource type="PackedScene" uid="uid://hs1lfea0uky1" path="res://Assets/Buildings/Scenes/farm_house.tscn" id="13_a7vik"]
 [ext_resource type="PackedScene" uid="uid://de1vguys3nehi" path="res://Assets/Characters/Enemies/Red_Band_Bandits/RBB_Dagger/Scenes/rbb_dagger.tscn" id="13_pmyx7"]
 [ext_resource type="Script" path="res://Assets/GUI/Scripts/CanvasLayer.gd" id="14_kk3l3"]
+[ext_resource type="Texture2D" uid="uid://b5bpabf7fg0nn" path="res://Assets/Characters/Enemies/Red_Band_Bandits/RBB_Dagger/Sprites/Skin_Varients/rbb_dagger_varient1_map.png" id="14_yun60"]
+[ext_resource type="Texture2D" uid="uid://cjwtteap66grh" path="res://Assets/Characters/Enemies/Red_Band_Bandits/RBB_Dagger/Sprites/Skin_Varients/rbb_dagger_varient2_map.png" id="15_0arf6"]
 [ext_resource type="PackedScene" uid="uid://dbik1s41svdr7" path="res://Assets/GUI/DateTime/Scenes/date_time_gui.tscn" id="16_cads6"]
+[ext_resource type="Texture2D" uid="uid://dktiycm7itrx4" path="res://Assets/Characters/Enemies/Red_Band_Bandits/RBB_Dagger/Sprites/Skin_Varients/rbb_dagger_varient3_map.png" id="16_fgp82"]
 [ext_resource type="PackedScene" uid="uid://lc3gcek3ihuj" path="res://Assets/GUI/Inventory/Scenes/Inventories/gui_item_database.tscn" id="17_fm2tk"]
+[ext_resource type="Texture2D" uid="uid://36dhxvtt54hi" path="res://Assets/Characters/Enemies/Red_Band_Bandits/RBB_Dagger/Sprites/Skin_Varients/rbb_dagger_varient4_map.png" id="17_smbuq"]
 [ext_resource type="PackedScene" uid="uid://c3c3x3avdcc6e" path="res://Assets/GUI/Inventory/Scenes/gui_inventory.tscn" id="17_w87mi"]
+[ext_resource type="Texture2D" uid="uid://cimqbm0fs7kev" path="res://Assets/Characters/Enemies/Red_Band_Bandits/RBB_Dagger/Sprites/Skin_Varients/rbb_dagger_varient5_map.png" id="18_m7esk"]
+[ext_resource type="Texture2D" uid="uid://uai7pwf153tk" path="res://Assets/Characters/Enemies/Red_Band_Bandits/RBB_Dagger/Sprites/Skin_Varients/rbb_dagger_varient6_map.png" id="19_i5kvh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kb72y"]
 size = Vector2(1152, 648)
@@ -8613,7 +8619,28 @@ map = NodePath("../../TileMaps/Ground_TileMap")
 position = Vector2(520, 171)
 
 [node name="RbbDagger" parent="Level/Characters" instance=ExtResource("13_pmyx7")]
-position = Vector2(580, 294)
+position = Vector2(880, 336)
+character_skin = ExtResource("14_yun60")
+
+[node name="RbbDagger2" parent="Level/Characters" instance=ExtResource("13_pmyx7")]
+position = Vector2(902, 345)
+character_skin = ExtResource("15_0arf6")
+
+[node name="RbbDagger3" parent="Level/Characters" instance=ExtResource("13_pmyx7")]
+position = Vector2(854, 346)
+character_skin = ExtResource("16_fgp82")
+
+[node name="RbbDagger4" parent="Level/Characters" instance=ExtResource("13_pmyx7")]
+position = Vector2(865, 372)
+character_skin = ExtResource("17_smbuq")
+
+[node name="RbbDagger5" parent="Level/Characters" instance=ExtResource("13_pmyx7")]
+position = Vector2(924, 368)
+character_skin = ExtResource("18_m7esk")
+
+[node name="RbbDagger6" parent="Level/Characters" instance=ExtResource("13_pmyx7")]
+position = Vector2(892, 364)
+character_skin = ExtResource("19_i5kvh")
 
 [node name="Buildings" type="Node2D" parent="Level"]
 z_as_relative = false

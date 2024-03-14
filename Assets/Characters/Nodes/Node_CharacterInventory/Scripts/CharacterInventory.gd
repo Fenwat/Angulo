@@ -1,4 +1,5 @@
 extends Node
+class_name CharacterInventory
 
 @export var inventory: PlayerInventory
 
@@ -65,8 +66,7 @@ func add_item_to_inventory(item, sub_inventory):
 #-----------------------------------Debug--------------------------------------------------
 
 func debug_inventory_contents():
-	if debug_inventory_contents_enabled == false:
-		return
+	if debug_inventory_contents_enabled == false: return
 	
 	print("")
 	print("----------------", character.character_name, "-Inventory-------------------")
