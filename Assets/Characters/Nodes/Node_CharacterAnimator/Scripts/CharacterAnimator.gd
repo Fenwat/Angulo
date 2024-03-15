@@ -16,6 +16,11 @@ func handle_animation(character_state: CharacterState):
 	var blend_position: String = "parameters/" + character_state.character_state_name + "/blend_position"
 	var animation_vector: Vector2 = Vector2.ZERO
 	
+	if character_input == null:
+		_debug_current_animation(character_state)
+		animation_tree.set("parameters/" + character_state.character_state_name, Vector2.ZERO)
+		return
+		
 	if direction_locked: return
 	
 	if character_state.is_static:
@@ -30,6 +35,9 @@ func handle_animation(character_state: CharacterState):
 
 func _set_animation_blend_position(path, move_input):
 	animation_tree.set(path, move_input)
+
+func handle_static_animation(character_state: CharacterState):
+	state_machine.travel(character_state.character_state_name)
 
 #-----------------------------------------Debug--------------------------------------------
 

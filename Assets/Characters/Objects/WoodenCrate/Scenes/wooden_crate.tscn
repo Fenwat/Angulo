@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://x2bolvqmr5y4"]
+
+[ext_resource type="Texture2D" uid="uid://blk67j7m7ok01" path="res://Assets/Characters/Objects/WoodenCrate/Sprites/wooden_crate.png" id="1_xn5p5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rn51c"]
+size = Vector2(8, 4)
+
+[node name="WoodenCrate" type="StaticBody2D"]
+collision_mask = 15
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 2
+z_as_relative = false
+y_sort_enabled = true
+texture = ExtResource("1_xn5p5")
+offset = Vector2(0, -6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_rn51c")

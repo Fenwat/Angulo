@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CharacterState" load_steps=2 format=3 uid="uid://wcg8qx1nio80"]
+
+[ext_resource type="Script" path="res://Assets/Characters/Nodes/Node_CharacterStateMachine/Scripts/CharacterState.gd" id="1_0tp1i"]
+
+[resource]
+script = ExtResource("1_0tp1i")
+character_state_name = "Run"
+character_state_type = 2
+locks_character_state = false
+is_static = false

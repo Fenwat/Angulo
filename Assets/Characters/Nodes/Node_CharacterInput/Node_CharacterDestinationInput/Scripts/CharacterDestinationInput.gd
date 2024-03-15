@@ -60,6 +60,5 @@ func move_to_position():
 	navigation_agent.target_position = destination_coords
 
 func _on_navigation_agent_2d_target_reached():
-	print(character.character_name, " reached target")
 	is_navigating = false
 	input_direction = Vector2.ZERO

@@ -1,0 +1,141 @@
+[gd_scene load_steps=19 format=3 uid="uid://dw1vgmujm6kg5"]
+
+[ext_resource type="Script" path="res://Assets/Characters/Nodes/Node_Character/Scripts/Character.gd" id="1_gmqrf"]
+[ext_resource type="Texture2D" uid="uid://cfggsaqiknh8x" path="res://Assets/Characters/Objects/Campfire/Sprites/campfire-Sheet.png" id="1_rr87s"]
+[ext_resource type="PackedScene" uid="uid://bxjqjiak56vpp" path="res://Assets/Characters/Nodes/Node_CharacterAnimator/Scenes/character_animator.tscn" id="3_o2kld"]
+[ext_resource type="PackedScene" uid="uid://dx80cavxacbuh" path="res://Assets/Characters/Nodes/Node_CharacterStateMachine/Node_StaticStateMachine/Scenes/static_state_machine.tscn" id="4_2l268"]
+[ext_resource type="Script" path="res://Assets/Characters/Nodes/Node_CharacterStateMachine/Scripts/CharacterState.gd" id="5_f0bxh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kpesg"]
+size = Vector2(8, 4)
+
+[sub_resource type="Animation" id="Animation_qxv8i"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_yggi1"]
+resource_name = "extinguished"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [5]
+}
+
+[sub_resource type="Animation" id="Animation_i3ayc"]
+resource_name = "lit"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ufvyh"]
+_data = {
+"RESET": SubResource("Animation_qxv8i"),
+"extinguished": SubResource("Animation_yggi1"),
+"lit": SubResource("Animation_i3ayc")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rl4w2"]
+animation = &"extinguished"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wmxk4"]
+animation = &"lit"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_a45wq"]
+animation = &"lit"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fd26w"]
+animation = &"lit"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_lf00h"]
+animation = &"lit"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_qm066"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_wmxk4")
+blend_point_0/pos = Vector2(-1, 0)
+blend_point_1/node = SubResource("AnimationNodeAnimation_a45wq")
+blend_point_1/pos = Vector2(0, 1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_fd26w")
+blend_point_2/pos = Vector2(1, 0.1)
+blend_point_3/node = SubResource("AnimationNodeAnimation_lf00h")
+blend_point_3/pos = Vector2(0, -1)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_lnonu"]
+states/Start/position = Vector2(194, 100)
+states/extinguished/node = SubResource("AnimationNodeAnimation_rl4w2")
+states/extinguished/position = Vector2(458, 104)
+states/lit/node = SubResource("AnimationNodeBlendSpace2D_qm066")
+states/lit/position = Vector2(307, 100)
+
+[sub_resource type="Resource" id="Resource_mhb62"]
+script = ExtResource("5_f0bxh")
+character_state_name = "lit"
+character_state_type = 0
+locks_character_state = false
+is_static = false
+
+[node name="Campfire" type="StaticBody2D"]
+collision_mask = 15
+script = ExtResource("1_gmqrf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 2
+z_as_relative = false
+y_sort_enabled = true
+texture = ExtResource("1_rr87s")
+offset = Vector2(-0.5, -4)
+hframes = 3
+vframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_kpesg")
+
+[node name="CharacterAnimator" parent="." instance=ExtResource("3_o2kld")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterAnimator"]
+libraries = {
+"": SubResource("AnimationLibrary_ufvyh")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="CharacterAnimator"]
+libraries = {
+"": SubResource("AnimationLibrary_ufvyh")
+}
+tree_root = SubResource("AnimationNodeStateMachine_lnonu")
+anim_player = NodePath("../AnimationPlayer")
+parameters/lit/blend_position = Vector2(-0.52381, -0.111111)
+
+[node name="StaticStateMachine" parent="." node_paths=PackedStringArray("character_animator") instance=ExtResource("4_2l268")]
+character_animator = NodePath("../CharacterAnimator")
+states = Array[ExtResource("5_f0bxh")]([SubResource("Resource_mhb62")])

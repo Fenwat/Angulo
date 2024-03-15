@@ -1,4 +1,4 @@
-[gd_scene load_steps=160 format=3 uid="uid://dbygvg6q6wg3f"]
+[gd_scene load_steps=162 format=3 uid="uid://dbygvg6q6wg3f"]
 
 [ext_resource type="PackedScene" uid="uid://buupbsnv0a67o" path="res://Systems/Scenes/systems.tscn" id="1_qjupr"]
 [ext_resource type="Script" path="res://Levels/Scripts/Level.gd" id="2_uelrh"]
@@ -24,6 +24,8 @@
 [ext_resource type="Script" path="res://Assets/Characters/NPCs/Scripts/NPCEvents.gd" id="17_nrqea"]
 [ext_resource type="PackedScene" uid="uid://c3c3x3avdcc6e" path="res://Assets/GUI/Inventory/Scenes/gui_inventory.tscn" id="17_w87mi"]
 [ext_resource type="PackedScene" uid="uid://w2h7rah72c3b" path="res://Assets/Characters/NPCs/NPCs/FordDellan/Scenes/ford_dellan.tscn" id="18_4or12"]
+[ext_resource type="PackedScene" uid="uid://dw1vgmujm6kg5" path="res://Assets/Characters/Objects/Campfire/Scenes/campfire.tscn" id="20_3atkf"]
+[ext_resource type="PackedScene" uid="uid://x2bolvqmr5y4" path="res://Assets/Characters/Objects/WoodenCrate/Scenes/wooden_crate.tscn" id="21_kgtjt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kb72y"]
 size = Vector2(1152, 648)
@@ -8781,6 +8783,18 @@ position = Vector2(309, 160)
 character_schedule_events = ExtResource("16_nthbo")
 
 [node name="Objects" type="Node2D" parent="Level"]
+z_as_relative = false
+y_sort_enabled = true
+
+[node name="Campfire" parent="Level/Objects" instance=ExtResource("20_3atkf")]
+position = Vector2(994, 492)
+character_name = "Campfire"
+
+[node name="WoodenCrate" parent="Level/Objects" instance=ExtResource("21_kgtjt")]
+position = Vector2(965, 524)
+
+[node name="WoodenCrate2" parent="Level/Objects" instance=ExtResource("21_kgtjt")]
+position = Vector2(1052, 469)
 
 [node name="Buildings" type="Node2D" parent="Level"]
 z_as_relative = false

@@ -4,29 +4,15 @@
 [ext_resource type="Script" path="res://Assets/Characters/Nodes/Node_Character/Scripts/Character.gd" id="1_rygo2"]
 [ext_resource type="Texture2D" uid="uid://1bsgn7ur5fe8" path="res://Assets/Characters/Enemies/Red_Band_Bandits/RBB_Dagger/Sprites/Movesets/rbb_dagger_moveset.png" id="2_s42k6"]
 [ext_resource type="PackedScene" uid="uid://bxjqjiak56vpp" path="res://Assets/Characters/Nodes/Node_CharacterAnimator/Scenes/character_animator.tscn" id="3_bo06d"]
-[ext_resource type="PackedScene" uid="uid://dqe0ilr4gjmxk" path="res://Assets/Characters/Nodes/Node_CharacterStateMachine/Scenes/character_state_machine.tscn" id="5_tetig"]
 [ext_resource type="Script" path="res://Assets/Characters/Nodes/Node_CharacterStateMachine/Scripts/CharacterState.gd" id="6_p60h2"]
 [ext_resource type="PackedScene" uid="uid://y3tfq8f53ji6" path="res://Assets/Characters/Nodes/Node_CharacterMovement/Scenes/character_movement.tscn" id="8_j47hp"]
 [ext_resource type="PackedScene" uid="uid://nenrmt8xvxgq" path="res://Assets/Characters/Nodes/Node_CharacterSkin/Scenes/character_skin.tscn" id="9_1xsam"]
+[ext_resource type="PackedScene" uid="uid://inrc4qwvlktn" path="res://Assets/Characters/Nodes/Node_CharacterStateMachine/Node_DynamicStateMachine/Scenes/dynamic_state_machine.tscn" id="9_6e8sw"]
 [ext_resource type="PackedScene" uid="uid://biqwmbkt6yoor" path="res://Assets/Characters/Nodes/Node_CharacterInput/Node_CharacterDestinationInput/Scenes/character_destination_input.tscn" id="10_afgqe"]
 [ext_resource type="PackedScene" uid="uid://c78c56b5oyfwi" path="res://Assets/Characters/Nodes/Node_CharacterInput/Node_CharacterDestinationInput/Node_CharacterPatrol/Scenes/character_patrol.tscn" id="14_wo5xa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d2rln"]
 size = Vector2(5, 1)
-
-[sub_resource type="Resource" id="Resource_nb401"]
-script = ExtResource("6_p60h2")
-character_state_name = "Walk"
-character_state_type = 2
-locks_character_state = false
-is_static = false
-
-[sub_resource type="Resource" id="Resource_8ytbe"]
-script = ExtResource("6_p60h2")
-character_state_name = "Idle"
-character_state_type = 0
-locks_character_state = false
-is_static = true
 
 [sub_resource type="Animation" id="Animation_lkhiq"]
 length = 0.001
@@ -248,6 +234,20 @@ states/Idle/position = Vector2(304, 100)
 states/Walk/node = SubResource("AnimationNodeBlendSpace2D_4rjpg")
 states/Walk/position = Vector2(304, 159)
 
+[sub_resource type="Resource" id="Resource_es23k"]
+script = ExtResource("6_p60h2")
+character_state_name = "Walk"
+character_state_type = 2
+locks_character_state = false
+is_static = false
+
+[sub_resource type="Resource" id="Resource_phttm"]
+script = ExtResource("6_p60h2")
+character_state_name = "Idle"
+character_state_type = 0
+locks_character_state = false
+is_static = true
+
 [node name="RbbDagger" type="CharacterBody2D"]
 collision_layer = 8
 collision_mask = 15
@@ -265,12 +265,6 @@ vframes = 28
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_d2rln")
-
-[node name="CharacterStateMachine" parent="." node_paths=PackedStringArray("character_input", "character_movement", "character_animator") instance=ExtResource("5_tetig")]
-character_input = NodePath("../CharacterDestinationInput")
-character_movement = NodePath("../CharacterMovement")
-character_animator = NodePath("../CharacterAnimator")
-states = Array[ExtResource("6_p60h2")]([SubResource("Resource_nb401"), SubResource("Resource_8ytbe")])
 
 [node name="CharacterAnimator" parent="." node_paths=PackedStringArray("character_input") instance=ExtResource("3_bo06d")]
 character_input = NodePath("../CharacterDestinationInput")
@@ -299,7 +293,7 @@ sprint_speed = 60
 sprite_2d = NodePath("../Sprite2D")
 
 [node name="CharacterDestinationInput" parent="." node_paths=PackedStringArray("character_state_machine", "character_movement", "navigation_agent") instance=ExtResource("10_afgqe")]
-character_state_machine = NodePath("../CharacterStateMachine")
+character_state_machine = NodePath("../DynamicStateMachine")
 character_movement = NodePath("../CharacterMovement")
 navigation_agent = NodePath("NavigationAgent2D")
 
@@ -309,6 +303,12 @@ navigation_agent = NodePath("NavigationAgent2D")
 path_desired_distance = 5.0
 target_desired_distance = 5.0
 avoidance_enabled = true
+
+[node name="DynamicStateMachine" parent="." node_paths=PackedStringArray("character_input", "character_movement", "character_animator") instance=ExtResource("9_6e8sw")]
+character_input = NodePath("../CharacterDestinationInput")
+character_movement = NodePath("../CharacterMovement")
+character_animator = NodePath("../CharacterAnimator")
+states = Array[ExtResource("6_p60h2")]([SubResource("Resource_es23k"), SubResource("Resource_phttm")])
 
 [connection signal="target_reached" from="CharacterDestinationInput/NavigationAgent2D" to="CharacterDestinationInput" method="_on_navigation_agent_2d_target_reached"]
 [connection signal="target_reached" from="CharacterDestinationInput/NavigationAgent2D" to="CharacterDestinationInput/CharacterPatrol" method="_on_navigation_agent_2d_target_reached"]

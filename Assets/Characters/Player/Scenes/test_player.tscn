@@ -1,4 +1,4 @@
-[gd_scene load_steps=107 format=3 uid="uid://8youmhgtwvqr"]
+[gd_scene load_steps=101 format=3 uid="uid://8youmhgtwvqr"]
 
 [ext_resource type="Material" uid="uid://dujeuv6iab2w" path="res://Assets/Characters/Player/Shaders/Materials/player_skin_material.tres" id="1_dnpnp"]
 [ext_resource type="Script" path="res://Assets/Characters/Nodes/Node_Character/Scripts/Character.gd" id="1_j8k8j"]
@@ -6,9 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bip7aesedlxq4" path="res://Assets/Characters/Player/Movesets/StraightSword/player_straightSword.png" id="2_hcgd3"]
 [ext_resource type="Script" path="res://Assets/Characters/Nodes/Node_CharacterSprite/Scripts/CharacterSpriteElement.gd" id="3_qu5xa"]
 [ext_resource type="PackedScene" uid="uid://bdws1mjkkhq04" path="res://Assets/Characters/Nodes/Node_CharacterInput/Node_CharacterUserInput/Scenes/character_user_input.tscn" id="4_82hbs"]
-[ext_resource type="PackedScene" uid="uid://dqe0ilr4gjmxk" path="res://Assets/Characters/Nodes/Node_CharacterStateMachine/Scenes/character_state_machine.tscn" id="4_yoxmo"]
 [ext_resource type="PackedScene" uid="uid://bxjqjiak56vpp" path="res://Assets/Characters/Nodes/Node_CharacterAnimator/Scenes/character_animator.tscn" id="5_0kqqu"]
-[ext_resource type="Script" path="res://Assets/Characters/Nodes/Node_CharacterStateMachine/Scripts/CharacterState.gd" id="5_m6wco"]
 [ext_resource type="Script" path="res://Assets/Characters/Nodes/Node_CharacterInput/Scripts/CharacterInputMap.gd" id="6_i37jq"]
 [ext_resource type="Script" path="res://Assets/Characters/Nodes/Node_CharacterInput/Scripts/DirectionalInputMap.gd" id="6_qaaus"]
 [ext_resource type="Script" path="res://Assets/Characters/Nodes/Node_CharacterInput/Scripts/HoldInputMap.gd" id="8_j7vus"]
@@ -17,10 +15,17 @@
 [ext_resource type="Script" path="res://Assets/Characters/Nodes/Node_CharacterInput/Scripts/PressInputMap.gd" id="9_r2u2h"]
 [ext_resource type="PackedScene" uid="uid://nenrmt8xvxgq" path="res://Assets/Characters/Nodes/Node_CharacterSkin/Scenes/character_skin.tscn" id="10_8h42o"]
 [ext_resource type="PackedScene" uid="uid://x8vjpjln4rjw" path="res://Assets/Characters/Nodes/Node_CharacterInventory/Scenes/character_inventory.tscn" id="11_4sa66"]
+[ext_resource type="PackedScene" uid="uid://inrc4qwvlktn" path="res://Assets/Characters/Nodes/Node_CharacterStateMachine/Node_DynamicStateMachine/Scenes/dynamic_state_machine.tscn" id="11_tukgn"]
 [ext_resource type="PackedScene" uid="uid://usxc1wl5ubiv" path="res://Assets/Characters/Nodes/Node_CharacterEquipment/Scenes/character_equipment.tscn" id="11_utqxn"]
-[ext_resource type="Script" path="res://Assets/Characters/Nodes/Node_CharacterStateMachine/Scripts/AttackStateData.gd" id="12_57t2m"]
 [ext_resource type="Resource" uid="uid://bagandoc31av" path="res://Assets/Characters/Player/Inventory/Items/Resources/ArmorSets/UnequippedSet/unequipped_equipment_load.tres" id="12_b6yqc"]
 [ext_resource type="Resource" uid="uid://cdl2jiyds7hs" path="res://Assets/Characters/Player/Inventory/Resource/player_inventory.tres" id="12_kab2c"]
+[ext_resource type="Resource" uid="uid://cn27gbxru1brp" path="res://Assets/Characters/Player/Inputs/stand.tres" id="13_4fcnl"]
+[ext_resource type="Resource" uid="uid://b46lglxa60rqb" path="res://Assets/Characters/Player/Inputs/walk.tres" id="14_fsi0w"]
+[ext_resource type="Resource" uid="uid://wcg8qx1nio80" path="res://Assets/Characters/Player/Inputs/run.tres" id="15_htg1w"]
+[ext_resource type="Resource" uid="uid://dpcixlq6kl8hx" path="res://Assets/Characters/Player/Inputs/light_attack_1.tres" id="16_5obvy"]
+[ext_resource type="Resource" uid="uid://gf65edm2xcwm" path="res://Assets/Characters/Player/Inputs/light_attack_2.tres" id="17_sr8x8"]
+[ext_resource type="Resource" uid="uid://do7sj20xmoj2n" path="res://Assets/Characters/Player/Inputs/light_attack_3.tres" id="18_qdvvm"]
+[ext_resource type="Resource" uid="uid://diorga3og6x6g" path="res://Assets/Characters/Player/Inputs/light_attack_4.tres" id="19_pki7d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_12k0d"]
 size = Vector2(5, 1)
@@ -67,103 +72,6 @@ press_input = SubResource("Resource_mwly0")
 script = ExtResource("3_qu5xa")
 character_sprite_sheet_name = "straightSword"
 character_sprite_sheet = ExtResource("2_hcgd3")
-
-[sub_resource type="Resource" id="Resource_d67fi"]
-script = ExtResource("5_m6wco")
-character_state_name = "Stand"
-character_state_type = 0
-locks_character_state = false
-is_static = true
-
-[sub_resource type="Resource" id="Resource_igdyn"]
-script = ExtResource("5_m6wco")
-character_state_name = "Walk"
-character_state_type = 2
-locks_character_state = false
-is_static = false
-
-[sub_resource type="Resource" id="Resource_q3uvc"]
-script = ExtResource("5_m6wco")
-character_state_name = "Run"
-character_state_type = 2
-locks_character_state = false
-is_static = false
-
-[sub_resource type="Resource" id="Resource_x0834"]
-script = ExtResource("12_57t2m")
-attack_type = 0
-part_of_string_attack = true
-attack_string_name = ""
-attack_index = 0
-attack_step_size_north = 5
-attack_step_size_east = 7
-attack_step_size_south = 2
-attack_step_size_west = 7
-
-[sub_resource type="Resource" id="Resource_spgvd"]
-script = ExtResource("5_m6wco")
-character_state_name = "LightAttack1"
-character_state_type = 3
-locks_character_state = true
-is_static = true
-attack_data = SubResource("Resource_x0834")
-
-[sub_resource type="Resource" id="Resource_4g4wr"]
-script = ExtResource("12_57t2m")
-attack_type = 0
-part_of_string_attack = true
-attack_string_name = ""
-attack_index = 1
-attack_step_size_north = 4
-attack_step_size_east = 9
-attack_step_size_south = 4
-attack_step_size_west = 9
-
-[sub_resource type="Resource" id="Resource_ixmmg"]
-script = ExtResource("5_m6wco")
-character_state_name = "LightAttack2"
-character_state_type = 3
-locks_character_state = true
-is_static = true
-attack_data = SubResource("Resource_4g4wr")
-
-[sub_resource type="Resource" id="Resource_mpc44"]
-script = ExtResource("12_57t2m")
-attack_type = 0
-part_of_string_attack = true
-attack_string_name = ""
-attack_index = 2
-attack_step_size_north = 5
-attack_step_size_east = 11
-attack_step_size_south = 5
-attack_step_size_west = 11
-
-[sub_resource type="Resource" id="Resource_tdskh"]
-script = ExtResource("5_m6wco")
-character_state_name = "LightAttack3"
-character_state_type = 3
-locks_character_state = true
-is_static = true
-attack_data = SubResource("Resource_mpc44")
-
-[sub_resource type="Resource" id="Resource_22s0x"]
-script = ExtResource("12_57t2m")
-attack_type = 0
-part_of_string_attack = true
-attack_string_name = ""
-attack_index = 3
-attack_step_size_north = 0
-attack_step_size_east = 0
-attack_step_size_south = 0
-attack_step_size_west = 0
-
-[sub_resource type="Resource" id="Resource_5ht8j"]
-script = ExtResource("5_m6wco")
-character_state_name = "LightAttack4"
-character_state_type = 3
-locks_character_state = true
-is_static = true
-attack_data = SubResource("Resource_22s0x")
 
 [sub_resource type="Animation" id="Animation_boxv8"]
 length = 0.001
@@ -270,7 +178,7 @@ tracks/0/keys = {
 tracks/1/type = "method"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../CharacterStateMachine")
+tracks/1/path = NodePath("../DynamicStateMachine")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -300,7 +208,7 @@ tracks/0/keys = {
 tracks/1/type = "method"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../CharacterStateMachine")
+tracks/1/path = NodePath("../DynamicStateMachine")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -330,7 +238,7 @@ tracks/0/keys = {
 tracks/1/type = "method"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../CharacterStateMachine")
+tracks/1/path = NodePath("../DynamicStateMachine")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -360,7 +268,7 @@ tracks/0/keys = {
 tracks/1/type = "method"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../CharacterStateMachine")
+tracks/1/path = NodePath("../DynamicStateMachine")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -390,7 +298,7 @@ tracks/0/keys = {
 tracks/1/type = "method"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../CharacterStateMachine")
+tracks/1/path = NodePath("../DynamicStateMachine")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -420,7 +328,7 @@ tracks/0/keys = {
 tracks/1/type = "method"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../CharacterStateMachine")
+tracks/1/path = NodePath("../DynamicStateMachine")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -450,7 +358,7 @@ tracks/0/keys = {
 tracks/1/type = "method"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../CharacterStateMachine")
+tracks/1/path = NodePath("../DynamicStateMachine")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -480,7 +388,7 @@ tracks/0/keys = {
 tracks/1/type = "method"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../CharacterStateMachine")
+tracks/1/path = NodePath("../DynamicStateMachine")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -510,7 +418,7 @@ tracks/0/keys = {
 tracks/1/type = "method"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../CharacterStateMachine")
+tracks/1/path = NodePath("../DynamicStateMachine")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -540,7 +448,7 @@ tracks/0/keys = {
 tracks/1/type = "method"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../CharacterStateMachine")
+tracks/1/path = NodePath("../DynamicStateMachine")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -570,7 +478,7 @@ tracks/0/keys = {
 tracks/1/type = "method"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../CharacterStateMachine")
+tracks/1/path = NodePath("../DynamicStateMachine")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -600,11 +508,11 @@ tracks/0/keys = {
 tracks/1/type = "method"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../CharacterStateMachine")
+tracks/1/path = NodePath("../DynamicStateMachine")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.6),
+"times": PackedFloat32Array(0.5),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -630,7 +538,7 @@ tracks/0/keys = {
 tracks/1/type = "method"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../CharacterStateMachine")
+tracks/1/path = NodePath("../DynamicStateMachine")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -660,7 +568,7 @@ tracks/0/keys = {
 tracks/1/type = "method"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../CharacterStateMachine")
+tracks/1/path = NodePath("../DynamicStateMachine")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -690,7 +598,7 @@ tracks/0/keys = {
 tracks/1/type = "method"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../CharacterStateMachine")
+tracks/1/path = NodePath("../DynamicStateMachine")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -720,7 +628,7 @@ tracks/0/keys = {
 tracks/1/type = "method"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../CharacterStateMachine")
+tracks/1/path = NodePath("../DynamicStateMachine")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -1124,7 +1032,7 @@ shape = SubResource("RectangleShape2D_12k0d")
 
 [node name="CharacterUserInput" parent="." node_paths=PackedStringArray("character_sprite", "character_state_machine", "character_movement", "character_animator", "character_skin", "character_equipment", "character_inventory", "character_signal_emitter") instance=ExtResource("4_82hbs")]
 character_sprite = NodePath("../CharacterSprite")
-character_state_machine = NodePath("../CharacterStateMachine")
+character_state_machine = NodePath("../DynamicStateMachine")
 character_movement = NodePath("../CharacterMovement")
 character_animator = NodePath("../CharacterAnimator")
 character_skin = NodePath("../CharacterSkin")
@@ -1137,12 +1045,12 @@ character_inputs = Array[ExtResource("6_i37jq")]([SubResource("Resource_q6nko"),
 sprite_2d = NodePath("../Sprite2D")
 character_sprites = Array[ExtResource("3_qu5xa")]([SubResource("Resource_kfwix")])
 
-[node name="CharacterStateMachine" parent="." node_paths=PackedStringArray("character_input", "character_movement", "character_animator", "character_inventory") instance=ExtResource("4_yoxmo")]
+[node name="DynamicStateMachine" parent="." node_paths=PackedStringArray("character_input", "character_movement", "character_animator", "character_inventory") instance=ExtResource("11_tukgn")]
 character_input = NodePath("../CharacterUserInput")
 character_movement = NodePath("../CharacterMovement")
 character_animator = NodePath("../CharacterAnimator")
 character_inventory = NodePath("../CharacterInventory")
-states = Array[ExtResource("5_m6wco")]([SubResource("Resource_d67fi"), SubResource("Resource_igdyn"), SubResource("Resource_q3uvc"), SubResource("Resource_spgvd"), SubResource("Resource_ixmmg"), SubResource("Resource_tdskh"), SubResource("Resource_5ht8j")])
+states = Array[Resource("res://Assets/Characters/Nodes/Node_CharacterStateMachine/Scripts/CharacterState.gd")]([ExtResource("13_4fcnl"), ExtResource("14_fsi0w"), ExtResource("15_htg1w"), ExtResource("16_5obvy"), ExtResource("17_sr8x8"), ExtResource("18_qdvvm"), ExtResource("19_pki7d")])
 
 [node name="CharacterAnimator" parent="." node_paths=PackedStringArray("character_input") instance=ExtResource("5_0kqqu")]
 character_input = NodePath("../CharacterUserInput")

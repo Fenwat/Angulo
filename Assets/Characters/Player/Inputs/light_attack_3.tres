@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="CharacterState" load_steps=4 format=3 uid="uid://do7sj20xmoj2n"]
+
+[ext_resource type="Script" path="res://Assets/Characters/Nodes/Node_CharacterStateMachine/Scripts/AttackStateData.gd" id="1_edvbe"]
+[ext_resource type="Script" path="res://Assets/Characters/Nodes/Node_CharacterStateMachine/Scripts/CharacterState.gd" id="2_60uvn"]
+
+[sub_resource type="Resource" id="Resource_mpc44"]
+script = ExtResource("1_edvbe")
+attack_type = 0
+part_of_string_attack = true
+attack_string_name = ""
+attack_index = 2
+attack_step_size_north = 5
+attack_step_size_east = 11
+attack_step_size_south = 5
+attack_step_size_west = 11
+
+[resource]
+script = ExtResource("2_60uvn")
+character_state_name = "LightAttack3"
+character_state_type = 3
+locks_character_state = true
+is_static = true
+attack_data = SubResource("Resource_mpc44")
