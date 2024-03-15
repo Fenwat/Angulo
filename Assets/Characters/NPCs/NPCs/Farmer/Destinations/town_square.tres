@@ -6,4 +6,5 @@
 script = ExtResource("1_f0myx")
 level = "level_1"
 destination_name = "town_square"
-destination_coordinates = Vector2(85, 51)
+destination_coordinates = Vector2(86, 35)
+destination_duration = 5

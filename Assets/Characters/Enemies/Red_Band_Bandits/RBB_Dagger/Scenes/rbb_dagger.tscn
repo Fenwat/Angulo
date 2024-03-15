@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://de1vguys3nehi"]
+[gd_scene load_steps=35 format=3 uid="uid://de1vguys3nehi"]
 
 [ext_resource type="Material" uid="uid://b2upwk8ng3g63" path="res://Assets/Characters/Enemies/Red_Band_Bandits/RBB_Dagger/Materials/rbb_dagger_skin_material.tres" id="1_mdj7f"]
 [ext_resource type="Script" path="res://Assets/Characters/Nodes/Node_Character/Scripts/Character.gd" id="1_rygo2"]
@@ -9,13 +9,24 @@
 [ext_resource type="PackedScene" uid="uid://y3tfq8f53ji6" path="res://Assets/Characters/Nodes/Node_CharacterMovement/Scenes/character_movement.tscn" id="8_j47hp"]
 [ext_resource type="PackedScene" uid="uid://nenrmt8xvxgq" path="res://Assets/Characters/Nodes/Node_CharacterSkin/Scenes/character_skin.tscn" id="9_1xsam"]
 [ext_resource type="PackedScene" uid="uid://biqwmbkt6yoor" path="res://Assets/Characters/Nodes/Node_CharacterInput/Node_CharacterDestinationInput/Scenes/character_destination_input.tscn" id="10_afgqe"]
-[ext_resource type="Resource" uid="uid://k4g58mp3cytj" path="res://Assets/Characters/NPCs/NPCs/Farmer/Destinations/town_square.tres" id="11_7i7oa"]
-[ext_resource type="Script" path="res://Assets/Characters/NPCs/Scripts/NPCEvent.gd" id="12_0u327"]
-[ext_resource type="Script" path="res://Assets/Characters/NPCs/Scripts/NPCEvents.gd" id="13_a54x1"]
 [ext_resource type="PackedScene" uid="uid://c78c56b5oyfwi" path="res://Assets/Characters/Nodes/Node_CharacterInput/Node_CharacterDestinationInput/Node_CharacterPatrol/Scenes/character_patrol.tscn" id="14_wo5xa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d2rln"]
 size = Vector2(5, 1)
+
+[sub_resource type="Resource" id="Resource_nb401"]
+script = ExtResource("6_p60h2")
+character_state_name = "Walk"
+character_state_type = 2
+locks_character_state = false
+is_static = false
+
+[sub_resource type="Resource" id="Resource_8ytbe"]
+script = ExtResource("6_p60h2")
+character_state_name = "Idle"
+character_state_type = 0
+locks_character_state = false
+is_static = true
 
 [sub_resource type="Animation" id="Animation_lkhiq"]
 length = 0.001
@@ -237,29 +248,6 @@ states/Idle/position = Vector2(304, 100)
 states/Walk/node = SubResource("AnimationNodeBlendSpace2D_4rjpg")
 states/Walk/position = Vector2(304, 159)
 
-[sub_resource type="Resource" id="Resource_nb401"]
-script = ExtResource("6_p60h2")
-character_state_name = "Walk"
-character_state_type = 2
-locks_character_state = false
-is_static = false
-
-[sub_resource type="Resource" id="Resource_8ytbe"]
-script = ExtResource("6_p60h2")
-character_state_name = "Idle"
-character_state_type = 0
-locks_character_state = false
-is_static = true
-
-[sub_resource type="Resource" id="Resource_l74km"]
-script = ExtResource("12_0u327")
-event_time = ""
-npc_destination_event = ExtResource("11_7i7oa")
-
-[sub_resource type="Resource" id="Resource_yvr4m"]
-script = ExtResource("13_a54x1")
-events = Array[ExtResource("12_0u327")]([SubResource("Resource_l74km")])
-
 [node name="RbbDagger" type="CharacterBody2D"]
 collision_layer = 8
 collision_mask = 15
@@ -278,6 +266,12 @@ vframes = 28
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_d2rln")
 
+[node name="CharacterStateMachine" parent="." node_paths=PackedStringArray("character_input", "character_movement", "character_animator") instance=ExtResource("5_tetig")]
+character_input = NodePath("../CharacterDestinationInput")
+character_movement = NodePath("../CharacterMovement")
+character_animator = NodePath("../CharacterAnimator")
+states = Array[ExtResource("6_p60h2")]([SubResource("Resource_nb401"), SubResource("Resource_8ytbe")])
+
 [node name="CharacterAnimator" parent="." node_paths=PackedStringArray("character_input") instance=ExtResource("3_bo06d")]
 character_input = NodePath("../CharacterDestinationInput")
 
@@ -295,12 +289,6 @@ anim_player = NodePath("../AnimationPlayer")
 parameters/Idle/blend_position = Vector2(-0.521825, -0.132275)
 parameters/Walk/blend_position = Vector2(0, 0)
 
-[node name="CharacterStateMachine" parent="." node_paths=PackedStringArray("character_input", "character_movement", "character_animator") instance=ExtResource("5_tetig")]
-character_input = NodePath("../CharacterDestinationInput")
-character_movement = NodePath("../CharacterMovement")
-character_animator = NodePath("../CharacterAnimator")
-states = Array[ExtResource("6_p60h2")]([SubResource("Resource_nb401"), SubResource("Resource_8ytbe")])
-
 [node name="CharacterMovement" parent="." node_paths=PackedStringArray("character_input") instance=ExtResource("8_j47hp")]
 character_input = NodePath("../CharacterDestinationInput")
 walk_speed = 15
@@ -316,9 +304,11 @@ character_movement = NodePath("../CharacterMovement")
 navigation_agent = NodePath("NavigationAgent2D")
 
 [node name="CharacterPatrol" parent="CharacterDestinationInput" instance=ExtResource("14_wo5xa")]
-npc_events = SubResource("Resource_yvr4m")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="CharacterDestinationInput"]
+path_desired_distance = 5.0
+target_desired_distance = 5.0
 avoidance_enabled = true
 
 [connection signal="target_reached" from="CharacterDestinationInput/NavigationAgent2D" to="CharacterDestinationInput" method="_on_navigation_agent_2d_target_reached"]
+[connection signal="target_reached" from="CharacterDestinationInput/NavigationAgent2D" to="CharacterDestinationInput/CharacterPatrol" method="_on_navigation_agent_2d_target_reached"]

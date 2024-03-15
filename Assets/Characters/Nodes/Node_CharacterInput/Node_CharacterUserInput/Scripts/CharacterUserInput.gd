@@ -58,6 +58,11 @@ func _physics_process(_delta):
 	_get_input_direction(directional_input)
 	_check_hold_inputs()
 	_check_press_inputs()
+	_get_last_non_zero_input()
+
+func _get_last_non_zero_input():
+	if input_direction != Vector2.ZERO:
+		last_non_zero_input = input_direction
 
 func _get_input_direction(input_map: CharacterInputMap):
 	var left_input: String
@@ -73,9 +78,6 @@ func _get_input_direction(input_map: CharacterInputMap):
 	down_input = input_map.directional_inputs.down_input
 	
 	input_direction = Input.get_vector(left_input, right_input, up_input, down_input)
-	
-	if input_direction != Vector2.ZERO:
-		last_non_zero_input = input_direction
 
 #-------------------------------------Hold-Input----------------------------------------
 

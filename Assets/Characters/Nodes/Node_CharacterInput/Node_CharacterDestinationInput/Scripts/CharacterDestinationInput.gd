@@ -19,14 +19,19 @@ var is_navigating: bool = false
 #------------------------------------------------------------------------------------------------------
 
 func _physics_process(_delta):
-	#_temp_movement_logic()
 	_handle_navigation()
+	_get_last_non_zero_input()
+
+func _get_last_non_zero_input():
+	if input_direction != Vector2.ZERO:
+		last_non_zero_input = input_direction
 
 func _temp_movement_logic():
 	input_direction = Vector2(0, 0.5)
 
 func _handle_navigation():
 	if not is_navigating: return
+	
 	if navigation_agent.is_navigation_finished(): return
 	
 	input_direction = to_local(navigation_agent.get_next_path_position()).normalized()
@@ -41,6 +46,8 @@ func do_travel_event(event):
 	move_to_position()
 
 func get_new_coordinates(event):
+	if event == null: return
+	
 	const tile_pixel_count: int = 8
 	var adjusted_coords = (event.npc_destination_event.destination_coordinates * Vector2(tile_pixel_count, tile_pixel_count) + Vector2(tile_pixel_count / 2.0, tile_pixel_count / 2.0))
 	destination_coords = adjusted_coords
@@ -48,13 +55,11 @@ func get_new_coordinates(event):
 func move_to_position():
 	if destination_coords == Vector2.ZERO: return
 	
-	if navigation_agent == null:
-		print("No navigation agent found")
-		return
+	if navigation_agent == null: return
 	
-	print(destination_coords)
 	navigation_agent.target_position = destination_coords
 
 func _on_navigation_agent_2d_target_reached():
+	print(character.character_name, " reached target")
 	is_navigating = false
-	character_state_machine.determine_idle()
+	input_direction = Vector2.ZERO
