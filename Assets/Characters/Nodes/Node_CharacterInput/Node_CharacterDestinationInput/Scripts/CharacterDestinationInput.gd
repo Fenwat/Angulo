@@ -5,7 +5,7 @@ class_name CharacterDestinationInput
 @export var character_movement: CharacterMovement
 @export var navigation_agent: NavigationAgent2D
 
-@export var path_desired_distance: float = 5.0
+@export var path_desired_distance: float = 1.0
 @export var target_desired_distance: float = 1.0
 
 @onready var character = $".."

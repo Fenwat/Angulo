@@ -1,10 +1,12 @@
-[gd_resource type="Resource" script_class="NPCEvents" load_steps=22 format=3 uid="uid://cgr44qo5onkpk"]
+[gd_resource type="Resource" script_class="NPCEvents" load_steps=24 format=3 uid="uid://cgr44qo5onkpk"]
 
 [ext_resource type="Resource" uid="uid://ccg36r0lthy40" path="res://Assets/Characters/NPCs/NPCs/Farmer/Destinations/field.tres" id="1_esxfa"]
 [ext_resource type="Script" path="res://Assets/Characters/NPCs/Scripts/NPCEvent.gd" id="2_jg8vr"]
 [ext_resource type="Resource" uid="uid://bd36jyy0xsbhg" path="res://Assets/Characters/NPCs/NPCs/Farmer/Destinations/farm_house.tres" id="3_tg62c"]
 [ext_resource type="Resource" uid="uid://k4g58mp3cytj" path="res://Assets/Characters/NPCs/NPCs/Farmer/Destinations/town_square.tres" id="4_v13td"]
 [ext_resource type="Script" path="res://Assets/Characters/NPCs/Scripts/NPCEvents.gd" id="5_twn5q"]
+[ext_resource type="Resource" uid="uid://hygdqy4mdvb8" path="res://Assets/Characters/NPCs/NPCs/Farmer/Destinations/inner_field.tres" id="5_yvkn6"]
+[ext_resource type="Resource" uid="uid://cgjwiutg6synl" path="res://Assets/Characters/NPCs/NPCs/Farmer/Destinations/west_field.tres" id="6_ybtoc"]
 
 [sub_resource type="Resource" id="Resource_4tjb1"]
 script = ExtResource("2_jg8vr")
@@ -24,7 +26,7 @@ npc_destination_event = ExtResource("4_v13td")
 [sub_resource type="Resource" id="Resource_8xyss"]
 script = ExtResource("2_jg8vr")
 event_time = "10:30"
-npc_destination_event = ExtResource("3_tg62c")
+npc_destination_event = ExtResource("5_yvkn6")
 
 [sub_resource type="Resource" id="Resource_jqjhq"]
 script = ExtResource("2_jg8vr")
@@ -44,7 +46,7 @@ npc_destination_event = ExtResource("3_tg62c")
 [sub_resource type="Resource" id="Resource_vsqcs"]
 script = ExtResource("2_jg8vr")
 event_time = "13:30"
-npc_destination_event = ExtResource("1_esxfa")
+npc_destination_event = ExtResource("6_ybtoc")
 
 [sub_resource type="Resource" id="Resource_cf5uv"]
 script = ExtResource("2_jg8vr")

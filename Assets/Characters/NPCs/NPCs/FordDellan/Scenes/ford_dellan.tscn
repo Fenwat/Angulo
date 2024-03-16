@@ -500,7 +500,6 @@ libraries = {
 character_state_machine = NodePath("../DynamicStateMachine")
 character_movement = NodePath("../CharacterMovement")
 navigation_agent = NodePath("NavigationAgent2D")
-target_desired_distance = 5.0
 
 [node name="CharacterSchedule" parent="CharacterDestinationInput" instance=ExtResource("8_rbkyi")]
 

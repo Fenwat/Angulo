@@ -1061,12 +1061,12 @@ libraries = {
 }
 tree_root = SubResource("AnimationNodeStateMachine_munys")
 anim_player = NodePath("../AnimationPlayer")
-parameters/LightAttack1/blend_position = Vector2(0.0884774, -0.0145375)
+parameters/LightAttack1/blend_position = Vector2(0, 0)
 parameters/LightAttack2/blend_position = Vector2(0, 0)
 parameters/LightAttack3/blend_position = Vector2(0, 0)
-parameters/LightAttack4/blend_position = Vector2(-0.0123457, -0.024229)
+parameters/LightAttack4/blend_position = Vector2(0, 0)
 parameters/Run/blend_position = Vector2(0, 0)
-parameters/Stand/blend_position = Vector2(-0.00823045, -0.00484574)
+parameters/Stand/blend_position = Vector2(0, -0.1)
 parameters/Walk/blend_position = Vector2(0, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterAnimator"]
