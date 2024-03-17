@@ -108,11 +108,13 @@ func _handle_character_state():
 func lock_character():
 	character_state_locked = true
 	character_movement.position_locked = true
+	character_movement.current_character_direction_locked = true
 	character_animator.direction_locked = true
 
 func unlock_character():
 	character_state_locked = false
 	character_movement.position_locked = false
+	character_movement.current_character_direction_locked = false
 	character_animator.direction_locked = false
 
 func _check_for_attack():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=101 format=3 uid="uid://8youmhgtwvqr"]
+[gd_scene load_steps=104 format=3 uid="uid://8youmhgtwvqr"]
 
 [ext_resource type="Material" uid="uid://dujeuv6iab2w" path="res://Assets/Characters/Player/Shaders/Materials/player_skin_material.tres" id="1_dnpnp"]
 [ext_resource type="Script" path="res://Assets/Characters/Nodes/Node_Character/Scripts/Character.gd" id="1_j8k8j"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bip7aesedlxq4" path="res://Assets/Characters/Player/Movesets/StraightSword/player_straightSword.png" id="2_hcgd3"]
 [ext_resource type="Script" path="res://Assets/Characters/Nodes/Node_CharacterSprite/Scripts/CharacterSpriteElement.gd" id="3_qu5xa"]
 [ext_resource type="PackedScene" uid="uid://bdws1mjkkhq04" path="res://Assets/Characters/Nodes/Node_CharacterInput/Node_CharacterUserInput/Scenes/character_user_input.tscn" id="4_82hbs"]
+[ext_resource type="Script" path="res://Assets/Characters/Player/Scenes/HitBox.gd" id="4_i8kyr"]
 [ext_resource type="PackedScene" uid="uid://bxjqjiak56vpp" path="res://Assets/Characters/Nodes/Node_CharacterAnimator/Scenes/character_animator.tscn" id="5_0kqqu"]
 [ext_resource type="Script" path="res://Assets/Characters/Nodes/Node_CharacterInput/Scripts/CharacterInputMap.gd" id="6_i37jq"]
 [ext_resource type="Script" path="res://Assets/Characters/Nodes/Node_CharacterInput/Scripts/DirectionalInputMap.gd" id="6_qaaus"]
@@ -29,6 +30,12 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_12k0d"]
 size = Vector2(5, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3uyjy"]
+size = Vector2(4, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nk302"]
+size = Vector2(3, 3)
 
 [sub_resource type="Resource" id="Resource_hmqtf"]
 script = ExtResource("6_qaaus")
@@ -189,6 +196,23 @@ tracks/1/keys = {
 "method": &"light_attack_finished"
 }]
 }
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../HitBox")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"set_hitbox"
+}, {
+"args": [],
+"method": &"set_default_hitbox"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_fgurr"]
 resource_name = "player_lightAttack1_front"
@@ -217,6 +241,23 @@ tracks/1/keys = {
 "values": [{
 "args": [],
 "method": &"light_attack_finished"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../HitBox")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"set_hitbox"
+}, {
+"args": [],
+"method": &"set_default_hitbox"
 }]
 }
 
@@ -249,6 +290,23 @@ tracks/1/keys = {
 "method": &"light_attack_finished"
 }]
 }
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../HitBox")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"set_hitbox"
+}, {
+"args": [],
+"method": &"set_default_hitbox"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_2jjp7"]
 resource_name = "player_lightAttack1_right"
@@ -277,6 +335,23 @@ tracks/1/keys = {
 "values": [{
 "args": [],
 "method": &"light_attack_finished"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../HitBox")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"set_hitbox"
+}, {
+"args": [],
+"method": &"set_default_hitbox"
 }]
 }
 
@@ -309,6 +384,23 @@ tracks/1/keys = {
 "method": &"light_attack_finished"
 }]
 }
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../HitBox")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"set_hitbox"
+}, {
+"args": [],
+"method": &"set_default_hitbox"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_xh3g7"]
 resource_name = "player_lightAttack2_front"
@@ -337,6 +429,23 @@ tracks/1/keys = {
 "values": [{
 "args": [],
 "method": &"light_attack_finished"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../HitBox")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"set_hitbox"
+}, {
+"args": [],
+"method": &"set_default_hitbox"
 }]
 }
 
@@ -369,6 +478,23 @@ tracks/1/keys = {
 "method": &"light_attack_finished"
 }]
 }
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../HitBox")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"set_hitbox"
+}, {
+"args": [],
+"method": &"set_default_hitbox"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_j71xe"]
 resource_name = "player_lightAttack2_right"
@@ -397,6 +523,23 @@ tracks/1/keys = {
 "values": [{
 "args": [],
 "method": &"light_attack_finished"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../HitBox")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"set_hitbox"
+}, {
+"args": [],
+"method": &"set_default_hitbox"
 }]
 }
 
@@ -429,6 +572,23 @@ tracks/1/keys = {
 "method": &"light_attack_finished"
 }]
 }
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../HitBox")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"set_hitbox"
+}, {
+"args": [],
+"method": &"set_default_hitbox"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_t3opq"]
 resource_name = "player_lightAttack3_front"
@@ -457,6 +617,23 @@ tracks/1/keys = {
 "values": [{
 "args": [],
 "method": &"light_attack_finished"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../HitBox")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"set_hitbox"
+}, {
+"args": [],
+"method": &"set_default_hitbox"
 }]
 }
 
@@ -489,6 +666,23 @@ tracks/1/keys = {
 "method": &"light_attack_finished"
 }]
 }
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../HitBox")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"set_hitbox"
+}, {
+"args": [],
+"method": &"set_default_hitbox"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_agm7y"]
 resource_name = "player_lightAttack3_right"
@@ -517,6 +711,23 @@ tracks/1/keys = {
 "values": [{
 "args": [],
 "method": &"light_attack_finished"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../HitBox")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"set_hitbox"
+}, {
+"args": [],
+"method": &"set_default_hitbox"
 }]
 }
 
@@ -549,6 +760,23 @@ tracks/1/keys = {
 "method": &"light_attack_finished"
 }]
 }
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../HitBox")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"set_hitbox"
+}, {
+"args": [],
+"method": &"set_default_hitbox"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_7sk2f"]
 resource_name = "player_lightAttack4_front"
@@ -577,6 +805,23 @@ tracks/1/keys = {
 "values": [{
 "args": [],
 "method": &"light_attack_finished"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../HitBox")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"set_hitbox"
+}, {
+"args": [],
+"method": &"set_default_hitbox"
 }]
 }
 
@@ -609,6 +854,23 @@ tracks/1/keys = {
 "method": &"light_attack_finished"
 }]
 }
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../HitBox")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"set_hitbox"
+}, {
+"args": [],
+"method": &"set_default_hitbox"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_18t81"]
 resource_name = "player_lightAttack4_right"
@@ -637,6 +899,23 @@ tracks/1/keys = {
 "values": [{
 "args": [],
 "method": &"light_attack_finished"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../HitBox")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"set_hitbox"
+}, {
+"args": [],
+"method": &"set_default_hitbox"
 }]
 }
 
@@ -1027,8 +1306,30 @@ hframes = 9
 vframes = 32
 frame = 9
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionBox" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_12k0d")
+
+[node name="HurtBox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_3uyjy")
+debug_color = Color(0.14902, 0.647059, 0, 0.419608)
+
+[node name="HitBox" type="Area2D" parent="." node_paths=PackedStringArray("state_machine", "movement")]
+collision_layer = 16
+collision_mask = 13
+script = ExtResource("4_i8kyr")
+state_machine = NodePath("../DynamicStateMachine")
+movement = NodePath("../CharacterMovement")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_nk302")
+disabled = true
+debug_color = Color(1, 0.031108, 0.0666663, 0.419608)
 
 [node name="CharacterUserInput" parent="." node_paths=PackedStringArray("character_sprite", "character_state_machine", "character_movement", "character_animator", "character_skin", "character_equipment", "character_inventory", "character_signal_emitter") instance=ExtResource("4_82hbs")]
 character_sprite = NodePath("../CharacterSprite")
@@ -1091,3 +1392,5 @@ equipment_load = ExtResource("12_b6yqc")
 inventory = ExtResource("12_kab2c")
 
 [node name="CharacterSignalEmitter" parent="." instance=ExtResource("8_oymk2")]
+
+[connection signal="area_entered" from="HitBox" to="HitBox" method="_on_area_entered"]

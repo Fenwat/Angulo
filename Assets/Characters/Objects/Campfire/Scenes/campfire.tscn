@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dw1vgmujm6kg5"]
+[gd_scene load_steps=21 format=3 uid="uid://dw1vgmujm6kg5"]
 
 [ext_resource type="Script" path="res://Assets/Characters/Nodes/Node_Character/Scripts/Character.gd" id="1_gmqrf"]
 [ext_resource type="Texture2D" uid="uid://cfggsaqiknh8x" path="res://Assets/Characters/Objects/Campfire/Sprites/campfire-Sheet.png" id="1_rr87s"]
@@ -7,7 +7,10 @@
 [ext_resource type="Script" path="res://Assets/Characters/Nodes/Node_CharacterStateMachine/Scripts/CharacterState.gd" id="5_f0bxh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kpesg"]
-size = Vector2(8, 4)
+size = Vector2(9, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_okxc6"]
+size = Vector2(7, 8)
 
 [sub_resource type="Animation" id="Animation_qxv8i"]
 length = 0.001
@@ -104,6 +107,13 @@ character_state_type = 0
 locks_character_state = false
 is_static = false
 
+[sub_resource type="Resource" id="Resource_kr0xm"]
+script = ExtResource("5_f0bxh")
+character_state_name = "extinguished"
+character_state_type = 0
+locks_character_state = false
+is_static = false
+
 [node name="Campfire" type="StaticBody2D"]
 collision_mask = 15
 script = ExtResource("1_gmqrf")
@@ -118,8 +128,15 @@ hframes = 3
 vframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_kpesg")
+
+[node name="HurtBox" type="Area2D" parent="."]
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_okxc6")
+debug_color = Color(0.14902, 0.647059, 0, 0.419608)
 
 [node name="CharacterAnimator" parent="." instance=ExtResource("3_o2kld")]
 
@@ -138,4 +155,4 @@ parameters/lit/blend_position = Vector2(-0.52381, -0.111111)
 
 [node name="StaticStateMachine" parent="." node_paths=PackedStringArray("character_animator") instance=ExtResource("4_2l268")]
 character_animator = NodePath("../CharacterAnimator")
-states = Array[ExtResource("5_f0bxh")]([SubResource("Resource_mhb62")])
+states = Array[ExtResource("5_f0bxh")]([SubResource("Resource_mhb62"), SubResource("Resource_kr0xm")])

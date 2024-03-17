@@ -13,6 +13,14 @@ attack_step_size_north = 4
 attack_step_size_east = 9
 attack_step_size_south = 4
 attack_step_size_west = 9
+north_hitbox_position = Vector2(0, -18)
+north_hitbox_size = Vector2(16, 8)
+south_hitbox_position = Vector2(0, 3)
+south_hitbox_size = Vector2(16, 8)
+east_hitbox_position = Vector2(14, -8)
+east_hitbox_size = Vector2(8, 16)
+west_hitbox_position = Vector2(-14, -8)
+west_hitbox_size = Vector2(8, 16)
 
 [resource]
 script = ExtResource("2_n04fx")

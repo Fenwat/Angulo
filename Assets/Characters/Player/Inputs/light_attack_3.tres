@@ -13,6 +13,14 @@ attack_step_size_north = 5
 attack_step_size_east = 11
 attack_step_size_south = 5
 attack_step_size_west = 11
+north_hitbox_position = Vector2(0, -19)
+north_hitbox_size = Vector2(16, 8)
+south_hitbox_position = Vector2(0, 4)
+south_hitbox_size = Vector2(16, 8)
+east_hitbox_position = Vector2(15, -8)
+east_hitbox_size = Vector2(8, 16)
+west_hitbox_position = Vector2(-15, -8)
+west_hitbox_size = Vector2(8, 16)
 
 [resource]
 script = ExtResource("2_60uvn")

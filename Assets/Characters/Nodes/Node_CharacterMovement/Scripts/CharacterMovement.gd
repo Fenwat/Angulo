@@ -34,7 +34,7 @@ enum character_type {
 }
 
 var current_character_direction = character_direction.SOUTH
-
+var current_character_direction_locked: bool = false
 # Debug variables
 var debug_character_direction_enabled: bool = false
 
@@ -66,6 +66,8 @@ func _handle_movement():
 #---------------------------------Character_Direction------------------------------------
 
 func _determine_character_direction():
+	if current_character_direction_locked == true: return
+	
 	if last_non_zero_direction_vector.y < 0 and abs(last_non_zero_direction_vector.x) < abs(last_non_zero_direction_vector.y):
 		current_character_direction = character_direction.NORTH
 	elif last_non_zero_direction_vector.x > 0 and abs(last_non_zero_direction_vector.x) > abs(last_non_zero_direction_vector.y):

@@ -295,6 +295,7 @@ toggle_item_database={
 2d_navigation/layer_2="Crop"
 2d_physics/layer_3="npc"
 2d_physics/layer_4="enemy"
+2d_physics/layer_5="Attack"
 
 [rendering]
 

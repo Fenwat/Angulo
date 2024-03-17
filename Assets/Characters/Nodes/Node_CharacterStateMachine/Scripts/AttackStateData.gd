@@ -30,3 +30,17 @@ class_name AttackStateData
 
 ## Indicates haw many pixels foward the character steps during the attack.
 @export var attack_step_size_west: int
+
+@export var north_hitbox_position: Vector2
+@export var north_hitbox_size: Vector2
+
+@export var south_hitbox_position: Vector2
+@export var south_hitbox_size: Vector2
+
+@export var east_hitbox_position: Vector2
+@export var east_hitbox_size: Vector2
+
+@export var west_hitbox_position: Vector2
+@export var west_hitbox_size: Vector2
+
+
