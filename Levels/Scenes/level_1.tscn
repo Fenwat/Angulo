@@ -1,4 +1,4 @@
-[gd_scene load_steps=162 format=3 uid="uid://dbygvg6q6wg3f"]
+[gd_scene load_steps=144 format=3 uid="uid://dbygvg6q6wg3f"]
 
 [ext_resource type="PackedScene" uid="uid://buupbsnv0a67o" path="res://Systems/Scenes/systems.tscn" id="1_qjupr"]
 [ext_resource type="Script" path="res://Levels/Scripts/Level.gd" id="2_uelrh"]
@@ -12,16 +12,14 @@
 [ext_resource type="Texture2D" uid="uid://spndr30l72o0" path="res://Assets/TileMaps/Tiles/Wheat/wheat.png" id="10_hh44h"]
 [ext_resource type="PackedScene" uid="uid://8youmhgtwvqr" path="res://Assets/Characters/Player/Scenes/test_player.tscn" id="13_7n3ux"]
 [ext_resource type="PackedScene" uid="uid://hs1lfea0uky1" path="res://Assets/Buildings/Scenes/farm_house.tscn" id="13_a7vik"]
+[ext_resource type="Texture2D" uid="uid://36dhxvtt54hi" path="res://Assets/Characters/Enemies/Red_Band_Bandits/RBB_Dagger/Sprites/Skin_Varients/rbb_dagger_varient4_map.png" id="13_ffh16"]
 [ext_resource type="PackedScene" uid="uid://de1vguys3nehi" path="res://Assets/Characters/Enemies/Red_Band_Bandits/RBB_Dagger/Scenes/rbb_dagger.tscn" id="13_pmyx7"]
+[ext_resource type="Texture2D" uid="uid://dktiycm7itrx4" path="res://Assets/Characters/Enemies/Red_Band_Bandits/RBB_Dagger/Sprites/Skin_Varients/rbb_dagger_varient3_map.png" id="14_12xtd"]
 [ext_resource type="Script" path="res://Assets/GUI/Scripts/CanvasLayer.gd" id="14_kk3l3"]
-[ext_resource type="Texture2D" uid="uid://b5bpabf7fg0nn" path="res://Assets/Characters/Enemies/Red_Band_Bandits/RBB_Dagger/Sprites/Skin_Varients/rbb_dagger_varient1_map.png" id="14_yun60"]
-[ext_resource type="Texture2D" uid="uid://cjwtteap66grh" path="res://Assets/Characters/Enemies/Red_Band_Bandits/RBB_Dagger/Sprites/Skin_Varients/rbb_dagger_varient2_map.png" id="15_0arf6"]
-[ext_resource type="Script" path="res://Assets/Characters/NPCs/Scripts/NPCDestinationEvent.gd" id="15_mb8oi"]
+[ext_resource type="Texture2D" uid="uid://uai7pwf153tk" path="res://Assets/Characters/Enemies/Red_Band_Bandits/RBB_Dagger/Sprites/Skin_Varients/rbb_dagger_varient6_map.png" id="15_c1h25"]
 [ext_resource type="PackedScene" uid="uid://dbik1s41svdr7" path="res://Assets/GUI/DateTime/Scenes/date_time_gui.tscn" id="16_cads6"]
-[ext_resource type="Script" path="res://Assets/Characters/NPCs/Scripts/NPCEvent.gd" id="16_dljtm"]
 [ext_resource type="Resource" uid="uid://cgr44qo5onkpk" path="res://Assets/Characters/NPCs/NPCs/Farmer/Schedules/farmer_test_schedule.tres" id="16_nthbo"]
 [ext_resource type="PackedScene" uid="uid://lc3gcek3ihuj" path="res://Assets/GUI/Inventory/Scenes/Inventories/gui_item_database.tscn" id="17_fm2tk"]
-[ext_resource type="Script" path="res://Assets/Characters/NPCs/Scripts/NPCEvents.gd" id="17_nrqea"]
 [ext_resource type="PackedScene" uid="uid://c3c3x3avdcc6e" path="res://Assets/GUI/Inventory/Scenes/gui_inventory.tscn" id="17_w87mi"]
 [ext_resource type="PackedScene" uid="uid://w2h7rah72c3b" path="res://Assets/Characters/NPCs/NPCs/FordDellan/Scenes/ford_dellan.tscn" id="18_4or12"]
 [ext_resource type="PackedScene" uid="uid://dw1vgmujm6kg5" path="res://Assets/Characters/Objects/Campfire/Scenes/campfire.tscn" id="20_3atkf"]
@@ -8618,98 +8616,6 @@ tile_size = Vector2i(8, 8)
 navigation_layer_0/layers = 2
 sources/0 = SubResource("TileSetAtlasSource_4b5oa")
 
-[sub_resource type="Resource" id="Resource_puwno"]
-script = ExtResource("15_mb8oi")
-level = "level_1"
-destination_name = "location5"
-destination_coordinates = Vector2(118, 57)
-destination_duration = 15
-
-[sub_resource type="Resource" id="Resource_hrmae"]
-script = ExtResource("16_dljtm")
-event_time = ""
-npc_destination_event = SubResource("Resource_puwno")
-
-[sub_resource type="Resource" id="Resource_ia1nk"]
-script = ExtResource("15_mb8oi")
-level = "level_1"
-destination_name = "location6"
-destination_coordinates = Vector2(130, 56)
-destination_duration = 20
-
-[sub_resource type="Resource" id="Resource_ekf1y"]
-script = ExtResource("16_dljtm")
-event_time = ""
-npc_destination_event = SubResource("Resource_ia1nk")
-
-[sub_resource type="Resource" id="Resource_vgckt"]
-script = ExtResource("15_mb8oi")
-level = "level_1"
-destination_name = "location7"
-destination_coordinates = Vector2(129, 61)
-destination_duration = 10
-
-[sub_resource type="Resource" id="Resource_wing0"]
-script = ExtResource("16_dljtm")
-event_time = ""
-npc_destination_event = SubResource("Resource_vgckt")
-
-[sub_resource type="Resource" id="Resource_jur3r"]
-script = ExtResource("17_nrqea")
-events = Array[ExtResource("16_dljtm")]([SubResource("Resource_hrmae"), SubResource("Resource_ekf1y"), SubResource("Resource_wing0")])
-
-[sub_resource type="Resource" id="Resource_05kae"]
-script = ExtResource("15_mb8oi")
-level = "level_1"
-destination_name = "location1"
-destination_coordinates = Vector2(115, 54)
-destination_duration = 10
-
-[sub_resource type="Resource" id="Resource_j7kvq"]
-script = ExtResource("16_dljtm")
-event_time = ""
-npc_destination_event = SubResource("Resource_05kae")
-
-[sub_resource type="Resource" id="Resource_kdfct"]
-script = ExtResource("15_mb8oi")
-level = "level_1"
-destination_name = "location2"
-destination_coordinates = Vector2(135, 52)
-destination_duration = 5
-
-[sub_resource type="Resource" id="Resource_d7xdl"]
-script = ExtResource("16_dljtm")
-event_time = ""
-npc_destination_event = SubResource("Resource_kdfct")
-
-[sub_resource type="Resource" id="Resource_k0cvb"]
-script = ExtResource("15_mb8oi")
-level = "level_1"
-destination_name = "location3"
-destination_coordinates = Vector2(132, 66)
-destination_duration = 15
-
-[sub_resource type="Resource" id="Resource_nh6eu"]
-script = ExtResource("16_dljtm")
-event_time = ""
-npc_destination_event = SubResource("Resource_k0cvb")
-
-[sub_resource type="Resource" id="Resource_2e6e1"]
-script = ExtResource("15_mb8oi")
-level = "level_1"
-destination_name = "location4"
-destination_coordinates = Vector2(114, 60)
-destination_duration = 15
-
-[sub_resource type="Resource" id="Resource_abuh1"]
-script = ExtResource("16_dljtm")
-event_time = ""
-npc_destination_event = SubResource("Resource_2e6e1")
-
-[sub_resource type="Resource" id="Resource_o7s1v"]
-script = ExtResource("17_nrqea")
-events = Array[ExtResource("16_dljtm")]([SubResource("Resource_j7kvq"), SubResource("Resource_d7xdl"), SubResource("Resource_nh6eu"), SubResource("Resource_abuh1")])
-
 [node name="Level1" type="Node2D"]
 
 [node name="Systems" parent="." instance=ExtResource("1_qjupr")]
@@ -8764,24 +8670,27 @@ z_as_relative = false
 y_sort_enabled = true
 
 [node name="TestPlayer" parent="Level/Characters" instance=ExtResource("13_7n3ux")]
-position = Vector2(516, 173)
+position = Vector2(643, 326)
+character_type = 0
 
 [node name="RbbDagger" parent="Level/Characters" instance=ExtResource("13_pmyx7")]
 position = Vector2(984, 455)
-character_name = "RBB Daggerman 1"
 character_type = 2
-character_skin = ExtResource("14_yun60")
-character_patrol_events = SubResource("Resource_jur3r")
+character_skin = ExtResource("13_ffh16")
 
 [node name="RbbDagger2" parent="Level/Characters" instance=ExtResource("13_pmyx7")]
 position = Vector2(935, 445)
-character_name = "RBB Daggerman 2"
 character_type = 2
-character_skin = ExtResource("15_0arf6")
-character_patrol_events = SubResource("Resource_o7s1v")
+character_skin = ExtResource("14_12xtd")
+
+[node name="RbbDagger3" parent="Level/Characters" instance=ExtResource("13_pmyx7")]
+position = Vector2(936, 505)
+character_type = 2
+character_skin = ExtResource("15_c1h25")
 
 [node name="FordDellan" parent="Level/Characters" instance=ExtResource("18_4or12")]
 position = Vector2(309, 160)
+character_type = 1
 character_schedule_events = ExtResource("16_nthbo")
 
 [node name="Objects" type="Node2D" parent="Level"]
@@ -8790,7 +8699,6 @@ y_sort_enabled = true
 
 [node name="Campfire" parent="Level/Objects" instance=ExtResource("20_3atkf")]
 position = Vector2(994, 492)
-character_name = "Campfire"
 
 [node name="WoodenCrate" parent="Level/Objects" instance=ExtResource("21_kgtjt")]
 position = Vector2(965, 524)

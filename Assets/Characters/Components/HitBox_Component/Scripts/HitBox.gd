@@ -12,6 +12,11 @@ func _ready():
 	set_default_hitbox()
 
 func _process(_delta):
+	_set_current_state()
+
+func _set_current_state():
+	if state_machine == null: return
+	
 	current_state = state_machine.current_character_state
 
 func set_default_hitbox():
@@ -20,6 +25,8 @@ func set_default_hitbox():
 	hitbox_shape.position = Vector2(0, -8)
 
 func set_hitbox():
+	if movement == null: return
+	
 	hitbox_shape.disabled = false
 	if movement.current_character_direction == 0:
 		_handle_north_hitbox()

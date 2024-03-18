@@ -1,9 +1,10 @@
-[gd_scene load_steps=35 format=3 uid="uid://de1vguys3nehi"]
+[gd_scene load_steps=37 format=3 uid="uid://de1vguys3nehi"]
 
+[ext_resource type="Script" path="res://Assets/Characters/Nodes/Node_Character/Scripts/Character.gd" id="1_j544e"]
 [ext_resource type="Material" uid="uid://b2upwk8ng3g63" path="res://Assets/Characters/Enemies/Red_Band_Bandits/RBB_Dagger/Materials/rbb_dagger_skin_material.tres" id="1_mdj7f"]
-[ext_resource type="Script" path="res://Assets/Characters/Nodes/Node_Character/Scripts/Character.gd" id="1_rygo2"]
 [ext_resource type="Texture2D" uid="uid://1bsgn7ur5fe8" path="res://Assets/Characters/Enemies/Red_Band_Bandits/RBB_Dagger/Sprites/Movesets/rbb_dagger_moveset.png" id="2_s42k6"]
 [ext_resource type="PackedScene" uid="uid://bxjqjiak56vpp" path="res://Assets/Characters/Nodes/Node_CharacterAnimator/Scenes/character_animator.tscn" id="3_bo06d"]
+[ext_resource type="PackedScene" uid="uid://gyek7u86ngcu" path="res://Assets/Characters/Components/HitBox_Component/Scenes/hit_box.tscn" id="4_aqhj7"]
 [ext_resource type="Script" path="res://Assets/Characters/Nodes/Node_CharacterStateMachine/Scripts/CharacterState.gd" id="6_p60h2"]
 [ext_resource type="PackedScene" uid="uid://y3tfq8f53ji6" path="res://Assets/Characters/Nodes/Node_CharacterMovement/Scenes/character_movement.tscn" id="8_j47hp"]
 [ext_resource type="PackedScene" uid="uid://nenrmt8xvxgq" path="res://Assets/Characters/Nodes/Node_CharacterSkin/Scenes/character_skin.tscn" id="9_1xsam"]
@@ -13,6 +14,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d2rln"]
 size = Vector2(5, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ixqc4"]
+size = Vector2(6, 16)
 
 [sub_resource type="Animation" id="Animation_lkhiq"]
 length = 0.001
@@ -251,7 +255,7 @@ is_static = true
 [node name="RbbDagger" type="CharacterBody2D"]
 collision_layer = 8
 collision_mask = 15
-script = ExtResource("1_rygo2")
+script = ExtResource("1_j544e")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 2
@@ -265,6 +269,19 @@ vframes = 28
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_d2rln")
+
+[node name="HurtBox" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_ixqc4")
+debug_color = Color(0.14902, 0.647059, 0, 0.419608)
+
+[node name="HitBox" parent="." node_paths=PackedStringArray("state_machine", "movement") instance=ExtResource("4_aqhj7")]
+state_machine = NodePath("../DynamicStateMachine")
+movement = NodePath("../CharacterMovement")
 
 [node name="CharacterAnimator" parent="." node_paths=PackedStringArray("character_input") instance=ExtResource("3_bo06d")]
 character_input = NodePath("../CharacterDestinationInput")

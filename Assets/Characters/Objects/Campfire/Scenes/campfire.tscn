@@ -1,6 +1,6 @@
 [gd_scene load_steps=21 format=3 uid="uid://dw1vgmujm6kg5"]
 
-[ext_resource type="Script" path="res://Assets/Characters/Nodes/Node_Character/Scripts/Character.gd" id="1_gmqrf"]
+[ext_resource type="Script" path="res://Assets/Characters/Nodes/Node_Character/Scripts/Character.gd" id="1_8i0ei"]
 [ext_resource type="Texture2D" uid="uid://cfggsaqiknh8x" path="res://Assets/Characters/Objects/Campfire/Sprites/campfire-Sheet.png" id="1_rr87s"]
 [ext_resource type="PackedScene" uid="uid://bxjqjiak56vpp" path="res://Assets/Characters/Nodes/Node_CharacterAnimator/Scenes/character_animator.tscn" id="3_o2kld"]
 [ext_resource type="PackedScene" uid="uid://dx80cavxacbuh" path="res://Assets/Characters/Nodes/Node_CharacterStateMachine/Node_StaticStateMachine/Scenes/static_state_machine.tscn" id="4_2l268"]
@@ -116,7 +116,7 @@ is_static = false
 
 [node name="Campfire" type="StaticBody2D"]
 collision_mask = 15
-script = ExtResource("1_gmqrf")
+script = ExtResource("1_8i0ei")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 2

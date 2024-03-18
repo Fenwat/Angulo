@@ -7,12 +7,13 @@ class_name Character
 	"PLAYER",
 	"NPC",
 	"EMEMY",
-	"ANIMAL"
+	"ANIMAL",
+	"OBJECT"
 ) var character_type
 
 @export var character_skin: Texture2D
 
-## The points the character will patrol between
+## The points the entity will patrol between
 @export var character_patrol_events: NPCEvents
 
 ## 

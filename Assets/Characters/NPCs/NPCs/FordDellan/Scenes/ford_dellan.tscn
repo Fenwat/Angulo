@@ -1,6 +1,6 @@
 [gd_scene load_steps=51 format=3 uid="uid://w2h7rah72c3b"]
 
-[ext_resource type="Script" path="res://Assets/Characters/Nodes/Node_Character/Scripts/Character.gd" id="1_lft82"]
+[ext_resource type="Script" path="res://Assets/Characters/Nodes/Node_Character/Scripts/Character.gd" id="1_b012l"]
 [ext_resource type="Texture2D" uid="uid://ba4ryydpxllh1" path="res://Assets/Characters/NPCs/NPCs/FordDellan/Sprites/farmer_animations.png" id="2_mxdtn"]
 [ext_resource type="PackedScene" uid="uid://inrc4qwvlktn" path="res://Assets/Characters/Nodes/Node_CharacterStateMachine/Node_DynamicStateMachine/Scenes/dynamic_state_machine.tscn" id="3_lxgms"]
 [ext_resource type="Script" path="res://Assets/Characters/Nodes/Node_CharacterStateMachine/Scripts/CharacterState.gd" id="4_37qx2"]
@@ -449,9 +449,7 @@ graph_offset = Vector2(-8, -12)
 [node name="FordDellan" type="CharacterBody2D"]
 collision_layer = 4
 collision_mask = 15
-script = ExtResource("1_lft82")
-character_name = "Ford Dellan"
-character_type = 1
+script = ExtResource("1_b012l")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 2

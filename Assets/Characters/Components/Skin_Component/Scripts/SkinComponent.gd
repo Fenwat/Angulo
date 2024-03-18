@@ -1,5 +1,5 @@
 extends Node
-class_name CharacterSkin
+class_name SkinComponent
 
 @export var sprite_2d: Sprite2D
 
@@ -16,8 +16,6 @@ func _ready():
 	_apply_skin()
 
 func _apply_skin():
-	if character.character_skin == null: return
-	
 	if character.character_skin:
 		#var character_skin_map_texture = ImageTexture.create_from_image(character.character_skin)
 		#sprite_2d.material.set_shader_parameter("SkinMap", character_skin_map_texture)

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cnfs2pdlwdud1"]
+
+[ext_resource type="Script" path="res://Assets/Characters/Components/Entity_Component/Scripts/DynamicEntity.gd" id="1_cb2rs"]
+
+[node name="DynamicEntity" type="CharacterBody2D"]
+script = ExtResource("1_cb2rs")

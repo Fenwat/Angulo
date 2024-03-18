@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dyj1oabxhj3m"]
+
+[ext_resource type="Script" path="res://Assets/Characters/Components/SignalEmitter_Component/Scripts/SignalEmitter.gd" id="1_a23i2"]
+
+[node name="SignalEmitter" type="Node2D"]
+script = ExtResource("1_a23i2")

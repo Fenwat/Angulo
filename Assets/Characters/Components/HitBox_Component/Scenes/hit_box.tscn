@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://gyek7u86ngcu"]
+
+[ext_resource type="Script" path="res://Assets/Characters/Components/HitBox_Component/Scripts/HitBox.gd" id="1_3q445"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nk302"]
+size = Vector2(3, 3)
+
+[node name="HitBox" type="Area2D" node_paths=PackedStringArray("state_machine", "movement")]
+collision_layer = 16
+collision_mask = 13
+script = ExtResource("1_3q445")
+state_machine = NodePath("")
+movement = NodePath("")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_nk302")
+disabled = true
+debug_color = Color(1, 0.031108, 0.0666663, 0.419608)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
