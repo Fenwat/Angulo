@@ -1,13 +1,13 @@
 extends Node
 class_name MovementComponent
 
-@export var character_input: CharacterInput
+@export var input_component: InputComponent
 
 @export var walk_speed: int
 @export var jog_speed: int
 @export var sprint_speed: int
 
-@onready var character = $".."
+@onready var entity = $".."
 
 @onready var move_speed: int = walk_speed
 
@@ -19,24 +19,24 @@ var call_function: String = ""
 var position_locked: bool = false
 var is_sprinting: bool = false
 
-enum character_direction{
+enum entity_direction{
 	NORTH,
 	EAST,
 	SOUTH,
 	WEST
 }
 
-enum character_type {
+enum entity_type {
 	PLAYER,
 	NPC,
 	ENEMY,
 	ANIMAL
 }
 
-var current_character_direction = character_direction.SOUTH
-var current_character_direction_locked: bool = false
+var current_entity_direction = entity_direction.SOUTH
+var current_entity_direction_locked: bool = false
 # Debug variables
-var debug_character_direction_enabled: bool = false
+var debug_entity_direction_enabled: bool = false
 
 #----------------------------------------------------------------------------------------
 #----------------------------------Physics-Process---------------------------------------
@@ -45,39 +45,39 @@ var debug_character_direction_enabled: bool = false
 func _physics_process(_delta):
 	_assign_input_vectors()
 	_handle_movement()
-	_determine_character_direction()
+	_determine_entity_direction()
 
 #------------------------------------Input-Source----------------------------------------
 
 func _assign_input_vectors():
-	direction_vector = character_input.input_direction
-	last_non_zero_direction_vector = character_input.last_non_zero_input
+	direction_vector = input_component.input_direction
+	last_non_zero_direction_vector = input_component.last_non_zero_input
 
 #--------------------------------------Movement------------------------------------------
 
 func _handle_movement():
 	if position_locked:
-		character.velocity = Vector2.ZERO
+		entity.velocity = Vector2.ZERO
 	else:
-		character.velocity = direction_vector * move_speed
+		entity.velocity = direction_vector * move_speed
 	
-	character.move_and_slide()
+	entity.move_and_slide()
 
 #---------------------------------Character_Direction------------------------------------
 
-func _determine_character_direction():
-	if current_character_direction_locked == true: return
+func _determine_entity_direction():
+	if current_entity_direction_locked == true: return
 	
 	if last_non_zero_direction_vector.y < 0 and abs(last_non_zero_direction_vector.x) < abs(last_non_zero_direction_vector.y):
-		current_character_direction = character_direction.NORTH
+		current_entity_direction = entity_direction.NORTH
 	elif last_non_zero_direction_vector.x > 0 and abs(last_non_zero_direction_vector.x) > abs(last_non_zero_direction_vector.y):
-		current_character_direction = character_direction.EAST
+		current_entity_direction = entity_direction.EAST
 	elif last_non_zero_direction_vector.y > 0 and abs(last_non_zero_direction_vector.x) < abs(last_non_zero_direction_vector.y):
-		current_character_direction = character_direction.SOUTH
+		current_entity_direction = entity_direction.SOUTH
 	elif last_non_zero_direction_vector.x < 0 and abs(last_non_zero_direction_vector.x) > abs(last_non_zero_direction_vector.y):
-		current_character_direction = character_direction.WEST
+		current_entity_direction = entity_direction.WEST
 	
-	debug_character_direction()
+	debug_entity_direction()
 
 #----------------------------------------------------------------------------------------
 #-----------------------------------Input-Triggered--------------------------------------
@@ -95,29 +95,29 @@ func sprint_released():
 
 #----------------------------------Attack-Movement---------------------------------------
 
-func move_character(attack_state: CharacterState):
-	match current_character_direction:
-		character_direction.NORTH:
-			character.position.y -= attack_state.attack_data.attack_step_size_north
-		character_direction.EAST:
-			character.position.x += attack_state.attack_data.attack_step_size_east
-		character_direction.SOUTH:
-			character.position.y += attack_state.attack_data.attack_step_size_south
-		character_direction.WEST:
-			character.position.x -= attack_state.attack_data.attack_step_size_west
+func move_entity(attack_state: EntityState):
+	match current_entity_direction:
+		entity_direction.NORTH:
+			entity.position.y -= attack_state.attack_data.attack_step_size_north
+		entity_direction.EAST:
+			entity.position.x += attack_state.attack_data.attack_step_size_east
+		entity_direction.SOUTH:
+			entity.position.y += attack_state.attack_data.attack_step_size_south
+		entity_direction.WEST:
+			entity.position.x -= attack_state.attack_data.attack_step_size_west
 
 #----------------------------------------------------------------------------------------
 #---------------------------------------Debug--------------------------------------------
 #----------------------------------------------------------------------------------------
 
-func debug_character_direction():
-	if debug_character_direction_enabled:
-		match current_character_direction:
-			character_direction.NORTH:
-				print(character.character_name, " facing north")
-			character_direction.EAST:
-				print(character.character_name, " facing east")
-			character_direction.SOUTH:
-				print(character.character_name, " facing south")
-			character_direction.WEST:
-				print(character.character_name, " facing west")
+func debug_entity_direction():
+	if debug_entity_direction_enabled:
+		match current_entity_direction:
+			entity_direction.NORTH:
+				print(entity.entity_name, " facing north")
+			entity_direction.EAST:
+				print(entity.entity_name, " facing east")
+			entity_direction.SOUTH:
+				print(entity.entity_name, " facing south")
+			entity_direction.WEST:
+				print(entity.entity_name, " facing west")

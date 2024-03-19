@@ -1,0 +1,93 @@
+[gd_resource type="Resource" script_class="NPCEvents" load_steps=24 format=3 uid="uid://tpwflea52sur"]
+
+[ext_resource type="Resource" uid="uid://ccg36r0lthy40" path="res://Assets/Characters/NPCs/NPCs/Farmer/Destinations/field.tres" id="1_cggh5"]
+[ext_resource type="Script" path="res://Assets/Characters/NPCs/Scripts/NPCEvent.gd" id="2_ri1gv"]
+[ext_resource type="Resource" uid="uid://bd36jyy0xsbhg" path="res://Assets/Characters/NPCs/NPCs/Farmer/Destinations/farm_house.tres" id="3_s7uuo"]
+[ext_resource type="Resource" uid="uid://k4g58mp3cytj" path="res://Assets/Characters/NPCs/NPCs/Farmer/Destinations/town_square.tres" id="4_02s0w"]
+[ext_resource type="Resource" uid="uid://hygdqy4mdvb8" path="res://Assets/Characters/NPCs/NPCs/Farmer/Destinations/inner_field.tres" id="5_4jm87"]
+[ext_resource type="Resource" uid="uid://cgjwiutg6synl" path="res://Assets/Characters/NPCs/NPCs/Farmer/Destinations/west_field.tres" id="6_46325"]
+[ext_resource type="Script" path="res://Assets/Characters/NPCs/Scripts/NPCEvents.gd" id="7_8klqs"]
+
+[sub_resource type="Resource" id="Resource_4tjb1"]
+script = ExtResource("2_ri1gv")
+event_time = "08:30"
+npc_destination_event = ExtResource("1_cggh5")
+
+[sub_resource type="Resource" id="Resource_wfvxb"]
+script = ExtResource("2_ri1gv")
+event_time = "09:00"
+npc_destination_event = ExtResource("3_s7uuo")
+
+[sub_resource type="Resource" id="Resource_knh2j"]
+script = ExtResource("2_ri1gv")
+event_time = "09:45"
+npc_destination_event = ExtResource("4_02s0w")
+
+[sub_resource type="Resource" id="Resource_8xyss"]
+script = ExtResource("2_ri1gv")
+event_time = "10:30"
+npc_destination_event = ExtResource("5_4jm87")
+
+[sub_resource type="Resource" id="Resource_jqjhq"]
+script = ExtResource("2_ri1gv")
+event_time = "11:30"
+npc_destination_event = ExtResource("1_cggh5")
+
+[sub_resource type="Resource" id="Resource_a4rsi"]
+script = ExtResource("2_ri1gv")
+event_time = "12:00"
+npc_destination_event = ExtResource("4_02s0w")
+
+[sub_resource type="Resource" id="Resource_ks57d"]
+script = ExtResource("2_ri1gv")
+event_time = "12:45"
+npc_destination_event = ExtResource("3_s7uuo")
+
+[sub_resource type="Resource" id="Resource_vsqcs"]
+script = ExtResource("2_ri1gv")
+event_time = "13:30"
+npc_destination_event = ExtResource("6_46325")
+
+[sub_resource type="Resource" id="Resource_cf5uv"]
+script = ExtResource("2_ri1gv")
+event_time = "14:30"
+npc_destination_event = ExtResource("3_s7uuo")
+
+[sub_resource type="Resource" id="Resource_80v2k"]
+script = ExtResource("2_ri1gv")
+event_time = "15:00"
+npc_destination_event = ExtResource("4_02s0w")
+
+[sub_resource type="Resource" id="Resource_d4bps"]
+script = ExtResource("2_ri1gv")
+event_time = "16:00"
+npc_destination_event = ExtResource("1_cggh5")
+
+[sub_resource type="Resource" id="Resource_qsf8t"]
+script = ExtResource("2_ri1gv")
+event_time = "16:45"
+npc_destination_event = ExtResource("3_s7uuo")
+
+[sub_resource type="Resource" id="Resource_u1rjm"]
+script = ExtResource("2_ri1gv")
+event_time = "17:30"
+npc_destination_event = ExtResource("1_cggh5")
+
+[sub_resource type="Resource" id="Resource_gmb2j"]
+script = ExtResource("2_ri1gv")
+event_time = "18:30"
+npc_destination_event = ExtResource("3_s7uuo")
+
+[sub_resource type="Resource" id="Resource_g8goi"]
+script = ExtResource("2_ri1gv")
+event_time = "19:30"
+npc_destination_event = ExtResource("4_02s0w")
+
+[sub_resource type="Resource" id="Resource_342df"]
+script = ExtResource("2_ri1gv")
+event_time = "20:15"
+npc_destination_event = ExtResource("3_s7uuo")
+
+[resource]
+script = ExtResource("7_8klqs")
+events = Array[ExtResource("2_ri1gv")]([SubResource("Resource_4tjb1"), SubResource("Resource_wfvxb"), SubResource("Resource_knh2j"), SubResource("Resource_8xyss"), SubResource("Resource_jqjhq"), SubResource("Resource_a4rsi"), SubResource("Resource_ks57d"), SubResource("Resource_vsqcs"), SubResource("Resource_cf5uv"), SubResource("Resource_80v2k"), SubResource("Resource_d4bps"), SubResource("Resource_qsf8t"), SubResource("Resource_u1rjm"), SubResource("Resource_gmb2j"), SubResource("Resource_g8goi"), SubResource("Resource_342df")])

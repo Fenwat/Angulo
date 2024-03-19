@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b7hhyvv2380eu"]
 
-[ext_resource type="Script" path="res://Assets/Characters/Nodes/Node_CharacterStateMachine/Node_DynamicStateMachine/Scripts/DynamicStateMachine.gd" id="1_q5p73"]
+[ext_resource type="Script" path="res://Assets/Characters/Components/StateMachine_Component/Scripts/DynamicStateMachineComponent.gd" id="1_w31kt"]
 
 [node name="DynamicStateMachine" type="Node2D"]
-script = ExtResource("1_q5p73")
+script = ExtResource("1_w31kt")

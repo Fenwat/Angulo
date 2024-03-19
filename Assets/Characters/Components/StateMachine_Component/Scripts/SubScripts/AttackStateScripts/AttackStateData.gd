@@ -1,4 +1,4 @@
-extends Node
+extends Resource
 class_name AttackStateData1
 
 ## The type of attack.

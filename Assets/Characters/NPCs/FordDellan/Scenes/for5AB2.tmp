@@ -1,0 +1,55 @@
+[gd_scene load_steps=10 format=3 uid="uid://cn3s4fewdith0"]
+
+[ext_resource type="Script" path="res://Assets/Characters/Components/Entity_Component/Scripts/DynamicEntity.gd" id="1_smws7"]
+[ext_resource type="Texture2D" uid="uid://dhoy8j1xjmylh" path="res://Assets/Characters/NPCs/FordDellan/Sprites/ford_dellan_animations.png" id="2_wclu1"]
+[ext_resource type="PackedScene" uid="uid://b7hhyvv2380eu" path="res://Assets/Characters/Components/StateMachine_Component/Scenes/dynamic_state_machine.tscn" id="3_2yiqd"]
+[ext_resource type="PackedScene" uid="uid://r5qplqjgdnad" path="res://Assets/Characters/Components/Movement_Component/Scenes/movement.tscn" id="4_a2co3"]
+[ext_resource type="PackedScene" uid="uid://cl02dbrlca2yh" path="res://Assets/Characters/Components/Animator_Component/Scenes/animator.tscn" id="5_b36d5"]
+[ext_resource type="PackedScene" uid="uid://c4e5hgyul60uv" path="res://Assets/Characters/Components/Input_Component/Scenes/destination_input_component.tscn" id="6_8sick"]
+[ext_resource type="PackedScene" uid="uid://c62v8i168vn73" path="res://Assets/Characters/Components/Input_Component/Scenes/schedule_input_component.tscn" id="7_p7b5h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_epqao"]
+size = Vector2(5, 1)
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_7ju8a"]
+
+[node name="ford_dellan" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 31
+script = ExtResource("1_smws7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_wclu1")
+offset = Vector2(-0.5, -7.5)
+hframes = 6
+vframes = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_epqao")
+
+[node name="DynamicStateMachine" parent="." node_paths=PackedStringArray("input_component", "movement_component", "animator_component") instance=ExtResource("3_2yiqd")]
+input_component = NodePath("../DestinationInput")
+movement_component = NodePath("../Movement")
+animator_component = NodePath("../Animator")
+
+[node name="Movement" parent="." node_paths=PackedStringArray("input_component") instance=ExtResource("4_a2co3")]
+input_component = NodePath("../DestinationInput")
+walk_speed = 10
+jog_speed = 25
+sprint_speed = 50
+
+[node name="Animator" parent="." node_paths=PackedStringArray("input_component") instance=ExtResource("5_b36d5")]
+input_component = NodePath("../DestinationInput")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Animator"]
+
+[node name="AnimationTree" type="AnimationTree" parent="Animator"]
+tree_root = SubResource("AnimationNodeStateMachine_7ju8a")
+anim_player = NodePath("../AnimationPlayer")
+
+[node name="DestinationInput" parent="." node_paths=PackedStringArray("navigation_agent") instance=ExtResource("6_8sick")]
+navigation_agent = NodePath("NavigationAgent2D")
+
+[node name="ScheduleInput" parent="DestinationInput" instance=ExtResource("7_p7b5h")]
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="DestinationInput"]

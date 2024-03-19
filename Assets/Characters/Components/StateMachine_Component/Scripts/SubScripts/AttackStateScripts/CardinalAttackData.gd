@@ -1,4 +1,4 @@
-extends AttackStateData1
+extends Resource
 class_name CardinalAttackData
 
 ## Indicates haw many pixels foward the character steps during the attack.

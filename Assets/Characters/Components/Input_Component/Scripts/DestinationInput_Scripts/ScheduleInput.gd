@@ -14,9 +14,9 @@ func _connect_signals():
 	TimeSignalBus.connect("event_time_reached", compare_event_time)
 
 func _connect_schedule():
-	if entity.character_schedule_events == null: return
+	if entity.entity_schedule_events == null: return
 	
-	schedule_events = entity.character_schedule_events
+	schedule_events = entity.entity_schedule_events
 
 func compare_event_time(time):
 	if schedule_events == null: return

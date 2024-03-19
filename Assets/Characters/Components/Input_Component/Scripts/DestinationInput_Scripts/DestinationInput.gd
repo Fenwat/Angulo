@@ -13,6 +13,17 @@ var is_navigating: bool = false
 #--------------------------------------Physics-Process-------------------------------------------------
 #------------------------------------------------------------------------------------------------------
 
+func _ready():
+	_set_navigation_parameters()
+
+func _set_navigation_parameters():
+	navigation_agent.path_desired_distance = path_desired_distance
+	navigation_agent.target_desired_distance = target_desired_distance
+
+#------------------------------------------------------------------------------------------------------
+#--------------------------------------Physics-Process-------------------------------------------------
+#------------------------------------------------------------------------------------------------------
+
 func _physics_process(_delta):
 	_handle_navigation()
 	_get_last_non_zero_input()

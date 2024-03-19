@@ -321,9 +321,7 @@ path_desired_distance = 5.0
 target_desired_distance = 5.0
 avoidance_enabled = true
 
-[node name="DynamicStateMachine" parent="." node_paths=PackedStringArray("character_input", "character_movement", "character_animator") instance=ExtResource("9_6e8sw")]
-character_input = NodePath("../CharacterDestinationInput")
-character_movement = NodePath("../CharacterMovement")
+[node name="DynamicStateMachine" parent="." node_paths=PackedStringArray("character_animator") instance=ExtResource("9_6e8sw")]
 character_animator = NodePath("../CharacterAnimator")
 states = Array[ExtResource("6_p60h2")]([SubResource("Resource_es23k"), SubResource("Resource_phttm")])
 

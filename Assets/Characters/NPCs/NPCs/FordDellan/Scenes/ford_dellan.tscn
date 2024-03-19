@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://w2h7rah72c3b"]
+[gd_scene load_steps=52 format=3 uid="uid://w2h7rah72c3b"]
 
 [ext_resource type="Script" path="res://Assets/Characters/Nodes/Node_Character/Scripts/Character.gd" id="1_b012l"]
 [ext_resource type="Texture2D" uid="uid://ba4ryydpxllh1" path="res://Assets/Characters/NPCs/NPCs/FordDellan/Sprites/farmer_animations.png" id="2_mxdtn"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bxjqjiak56vpp" path="res://Assets/Characters/Nodes/Node_CharacterAnimator/Scenes/character_animator.tscn" id="6_8tdkn"]
 [ext_resource type="PackedScene" uid="uid://biqwmbkt6yoor" path="res://Assets/Characters/Nodes/Node_CharacterInput/Node_CharacterDestinationInput/Scenes/character_destination_input.tscn" id="7_rf3l1"]
 [ext_resource type="PackedScene" uid="uid://btw2n0u3j7v2f" path="res://Assets/Characters/Nodes/Node_CharacterInput/Node_CharacterDestinationInput/Node_CharacterSchedule/Scenes/character_schedule.tscn" id="8_rbkyi"]
+[ext_resource type="Resource" uid="uid://ddq4d0c2wdpti" path="res://Assets/Characters/NPCs/NPCs/FordDellan/Schedules/ford_dellan_test_schedule.tres" id="9_qrdj7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5bnhu"]
 size = Vector2(5, 1)
@@ -500,6 +501,7 @@ character_movement = NodePath("../CharacterMovement")
 navigation_agent = NodePath("NavigationAgent2D")
 
 [node name="CharacterSchedule" parent="CharacterDestinationInput" instance=ExtResource("8_rbkyi")]
+schedule_events = ExtResource("9_qrdj7")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="CharacterDestinationInput"]
 path_desired_distance = 5.0

@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://wd805m28wd3s" path="res://Assets/TileMaps/AutoTiles/grass/grass.png" id="8_kslfo"]
 [ext_resource type="Texture2D" uid="uid://boqk11g1ldu1t" path="res://Assets/TileMaps/AutoTiles/fence/fence.png" id="9_hf3k7"]
 [ext_resource type="Texture2D" uid="uid://spndr30l72o0" path="res://Assets/TileMaps/Tiles/Wheat/wheat.png" id="10_hh44h"]
+[ext_resource type="PackedScene" uid="uid://cn3s4fewdith0" path="res://Assets/Characters/NPCs/FordDellan/Scenes/ford_dellan.tscn" id="12_dgdi0"]
+[ext_resource type="Resource" uid="uid://tpwflea52sur" path="res://Assets/Characters/NPCs/FordDellan/Resources/Schedules/ford_dellan_test_schedule.tres" id="13_1di55"]
 [ext_resource type="PackedScene" uid="uid://8youmhgtwvqr" path="res://Assets/Characters/Player/Scenes/test_player.tscn" id="13_7n3ux"]
 [ext_resource type="PackedScene" uid="uid://hs1lfea0uky1" path="res://Assets/Buildings/Scenes/farm_house.tscn" id="13_a7vik"]
 [ext_resource type="Texture2D" uid="uid://36dhxvtt54hi" path="res://Assets/Characters/Enemies/Red_Band_Bandits/RBB_Dagger/Sprites/Skin_Varients/rbb_dagger_varient4_map.png" id="13_ffh16"]
@@ -18,10 +20,8 @@
 [ext_resource type="Script" path="res://Assets/GUI/Scripts/CanvasLayer.gd" id="14_kk3l3"]
 [ext_resource type="Texture2D" uid="uid://uai7pwf153tk" path="res://Assets/Characters/Enemies/Red_Band_Bandits/RBB_Dagger/Sprites/Skin_Varients/rbb_dagger_varient6_map.png" id="15_c1h25"]
 [ext_resource type="PackedScene" uid="uid://dbik1s41svdr7" path="res://Assets/GUI/DateTime/Scenes/date_time_gui.tscn" id="16_cads6"]
-[ext_resource type="Resource" uid="uid://ddq4d0c2wdpti" path="res://Assets/Characters/NPCs/NPCs/FordDellan/Schedules/ford_dellan_test_schedule.tres" id="17_dggmq"]
 [ext_resource type="PackedScene" uid="uid://lc3gcek3ihuj" path="res://Assets/GUI/Inventory/Scenes/Inventories/gui_item_database.tscn" id="17_fm2tk"]
 [ext_resource type="PackedScene" uid="uid://c3c3x3avdcc6e" path="res://Assets/GUI/Inventory/Scenes/gui_inventory.tscn" id="17_w87mi"]
-[ext_resource type="PackedScene" uid="uid://w2h7rah72c3b" path="res://Assets/Characters/NPCs/NPCs/FordDellan/Scenes/ford_dellan.tscn" id="18_4or12"]
 [ext_resource type="PackedScene" uid="uid://dw1vgmujm6kg5" path="res://Assets/Characters/Objects/Campfire/Scenes/campfire.tscn" id="20_3atkf"]
 [ext_resource type="PackedScene" uid="uid://x2bolvqmr5y4" path="res://Assets/Characters/Objects/WoodenCrate/Scenes/wooden_crate.tscn" id="21_kgtjt"]
 
@@ -8673,6 +8673,12 @@ y_sort_enabled = true
 position = Vector2(643, 326)
 character_type = 0
 
+[node name="ford_dellan" parent="Level/Characters" instance=ExtResource("12_dgdi0")]
+position = Vector2(321, 166)
+entity_schedule_events = ExtResource("13_1di55")
+entity_name = "Ford Dellan"
+entity_type = 1
+
 [node name="RbbDagger" parent="Level/Characters" instance=ExtResource("13_pmyx7")]
 position = Vector2(984, 455)
 character_type = 2
@@ -8687,11 +8693,6 @@ character_skin = ExtResource("14_12xtd")
 position = Vector2(936, 505)
 character_type = 2
 character_skin = ExtResource("15_c1h25")
-
-[node name="FordDellan" parent="Level/Characters" instance=ExtResource("18_4or12")]
-position = Vector2(309, 160)
-character_type = 1
-character_schedule_events = ExtResource("17_dggmq")
 
 [node name="Objects" type="Node2D" parent="Level"]
 z_as_relative = false

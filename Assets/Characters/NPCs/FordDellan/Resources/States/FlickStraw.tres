@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EntityState" load_steps=2 format=3 uid="uid://cf6dnlgbrigop"]
+
+[ext_resource type="Script" path="res://Assets/Characters/Components/StateMachine_Component/Scripts/SubScripts/EntityState.gd" id="1_dmv4a"]
+
+[resource]
+script = ExtResource("1_dmv4a")
+entity_state_name = "FlickStraw"
+entity_state_type = 1
+locks_entity_state = false
+is_static = true

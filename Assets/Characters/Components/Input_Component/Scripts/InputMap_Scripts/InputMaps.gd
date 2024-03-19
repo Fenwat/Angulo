@@ -1,5 +1,5 @@
 extends Resource
-class_name InputMap1
+class_name InputMaps
 
 ## Name of input map.
 @export var input_map_name: String

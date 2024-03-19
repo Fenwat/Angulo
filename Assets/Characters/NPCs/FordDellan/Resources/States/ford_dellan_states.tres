@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EntityStates" load_steps=6 format=3 uid="uid://6ka2u80jtt6l"]
+
+[ext_resource type="Script" path="res://Assets/Characters/Components/StateMachine_Component/Scripts/SubScripts/EntityStates.gd" id="1_n8ggk"]
+[ext_resource type="Resource" uid="uid://dp7n64d3okdyr" path="res://Assets/Characters/NPCs/FordDellan/Resources/States/Stand.tres" id="2_x6xfq"]
+[ext_resource type="Resource" uid="uid://bvli0k3mti6aw" path="res://Assets/Characters/NPCs/FordDellan/Resources/States/Walk.tres" id="3_4qgdr"]
+[ext_resource type="Resource" uid="uid://cf6dnlgbrigop" path="res://Assets/Characters/NPCs/FordDellan/Resources/States/FlickStraw.tres" id="4_1k67x"]
+[ext_resource type="Resource" uid="uid://bduinl8vod6s0" path="res://Assets/Characters/NPCs/FordDellan/Resources/States/Forage.tres" id="5_qpwnl"]
+
+[resource]
+script = ExtResource("1_n8ggk")
+states_array = Array[Resource("res://Assets/Characters/Components/StateMachine_Component/Scripts/SubScripts/EntityState.gd")]([ExtResource("2_x6xfq"), ExtResource("3_4qgdr"), ExtResource("4_1k67x"), ExtResource("5_qpwnl")])
