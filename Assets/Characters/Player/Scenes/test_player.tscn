@@ -3,7 +3,7 @@
 [ext_resource type="Material" uid="uid://dujeuv6iab2w" path="res://Assets/Characters/Player/Shaders/Materials/player_skin_material.tres" id="1_dnpnp"]
 [ext_resource type="PackedScene" uid="uid://doakyahaj4cqc" path="res://Assets/Characters/Nodes/Node_CharacterSprite/Scenes/character_sprite.tscn" id="1_mu7au"]
 [ext_resource type="Script" path="res://Assets/Characters/Nodes/Node_Character/Scripts/Character.gd" id="1_qiwsx"]
-[ext_resource type="Texture2D" uid="uid://bip7aesedlxq4" path="res://Assets/Characters/Player/Movesets/StraightSword/player_straightSword.png" id="2_hcgd3"]
+[ext_resource type="Texture2D" uid="uid://bip7aesedlxq4" path="res://Assets/Characters/Player/Movesets/StraightSword/Sprites/player_straightSword.png" id="2_hcgd3"]
 [ext_resource type="Script" path="res://Assets/Characters/Nodes/Node_CharacterSprite/Scripts/CharacterSpriteElement.gd" id="3_qu5xa"]
 [ext_resource type="PackedScene" uid="uid://bdws1mjkkhq04" path="res://Assets/Characters/Nodes/Node_CharacterInput/Node_CharacterUserInput/Scenes/character_user_input.tscn" id="4_82hbs"]
 [ext_resource type="PackedScene" uid="uid://gyek7u86ngcu" path="res://Assets/Characters/Components/HitBox_Component/Scenes/hit_box.tscn" id="4_auiod"]

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4e5hgyul60uv"]
+
+[ext_resource type="Script" path="res://Assets/Characters/Components/Input_Component/Scripts/DestinationInput_Scripts/DestinationInput.gd" id="1_f0oth"]
+
+[node name="DestinationInput" type="Node2D"]
+script = ExtResource("1_f0oth")

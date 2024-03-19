@@ -1,7 +1,7 @@
 [gd_scene load_steps=90 format=3 uid="uid://c85qvwqv4xynr"]
 
 [ext_resource type="Material" uid="uid://dujeuv6iab2w" path="res://Assets/Characters/Player/Shaders/Materials/player_skin_material.tres" id="1_uyuon"]
-[ext_resource type="Texture2D" uid="uid://bip7aesedlxq4" path="res://Assets/Characters/Player/Movesets/StraightSword/player_straightSword.png" id="2_e70sl"]
+[ext_resource type="Texture2D" uid="uid://bip7aesedlxq4" path="res://Assets/Characters/Player/Movesets/StraightSword/Sprites/player_straightSword.png" id="2_e70sl"]
 [ext_resource type="Script" path="res://Assets/Characters/Player/Scripts/InputManager.gd" id="3_tao1v"]
 [ext_resource type="Script" path="res://Assets/Characters/Player/Scripts/MovementManager.gd" id="4_fq7xd"]
 [ext_resource type="Script" path="res://Assets/Characters/Player/Scripts/AnimationManager.gd" id="5_uq34l"]

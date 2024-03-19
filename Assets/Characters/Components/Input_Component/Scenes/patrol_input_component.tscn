@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3giqvvpq7r4n"]
+
+[ext_resource type="Script" path="res://Assets/Characters/Components/Input_Component/Scripts/DestinationInput_Scripts/PatrolInput.gd" id="1_bbh2n"]
+
+[node name="PatrolInput" type="Node2D"]
+script = ExtResource("1_bbh2n")
+
+[node name="Timer" type="Timer" parent="."]
