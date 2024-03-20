@@ -3,8 +3,7 @@ class_name SkinComponent
 
 @export var sprite_2d: Sprite2D
 
-@onready var character = $".."
-#@onready var sprite_2d = $"../Sprite2D"
+@onready var entity = $".."
 
 var player_skin_map = preload("res://Assets/Characters/Player/Shaders/Skins/player_skin_map.png")
 var player_skin_index = preload("res://Assets/Characters/Player/Shaders/Skins/player_skin_index.png")
@@ -16,10 +15,8 @@ func _ready():
 	_apply_skin()
 
 func _apply_skin():
-	if character.character_skin:
-		#var character_skin_map_texture = ImageTexture.create_from_image(character.character_skin)
-		#sprite_2d.material.set_shader_parameter("SkinMap", character_skin_map_texture)
-		sprite_2d.material.set_shader_parameter("SkinMap", character.character_skin)
+	if entity.entity_skin:
+		sprite_2d.material.set_shader_parameter("SkinMap", entity.entity_skin)
 
 func set_new_skin(new_source_rect, new_dest_rect):
 	process_source_rect(new_source_rect)

@@ -1,0 +1,69 @@
+[gd_resource type="Resource" script_class="NPCEvents" load_steps=14 format=3 uid="uid://b18xofu2i65t8"]
+
+[ext_resource type="Script" path="res://Assets/Characters/NPCs/Scripts/NPCDestinationEvent.gd" id="1_3opa7"]
+[ext_resource type="Script" path="res://Assets/Characters/NPCs/Scripts/NPCEvent.gd" id="2_6anwy"]
+[ext_resource type="Script" path="res://Assets/Characters/NPCs/Scripts/NPCEvents.gd" id="3_hgk7d"]
+
+[sub_resource type="Resource" id="Resource_wjek4"]
+script = ExtResource("1_3opa7")
+level = "level_1"
+destination_name = "TestDestination4"
+destination_coordinates = Vector2(114, 55)
+destination_duration = 15
+
+[sub_resource type="Resource" id="Resource_7qu0m"]
+script = ExtResource("2_6anwy")
+event_time = ""
+npc_destination_event = SubResource("Resource_wjek4")
+
+[sub_resource type="Resource" id="Resource_87csw"]
+script = ExtResource("1_3opa7")
+level = "level_1"
+destination_name = "TestDestination5"
+destination_coordinates = Vector2(131, 57)
+destination_duration = 5
+
+[sub_resource type="Resource" id="Resource_bxnr1"]
+script = ExtResource("2_6anwy")
+event_time = ""
+npc_destination_event = SubResource("Resource_87csw")
+
+[sub_resource type="Resource" id="Resource_q3344"]
+script = ExtResource("1_3opa7")
+level = "level_1"
+destination_name = "TestDestination6"
+destination_coordinates = Vector2(135, 58)
+destination_duration = 5
+
+[sub_resource type="Resource" id="Resource_lglrm"]
+script = ExtResource("2_6anwy")
+event_time = ""
+npc_destination_event = SubResource("Resource_q3344")
+
+[sub_resource type="Resource" id="Resource_dow3h"]
+script = ExtResource("1_3opa7")
+level = "level_1"
+destination_name = "TestDestination7"
+destination_coordinates = Vector2(133, 67)
+destination_duration = 15
+
+[sub_resource type="Resource" id="Resource_5ce77"]
+script = ExtResource("2_6anwy")
+event_time = ""
+npc_destination_event = SubResource("Resource_dow3h")
+
+[sub_resource type="Resource" id="Resource_20uvw"]
+script = ExtResource("1_3opa7")
+level = "level_1"
+destination_name = "TestDestination8"
+destination_coordinates = Vector2(113, 67)
+destination_duration = 20
+
+[sub_resource type="Resource" id="Resource_ksqt2"]
+script = ExtResource("2_6anwy")
+event_time = ""
+npc_destination_event = SubResource("Resource_20uvw")
+
+[resource]
+script = ExtResource("3_hgk7d")
+events = Array[ExtResource("2_6anwy")]([SubResource("Resource_7qu0m"), SubResource("Resource_bxnr1"), SubResource("Resource_lglrm"), SubResource("Resource_5ce77"), SubResource("Resource_ksqt2")])

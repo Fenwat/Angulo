@@ -4,6 +4,9 @@ class_name HitBox
 @export var state_machine: CharacterStateMachine
 @export var movement: CharacterMovement
 
+@export var state_machine_component: StateMachineComponent
+@export var movement_component: MovementComponent
+
 @onready var hitbox_shape = $CollisionShape2D
 
 var current_state: CharacterState

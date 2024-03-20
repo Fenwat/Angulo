@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EntityState" load_steps=2 format=3 uid="uid://r0gwysc44pjr"]
+
+[ext_resource type="Script" path="res://Assets/Characters/Components/StateMachine_Component/Scripts/SubScripts/EntityState.gd" id="1_s2j16"]
+
+[resource]
+script = ExtResource("1_s2j16")
+entity_state_name = "Walk"
+entity_state_type = 2
+locks_entity_state = false
+is_static = false

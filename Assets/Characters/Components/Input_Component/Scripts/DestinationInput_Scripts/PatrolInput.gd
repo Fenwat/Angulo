@@ -15,7 +15,7 @@ func _ready():
 	call_deferred("_process_next_destination")
 
 func _connect_npc_events():
-	patrol_events = entity.character_patrol_events
+	patrol_events = entity.entity_patrol_events
 
 func _set_current_event():
 	if patrol_events == null: return

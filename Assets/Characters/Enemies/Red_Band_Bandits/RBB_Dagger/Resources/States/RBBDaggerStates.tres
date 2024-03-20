@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="EntityStates" load_steps=4 format=3 uid="uid://dqd2rniv8g8rq"]
+
+[ext_resource type="Script" path="res://Assets/Characters/Components/StateMachine_Component/Scripts/SubScripts/EntityStates.gd" id="1_gbuwa"]
+[ext_resource type="Resource" uid="uid://cnbx0fs6d4xy2" path="res://Assets/Characters/Enemies/Red_Band_Bandits/RBB_Dagger/Resources/States/Stand.tres" id="2_nw1fp"]
+[ext_resource type="Resource" uid="uid://r0gwysc44pjr" path="res://Assets/Characters/Enemies/Red_Band_Bandits/RBB_Dagger/Resources/States/Walk.tres" id="3_ilhc8"]
+
+[resource]
+script = ExtResource("1_gbuwa")
+states_array = Array[Resource("res://Assets/Characters/Components/StateMachine_Component/Scripts/SubScripts/EntityState.gd")]([ExtResource("2_nw1fp"), ExtResource("3_ilhc8")])

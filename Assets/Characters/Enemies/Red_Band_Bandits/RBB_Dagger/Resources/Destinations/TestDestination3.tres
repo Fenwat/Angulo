@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="NPCDestinationEvent" load_steps=2 format=3 uid="uid://cpy8xv5bgt0rv"]
+
+[ext_resource type="Script" path="res://Assets/Characters/NPCs/Scripts/NPCDestinationEvent.gd" id="1_3aoik"]
+
+[resource]
+script = ExtResource("1_3aoik")
+level = "level_1"
+destination_name = "Destination3"
+destination_coordinates = Vector2(129, 59)
+destination_duration = 15

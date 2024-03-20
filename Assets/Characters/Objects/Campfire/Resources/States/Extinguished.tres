@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EntityState" load_steps=2 format=3 uid="uid://bgckbrdnhr7e4"]
+
+[ext_resource type="Script" path="res://Assets/Characters/Components/StateMachine_Component/Scripts/SubScripts/EntityState.gd" id="1_xgb3q"]
+
+[resource]
+script = ExtResource("1_xgb3q")
+entity_state_name = "Extinguished"
+entity_state_type = 0
+locks_entity_state = false
+is_static = false

@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="NPCEvents" load_steps=9 format=3 uid="uid://bjal6q5w3d0t7"]
+
+[ext_resource type="Resource" uid="uid://dmmtd453kmira" path="res://Assets/Characters/Enemies/Red_Band_Bandits/RBB_Dagger/Resources/Destinations/TestDestination1.tres" id="1_2k44o"]
+[ext_resource type="Script" path="res://Assets/Characters/NPCs/Scripts/NPCEvents.gd" id="1_4n6in"]
+[ext_resource type="Script" path="res://Assets/Characters/NPCs/Scripts/NPCEvent.gd" id="2_fnusm"]
+[ext_resource type="Resource" uid="uid://buny7bs33x3sq" path="res://Assets/Characters/Enemies/Red_Band_Bandits/RBB_Dagger/Resources/Destinations/TestDestination2.tres" id="3_dftkg"]
+[ext_resource type="Resource" uid="uid://cpy8xv5bgt0rv" path="res://Assets/Characters/Enemies/Red_Band_Bandits/RBB_Dagger/Resources/Destinations/TestDestination3.tres" id="4_a3lm3"]
+
+[sub_resource type="Resource" id="Resource_bt3o1"]
+script = ExtResource("2_fnusm")
+event_time = ""
+npc_destination_event = ExtResource("1_2k44o")
+
+[sub_resource type="Resource" id="Resource_drrjt"]
+script = ExtResource("2_fnusm")
+event_time = ""
+npc_destination_event = ExtResource("3_dftkg")
+
+[sub_resource type="Resource" id="Resource_p72qc"]
+script = ExtResource("2_fnusm")
+event_time = ""
+npc_destination_event = ExtResource("4_a3lm3")
+
+[resource]
+script = ExtResource("1_4n6in")
+events = Array[ExtResource("2_fnusm")]([SubResource("Resource_bt3o1"), SubResource("Resource_drrjt"), SubResource("Resource_p72qc")])

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="NPCDestinationEvent" load_steps=2 format=3 uid="uid://dmmtd453kmira"]
+
+[ext_resource type="Script" path="res://Assets/Characters/NPCs/Scripts/NPCDestinationEvent.gd" id="1_hggi7"]
+
+[resource]
+script = ExtResource("1_hggi7")
+level = "level_1"
+destination_name = "TestDestination1"
+destination_coordinates = Vector2(120, 56)
+destination_duration = 15
